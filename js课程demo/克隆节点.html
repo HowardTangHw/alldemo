@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo">
+        <div id="one"></div>
+        <div id="two"></div>
+    </div>
+</body>
+</html>
+<script>
+    var demo = document.getElementById("demo");
+    demo.parentNode.insertBefore(demo.cloneNode(true),demo);
+</script>

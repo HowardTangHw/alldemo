@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div {
+				width: 200px;
+				height: auto;
+				border: 1px solid #1E90FF;
+			}
+			p {
+				width: 200px;
+				height: 200px;
+				border: 10px solid #008000;
+				padding: 20px;
+				margin:20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div>自动测量自动测量自动测量自动测量自动测量自动测量自动测量自动测量自动测量自动测量自动测量自动测量自动测量自动测量自动测量自动测量自动测量自动测量自动测量</div>
+		<p>width: 200px;
+				height: 200px;
+				border: 10px solid #008000;
+				padding: 20px;
+				margin:20px</p>
+	</body>
+</html>
+<script>
+	//offset测量高度 等于 width+border+padding
+	var div =document.getElementsByTagName("div")[0];
+	var p = document.getElementsByTagName("p")[0];
+	console.log(div.offsetHeight);//自动测量高度 
+	console.log(p.offsetWidth);
+	
+</script>

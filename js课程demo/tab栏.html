@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box {
+				border: 1px solid saddlebrown;
+				width: 450px;
+				height: 300px;
+				margin: 0 auto;
+			}
+			
+			.bd ul {
+				display: none;
+			}
+			.hd span {
+				width: 100px;
+				height: 20px;
+				background: #ADFF2F;
+				display: inline-block;
+				text-align: center;
+				line-height: 20px;
+				color: #666;
+				border: 3px solid red;
+			}
+			.hd span:hover {
+				background: #8B4513;
+				border-bottom: none;
+			}
+			
+			body .show {
+				display: block;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+			<div class="hd">
+				<span>体育</span>
+				<span>娱乐</span>
+				<span>新闻</span>
+				<span>天气</span>
+			</div>
+			<div class="bd">
+				<ul class="show">
+					<li>哈哈哈哈</li>
+					<li>哈哈哈哈</li>
+					<li>哈哈哈哈</li>
+					<li>哈哈哈哈</li>
+				</ul>
+				<ul>
+					<li>嘻嘻嘻嘻</li>
+					<li>嘻嘻嘻嘻</li>
+					<li>嘻嘻嘻嘻</li>
+					<li>嘻嘻嘻嘻</li>
+				</ul>
+				<ul>
+					<li>嗯嗯嗯嗯</li>
+					<li>嗯嗯嗯嗯</li>
+					<li>嗯嗯嗯嗯</li>
+					<li>嗯嗯嗯嗯</li>
+				</ul>
+				<ul>
+					<li>嘎嘎嘎嘎</li>
+					<li>嘎嘎嘎嘎</li>
+					<li>嘎嘎嘎嘎</li>
+					<li>嘎嘎嘎嘎</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+
+</html>
+<script>
+	var btns = document.getElementsByTagName("span");
+	var uls = document.getElementsByTagName("ul");
+	for(var i = 0; i < btns.length; i++) {
+		btns[i].index = i;
+		btns[i].onmouseover = function() {
+			for(var j = 0; j < uls.length; j++) {
+				uls[j].style.display = "none";
+			}
+			uls[this.index].style.display = "block";
+		}
+	}
+</script>

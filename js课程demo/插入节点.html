@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box {
+            width:100px;
+            height:100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<div id="demo">
+    <div id="xiongda"></div>
+    
+    </div>    
+</body>
+</html>
+<script>
+    var demo =document.getElementById("demo");
+    var test =document.createElement("div");
+    var xiongda =document.getElementById("xiongda");
+    demo.appendChild(test);
+    var span =document.createElement("span");
+    demo.insertBefore(span,demo.children[0]);
+    test.getAttribute("id");//获得属性名
+    test.setAttribute("class","box");//修改属性名
+    test.removeAttribute("class");//删除属性名;
+</script>

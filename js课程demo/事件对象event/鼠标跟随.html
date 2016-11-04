@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {margin: 0;padding:0}
+        img {
+            position: absolute;
+            top:0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+<img src="img.jpg" alt="" width="100" id="pic"/>
+</body>
+</html>
+<script src="my.js"></script>
+<script>
+    // leader = leader + (target - leader ) / 10;
+    var pic = document.getElementById("pic");
+    var targetx=targety=leadery=timer=0;
+    var leaderx=0;
+    document.onmousemove=function(event){
+    	var pagex = event.pageX||window.event.clientX+scroll().left;
+    	var pagey = event.pageY ||window.event.clientY +scroll().top;
+    	targetx=pagex-50;
+		targety=pagey-30;
+		 clearInterval(timer);
+    timer=setInterval(function(){
+    	var stepx =(targetx-leaderx)/10;
+    	var stepy = (targety-leadery)/10;
+    	stepx=stepx>0?Math.ceil(stepx):Math.floor(stepx);
+    	stepy=stepy>0?Math.ceil(stepy):Math.floor(stepy);
+    	console.log(stepx,stepy);
+    	leaderx = leaderx+stepx;
+    	leadery =leadery+stepy;
+    	pic.style.left=leaderx+"px";
+    	pic.style.top=leadery+"px";
+    	if(targetx==leaderx && targety==leadery)
+    	{
+    		 clearInterval(timer);
+    	}
+    },10);
+		}
+   
+
+</script>

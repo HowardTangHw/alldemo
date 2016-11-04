@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<!-- 声明当前页面的编码集,中文编码:GKB/GB2312 国际编码:utf-8 -->
+		<meta http-equiv="content-type" content="text/html" charset="utf-8">
+		<!--声明当前页面的三要素-标题-关键字--简介 -->
+		<title></title>
+		<meta name="Keywords" content="关键字,关键字,关键字">
+		<meta name="description" content="">
+		<!-- css/js -->
+		<style type="text/css">
+			/*浏览器兼容性解决方案*/
+			
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.clock {
+				width: 600px;
+				height: 600px;
+				margin: 50px auto;
+				background: url(images/clock.jpg) no-repeat;
+				position: relative;
+			}
+			
+			.clock div {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				background: url(images/hour.png)no-repeat center center;
+			}
+			
+			#m {
+				background-image: url(images/minute.png);
+			}
+			
+			#s {
+				background-image: url(images/second.png);
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<div class="clock">
+			<div id="h"></div>
+			<div id="m"></div>
+			<div id="s"></div>
+		</div>
+	</body>
+
+</html>
+<script>
+	var hh = document.getElementById("h");
+	var mm = document.getElementById("m");
+	var ss = document.getElementById("s");
+	setInterval(clock, 50);
+
+	function clock() {
+		var date = new Date();
+		//获取当前毫秒数
+		var ms = date.getMilliseconds();
+		//当前秒数 = 秒数+已过去的毫秒数
+		var s = date.getSeconds() + ms/1000;
+		//当前分钟= 分钟+已过去秒数
+		var m = date.getMinutes() + s / 60;
+		//当前小时= 小时+已过去小时
+		var h = date.getHours() % 12 + m / 60;
+		//360度/12小时 每一小时有30度
+		hh.style.WebkitTransform = "rotate(" + h * 30 + "deg)";
+		//360度/60分钟 每一分钟有6度 每一秒也有6度
+		mm.style.WebkitTransform = "rotate(" + m * 6 + "deg)";
+		ss.style.WebkitTransform = "rotate(" + s * 6 + "deg)";
+	}
+</script>

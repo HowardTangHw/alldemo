@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#left {
+				width: 100px;
+				height: 500px;
+				background-color: pink;
+				position: fixed;
+				top: 0;
+				left: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="left">广而告之</div>
+	</body>
+</html>
+<script>
+	var id =document.getElementById("left");
+	setTimeout(function(){id.style.display="none";},2000);
+</script>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.btn a {
+				width: 100px;
+				height: 40px;
+				margin: 30px auto;
+				border: 1px solid dodgerblue;
+				display: block;
+				text-align: center;
+				font-size: 20px;
+				line-height: 40px;
+				background: deepskyblue;
+				color: white;
+				border-radius: 20px;
+				text-decoration: none;
+			}
+			
+			.btn a:hover {
+				background: dodgerblue;
+				border: 1px solid deepskyblue;
+			}
+			
+			._choice {
+				margin: -27px auto;
+				display: none;
+			}
+			
+			.choice li {
+				border: 1px solid deepskyblue;
+				width: 50px;
+				text-decoration: none;
+				list-style: none;
+				margin: 0 auto;
+			}
+			
+			.choice li a {
+				text-decoration: none;
+			}
+		</style>
+
+		<script>
+			window.onload = function() {
+				var btn = document.getElementById("b_btn");
+				var c = document.getElementsByClassName("_choice")[0];
+				var li =document.getElementsByTagName("li")[2];
+	
+				btn.onclick = function() {
+//				c.style.display = c.style.display == "block" ? "none" : "block"	;
+				if(c.style.display=="" || c.style.display=="none")
+				{
+					c.style.display="block";
+				}
+				else
+				{
+					c.style.display="none";
+				}
+				
+				}
+				li.onclick=function(){
+					c.style.display="none";
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<div class="btn">
+			<a href="#" id="b_btn">输入法</a>
+		</div>
+		<div class="_choice">
+			<ul class="choice">
+				<li>
+					<a href="#">中文</a>
+				</li>
+				<li>
+					<a href="#">英文</a>
+				</li>
+				<li>
+					<a href="#">关闭</a>
+				</li>
+			</ul>
+		</div>
+	</body>
+
+</html>

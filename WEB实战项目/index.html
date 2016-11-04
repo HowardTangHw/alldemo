@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<!-- 声明当前页面的编码集,中文编码:GKB/GB2312 国际编码:utf-8 -->
+		<meta http-equiv="content-type" content="text/html" charset="utf-8">
+		<!--声明当前页面的三要素-标题-关键字--简介 -->
+		<title></title>
+		<meta name="Keywords" content="关键字,关键字,关键字">
+		<meta name="description" content="">
+		<!-- css/js -->
+		
+		<style type="text/css">
+			/*浏览器兼容性解决方案*/
+			
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			body {
+				font-family: "微软雅黑";
+				font-size: 12px;
+				color: #666;
+				background: url(img/bg.png);
+			}
+			/*top star*/
+			
+			#top {
+				width: 100%;
+				height: 80px;
+				background: white;
+			}
+			
+			#top .t_header {
+				width: 1000px;
+				height: 80px;
+				margin: 0 auto;
+			}
+			
+			#top .t_header .t_logo {
+				float: left;
+				margin-top: 6px;
+			}
+			
+			#top .t_header .t_nav {
+				float: left
+			}
+			
+			#top .t_header .t_nav .t_ul li {
+				list-style-type: none;
+				float: left;
+				line-height: 80px;
+			}
+			
+			#top .t_header .t_nav .t_ul li a {
+				font-size: 16px;
+				color: #666;
+				text-decoration: none;
+				margin-left: 20px;
+				overflow: ;
+			}
+			
+			#top .t_header .t_nav .t_ul li a:hover {
+				border-bottom: 3px solid #d03d43;
+				padding-bottom: 3px;
+			}
+			
+			#top .t_header .t_nav .t_ul .t_sel {
+				border-bottom: 3px solid #d03d43;
+				padding-bottom: 3px;
+			}
+			
+			#top .t_header .t_share {
+				float: right;
+			}
+			
+			#top .t_header .t_share a {
+				width: 38px;
+				height: 38px;
+				display: block;
+				float: left;
+				margin: 23px 0px 0px 8px;
+				position: relative;
+				overflow: hidden;
+			}
+			
+			#top .t_header .t_share a span {
+				width: 38px;
+				height: 80px;
+				display: block;
+				;
+				background: url(img/wei.png)no-repeat 3px 6px;
+				position: absolute;
+			}
+			
+			#top .t_header .t_share .t_wb .wb {
+				background-position: 3px 6px;
+			}
+			
+			#top .t_header .t_share .t_wx .wx {
+				background-position: -42px 6px;
+			}
+			
+			#top .t_header .t_share .t_qq .qq {
+				background-position: -80px 6px;
+			}
+			/*top end*/
+						/*star banner*/
+			.banner{width: 100%;height: 240px;position: relative;}
+			.banner .b_list{width: 100%;height: 240px;background-repeat: no-repeat;background-position:top center;position: absolute;left: 0;top: 0; }
+			.banner .b_btn{position: absolute;bottom: 5px;left: 47%;z-index: 2}
+			/*透明要用rgba,不然里面的小圆点都透明了*/
+			.banner .b_btn .b_ul{display: inline-block;background: rgba(0,0,0,.6);   padding: 2px 20px;border-radius: 10px;}
+			.banner .b_btn .b_ul li{list-style: none;float: left;width: 16px;height: 16px;background: url(img/1.png)no-repeat;margin-right: 3px;}
+			.banner .b_btn .b_ul .b_no{background: url(img/2.png)no-repeat;}
+			/*banner end*/
+			/*course star*/
+			
+			.course {
+				width: 1000px;
+				height: 219px;
+				background: url(img/course-index.png)no-repeat;
+				margin: 50px auto;
+			}
+			
+			.course .c_con {
+				width: 880px;
+				height: 99px;
+				padding: 68px 46px 52px 74px;
+			}
+			
+			.course .c_con .c_ul li {
+				list-style: none;
+				width: 290px;
+				height: 100px;
+				float: left;
+			}
+			
+			.course .c_con .c_ul li .c_icon {
+				width: 94px;
+				height: 94px;
+				background: url(img/index_classet_btn.png)no-repeat;
+				display: block;
+				text-align: center;
+				line-height: 94px;
+				font-size: 26px;
+				color: #fff;
+				font-weight: bold;
+				float: left;
+				margin-right: 10px;
+			}
+			
+			.course .c_con .c_ul li .c_title {
+				font-size: 18px;
+				line-height: 30px;
+				line-height: 35px;
+			}
+			
+			.course .c_con .c_ul li .c_lesson {
+				padding-top: 10px;
+			}
+			
+			.course .c_con .c_ul li .i_1 {
+				background-position: -18px -10px;
+			}
+			
+			.course .c_con .c_ul li .i_2 {
+				background-position: -18px -104px;
+			}
+			
+			.course .c_con .c_ul li .i_3 {
+				background-position: -18px -202px;
+			}
+			/*course end*/
+			/*course_box star*/
+			
+			.course_box {
+				width: 1000px;
+				height: 210px;
+				margin: 0 auto;
+			}
+			
+			.course_box .c_left {
+				width: 42px;
+				height: 210px;
+				float: left;
+			}
+			
+			.course_box .c_center {
+				width: 916px;
+				height: 210px;
+				float: left;
+				overflow: hidden;
+				position: relative;
+			}
+			
+			.course_box .c_right {
+				width: 42px;
+				height: 210px;
+				float: right;
+			}
+			
+			.course_box .c_left .c_pre {
+				width: 42px;
+				height: 58px;
+				display: block;
+				background: url("img/pae.png") no-repeat;
+				margin-top: 80px;
+			}
+			
+			.course_box .c_left .c_pre:hover {
+				background-position: 0 -107px;
+			}
+			
+			.course_box .c_center .c_all {
+				width: 1216px;
+				height: 210px;
+				position: absolute;
+				left: 0;
+			}
+			
+			.course_box .c_center .c_all .c_list {
+				width: 304px;
+				height: 200px;
+				background: url("img/bagj_03.png") no-repeat bottom center;
+				float: left;
+			}
+			
+			.course_box .c_center .c_all .c_list .c_book {
+				float: left;
+				margin-top: 40px;
+			}
+			
+			.course_box .c_center .c_all .c_list .c_info {
+				float: left;
+				width: 182px;
+				height: 200px;
+			}
+			
+			.course_box .c_center .c_all .c_list .c_info .c_title {
+				font-size: 14px;
+				margin-top: 58px;
+				font-weight: bold;
+			}
+			
+			.course_box .c_center .c_all .c_list .c_info .c_desc {
+				height: 34px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				-webkit-line-clamp: 2;
+				-webkit-box-orient: vertical;
+				margin: 10px 0;
+			}
+			
+			.course_box .c_center .c_all .c_list .c_info .c_desc span {
+				word-wrap: break-word;
+				white-space: pre-wrap;
+			}
+			
+			.course_box .c_center .c_all .c_list .c_info .c_btn {
+				display: inline-block;
+				background: #f60;
+				padding: 3px 20px;
+				text-decoration: none;
+				color: #fff;
+				border-radius: 11px;
+			}
+			
+			.course_box .c_center .c_all .c_list .c_info .c_btn:hover {
+				background: #f00;
+			}
+			
+			.course_box .c_right .c_next {
+				width: 42px;
+				height: 58px;
+				display: block;
+				background: url("img/pae.png") no-repeat 5px -213px;
+				margin-top: 80px;
+			}
+			
+			.course_box .c_right .c_next:hover {
+				background-position: 5px -324px;
+			}
+			/*course_box end*/
+			/*btn star*/
+			
+			.vipbotton {
+				width: 422px;
+				height: 41px;
+				margin: 80px auto;
+			}
+			
+			.vipbotton .v_btn {
+				width: 422px;
+				height: 41px;
+				background: #dd4250;
+				border-radius: 20px;
+				text-decoration: none;
+				color: white;
+				font-size: 20px;
+				display: block;
+				text-align: center;
+				line-height: 41px;
+			}
+			
+			.vipbotton .v_btn:hover {
+				background: #d92638;
+			}
+			/*btn end*/
+			/*pic star*/
+			
+			.pic {
+				width: 1000px;
+				height: 440px;
+				background: white;
+				margin: 0 auto;
+				border-radius: 15px;
+			}
+			
+			.pic h2 {
+				line-height: 50px;
+				padding-left: 10px;
+			}
+			
+			.pic .p_img ul li {
+				list-style: none;
+				float: left;
+				padding: 15px;
+			}
+			/*pic end*/
+			/*message star*/
+			
+			.message {
+				width: 1000px;
+				height: 320px;
+				background: #fff;
+				margin: 80px auto;
+				border-radius: 20px;
+			}
+			
+			.message .m_left {
+				width: 500px;
+				padding: 35px 0px 0px 20px;
+				float: left;
+			}
+			
+			.message .m_left h3 {
+				font-size: 22px;
+				background: url(img/fee_icon.png)no-repeat;
+				padding-left: 40px;
+				font-weight: bold;
+			}
+			
+			.message .m_left ul li {
+				list-style: none;
+				font-size: 14px;
+				line-height: 20px;
+				padding-left: 40px;
+				padding-top: 10px;
+			}
+			
+			.message .m_left h4 {
+				font-size: 20px;
+				background: url(img/course_present.png)no-repeat;
+				padding-left: 40px;
+				padding-top: 35px;
+				padding-bottom: 10px;
+				text-decoration: none;
+				font-weight: normal;
+			}
+			
+			.message .m_left .m_money .money {
+				font-size: 40px;
+				color: #f60;
+				font-weight: bold;
+				padding-top: 5px;
+				padding-right: 10px;
+			}
+			
+			.message .m_left .m_money .one {
+				font-size: 14px;
+				border-left: 1px solid #666;
+				padding-left: 10px;
+			}
+			
+			.message .m_left .m_money .l_desc {
+				font-size: 12px;
+				line-height: 20px;
+			}
+			
+			.message .m_right {
+				width: 300px;
+				height: 200px;
+				float: right;
+				margin: 40px
+			}
+			
+			.message .m_right .r_qq {
+				font-size: 28px;
+				padding-bottom: 20px;
+			}
+			
+			.message .m_right .r_time {
+				font-size: 18px;
+				font-weight: bold;
+				color: black;
+				line-height: 40px;
+			}
+			
+			.message .m_right .r_phone {
+				font-size: 18px;
+				font-weight: bold;
+				padding-top: 10px;
+			}
+			
+			.message .m_right .r_phone .r_number {
+				font-size: 30px;
+				color: #ff4401;
+				font-weight: bold;
+			}
+			/*message end*/
+			/*footer star*/
+			
+			.footer {
+				width: 100%;
+				height: 50px;
+				background: white;
+			}
+			
+			.footer p {
+				text-align: center;
+				line-height: 50px;
+				font-size: 16px;
+			}
+			/*footer end*/
+			
+			.clear {
+				clear: both;
+			}
+		</style>
+		<!--自定义弹窗库的CSS样式-->
+		<link href="css/box.css"  type="text/css" rel="stylesheet"/>
+	</head>
+
+	<body>
+		<!--top star-->
+		<div id="top">
+			<div class="t_header">
+				<div class="t_logo">
+					<a href="#">
+						<img src="img/logo.png" width="215" height="66" alt="logo" />
+					</a>
+				</div>
+				<div class="t_nav">
+					<ul class="t_ul">
+						<li>
+							<a href="#" class="t_sel">首页</a>
+						</li>
+						<li>
+							<a href="#">WEB前端课题体系</a>
+						</li>
+						<li>
+							<a href="#">教程下载</a>
+						</li>
+						<li>
+							<a href="#">公开课</a>
+						</li>
+						<li>
+							<a href="#">联系我们</a>
+						</li>
+					</ul>
+				</div>
+				<div class="t_share">
+					<a href="#" class="t_wb"><span class="wb"></span></a>
+					<a href="#" class="t_wx"><span class="wx"></span></a>
+					<a href="#" class="t_qq"><span class="qq"></span></a>
+				</div>
+			</div>
+		</div>
+		<!--top end-->
+
+		<!--bannerstar-->
+			<!--banner star-->
+		<div class="banner">
+			<div class="b_list" style="background-image: url(img/1.jpg);z-index: 1;"></div>
+			<div class="b_list" style="background-image: url(img/2.jpg);z-index: 0;"></div>
+			<div class="b_list" style="background-image: url(img/1.jpg);z-index: 0;"></div>
+			<div class="b_list" style="background-image: url(img/2.jpg);z-index: 0;"></div>
+			<div class="b_btn">
+				<ul class="b_ul">
+					<li class="b_no"></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					</ul>
+			</div>
+		</div>
+		<!--banner end-->
+		<!--banner end-->
+
+		<!--course star-->
+		<div class="course">
+			<div class="c_con">
+				<ul class="c_ul">
+					<li>
+						<span class="c_icon i_1">22:00</span>
+						<p class="c_lesson">开设课程</p>
+						<strong class="c_title">VIP零基础到项目实战</strong>
+						<p>学院创始人:Arry老师</p>
+					</li>
+					<li>
+						<span class="c_icon i_2">22:00</span>
+						<p class="c_lesson">开设课程</p>
+						<strong class="c_title">VIP零基础到项目实战</strong>
+						<p>学院创始人:Arry老师</p>
+					</li>
+					<li>
+						<span class="c_icon i_3">22:00</span>
+						<p class="c_lesson">开设课程</p>
+						<strong class="c_title">VIP零基础到项目实战</strong>
+						<p>学院创始人:Arry老师</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!--course end-->
+		<!--course_box start-->
+		<div class="course_box">
+			<div class="c_left">
+				<a href="javascript:;" class="c_pre"></a>
+			</div>
+			<div class="c_center">
+				<div class="c_all">
+					<div class="c_list">
+						<div class="c_book">
+							<img src="img/txb.png" alt="WEB零基础到实战" width="112" height="144" />
+						</div>
+						<div class="c_info">
+							<h3 class="c_title">特训班（独立动态网站开发）</h3>
+							<p class="c_desc"><span>HTML零基础到高级课程实战（全程20节课），独立设计编写模板，开发完整具有前后台的动态网站，存实战训练。</span></p>
+							<a href="#" class="c_btn">马上报名</a>
+						</div>
+					</div>
+					<div class="c_list">
+						<div class="c_book">
+							<img src="img/sj.png" alt="WEB零基础到实战" width="112" height="144" />
+						</div>
+						<div class="c_info">
+							<h3 class="c_title">HTML5+css3手机网页制作</h3>
+							<p class="c_desc"><span>HTML零基础到高级课程实战（全程20节课），独立设计编写模板，开发完整具有前后台的动态网站，存实战训练。</span></p>
+							<a href="#" class="c_btn">马上报名</a>
+						</div>
+					</div>
+					<div class="c_list">
+						<div class="c_book">
+							<img src="img/seo.png" alt="WEB零基础到实战" width="112" height="144" />
+						</div>
+						<div class="c_info">
+							<h3 class="c_title">SEO代码优化课程</h3>
+							<p class="c_desc"><span>HTML零基础到高级课程实战（全程20节课），独立设计编写模板，开发完整具有前后台的动态网站，存实战训练。</span></p>
+							<a href="#" class="c_btn">马上报名</a>
+						</div>
+					</div>
+					<div class="c_list">
+						<div class="c_book">
+							<img src="img/work.png" alt="WEB零基础到实战" width="112" height="144" />
+						</div>
+						<div class="c_info">
+							<h3 class="c_title">特训班（独立动态网站开发）</h3>
+							<p class="c_desc"><span>HTML零基础到高级课程实战（全程20节课），独立设计编写模板，开发完整具有前后台的动态网站，存实战训练。</span></p>
+							<a href="#" class="c_btn">马上报名</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="c_right">
+				<a href="javascript:;" class="c_next"></a>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<!--end course_box-->
+
+		<!--botton star-->
+		<div class="vipbotton">
+			<a href="#" class="v_btn">马上咨询报名报名&gt;&gt;</a>
+		</div>
+		<!--botton end-->
+
+		<!--pic star-->
+		<div class="pic">
+			<div class="p_tittle">
+				<h2>相片栏</h2>
+			</div>
+			<div class="p_img">
+				<ul>
+					<li>
+						<a href="img/img/1.jpg"><img src="img/img/s_1.jpg" alt="" height="165px" width="220px" /></a>
+					</li>
+					<li>
+						<a href="img/img/2.jpg"><img src="img/img/s_2.jpg" alt="" height="165px" width="220px" /></a>
+					</li>
+					<li>
+						<a href="img/img/3.jpg"><img src="img/img/s_3.jpg" alt="" height="165px" width="220px" /></a>
+					</li>
+					<li>
+						<a href="img/img/4.jpg"><img src="img/img/s_4.jpg" alt="" height="165px" width="220px" /></a>
+					</li>
+					<li>
+						<a href="img/img/5.jpg"><img src="img/img/s_5.jpg" alt="" height="165px" width="220px" /></a>
+					</li>
+					<li>
+						<a href="img/img/6.jpg"><img src="img/img/s_6.jpg" alt="" height="165px" width="220px" /></a>
+					</li>
+					<li>
+						<a href="img/img/7.jpg"><img src="img/img/s_7.jpg" alt="" height="165px" width="220px" /></a>
+					</li>
+					<li>
+						<a href="img/img/8.jpg"><img src="img/img/s_8.jpg" alt="" height="165px" width="220px" /></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!--pic end-->
+
+		<!--message star-->
+		<div class="message">
+			<div class="m_left">
+				<h3>咨询咨询咨询咨询咨询咨询咨询咨询</h3>
+				<ul>
+					<li>1. 特训班 (织梦DeDe独立开发动态网站20节课) 课表下载地址</li>
+					<li>2. SEO 代码优化课程</li>
+					<li>3. HTML5 + css3班 ，手机版网页制作</li>
+				</ul>
+				<h4>收费收费收费</h4>
+				<p class="m_money">
+					<span class="money">7880¥</span>
+					<span class="one">含一对一指导，解答</span>
+				</p>
+				<p class="l_desc">（名额有限，先到先得！）</p>
+
+			</div>
+			<div class="m_right">
+				<p class="r_qq">咨询QQ:2379034!!!!</p>
+				<p class="r_time">报名截止日期:</p>
+				<p class="r_time">2016年10月7日</p>
+				<p class="r_phone">
+					咨询电话 <br />
+					<span class="r_number">440-123-123-123</span>
+				</p>
+			</div>
+
+		</div>
+		<!--message end-->
+		<!--footer star-->
+		<div class="footer">
+			<p>
+				Copyright &copy; 1990-2016 All Rights Reserved 版权所有：砖头文
+			</p>
+		</div>
+		<!--footer end-->
+
+		<!--引入jq的官方类库-->
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<!--引入自定义弹窗类库--弹窗放大窗口-->
+		<script type="text/javascript" src="js/box.js"></script>
+<script type="text/javascript">
+		
+
+	$(function(){
+
+		// 循环执行hover部分
+		$(".t_share a").each(function(index){
+			$(this).hover(function(){
+				if(index == 0){
+					$(this).css({"background":"#E6162D"});
+				} else if(index == 1){
+					$(this).css({"background":"#0e71b7"});
+				} else if(index == 2){
+					$(this).css({"background":"#666"});
+				}
+				// 添加背景区域为圆角
+				$(this).css({"border-radius":4});
+				// 先停一次
+				$(this).find("span").stop();
+				// 滚动
+				$(this).find("span").animate({"top":-48});
+			},function(){
+				// 当前a标签
+				var _this = $(this);
+				// 回来
+				_this.find("span").animate({"top":0},function(){
+					_this.css({"background":"none"});
+				});
+			});
+		});
+
+		// banner切换效果
+		$(".b_btn").find("li").mouseover(function(){
+			// 获取自定义属性元素的值
+			var num = $(this).attr("num");
+			$(this).addClass("b_no").siblings().removeClass("b_no");
+			$("#banner").fadeOut(500,function(){
+				$(this).css("background","url(images/"+num+".jpg) no-repeat top center").fadeIn(500);
+			});
+		});
+
+		var yy = 1;
+		// 课程左侧切换
+		$(".c_pre").click(function(){
+			if(!$(".c_all").is(":animated")){
+				if(yy == 1){
+					return;	
+				} else{
+					$(".c_all").animate({left:"+="+304});
+					yy--;
+				}
+			}
+		});
+
+		// 课程右侧切换
+	$(".c_next").click(function(){
+			if(!$(".c_all").is(":animated")){
+				// 课程列表list个数
+				var list_len = $(".course_box .c_list").length;
+				if(yy == list_len-2){
+					return;
+				} else {
+					$(".c_all").animate({left:"-="+304});
+					yy++;
+				}
+			}
+		});
+	});
+
+
+	
+	// 弹窗图像放大效果
+	$(function(){
+		$(".p_img a").lightBox();
+	});
+	//banner图切换
+
+
+	$(function(){
+		$(".b_ul").find("li").mouseover(function(){
+			//小按钮选中的添加样式,兄弟的去除样式
+			$(this).addClass("b_no").siblings().removeClass();
+			//初始化显示级别
+			$(".b_list").css({"z-index":0,"opacity":0});
+			//联动按钮和背景图片
+			var _index =$(this).index();//获取小按钮的索引
+			//背景图片级别为1,就是联动之后显示联动的图片,通过调用EQ,一一对应
+			$(".b_list").eq(_index).css("z-index",1).fadeTo(1000,1);
+		});
+		
+		
+		
+	});
+
+
+
+
+</script>
+	</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<div id="div1">你叫什么名字啊?</div>
+		<div id="div2">关你屁事</div>
+		<button id="btn1">concat</button><span></span> <br />
+		<button id="btn2">slice(2)</button><span></span> <br />
+		<button id="btn3">slice(2,3)</button><span></span> <br />
+		<button id="btn4">slice(-2)</button><span></span> <br />
+		<button id="btn5">substr(2)</button><span></span> <br />
+		<button id="btn6">substr(2,3)</button><span></span> <br />
+		<button id="btn7">substr(-2)</button><span></span> <br />
+		<button id="btn8">substr(-2)兼容写法</button><span></span> <br />
+		<button id="btn9">substring(2)</button><span></span> <br />
+		<button id="btn10">substring(2,3)</button><span></span> <br />
+		<button id="btn11">substring(3,1)自动比较大小</button><span></span> <br />
+		<button id="btn12">substring(-1)负数自动转为0,全部显示</button><span></span> <br />
+	</body>
+
+</html>
+<script>
+	var div1 = document.getElementById("div1").innerHTML;
+	var div2 = document.getElementById("div2").innerHTML;
+
+	function onclickbtn(btn, txt) {
+		document.getElementById(btn).onclick = function() {
+			this.nextSibling.innerHTML = txt;
+		}
+	}
+	//slice(num,num) 第一个为开始位置(包含) 第二个为结束位置(不包含)
+	onclickbtn("btn1", div1.concat(div2));
+	onclickbtn("btn2", div1.slice(2)); //从2开始取到最后
+	onclickbtn("btn3", div1.slice(2, 3)); //从2开始 到3前面结束
+	onclickbtn("btn4", div1.slice(-2)); //负数是从右边开始数起,到最后
+
+	//substr(num,num)第一个为开始位置(包含),第二个为长度 (从开始位置数起几个)
+	onclickbtn("btn5", div1.substr(2)); //从索引号2开始取到最后
+	onclickbtn("btn6", div1.substr(2, 3)); //从2开始数 数3个
+	onclickbtn("btn7", div1.substr(-2)); //IE678 兼容不了
+	onclickbtn("btn8", div1.substr(div1.length - 2)); //兼容写法
+
+	//substring
+	onclickbtn("btn9", div1.substring(2)); //从2开始取到最后
+	onclickbtn("btn10", div1.substring(2, 3)); //从2开始 到3前面结束
+	onclickbtn("btn11", div1.substring(3, 1)); //自动比较大小
+	onclickbtn("btn12", div1.substring(-1)); //负数转为0,全部显示
+</script>

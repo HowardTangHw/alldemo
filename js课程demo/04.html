@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		body input{margin: 0 auto; display: block;}
+		#outer{width:330px;height:100px;margin:10px auto;}
+		#outer div{float:left;width:100px;height:100px;margin:0 5px;background:black;}
+
+		</style>
+<script>
+	function btnclick(){
+		var oDiv = document.getElementById("outer").getElementsByTagName("div");;
+		var oBtn = document.getElementById("btn");
+		for (var i=0;i<oDiv.length;i++)
+		{
+			oDiv[i].style.background= "red";	
+		}
+	}
+</script>
+	</head>
+	<body>
+		<input type="button" value="点击" onclick="btnclick()" id="btn"/>
+		<div id="outer">
+		<div ></div>
+		<div ></div>
+		<div ></div>
+		</div>
+	</body>asdfasd
+</html>

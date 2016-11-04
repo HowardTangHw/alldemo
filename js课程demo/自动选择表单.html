@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" value="我今天学习很happy" id="txt"/>
+	</body>
+</html>
+<script>
+	var txt =document.getElementById("txt");
+	txt.onmouseover =function(){
+		txt.select();
+	}
+	txt.onmouseout =function() {
+		txt.blur();
+	}
+</script>

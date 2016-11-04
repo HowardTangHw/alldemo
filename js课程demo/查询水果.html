@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<input type="text" name="" id="txt" value="" />
+		<button>查询</button>
+	</body>
+
+</html>
+<script>
+	var btn = document.getElementsByTagName("button")[0];
+	var txt = document.getElementById("txt");
+	btn.onclick = function() {
+		switch(txt.value) {
+			case "苹果":
+				alert("苹果5块一斤");
+				break;
+			case "香蕉":
+				alert("香蕉2块一斤");
+				break;
+			case "葡萄":
+				alert("葡萄2块一斤");
+				break;
+			default:
+				alert("请输入水果");
+		}
+	}
+</script>

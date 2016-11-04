@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box {
+				width: 100px;
+				height: 100px;
+				background-color: palegreen;
+				position: absolute;
+				left: 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<button id="btn1">200</button>
+		<button id="btn2">400</button>
+		<button id="stop">停止</button>
+		<button id="return">还原</button>
+		<div id="box"></div>
+	</body>
+
+</html>
+<script type="text/javascript">
+	var btn1 = document.getElementById("btn1");
+	var btn2 = document.getElementById("btn2");
+	var stop = document.getElementById("stop");
+	var box = document.getElementById("box");
+	var re =document.getElementById("return");
+	btn1.onclick = function() {
+		run(box,200);
+	}
+	btn2.onclick = function() {
+		run(box,400);
+	}
+	stop.onclick = function() {
+		run(box,stop);
+	}
+	re.onclick=function(){
+		run(box,stop);
+		box.style.left=0+"px";
+	}
+
+	function run(obj, target) {
+		clearInterval(obj.timer);
+			var speed = obj.offsetLeft < target ? 5 : -5;
+			obj.timer = setInterval(function() {
+			var result = target - obj.offsetLeft;
+			if(Math.abs(result) > 10) {
+				obj.style.left = obj.offsetLeft + speed + "px";
+			}
+		}, 30);
+		if(target == "stop") {
+			clearInterval(obj.timer);
+		}
+
+	}
+</script>

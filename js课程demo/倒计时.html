@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div {
+				text-align: center;
+				}
+		</style>
+	</head>
+	<body>
+		<div id="demo"></div>
+	</body>
+</html>
+<script>
+	var div =document.getElementById("demo");
+	var deadline = new Date("2017/01/01 00:00:00")
+	setInterval(timer,1000);
+	function timer (){
+		var nowtime = new Date();
+		var time = parseInt((deadline.getTime()-nowtime.getTime())/1000);
+		var d =parseInt(time/3600/24);
+		var h =parseInt(time/3600 %24);
+		var m =parseInt(time/60 %60);
+		var s =time %60;
+		d<10 ?d="0"+d :d;
+		h<10 ?h="0"+h :h;
+		m<10 ?m="0"+m :m;
+		s<10 ?s="0"+s :s;
+		demo.innerHTML="距离2017年1月1日还有"+d+"天"+h+"小时"+m+"分"+s+"秒";
+	}
+</script>

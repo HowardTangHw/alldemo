@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			/*css 初始化 */
+			
+			html,
+			body,
+			ul,
+			li,
+			ol,
+			dl,
+			dd,
+			dt,
+			p,
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6,
+			form,
+			fieldset,
+			legend,
+			img {
+				margin: 0;
+				padding: 0;
+			}
+			
+			fieldset,
+			img,
+			input,
+			button {
+				/*fieldset组合表单中的相关元素*/
+				border: none;
+				padding: 0;
+				margin: 0;
+				outline-style: none;
+			}
+			
+			ul,
+			ol {
+				list-style: none;
+				/*清除列表风格*/
+			}
+			
+			input {
+				padding-top: 0;
+				padding-bottom: 0;
+				font-family: "SimSun", "宋体";
+			}
+			
+			select,
+			input {
+				vertical-align: middle;
+			}
+			
+			select,
+			input,
+			textarea {
+				font-size: 12px;
+				margin: 0;
+			}
+			
+			textarea {
+				resize: none;
+			}
+			/*防止多行文本框拖动*/
+			
+			img {
+				border: 0;
+				vertical-align: middle;
+			}
+			/*  去掉图片低测默认的3像素空白缝隙*/
+			
+			table {
+				border-collapse: collapse;
+				/*合并外边线*/
+			}
+			
+			body {
+				font: 12px/150% Arial, Verdana, "\5b8b\4f53";
+				/*宋体，Unicode，统一码*/
+				color: #666;
+				background: #fff
+			}
+			
+			.clearfix:before,
+			.clearfix:after {
+				content: "";
+				display: table;
+			}
+			
+			.clearfix:after {
+				clear: both;
+			}
+			
+			.clearfix {
+				*zoom: 1;
+				/*IE/7/6*/
+			}
+			
+			a {
+				color: #666;
+				text-decoration: none;
+			}
+			
+			a:hover {
+				color: #C81623;
+			}
+			
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6 {
+				text-decoration: none;
+				font-weight: normal;
+				font-size: 100%;
+			}
+			
+			s,
+			i,
+			em {
+				font-style: normal;
+				text-decoration: none;
+			}
+			
+			.col-red {
+				color: #C81623 !important;
+			}
+			/*公共类*/
+			
+			.w {
+				/*版心 提取 */
+				width: 1210px;
+				margin: 0 auto;
+			}
+			
+			.fl {
+				float: left;
+			}
+			
+			.fr {
+				float: right;
+			}
+			
+			.al {
+				text-align: left;
+			}
+			
+			.ac {
+				text-align: center;
+			}
+			
+			.ar {
+				text-align: right;
+			}
+			
+			.hide {
+				display: none;
+			}
+			
+			.jdtab {
+				border-bottom: 1px solid #B61D1D;
+				height: 35px;
+			}
+			
+			.jdtab ul {
+				height: 34px;
+				border: 1px solid #ccc;
+				border-bottom: 0 none;
+			}
+			
+			.jdtab ul li {
+				float: left;
+				position: relative;
+			}
+			
+			.jdtab a {
+				display: block;
+				padding: 0 16px 0 17px;
+				height: 32px;
+				font: 12px/30px "SimSun";
+				margin-left: -1px;
+				margin-top: -1px;
+				border: 1px solid transparent;
+				border-top: 3px solid transparent;
+			}
+			
+			.jdtab i {
+				display: block;
+				position: absolute;
+				right: 0;
+				top: 12px;
+				width: 1px;
+				height: 12px;
+				background-color: #ccc;
+			}
+			/*.jdtab li:hover a {*/
+			/*position: relative;*/
+			/*border-color: #B61D1D;*/
+			/*border-bottom-color: white;*/
+			/*z-index: 1;*/
+			/*}*/
+			
+			.tablihovera {
+				position: relative;
+				border-color: #B61D1D !important;
+				border-bottom-color: white !important;
+				z-index: 1;
+			}
+			
+			.li-last {
+				margin-right: -1px;
+			}
+			
+			.jdtab {
+				font: 20px/30px "Microsoft Yahei";
+			}
+			
+			.jdtab img {
+				margin-top: -6px;
+			}
+			
+			.tabf-detail {
+				position: relative;
+			}
+			
+			.detail-1f {
+				width: 1208px;
+				height: 530px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				border: 1px solid #B61D1D;
+				border-top: none;
+				display: none;
+			}
+			
+			.fnormal {
+				display: block;
+			}
+			
+			.main-all {
+				height: 567px;
+				margin-top: 20px;
+			}
+			
+			.hd {
+				height: 36px;
+				font: 20px/30px "微软雅黑";
+				vertical-align: auto;
+				border-bottom: 1px solid #B61D1D;
+			}
+			
+			.hd img {
+				margin-top: -5px;
+				margin-right: 10px;
+			}
+			
+			.bd {
+				position: relative;
+			}
+			
+			.bd ul {
+				height: 531px;
+			}
+			
+			.hd ul {
+				border: 1px solid #ccc;
+				border-bottom: none;
+			}
+			
+			.hd ul li {
+				float: left;
+				position: relative;
+			}
+			
+			.hd ul li a {
+				display: block;
+				padding: 0 16px 0 17px;
+				height: 32px;
+				font: 12px/30px "SimSun";
+				margin-left: -1px;
+				margin-top: 0px;
+				border: 1px solid transparent;
+				border-top: 3px solid transparent;
+			}
+			
+			.hd ul li i {
+				background-color: #ccc;
+				height: 12px;
+				position: absolute;
+				top: 11px;
+				right: 0px;
+				width: 1px;
+			}
+			
+			.current {
+				position: relative;
+				border-color: #B61D1D !important;
+				border-bottom-color: white !important;
+				z-index: 1;
+			}
+			
+			.detail {
+				width: 1208px;
+				height: 530px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				border: 1px solid #B61D1D;
+				border-top: none;
+				display: none;
+			}
+			.show {
+				display: block;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="w main-all" id="one">
+			<div class="hd">
+				<img src="img/1f.png" /><span>服装鞋包</span>
+				<ul class="fr choice">
+					<li>
+						<a href="#" class="current">大牌</a><i></i></li>
+					<li>
+						<a href="#" >男装</a><i></i></li>
+					<li>
+						<a href="#">女装</a><i></i></li>
+					<li>
+						<a href="#">鞋靴</a><i></i></li>
+					<li>
+						<a href="#">箱包</a><i></i></li>
+					<li>
+						<a href="#">内衣搭配</a><i></i></li>
+					<li>
+						<a href="#">珠宝首饰</a><i></i></li>
+					<li>
+						<a href="#">奢侈礼品</a><i></i></li>
+					<li>
+						<a href="#">奢华腕表</a>
+					</li>
+				</ul>
+
+			</div>
+			<div class="bd w">
+				<ul class="jd-lis">
+					<li class="detail show">大牌</li>
+					<li class="detail">男装</li>
+					<li class="detail">女装</li>
+					<li class="detail">鞋靴</li>
+					<li class="detail">箱包</li>
+					<li class="detail">内衣搭配</li>
+					<li class="detail">珠宝首饰</li>
+					<li class="detail">奢侈礼品</li>
+					<li class="detail">奢华腕表</li>
+				</ul>
+			</div>
+		</div>
+			<div class="w main-all" id="tow">
+			<div class="hd">
+				<img src="img/1f.png" /><span>服装鞋包</span>
+				<ul class="fr choice">
+					<li>
+						<a href="#" class="current">大牌</a><i></i></li>
+					<li>
+						<a href="#" >男装</a><i></i></li>
+					<li>
+						<a href="#">女装</a><i></i></li>
+					<li>
+						<a href="#">鞋靴</a><i></i></li>
+					<li>
+						<a href="#">箱包</a><i></i></li>
+					<li>
+						<a href="#">内衣搭配</a><i></i></li>
+					<li>
+						<a href="#">珠宝首饰</a><i></i></li>
+					<li>
+						<a href="#">奢侈礼品</a><i></i></li>
+					<li>
+						<a href="#">奢华腕表</a>
+					</li>
+				</ul>
+
+			</div>
+			<div class="bd w">
+				<ul class="jd-lis">
+					<li class="detail show">大牌</li>
+					<li class="detail">男装</li>
+					<li class="detail">女装</li>
+					<li class="detail">鞋靴</li>
+					<li class="detail">箱包</li>
+					<li class="detail">内衣搭配</li>
+					<li class="detail">珠宝首饰</li>
+					<li class="detail">奢侈礼品</li>
+					<li class="detail">奢华腕表</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+
+</html>
+<script>
+function tab(id){
+	var id =document.getElementById(id);
+	 var choice =id.getElementsByTagName("a");
+	 var lis = id.getElementsByClassName("jd-lis")[0].getElementsByTagName("li");
+	 for (var i=0;i<choice.length;i++)
+	 { choice[i].index = i;
+	 	choice[i].onmouseover = function(){
+	 	for (var i=0;i<choice.length;i++)
+	 	{
+	 		choice[i].className="";
+	 		lis[i].style.display="none";
+	 	}
+	     this.className="current";
+	     lis[this.index].style.display="block";
+	 	}
+	 }
+	}
+tab("one");tab("tow");
+</script>

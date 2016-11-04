@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="file" id="file"><span></span>
+	</body>
+</html>
+<script>
+	var id = document.getElementById("file");
+	file.onchange=function(){
+		var path = this.value;
+		var name = path.substr(path.lastIndexOf(".")).toUpperCase();
+		if (name == ".JPEG" || name==".JPG"||name==".PNG")
+		{
+			file.nextSibling.innerHTML="格式正确";
+		}
+		else{
+			file.nextSibling.innerHTML="格式不正确";
+		}
+	}
+</script>

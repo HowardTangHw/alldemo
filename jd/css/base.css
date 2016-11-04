@@ -1,0 +1,400 @@
+@charset "UTF-8";
+/*css 初始化 */
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img {
+    margin: 0;
+    padding: 0;
+}
+
+fieldset, img, input, button { 			/*fieldset组合表单中的相关元素*/
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline-style: none;
+}
+
+ul, ol {
+    list-style: none;				/*清除列表风格*/
+}
+
+input {
+    padding-top: 0;
+    padding-bottom: 0;
+    font-family: "SimSun", "宋体";
+}
+
+select, input {
+    vertical-align: middle;
+}
+
+select, input, textarea {
+    font-size: 12px;
+    margin: 0;
+}
+
+textarea {
+    resize: none;
+}
+
+/*防止多行文本框拖动*/
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+/*  去掉图片低测默认的3像素空白缝隙*/
+table {
+    border-collapse: collapse;			/*合并外边线*/
+}
+
+
+body {
+    font: 12px/150% Arial, Verdana, "\5b8b\4f53";	/*宋体，Unicode，统一码*/
+    color: #666;
+    background: #fff
+}
+
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1; /*IE/7/6*/
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #C81623;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 100%;
+}
+
+s, i, em {
+    font-style: normal;
+    text-decoration: none;
+}
+
+.col-red {
+    color: #C81623 !important;
+}
+
+/*公共类*/
+.w {
+    /*版心 提取 */
+    width: 1210px;
+    margin: 0 auto;
+}
+
+.fl {
+    float: left
+}
+
+.fr {
+    float: right
+}
+
+.al {
+    text-align: left
+}
+
+.ac {
+    text-align: center
+}
+
+.ar {
+    text-align: right
+}
+
+.hide {
+    display: none;
+}
+
+/*site-nav部分star*/
+.site-nav {
+	height: 30px;
+	line-height: 30px;
+	background-color:#f1f1f1;
+}
+.site-nav-send,
+.site-nav-right .site-nav-right-fore {
+	height: 30px;
+	padding: 0 25px 0 10px;
+	position: relative;
+}
+.site-nav-right-fore i,
+.site-nav-send i {
+	position: absolute;
+	top: 12px;
+	right: 6px;
+	font: 400 15px/15px "宋体";
+	width: 15px;
+	height: 8px;
+	overflow: hidden;
+}
+.site-nav-right-fore i s,
+.site-nav-send i s {
+	position: absolute;
+	top: -6px;
+	left: 0px;
+}
+body .site-nav-hs:hover {
+	background-color: white;
+}
+.site-nav-send:hover>i s,
+.site-nav-right-fore:hover>i s
+ {
+	position: absolute;
+	top: 1px;
+}
+.site-nav-right li {
+	float: left;
+	padding: 0 10px;
+}
+.site-nav-right .site-nav-right-line {
+	width: 1px;
+	height: 12px;
+	background-color: #DDD;
+	margin-top: 9px;
+	padding: 0px;
+}
+.site-nav-right .jd-tel {
+	padding-left: 25px;
+}
+.tel {
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	width: 15px;
+	height: 20px;
+	background: url(../images/tel.png)no-repeat;
+}
+.jd-tel:hover{
+	background-color: white;
+}
+.jd-tel:hover>.tel {
+	background: url(../images/tel.png)no-repeat 0px -25px;
+}
+/*site-nav部分end*/
+
+/*topbanner star*/
+.topbanner {
+	height: 80px;
+	background-color: #8B25C6;
+}
+.tb-w{
+	position: relative;
+}
+.topbanner-1111 {
+	position: absolute;
+	top: 5px;
+	right: 70px;
+	height: 19px;
+	width: 19px;
+	background: url(../images/close.png) no-repeat;
+	border-radius: 10px;
+}
+.topbanner-1111:hover {
+	background-position:0 -19px;
+}
+/*topbanner end*/
+
+/*search star*/
+.search-logo {
+	width: 362px;
+	height: 60px;
+	float: left;
+	padding: 20px 0;
+	position: relative;
+}
+.search-logo-a {
+	display: block;
+	width: 270px;
+	height: 60px;
+	background: url(../images/jd-logo.png)no-repeat;
+}
+.search-logo-gif {
+	position: absolute;
+	top: 2px;
+	left: 170px;
+	width: 180px;
+	height: 80px;
+	background: url(../images/dong.gif)no-repeat;
+}
+.search-input {
+	width: 538px;
+	height: 36px;
+	margin-top: 25px;
+	float: left;
+	
+}
+.search-input input {
+	width: 446px;
+	height: 24px;
+	border:2px solid #B61D1D;
+	padding: 4px;
+	font: 14px/24px "微软雅黑";
+	float: left;
+}
+.search-input a {
+	width: 80px;
+	height: 36px;
+	background: #B61D1D;
+	float: left;
+	color: white;
+	font-size: 16px;
+	line-height: 36px;
+	font-weight: 400;
+	font-family: "微软雅黑";
+	text-align: center;
+}
+.search-buycar {
+	width: 97px;
+	height: 35px;
+	float: right;
+	border:1px solid #F1F1F1;
+	margin: 25px 65px 0 0;
+	background: #f9f9f9;
+	padding-left: 43px;
+	line-height: 35px;
+	position: relative;
+}
+.search-buycar:hover {
+	background: white;
+	box-shadow: 0 0 5px rgba(0,0,0,.2);
+}
+.search-buycar .icon1 {
+	position: absolute;
+	top:8px;
+	left: 20px;
+	width: 18px;
+	height: 16px;
+	background: url(../images/tel.png)no-repeat -1px -115px;
+}
+.search-buycar .icon2 {
+	position: absolute;
+	top:-1px;
+	right: 22px;
+	font-weight: 400;
+	font-size: 14px;
+	font-family: "宋体";
+}
+.search-buycar .icon3 {
+	position: absolute;
+	top:-6px;
+	background: #B61D1D;
+	width: 16px;
+	height: 14px;
+	line-height: 14px;
+	text-align: center;
+	color: white;
+	border-radius: 7px 7px 7px 0;
+}
+.search-more {
+	width: 490px;
+	height: 28px;
+	float: left;
+}
+.search-more a{
+	line-height: 28px;
+	margin-right: 5px;
+}
+/*search end*/
+
+
+/*site-nav部分star*/
+/*site-nav部分end*/
+
+
+/*footer star*/
+.slogen {
+	height: 95px;
+	background-color: #F5F5F5;
+	position: relative;
+	margin-bottom: 14px;
+}
+.item {
+	position: absolute;
+ 	top: 21px;
+ 	left: 50%;	
+ 	width: 302px;
+ 	height: 54px;
+}
+.slogen-icon1 {
+	margin-left: -608px;
+}
+.slogen-icon2 {
+	margin-left: -304px;
+}
+.slogen-icon4 {
+	margin-left: 304px;
+}
+.jd-dd dl {
+	width: 199px;
+	float: left;
+}
+.jd-dd dt{
+	height: 36px;
+	font-weight: 400;
+	line-height: 36px;
+	font-size: 16px;
+	font-family: "微软雅黑";
+}
+.jd-dd  dd,.jd-address-content {
+	font: 12px/20px "宋体";
+}
+.jd-dd .fore5 {
+	width: 100px;
+}
+.jd-map {
+	width: 190px;
+	height: 170px;
+	background: url(../images/china.png)no-repeat left bottom;
+	float: right;
+	margin-right: 40px;
+	padding-left: 16px;
+}
+.jd-address {
+	height: 36px;
+	font-weight: 400;
+	line-height: 36px;
+	font-size: 16px;
+	font-family: "微软雅黑";
+}
+.jd-address-content {
+	margin-top: 8px;
+}
+.jd-address-content span {
+	line-height: 18px;
+}
+.footer-bottom {
+	margin-top: 20px;
+	border-top: 1px solid #E5E5E5;
+	text-align: center;
+	padding:22px 0;
+}
+.links a {
+	margin: 0 10px;
+}
+.copyright {
+	margin: 15px 0;
+}
+.message img {
+	margin-right: 15px;
+	margin-bottom: 30px;
+}
+/*footer end*/
+
+
+

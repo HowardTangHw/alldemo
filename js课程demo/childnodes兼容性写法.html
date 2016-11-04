@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+</body>
+</html>
+<script>
+    var demo= document.getElementById("demo");
+    var div = demo.childNodes;
+    for(var i = 0 ;i<div.length;i++)
+    {
+       if( div[i].nodeType == 1)
+       {
+           div[i].style.backgroundColor="red";
+       }
+    }
+</script>

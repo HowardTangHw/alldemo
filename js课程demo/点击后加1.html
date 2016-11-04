@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			a {width: 100px; height: 40px;background: #1E90FF;border-radius: 20px;display: block;text-align: center;line-height: 40px;font-size: 30px;font-family: "微软雅黑";color: white;text-decoration: none;margin: 0 auto;}
+		</style>
+		<script>
+//			function num(){
+//				var inner = document.getElementsByTagName("a")[0].innerHTML;
+//				inner++;
+//				document.getElementsByTagName("a")[0].innerHTML=inner;
+//			}
+           window.onload=function(){
+			var btn=document.getElementsByTagName("a")[0];
+			btn.onclick = function(){
+				document.getElementsByTagName("a")[0].innerHTML++;
+			}
+			}
+		</script>
+	</head>
+	<body>
+		<!--<a href="javascript:;" onclick="num()">0</a>-->
+		<a href="javascript:;">0</a>
+	</body>
+</html>

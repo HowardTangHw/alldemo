@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		#div {
+				width: 100px;
+				height: 100px;
+				background: pink;
+				position: absolute;
+				left: 400px;
+			}
+		</style>
+	</head>
+	<body>
+		<button id="btn">点击</button>
+		<div id="div"></div>
+	</body>
+</html>
+<script>
+	var btn =document.getElementById("btn");
+	var div =document.getElementById("div");
+	var timer =null;
+	var target=0;
+	btn.onclick = function(){
+		timer =setInterval(abc,30);
+		function abc(){
+			//缓动动画 步长=(目标位置-当前位置)/10 不断减少速度
+			var step = (target-div.offsetLeft)/10;
+			//步长取整 
+			step = step>0? Math.ceil(step):Math.floor(step);
+			//原理 位置 =位置+步长
+			div.style.left = div.offsetLeft+ step +"px";
+			//当目标位置停止定时器
+			if(div.offsetLeft==target)
+			{
+				clearInterval(timer);
+			}
+		}
+	}
+</script>

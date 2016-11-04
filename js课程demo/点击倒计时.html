@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" />
+		<button id="btn">点击发送短信</button>
+	</body>
+</html>
+<script>
+	var btn =document.getElementById("btn");
+	var num =5;
+//	btn.onclick=function abc(){
+//		var timer=null;
+//		clearTimeout(timer);
+//		btn.disabled=true;
+//		btn.innerHTML=num+"秒后重发";
+//		if(num>=0)
+//		{
+//			timer=setTimeout(abc,1000);
+//			num--;
+//		}
+//		else{
+//			btn.disabled=false;
+//			btn.innerHTML="点击重新发送短信";
+//			num=5;
+//		}
+//	}
+btn.onclick=function(){
+	var timer=null;
+	clearInterval(timer);
+	btn.disabled=true;
+	timer=setInterval(message,1000);
+	function message(){
+		if(num>=0)
+		{
+			btn.innerHTML=num+"秒后重发";
+			num--;
+		}
+		else{
+			btn.disabled=false;
+			btn.innerHTML="点击重新发送短信";
+			clearInterval(timer);
+			num=5;
+		}
+	}
+}
+</script>

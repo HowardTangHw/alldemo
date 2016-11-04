@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+body{font:12px/1.5 Tahoma;text-align:center;}
+code,input,button{font-family:inherit;}
+input{border:1px solid #ccc;display: block;margin: 30px auto;}
+
+		</style>
+		<script type="text/javascript">
+			function btnclick()
+			{
+				var b =document.getElementsByTagName("input");
+				alert(b[0].value);
+				alert(b[1].value);
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text"  value="广州市"/>
+		<input type="text" value="白云区"/>
+		<input type="submit" onclick="btnclick()"/>
+	</body>
+</html>

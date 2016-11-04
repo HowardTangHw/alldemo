@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function count(checke)
+			{  
+				if(document.getElementById("count").value=="")
+				{
+				document.getElementById("1").value="";
+				document.getElementById("count").value=document.getElementById("null").value;
+				document.getElementById("null").value="";
+				}
+				
+
+				document.getElementById("3").value = c;
+//				谨记:当onclick调用函数时传值时,要留意是不是已经在""里面,如果是,里面的""要改为'';
+//				如果用了""时,就定义为字符串了,判断时(if checke=="1")也要加上"",case里面也要加上"";
+//				如果没用,则不用加.要保持一致性.
+				
+			}
+			function number1(a)
+			{
+			var b =document.getElementById("null").value;
+				b=b+a;
+			document.getElementById("null").value=b;
+			document.getElementById("1").value=b;
+				
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text" style="margin-left:96px;" id="count" />&nbsp;<input type="text" id="stats" style="width: 15px;" /><br />
+		请输入数字：<input type="text" id="1" /><br />
+		结&nbsp;&nbsp;&nbsp;果: <input type="text" id="3" /><br  />
+		<input type="button" value="1" onclick="number1('1')"/>
+		<input type="button" value="2" onclick="number1('2')"/>
+		<input type="button" value="3" onclick="number1('3')"/><br  /><br  />
+		<input type="button" value="4" onclick="number1('4')"/>
+		<input type="button" value="5" onclick="number1('5')"/>
+		<input type="button" value="6" onclick="number1('6')"/><br  /><br  />
+		<input type="button" value="7" onclick="number1('7')"/>
+		<input type="button" value="8" onclick="number1('8')"/>
+		<input type="button" value="9" onclick="number1('9')"/><br  /><br />
+		<input type="button" value="+" onclick="count(1)"/>
+		<input type="button" value="-" onclick="count(2)"/>
+		<input type="button" value="*" onclick="count(3)"/>
+		<input type="button" value="/" onclick="count(4)"/>
+		<input type="text" style="display: none;" id="null"/>
+		<input type="text" style="display: none;" id"jieguo"/>
+	</body>
+</html>

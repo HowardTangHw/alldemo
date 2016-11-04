@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{margin:0;padding:0;}
+        ul{list-style:none;}
+        img {vertical-align: top; }  /*取消图片底部3像素距离*/
+        .box {
+            width: 300px;
+            height: 400px;
+            margin: 100px auto;
+            background-color: pink;
+            overflow: hidden;
+            position: relative;
+        }
+        .box ul {
+            height: 4000%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .box ul li{
+        	height: 200px;
+        }
+    </style>
+</head>
+<body>
+<div class="box" id="scroll">
+    <ul>
+        <li><img src="images/01.jpg" alt=""/></li>
+        <li><img src="images/02.jpg" alt=""/></li>
+        <li><img src="images/03.jpg" alt=""/></li>
+        <li><img src="images/04.jpg" alt=""/></li>
+    </ul>
+</div>
+</body>
+</html>
+<script>
+	var box =document.getElementById("scroll");
+	var ul =box.children[0];
+	var lis= ul.children;
+	var timer =null;
+	var k=0;
+	var num=0;
+	//1克隆
+	ul.appendChild(lis[0].cloneNode(true));
+	ul.appendChild(lis[1].cloneNode(true));
+	//2动画
+
+	timer=setInterval(autoplay,500);
+
+	
+//	
+	function autoplay (){
+//		num--;
+//		num = num<-800?0:num;
+		if(ul.offsetTop>-800)
+		{
+		ul.style.top=ul.offsetTop+-5+"px";}
+		else{
+			ul.style.top=0;
+		}
+		console.log(ul.style.top);
+	}
+	box.onmouseover=function(){
+		clearInterval(timer);
+	}
+	box.onmouseout=function(){
+		timer=setInterval(autoplay,20);
+	}
+
+		
+		
+	
+
+</script>

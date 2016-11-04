@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+			<title></title>
+			<style>
+			*{margin: 0;padding: 0;}
+				#father {width: 300px;
+				height: 300px;
+				margin:100px;
+				background-color: palegoldenrod;}
+				#son{width: 100px;
+				height: 100px;
+				background-color: palegreen;}
+			</style>
+	</head>
+	
+	<body>
+		<div id="father">
+			<div id="son"></div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var son =document.getElementById("son");
+	//父级如果没有加定位,则一直向上找,最后找到Body为准
+	console.log("父级无定位,向上找,找到body为准");
+	console.log(son.offsetLeft);
+	console.log(son.offsetTop);
+	var father =document.getElementById("father");
+	
+	//父级加定位之后,就以父级为准
+	console.log("父级加定位以后");
+	father.style.position="absolute";
+	console.log(son.offsetLeft);
+	console.log(son.offsetTop);
+</script>

@@ -1,0 +1,10 @@
+body{
+	background:#FF0000;	
+}
+#nav{
+	background:red;
+	border-color:#FFFFFF;	
+}
+#nav li{
+	border-color:#fff;	
+}

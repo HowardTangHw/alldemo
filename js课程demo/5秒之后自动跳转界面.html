@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="id"></div>
+	</body>
+</html>
+<script>
+	var id = document.getElementById("id");
+	var num=5;
+	setTimeOut();
+	function setTimeOut(){
+		id.innerHTML="<a href='http://www.baidu.com'>在"+num+"秒后跳转页面</a>"
+		num--;
+		if(num>=0)
+		{
+			setTimeout(arguments.callee,1000);
+		}
+		else
+		{
+			window.location.href="http://www.baidu.com";
+		}
+	}
+</script>

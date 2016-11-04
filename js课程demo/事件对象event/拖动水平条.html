@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {margin:0;padding:0;}
+        .scroll {
+            width: 400px;
+            height: 8px;
+            background-color: #ccc;
+            margin: 100px;
+            position: relative;
+
+        }
+        .bar {
+            width: 10px;
+            height: 22px;
+            background-color: #369;
+            position: absolute;
+            top: -7px;
+            left: 0;
+            cursor: pointer;
+        }
+        .tiao{
+        	height: 8px;
+        	background-color: #369;
+        	position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div class="scroll" id="scroll">
+    <div class="bar" id="bar"></div>
+    <div class="tiao" id="tiao"></div>
+</div>
+<div id="log"></div>
+</body>
+</html>
+<script type="text/javascript">
+	var scroll= document.getElementById("scroll");
+	var bar =document.getElementById("bar");
+	var tiao =document.getElementById("tiao");
+	var log=document.getElementById("log");
+	bar.onmousedown=function(event){
+		var event= event||window.event;
+		var mousex=event.pageX-bar.offsetLeft;
+		document.onmousemove=function(){
+			var event= event||window.event;
+			var x =event.pageX-mousex;
+			if(x<0)
+			{
+				x=0;
+			}
+			else if(x>scroll.offsetWidth-bar.offsetWidth)
+			{
+				x=scroll.offsetWidth-bar.offsetWidth;
+				
+			}
+			tiao.style.width=x+"px";
+			bar.style.left=x+"px";
+			if(bar.offsetLeft>0)
+			{
+			log.innerHTML="已经走了"+parseInt(bar.offsetLeft/390*100)+"%";
+			}
+			else{
+				log.innerHTML="";
+			}
+		}
+		document.onmouseup=function(){
+			document.onmousemove=null;
+		}
+	}
+</script>

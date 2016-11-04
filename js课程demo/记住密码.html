@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			#click {
+				width: 100px;
+				margin: 10px auto;
+				vertical-align: middle;
+			}
+			
+			.tips {
+				width: 300px;
+				margin: 10px auto;
+				font-size: 12px;
+				font-family: "微软雅黑";
+				color: #666;
+				background: orange;
+				border: 1px solid orangered;
+				display: none;
+			}
+		</style>
+		<script>
+			window.onload = function() {
+				var oId = document.getElementById("click");
+				var oDiv = document.getElementsByClassName("tips")[0];
+				oId.onmouseover = function() {
+					oDiv.style.display = "block";
+				}
+				oId.onmouseout = function() {
+					oDiv.style.display = "none";
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="click">
+			<input type="checkbox" id="checkbox" />
+			<label for="checkbox">记住密码</label>
+		</div>
+		<div class="tips">
+			<p id="p">为了您的信息安全，请不要在网吧或公用电脑上使用此功能！</p>
+		</div>
+	</body>
+
+</html>

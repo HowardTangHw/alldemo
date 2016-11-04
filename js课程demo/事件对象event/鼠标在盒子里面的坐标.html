@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+			#box {
+				width: 300px;
+				height: 300px;
+				position: absolute;
+				top: 100px;
+				left: 100px;
+				background-color: palegreen;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+	</body>
+</html>
+<script type="text/javascript">
+	var box  =document.getElementById("box");
+	box.onmousemove=function(event){
+		var event = event || window.event;
+		var pagex = event.pageX||event.clientX+scroll().left;
+		var pagey = event.pageY||event.clientY+scroll().top;
+		box.innerHTML="X坐标为:"+(pagex-box.offsetLeft)+"y坐标为"+(pagey-box.offsetTop);
+	}
+</script>

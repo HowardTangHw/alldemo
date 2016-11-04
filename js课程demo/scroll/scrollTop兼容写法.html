@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+/*
+ 1.怪异模式的浏览器 （未声明DTD ）    
+我们应该使用  document.body.scrollTop          scrollLeft
+2.标准模式的浏览器
+    我们应该使用的是  document.documentElement.scrollTop;  
+3.ie9+ 以上的版本 以及正常浏览器  （除了ie678等）
+我们跟提倡 使用  window.pageYOffset;         pageXOffset  
+三种方法 都是 被卷去的头部写法。
+*/
+//兼容写法
+	var scrolltop = window.pageYOffset ||document.documentElement.scrolltop||document.body.scrollTop||0;
+	
+</script>

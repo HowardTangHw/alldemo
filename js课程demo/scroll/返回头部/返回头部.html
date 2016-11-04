@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+	<head lang="en">
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.rocket {
+				position: fixed;
+				right: 50px;
+				bottom: 100px;
+				display: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<span class="rocket" id="backTop">
+    <img src="images/Top.jpg" alt=""/>
+</span>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+		<p>开始页面内容</p>
+	</body>
+
+</html>
+<script src="my.js" type="text/javascript" charset="utf-8"></script>
+<script>
+	var rocky = document.getElementById("backTop");
+	window.onload = function() {
+		var timer = null;
+		var leader = 0;
+		var target = 0;
+		window.onscroll = function() {
+			if(scroll().top > 100) {
+				rocky.style.display = "block";
+			} else {
+				rocky.style.display = "none";
+			}
+			leader = scroll().top;
+			console.log(leader);
+		}
+
+		//  	rocky.onclick=function(){
+		//  		window.scrollTo(0,0);
+		
+		rocky.onclick = function() {
+			clearInterval(timer);
+			timer=setInterval(function(){
+				var step = (target-leader)/10;
+				step = step>0?Math.ceil(step):Math.floor(step);
+//				leader = leader + step ;
+				window.scrollTo(0,scroll().top+step);
+				console.log(leader);
+			if(scroll().top<=3)
+		{
+			clearInterval(timer);
+		}
+			},30);
+		}
+
+	}
+
+	// 复习我们的缓动公式   leader = leader + (target - leader ) / 10;
+	// target 我们一定知道 就是  0
+	// 但是 leader 当前的位置 不知道   但是我们可以通过 scrollTop
+
+	
+</script>

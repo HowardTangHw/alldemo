@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		/*整体固定在右边10px,底部10px*/
+		
+		#t_fixed {
+			position: fixed;
+			right: 10px;
+			/*bottom: -85px;*/
+			bottom: 10px;
+			transition: bottom ease .3s;
+			z-index: 3;
+		}
+		/*btn样式,块元素,背景图片用按钮的图片,圆边,将文字隐藏*/
+		
+		#t_fixed a.btn {
+			width: 36px;
+			height: 36px;
+			display: block;
+			/*margin-top: 2px;*/
+			background: url(t-fixed.png) 0 0 no-repeat;
+			text-decoration: none;
+			text-indent: -999em;
+			border-radius: 5px;
+		}
+		/*GOTOP的样式,直接定位图片,定位到第一个logo*,因为上面btn样式已经固定了长宽，
+			为36px,那么只获取0-36px的logo*/
+		
+		#t_fixed a.gotop {
+			background-position: -2px 0;
+		}
+		
+		#t_fixed a.btn:hover {
+			background-color: #E0E0E0;
+		}
+		/*定位到QQLOGO,第二个元素,从42px+36px,获取整个QQLOGO*/
+		
+		#t_fixed a.qq-qun {
+			background-position: -2px -42px;
+		}
+		
+		#t_fixed a.top {
+			background-position: -2px -82px;
+			a {
+				text-transform:
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<img src="QQ图片20160927162807.gif" />
+	<img src="QQ图片20160927162807.gif" />
+	<img src="QQ图片20160927162807.gif" /> <br />
+	<img src="QQ图片20160927162807.gif" />
+	<img src="QQ图片20160927162807.gif" />
+	<img src="QQ图片20160927162807.gif" /><br />
+	<img src="QQ图片20160927162807.gif" />
+	<img src="QQ图片20160927162807.gif" />
+	<img src="QQ图片20160927162807.gif" /><br />
+	<h1>噢？</h1>
+	<h1>噢？</h1>
+	<h1>噢？</h1>
+	<h1>噢？</h1>
+	<h1>噢？</h1>
+	<h1>噢？</h1>
+	<h1>噢？</h1>
+	<h1>噢？</h1>
+	<h1></h1>
+
+
+	<div id="t_fixed">
+		<a class="btn top"></a>
+		<a class="btn qq-qun" href="http://wpa.qq.com/msgrd?v=3&uin=2379034&site=qq&menu=yes" original-title="QQ"></a>
+		<a class="btn gotop" href="javascript:;" onclick="window.scrollTo('0','0')" original-title="返回顶部">返回顶部</a>
+	</div>
+</body>
+
+</html>

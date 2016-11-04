@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		字符串<input type="text" id="all" /> 索引
+		<input type="text" id="index" />
+		<button id="btn1">从前面往后 indexOf</button>
+		<button id="btn2">从后面往前 lastIndexOf</button>
+	</body>
+
+</html>
+<script>
+function $(id){return document.getElementById(id)}
+$("btn1").onclick = function(){
+	alert($("all").value.indexOf($("index").value));
+}
+$("btn2").onclick = function(){
+	alert($("all").value.lastIndexOf($("index").value));
+}
+</script>

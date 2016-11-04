@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{height: 3000px;}
+		</style>
+	</head>
+
+	<body>
+	</body>
+
+</html>
+<script>
+//封装scrollTop和scrollLeft兼容性写法
+	function scroll() { 
+		//IE9+以上的高级浏览器
+		//scrollTop默认为0,而0不等于null
+		if(window.pageYOffset != null) {
+			return {
+				left: window.pageXOffset,
+				top: window.pageYOffset
+			}
+		}
+		//声明了DTD的
+		else if(document.compatMode == "CSS1Compat") {
+			return {
+				left: document.documentElement.scrollLeft,
+				top: document.documentElement.scrollTop
+			}
+		}
+		//未声明DTD的
+		return {
+			left:document.body.scrollLeft,
+			top:document.body.scrollTop
+		}
+	}
+
+
+
+
+
+
+	
+	window.onscroll=function(){
+		document.title=scroll().top;
+	}
+	
+</script>

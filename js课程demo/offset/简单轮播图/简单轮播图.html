@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head lang="en">
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		* {margin:0; padding:0;}
+		ul {list-style: none;}
+		.box {
+			width: 490px;
+			height: 170px;
+			border: 1px solid #ccc;
+			margin: 100px auto;
+			padding: 5px;
+		}
+		.inner {
+			width: 490px;
+			height: 170px;
+			background-color: pink;
+			position: relative;
+			overflow: hidden;}
+		.inner ul li a img {vertical-align: top;}
+		.inner ul li {float: left;}
+		.inner ul{width: 1000%;}
+		.s-btn {
+			position: absolute;
+			bottom: 5px;
+			left: 40%;
+		}
+		.s-btn span {display: inline-block;
+		width: 16px;
+		height: 16px;
+		background-color:rgba(0,0,0,.7);
+		color: white;
+		text-align: center;
+		line-height: 16px;
+		border-radius: 8px;
+		cursor: pointer;}
+		.s-btn span.current {
+			background-color: orangered;
+			
+		}
+		.inner ul {
+			position: absolute;
+			top:0;
+			left:0;
+		}
+			
+		</style>
+	</head>
+	<body>
+		<div class="box" id="box">
+			<div class="inner" id="inner">
+				<ul>
+					<li><a href="#"><img src="images/01.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/02.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/03.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/04.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/05.jpg" alt="" /></a></li>
+				</ul>
+				<div class="s-btn">
+					<span class="current">1</span>
+					<span>2</span>
+					<span>3</span>
+					<span>4</span>
+					<span>5</span>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script>
+	var box =document.getElementById("box");
+var inner =box.children[0];
+		var ul =inner.children[0];
+	var spans=inner.children[1].children;
+	for (var i=0;i<spans.length;i++){
+		spans[i].index=i;
+		spans[i].onmouseover=function(){
+			
+			for(var j=0;j<spans.length;j++)
+			{
+				spans[j].className="";
+			}
+			this.className="current";
+			run(ul,-this.index*490);
+		}
+	}
+	//动画
+//		function run(obj, target) {
+//		clearInterval(obj.timer);
+//		var speed = obj.offsetLeft < target ? 30 : -30;
+//		obj.timer = setInterval(function() {
+//			var result = target - obj.offsetLeft;
+//			obj.style.left = obj.offsetLeft + speed + "px";
+//			if(Math.abs(result)<=10){
+//				clearInterval(obj.timer);
+//				obj.style.left=target+"px";
+//			}
+//		}, 30);
+//		if(target == "stop") {
+//			clearInterval(obj.timer);
+//		}
+//
+//	}
+	function run(obj, target) {
+		clearInterval(obj.timer);
+		var speed = obj.offsetLeft < target ? 49 : -49;
+
+		obj.timer = setInterval(function() {
+			var result = target - obj.offsetLeft;
+			if(Math.abs(result) > 15) {
+				obj.style.left = obj.offsetLeft + speed + "px";
+			}
+		}, 30);
+		if(target == "stop") {
+			clearInterval(obj.timer);
+		}
+
+	}
+</script>

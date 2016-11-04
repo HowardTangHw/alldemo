@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<!-- 声明当前页面的编码集,中文编码:GKB/GB2312 国际编码:utf-8 -->
+		<meta http-equiv="content-type" content="text/html" charset="utf-8">
+		<!--声明当前页面的三要素-标题-关键字--简介 -->
+		<title></title>
+		<meta name="Keywords" content="关键字,关键字,关键字">
+		<meta name="description" content="">
+		<!--引入loading的css-->
+		<link rel="stylesheet" href="css/loading.css" />
+		<!-- css/js -->
+		<style type="text/css">
+			/*浏览器兼容性解决方案*/
+			
+			* {
+				margin: 0;
+				padding: 0;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<!--
+        	自定义插件四部曲:
+        	1.布局
+        	2.通过jQuery动态放到页面上
+        	3.定义编写插件三要素:定位,(脱离文档流),top left
+        	4.封装
+        -->
+
+		<!--引入类库-->
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+		<script type="text/javascript" src="js/loading_V1.0.js"></script>
+
+		<script>
+			//调用插件
+			$.Ztloading({
+				content: "砖头太帅了！",
+				width: 200,
+				height: 45
+			});
+		</script>
+
+	</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		#one{
+		}
+	</style>
+	<body>
+		<div id="one">
+			<div id="two">
+				<div id="three"></div>
+			</div>
+		</div>
+	</body>
+</html>
+<script>
+	var three =document.getElementById("three");
+	console.log("offsetParent找到距离最近的带有定位的父级,如果都没有 则是Body")
+	console.log(three.offsetParent);
+	console.log("one加定位");
+	three.parentNode.parentNode.style.position="absolute";
+	console.log(three.offsetParent);
+	console.log("parentNode是寻找亲父");
+	console.log(three.parentNode);
+	
+</script>

@@ -1,0 +1,29 @@
+/*loding style star*/
+			
+			body {
+				font-family: "微软雅黑";
+				color: #666666;
+				font-size: 12px;
+				text-align: center;
+				line-height: 45px;
+			}
+			
+			.zt_loading {
+				width: 200px;
+				height: 45px;
+				background: #6cf;
+				box-shadow: 3px 3px 20px -1px #000;
+				;
+				text-align: center;
+				line-height: 45px;
+				font-size: 14px;
+				color: #fff;
+				font-family: "微软雅黑";
+				position: absolute;
+			}
+			
+			.zt_loading img {
+				vertical-align: middle;
+				margin-right: 10px;
+			}
+/*loding style end*/

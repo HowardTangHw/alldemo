@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>A Personal Protfolio webpage</title>
+	<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" />
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style>
+		body,
+		html {
+			width: 100%;
+			height: 100%;
+		}
+		
+		body,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+			font-weight: 700;
+		}
+		/*导航栏开始*/
+		
+		.topnav {
+			font-size: 16px;
+			background: #1e1e1e;
+		}
+		
+		.topnavboder {
+			border-bottom: 1px outset rgba(192, 192, 192, 0.8);
+		}
+		
+		.topfixed {
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 1030;
+		}
+		
+		.navbar {
+			min-height: 50px;
+		}
+		
+		.navbar-brand {
+			float: left;
+			height: 50px;
+			padding: 15px;
+		}
+		/*导航栏结束*/
+		/*Home部分开始*/
+		
+		.home-header {
+			height: 855px;
+			padding-top: 50px;
+			text-align: center;
+			background: url("http://www.z4a.net/images/2016/10/27/bdcc014cbafde426dd12e51e9ac80cf0.jpg") no-repeat center center fixed;
+			background-size: cover;
+		}
+		
+		.bg-overlay {
+			background: rgba(0, 0, 0, 0.3);
+			height: 855px;
+		}
+		
+		.home-message {
+			position: relative;
+			padding-top: 20%;
+		}
+		
+		.home-message> h1 {
+			margin-top: -50px;
+			font-size: 5em;
+			color: rgba(255, 255, 255, 0.99);
+			font-family: "微软雅黑";
+		}
+		
+		.home-message> h3 {
+			font-size: 2em;
+			color: rgba(255, 255, 255, 0.7);
+		}
+		/*Home部分结束*/
+		/*about部分开始*/
+		
+		.about-header {
+			height: 855px;
+			padding-top: 50px;
+			text-align: center;
+			background: url("http://www.z4a.net/images/2016/10/27/3d2122d6f5aff20bc4fd70f8837d260b.jpg") no-repeat center center fixed;
+			background-size: cover;
+		}
+		
+		.bg-overlay2 {
+			margin-top: -50px;
+			background: rgba(0, 0, 0, 0.2);
+			height: 855px;
+		}
+		
+		.about-message {
+			position: relative;
+			padding-top: 20%;
+		}
+		
+		.about-message >h2 {
+			margin-top: -50px;
+			font-size: 3em;
+			color: rgba(255, 255, 255, 0.99);
+			font-family: "微软雅黑";
+		}
+		
+		.about-message >p {
+			font-size: 2em;
+			color: rgba(255, 255, 255, 0.99);
+			font-family: "微软雅黑";
+		}
+		
+		.ulli {
+			float: right;
+		}
+		/*about部分结束*/
+		/*Portfolio部分开始*/
+		
+		.portfolio-header {
+			height: 855px;
+			padding-top: 50px;
+			text-align: center;
+			background: url("http://www.z4a.net/images/2016/10/27/f765e4bddb5d8ae547ca74180742d42c.jpg") no-repeat center center fixed;
+			background-size: cover;
+		}
+		
+		.portfolio-message {
+			position: relative;
+			padding-top: 10%;
+		}
+		
+		.portfolio-message >h2 {
+			margin-top: -20px;
+			font-size: 3em;
+			color: rgba(255, 255, 255, 0.99);
+			font-family: "微软雅黑";
+		}
+		
+		.portfolio-pic {
+			margin-top: 2%;
+		}
+		
+		.portfolio-ulli {
+			margin-top: 3%;
+			font-size: 1em;
+			color: rgba(255, 255, 255, 0.99);
+			font-family: "微软雅黑";
+		}
+		
+		.link {
+			margin-top: 2%;
+			margin-right: 17px;
+			float: right;
+		}
+		
+		.link a {
+			font-size: 1em;
+			color: rgba(255, 255, 255, 0.99);
+		}
+		/*Portfolio部分结束*/
+		/*contact部分开始*/
+		
+		.contact-header {
+			height: 855px;
+			padding-top: 50px;
+			text-align: center;
+			background: url("http://www.z4a.net/images/2016/10/27/2447c829fb77322531bd94e1e38adad7.jpg") no-repeat center center fixed;
+			background-size: cover;
+		}
+		
+		.contact-message {
+			position: relative;
+			padding-top: 30%;
+		}
+		
+		.contact-message >h2 {
+			margin-top: -50px;
+			font-size: 4em;
+			color: rgba(255, 255, 255, 0.99);
+			font-family: "微软雅黑";
+		}
+		
+		.btn {
+			display: inline-block;
+			color: #000;
+			border: 2px outset rgba(0, 0, 0, 0.8);
+			background: #fff;
+			text-shadow: 1px 1px 1px rgba(0, 0, 0, 20);
+			box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+			letter-spacing: 2px;
+			transition: 0.2s;
+		}
+		
+		.btn:hover {
+			color: #fff;
+			border: 2px outset rgba(0, 0, 0, 0.9);
+			background: rgba(0, 0, 0, 0.9);
+			transform: scale(1.1);
+			transition: 0.2s;
+			text-shadow: 1px 1px 1px rgba(0, 0, 0, 20);
+			box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+			letter-spacing: 2px;
+		}
+		/*contact部分结束*/
+		/*footer开始*/
+		
+		.footer {
+			border-top: 1px solid rgba(255, 255, 255, .3);
+			background: #1e1e1e;
+		}
+		
+		.footerul li a {
+			color: #fff;
+		}
+		/*footer结束*/
+		/*导航栏*/
+			#gotop {
+			position: fixed;
+			right: 10px;
+			/*bottom: -85px;*/
+			bottom: 10px;
+			transition: bottom ease .3s;
+			z-index: 3;
+			}
+			/*btn样式,块元素,背景图片用按钮的图片,圆边,将文字隐藏*/
+			#gotop .t_btn {
+			width: 36px;
+			height: 36px;
+			display: block;
+			/*margin-top: 2px;*/
+			background: url("http://www.z4a.net/images/2016/10/28/08767e66966285c676ac2f1f40ac3864.png") 0 0 no-repeat;
+			text-decoration: none;
+			text-indent: -999em;
+			border-radius: 5px;}
+			#gotop .t_gotop {
+			background-position: -2px 0;}
+			#gotop .t_btn:hover {
+			background-color: #E0E0E0;}
+					/*导航栏结束*/
+	</style>
+</head>
+
+<body>
+	<!--头部导航栏开始-->
+	<nav class="topnav topnavboder navbar-default  navbar-fixed-top navbar" role="navigation">
+		<div class="container topnav">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				<a class="navbar-brand topnav" href="#">Index</a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a href="#home">Home</a>
+					</li>
+					<li>
+						<a href="#about">About</a>
+					</li>
+					<li>
+						<a href="#portfolio">Portfolio</a>
+					</li>
+					<li>
+						<a href="#contact">Contact</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!--头部导航栏结束-->
+
+	<!--Home部分开始-->
+	<!--home锚点-->
+	<a name="home"></a>
+	<div class="home-header">
+		<div class=" bg-overlay">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="home-message">
+							<h1>谋事在人,成事在天.</h1>
+							<h3>Man proposes,God disposes.</h3>
+							<hr class="home-hr">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--Home部分结束-->
+
+	<!--about部分开始-->
+	<a name="about"></a>
+	<div class="about-header">
+		<div class="bg-overlay2">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 about-message">
+						<h2>推巨石的人</h2>
+						<hr>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;西西弗斯无声的全部快乐就在于：他的命运是属于他的。他的岩石是他的事情。同样，当荒谬的人深思他的痛苦时，他就使一切偶像哑然失声。荒谬的人知道，他是自己生活的主人。我把西西弗斯留在山脚下！我们总是看到他身上的重负。而西西弗斯告诉我们，最高的虔诚是否认诸神并且搬掉石头。他也认为自己是幸福的。这个从此没有主宰的世界对他来讲既不是荒漠，也不是沃土。这块巨石上的每一颗粒，这黑黝黝的高山上的每一矿砂唯有对西西弗斯才形成一个世界。他爬上山顶所要进行的斗争本身就足以使一个人心里感到充实&nbsp;&nbsp;&nbsp;
+							——加缪
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--about部分结束-->
+
+	<!--portfolio部分开始-->
+	<a name="portfolio"></a>
+	<div class="portfolio-header">
+		<div class="bg-overlay2">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg12 portfolio-message">
+						<div class="clearfix"></div>
+						<h2 class="text-center"><em>The Shawshank Redemption</em></h2>
+					</div>
+					<div class="col-lg-5 col-sm-6 portfolio-pic ">
+						<div class="clearfix"></div>
+						<div class="thumbnail"><img src="http://www.z4a.net/images/2016/10/25/d68b65cb1166e151be09e6cb.jpg" />
+						</div>
+					</div>
+					<div class="col-lg-5 col-sm-6 portfolio-ulli">
+						<ul class="ulli">
+							<li>I guess it comes down to a simple choice:get busy living or get busy dying.</li>
+							<li>These walls are kind of funny like that. First you hate them, then you get used to them. Enough time passed, get so
+								you depend on them. That`s institution alized.</li>
+							<li>That’s the beauty of music. They can’t take that away from you.</li>
+							<li>Remember, Hope is a good thing, maybe the best of things and no good thing ever dies!</li>
+							<li>Hope is a good thing,maybe the best of things,and no good thing ever dies.</li>
+							<li>Fear can hold you prisoner. hope can set you free.</li>
+						</ul>
+					</div>
+					<div class="link"><a href="https://en.wikipedia.org/wiki/The_Shawshank_Redemption" target="_blank">Wiki:<span class="glyphicon glyphicon-link
+"></span> The Shawshank Redemption<a></div>
+				</div>
+				<hr>
+					
+			</div>
+				
+		</div>
+	</div>
+	<!--portfolio部分结束-->
+
+	<!--contact部分开始-->
+	<a name="contact"></a>
+						<div class="contact-header">
+							<div class="bg-overlay2">
+								<div class="container">
+									<div class="row">
+										<div class="col-lg-12">
+											<div class="contact-message">
+												<h2>联系方式</h2>
+												<hr class="intro-divider">
+												<ul class="list-inline intro-social-buttons">
+
+													<li>
+														<a href="https://github.com/HowardTangHw" target="_blank" class="btn btn-default btn-lg "><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+													</li>
+													<li>
+														<a href="https://freecodecamp.cn/HowardTangHw" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-fire fa-fw"></i> <span class="network-name">freeCodeCamp</span></a>
+													</li>
+													<li>
+														<a href="http://wpa.qq.com/msgrd?v=3&uin=2379034&site=qq&menu=yes" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-comments-o fa-fw"></i> <span class="network-name">Tecent QQ</span></a>
+													</li>
+													<li>
+														<a href="https://codepen.io/haowenmogu/" target="_blank" class="btn btn-default btn-lg"><i class="glyphicon glyphicon-pencil"></i> <span class="network-name">CodePen</span></a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--contact部分结束-->
+
+						<!--footer部分开始-->
+						<footer class="footer">
+							<div class=" container ">
+								<div class="row">
+									<div class="col-lg-12">
+										<ul class="list-inline footerul">
+											<li>
+												<a href="#">Home</a>
+											</li>
+											<li class="footer-menu-divider">&sdot;</li>
+											<li>
+												<a href="#about">About</a>
+											</li>
+											<li class="footer-menu-divider">&sdot;</li>
+											<li>
+												<a href="#portfolio">Portfolio</a>
+											</li>
+											<li class="footer-menu-divider">&sdot;</li>
+											<li>
+												<a href="#contact">Contact</a>
+											</li>
+										</ul>
+										<p class="copyright text-muted small">Copyright &copy; Infinito Web Design Studio 2015. All Rights Reserved</p>
+									</div>
+								</div>
+							</div>
+						</footer>
+						<!--footer部分结束-->
+						<!--右侧gotop-->
+						<div id="gotop">
+							<a class="t_btn t_gotop" href="javascript:;" onclick="window.scrollTo('0','0')" original-title="返回顶部">返回顶部</a>
+						</div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+$("#gotop").hide();
+$(function () {
+$(window).scroll(function(){
+if ($(window).scrollTop()>100){
+$("#gotop").fadeIn(500);
+}
+else
+{
+$("#gotop").fadeOut(500);
+}
+});
+$("#gotop").click(function(){
+$('body,html').animate({scrollTop:0},100);
+return false;
+});
+});
+});
+</script>
+</body>
+</html>

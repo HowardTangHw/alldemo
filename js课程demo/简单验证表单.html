@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+			.erro {
+				background: red;
+				display: inline-block;
+				color: white;
+			}
+			.ok {
+				background: greenyellow;
+				color: white;
+				display: inline-block;
+			}
+		</style>
+	</head>
+	<body>
+		<label for="txt">语文:</label>
+		<input type="text" id="txt"/>
+		<p></p>
+	</body>
+</html>
+<script>
+	var txt = document.getElementById("txt");
+	var p =document.getElementsByTagName("p")[0];
+	txt.onblur=function(){
+		if(this.value=="")
+		{
+			p.className="erro";
+			p.innerHTML="请输入内容!必须为数字!";
+		}
+		else if(isNaN(this.value))
+		{
+			p.className="erro";
+			p.innerHTML="请输入数字!";
+		}
+		else if (this.value>150 || this.value<0)
+		{
+			p.className="erro";
+			p.innerHTML="请输入合理范围!";
+		}
+		else {
+			p.className="ok";
+			p.innerHTML="ok!";
+		}
+	}
+</script>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+	</body>
+
+</html>
+<script type="text/javascript">
+	document.onclick = function(event) {
+		var event = event || window.event;
+		//就以当前浏览器的屏幕 固定定位:fixed
+		console.log(event.clientX + " " + event.clientY);
+		//以我们的页面,文档的左上角 绝对定位:absolute
+//		console.log(event.pageX + " " + event.pageY);
+		//pageY的兼容性写法
+		var x = event.pageX || event.clientX+document.documentElement.scrollLeft;
+		var y = event.pageY || event.clientY+document.documentElement.scrollTop;
+		//电脑屏幕的
+		console.log(event.screenX + " " + event.screenY);
+	}
+</script>

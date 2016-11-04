@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>Loading插件</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+		</style>
+		<!--样式库-->
+		<link rel="stylesheet" href="css/loading.css" />
+		<!--特效库-->
+		<link rel="stylesheet" href="css/loading_css3.css" />
+	</head>
+
+	<body>
+		<!--
+        	自定义插件四部曲:
+        	1.布局
+        	2.通过jQuery动态放到页面上
+        	3.定义编写插件三要素:定位,(脱离文档流),top left
+        	4.封装
+        -->
+
+		<!--引入类库-->
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+		<script type="text/javascript" src="js/loading_v2.0_点击和自动退出效果.js" ></script>
+		<script type="text/javascript">
+
+			//调用插件
+			$.Ztloading({
+				content: "砖头太帅了！",
+				width: 200,
+				height: 45,
+				timeout: 1.5
+			});
+		</script>
+	</body>
+
+</html>

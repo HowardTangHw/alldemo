@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    *{marigin:0;
+    padding:0;}
+    .box {width:600px;
+    border:1px solid red;
+    margin: 60px auto;}
+    .box p {
+        display: inline-block;
+    }
+    .box ul {
+        margin-left: 20px;
+        width: 400px;
+    }
+    .box ul li{
+        list-style: none;
+        text-decoration: none;
+        border-bottom: 1px dashed #000;
+        margin-top: 10px;
+    }
+    .box ul li a {
+        float: right;
+    }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p>微博发布</p>
+        <input type="text" id="txt"/>
+        <button id="btn">提交</button>
+        <ul id="ul">
+
+        </ul>
+    </div>
+</body>
+</html>
+<script>
+    var btn = document.getElementById("btn");
+    var txt = document.getElementById("txt");
+    var ul = document.getElementById("ul");
+    btn.onclick =function (){
+        if (txt.value=="")
+        {
+            alert("请输入内容");
+            return false;
+        }
+        var newLi = document.createElement("li");
+        newLi.innerHTML=txt.value+"<a href='javascript:;'>删除</a>";
+        txt.value="";
+        var lis = ul.children;
+        ul.insertBefore(newLi,lis[0]);
+      for (var i =0;i<lis.length;i++)
+        {
+          as[i].onclick = function (){
+              ul.removeChild(this.parentNode);
+          }
+        }
+    }
+
+</script>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				background: url(images/box.png) no-repeat center top;
+				width: 100%;
+				margin: 0 auto;
+				height: 7573px;
+			}
+			.top{
+				height: 45px;
+				width: 100%;
+				background: url(images/r1.png) no-repeat center top ;
+				position: fixed;
+				top: 0;
+			}
+			.topadd{
+				position: static;
+			}
+			.one{
+				margin: 0 auto;
+				width:1000px;
+				height:45px;
+			}
+			.one a{
+				float: right;
+				width:55px;
+				height:22px;
+				margin-top: 10px;
+				cursor: pointer;
+			}
+			.tan{
+				width:400px;
+				height:200px;
+				border:2px solid lightcoral;
+				position: fixed;
+				top:50%;
+				left: 50%;
+				margin-top: -100px;
+				margin-left:-200px ;
+				background: #fff;
+				display: none;
+			}
+			.tanup{
+				padding-left:15px;width:385px;height:36px;background:rgb(237, 100, 100);cursor: move;color:#fff;font:18px/36px "microsoft yahei"
+			}
+			.txt{
+				color:lightcoral;
+				font: 26px "microsoft yahei";
+				text-align: center;line-height: 60px;
+			}
+			.btn{
+				display: inline-block;
+				width: 80px;
+				border: 2px solid salmon;
+				background-color: bisque;
+				text-align: center;
+				margin-left: 70px;
+				margin-top: 20px;
+				color: salmon;
+				font: 16px/36px "microsoft yahei";
+				cursor: pointer;
+			}
+			
+			.left , .right{
+				width:120px;
+				height:288px;
+				position: absolute;
+				top:200px;
+			}
+			.left{
+				left:0px;
+				background: url(images/r2_c1.png) no-repeat;
+			}
+			.right{
+				right:0px;
+				background: url(images/r2_c2.png) no-repeat;
+			}
+			.totop{
+				width: 50px;
+				height: 50px;
+				background: url(images/20150717215921.png);
+				position: fixed;
+				display: none;
+				bottom:50px;
+				right: 20px;
+				cursor: pointer;
+			}
+			.s_
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="top" id="s_top">
+				<div class="one">
+					<a href="javascript:;"></a>
+				</div>
+			</div>
+			<div class="tan" id="s_tan">
+				<div class="tanup" id="tanup">提示框</div>
+				<div class="txt">你真的真的真的要关闭吗？</div>
+				<span class="btn">狠心关掉</span><span class="btn">让它呆着</span>
+			</div>
+			<div class="left" id="left"></div>
+			<div class="right" id="right"></div>
+			<div class="totop" id="totop"></div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="my.js"></script>
+<script type="text/javascript">
+	var btn1 =document.getElementsByTagName("a")[0];
+	var btn21 =document.getElementsByClassName("btn")[0];
+	var btn22 =document.getElementsByClassName("btn")[1];
+	var nav = document.getElementById("s_top")
+	var gotop =document.getElementById("totop");
+	btn1.onclick=function(){
+		btn21.parentNode.style.display="block";
+	}
+	btn21.onclick=function(){
+		btn21.parentNode.style.display="none";
+		nav.style.position="static";
+		btn1.style.display="none";
+	}
+	btn22.onclick=function(){
+		btn21.parentNode.style.display="none";
+	}
+	
+	var left = document.getElementById("left");
+	var right =document.getElementById("right");
+	left.onclick=function(){
+		left.style.display="none";
+		right.style.display="none";
+	}
+	
+	right.onclick=function(){
+		left.style.display="none";
+		right.style.display="none";
+	}
+	var tim1=null;
+	var lead =left.offsetTop;
+//	var target =scroll().top;
+//	console.log(target);
+	window.onscroll=function(){
+		var target =scroll().top+200;
+		clearInterval(tim1);//关键!!!
+		tim1=setInterval(abc,30);
+		function abc(){
+			//leader = leader +(target-leader)/10
+			var step =(target-left.offsetTop)/10;
+			step = step>0?Math.ceil(step):Math.floor(step);
+			left.style.top=left.offsetTop+step+"px";
+			right.style.top=left.offsetTop+step+"px";
+			if(target==left.offsetTop)
+			{
+				clearInterval(tim1);
+			}
+            }
+		
+	
+	if(scroll().top>200)
+	{
+		gotop.style.display="block";
+	}
+	else
+	{
+		gotop.style.display="none";
+	}
+	
+	lead1=scroll().top;
+
+}	
+	var tim2=null;
+	gotop.onclick=function(){
+		//原理 leader =learder +step
+		clearInterval(tim2);
+		tim2=setInterval(zzz,30);
+		function zzz(){
+		var step =(0-lead1)/10;
+		lead1=lead1+Math.floor(step);
+		window.scrollTo(0,lead1);
+		if(scroll().top==0)
+			{
+				clearInterval(tim2);
+			}
+		}
+	}
+
+
+	
+//	  function animate(obj,target) {
+//      clearInterval(obj.timer);
+//      obj.timer = setInterval(function() {
+//          // 运动公式  leader = leader + (target - leadaer) / 10
+//          var step = (target - obj.offsetTop) / 10;
+//          step = step > 0 ? Math.ceil(step) : Math.floor(step);
+//          obj.style.top = obj.offsetTop + step + "px";
+//          if(target == obj.offsetTop) {
+//              clearInterval(obj.timer);
+//          }
+//      },30)
+//	}
+//	}
+	var move =document.getElementById("tanup");
+	var box =document.getElementById("s_tan");
+	starDrop(move,box);
+function starDrop(obj, target) { //obj为拖拽栏,target为移动栏
+		obj.onmousedown = function(event) {
+			var event = event || window.event;
+			var mousex = event.pageX - target.offsetLeft; //获取鼠标当前的x,y 点下去那刻,就要记录下来
+			var mousey = event.pageY - target.offsetTop;
+
+			document.onmousemove = function(event) {
+				var event = event || window.event;
+				var pagex = event.pageX || event.clientX + scroll().left;
+				var pagey = event.pageY || event.clientY + scroll().top;
+				var x = pagex - mousex; //移动的距离 再减去 鼠标当前的位置 ,维持一致性
+				var y = pagey - mousey;
+				target.style.left = x + "px";
+				target.style.top = y + "px";
+				window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
+			}
+			obj.onmouseup = function(event) {
+				document.onmousemove = null;
+			}
+		}
+	}
+</script>

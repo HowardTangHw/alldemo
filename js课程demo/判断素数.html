@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--判断素数-->
+		<script>
+			function get_primes(arr) {
+				function isPrime(x) {
+					//Number.isInterger是用来判断输入的类型是不是Number,还有就是判断是不是一个整数
+					//		function Number.isInteger(obj) {
+					//			return typeof obj === 'number' && obj % 1 === 0
+					//		}
+					if(!Number.isInteger(x) || x <= 1) return false;
+					//首先判断他是不是一个Number和整数，如果不是则在Number.isInteger中返回false，然后！ 则会判断成true  则执行return false,数字不会记录到arr.filter中。（arr.filter，只会记录返回true的值。|| 只要两者一个为True都会执行false）
+					
+					for(var i = 2; i <= Math.sqrt(x); i++) { //如果x不能被2~√x间任一整数整除，x必定是素数
+						if(x % i == 0) return false;
+					}
+/*					for(var i = 2; i <= x-1; i++) {   //也可以全部遍历，效率降低
+						if(x % i == 0) return false;
+				}
+*/
+					return true;
+				}
+				return arr.filter(isPrime);
+			}
+
+			// 测试:
+			var
+				x,
+				r,
+				arr = [];
+			for(x = 1; x < 100; x++) {
+				arr.push(x);
+			}
+			r = get_primes(arr);
+			if(r.toString() === [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97].toString()) {
+				alert('测试通过!');
+			} else {
+				alert('测试失败: ' + r.toString());
+			}
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

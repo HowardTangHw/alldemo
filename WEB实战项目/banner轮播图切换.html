@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- 声明当前页面的编码集,中文编码:GKB/GB2312 国际编码:utf-8 -->
+		<meta http-equiv="content-type" content="text/html" charset="utf-8">
+		<!--声明当前页面的三要素-标题-关键字--简介 -->
+		<title>banner轮播图切换</title>
+		<meta name="Keywords" content="关键字,关键字,关键字">
+		<meta name="description" content="">
+		<!-- css/js -->
+		<style type="text/css">
+		/*浏览器兼容性解决方案*/
+			*{margin: 0;padding: 0;}
+			/*star banner*/
+			.banner{width: 100%;height: 240px;position: relative;}
+			.banner .b_list{width: 100%;height: 240px;background-repeat: no-repeat;background-position:top center;position: absolute;left: 0;top: 0; }
+			.banner .b_btn{position: absolute;bottom: 5px;left: 47%;z-index: 2}
+			/*透明要用rgba,不然里面的小圆点都透明了*/
+			.banner .b_btn .b_ul{display: inline-block;background: rgba(0,0,0,.6);   padding: 2px 20px;border-radius: 10px;}
+			.banner .b_btn .b_ul li{list-style: none;float: left;width: 16px;height: 16px;background: url(img/1.png)no-repeat;margin-right: 3px;}
+			.banner .b_btn .b_ul .b_no{background: url(img/2.png)no-repeat;}
+			/*banner end*/
+		</style>
+	
+	</head>
+	<body>
+		<!--
+			z-index :兄弟元素之间的级别关系
+			兄弟元素必须使用了定位(position)的情况下,才能使用z-index(即:z-index才起作用)
+			父类banner定位 子类定位
+		-->
+		<!--banner star-->
+		<div class="banner">
+			<div class="b_list" style="background-image: url(img/1.jpg);z-index: 1;"></div>
+			<div class="b_list" style="background-image: url(img/2.jpg);z-index: 0;"></div>
+			<div class="b_list" style="background-image: url(img/1.jpg);z-index: 0;"></div>
+			<div class="b_list" style="background-image: url(img/2.jpg);z-index: 0;"></div>
+			<div class="b_btn">
+				<ul class="b_ul">
+					<li class="b_no"></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					</ul>
+			</div>
+		</div>
+		<!--banner end-->
+<!--引入JQ-->
+<script type="text/javascript" src="js/jquery.js"></script>
+<script>
+
+	$(function(){
+		$(".b_ul").find("li").mouseover(function(){
+			//小按钮选中的添加样式,兄弟的去除样式
+			$(this).addClass("b_no").siblings().removeClass();
+			//初始化显示级别
+			$(".b_list").css({"z-index":0,"opacity":0});
+			//联动按钮和背景图片
+			var _index =$(this).index();//获取小按钮的索引
+			//背景图片级别为1,就是联动之后显示联动的图片
+			$(".b_list").eq(_index).css("z-index",1).fadeTo(1000,1);
+		});
+		
+		
+		
+	});
+</script>
+	</body>
+</html>

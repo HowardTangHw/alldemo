@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="demo">1</div>
+<div>2</div>
+<div>2</div>
+<div class="test">3</div>
+<div>2</div>
+<div class="test">3</div>
+<div>2</div>
+<div>2</div>
+<div>2</div>
+<div>2</div>
+
+	</body>
+</html>
+<script>
+//getClassName兼容性写法
+	    function getClassName(classname) {
+        if(document.getElementsByClassName){
+        return document.getElementsByClassName(classname);
+        }
+        //IE 678兼容
+        var arr =[];
+        var dom = document.getElementsByTagName("*");  /*所有的标签都过一次*/
+        //把标签的类名,字符串转换为数组,只有数组才能遍历
+        for(var i = 0;i<dom.length;i++){
+            //把类名字符串转换为数组
+            var arrName = dom[i].className.split(" ");
+            for(var j=0;j<arrName.length;i++)
+            {
+                if(arrName[j] == classname )
+                {
+                    arr.push(dom[i]);
+                }
+            }
+        }
+        return arr;//返回总的数组   
+        } 
+        function $(id) {
+        	var s = id.charAt(0);
+        	var ss = id.substr(1);
+        	switch(s){
+        		case "#":
+        		return document.getElementById(ss);
+        		break;
+        		case ".":
+        		return getClassName(ss);
+        		break;
+        		default:
+        		return document.getElementsByTagName(id);
+        		
+        	}
+        }
+      $("#demo").style.backgroundColor = "red";
+    for(var i=0;i<$(".test").length;i++)
+    {
+        $(".test")[i].style.backgroundColor = 'purple';
+    }
+   console.log($("div").length);
+
+</script>

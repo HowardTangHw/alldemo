@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body {
+				background: #000000;
+			}
+			
+			ul {
+				width: 700px;
+				height: 410px;
+				border: 1px solid #FFFFFF;
+				margin: 100px auto;
+			}
+			
+			ul li {
+				margin-left: 10px;
+				float: left;
+				margin-top: 10px;
+			}
+			.current{
+				opacity: 0.8;
+			}
+		</style>
+	</head>
+
+	<body>
+		<ul>
+			<li><img src="images/突出效果images/01.jpg" </li>
+			<li><img src="images/突出效果images/02.jpg" </li>
+			<li><img src="images/突出效果images/03.jpg" </li>
+			<li><img src="images/突出效果images/04.jpg" </li>
+			<li><img src="images/突出效果images/05.jpg" </li>
+			<li><img src="images/突出效果images/06.jpg" </li>
+		</ul>
+	</body>
+
+</html>
+<script type="text/javascript">
+	var ul =document.getElementsByTagName("ul")[0];
+	var lis =ul.children;
+	for(var i =0;i<lis.length;i++)
+	{	lis[i].index=i;
+		lis[i].onmouseover=function(){
+			for(var i=0;i<lis.length;i++)
+			{
+			lis[i].setAttribute("class","current");
+			}
+			lis[this.index].className="";
+		}
+		lis[i].onmouseout=function(){
+			for(var i =0;i<lis.length;i++)
+			{
+				lis[i].className="";
+			}
+		}
+	}
+</script>

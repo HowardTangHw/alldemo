@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<body>
+	<button id="btn">点击</button>
+	<ul id="ul">
+
+	</ul>
+
+
+</body>
+
+</html>
+<script>
+    var btn =document.getElementById("btn");
+    var ul =document.getElementById("ul");
+    btn.onclick  = function()
+    {
+        var newLi = document.createElement("li");
+        ul.appendChild(newLi);
+    }
+</script>

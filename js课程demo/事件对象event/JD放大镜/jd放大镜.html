@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		*{margin: 0;
+		padding: 0;}
+			.box {
+				width: 350px;
+				height: 350px;
+				border: 1px solid #ccc;
+				margin: 100px;
+				position: relative;
+			}
+			.msk{
+				position:absolute ;
+				top: 0;
+				left: 0;
+				background-color: yellow;
+				opacity: 0.4;		
+				width: 175px;
+				height:175px;
+				cursor: pointer;
+				display: none;
+					}
+			.big{
+				width: 400px;
+				height: 400px;
+				position: absolute;
+				top: 0;
+				left: 360px;
+				border: 1px solid #ccc;
+				overflow: hidden;
+				display: none;
+			}
+			.big img{
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box" id="box">
+			<div class="small">
+				<img src="images/001.jpg">
+				<div class="msk"></div>
+			</div>
+			<div class="big"><img src="images/0001.jpg"/></div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="my.js" ></script>
+<script>
+	var box =document.getElementById("box");
+	var small = box.children[0];
+	var big = box.children[1];
+	var msk =small.children[1];
+	
+//黄色盒子 和大盒子的显示
+	small.onmouseover=function(){
+		msk.style.display="block";
+		big.style.display="block";
+	}
+	small.onmouseout=function(){
+		msk.style.display="none";
+		big.style.display="none";
+	}
+	
+	//第二步 鼠标在samll内的坐标  
+	small.onmousemove=function(event){
+		var even = even||window.event;
+		var pagex = even.pageX||even.clientX+scroll().left;
+		var pagey = even.pageY || eve.clientY+scroll().top;
+		var x = pagex - box.offsetLeft-(msk.offsetLeft/2);  //父亲和SMALL高宽一样,而且父亲有定位,所以如果用small.offsetleft的话,永远为0
+		var y = pagey- box.offsetTop-(msk.offsetTop/2);//msk.offsetTop/2  让msk盒子一直居中
+		//第三步 让黄色盒子在small里面不超出
+		console.log(x);
+		if(x<0)
+		{
+			x=0;
+		}
+		else if(x>small.offsetWidth-msk.offsetWidth)
+		{
+			x=small.offsetWidth-msk.offsetWidth;
+		}
+		 if(y<0)
+		{
+			y=0;
+		}
+		else if(y>small.offsetHeight-msk.offsetHeight)
+		{
+			y=small.offsetHeight-msk.offsetHeight;
+		}
+		msk.style.left=x+"px";
+		msk.style.top=y+"px";
+		//大图片的做法
+		var bigpic=big.children[0];
+//     修改大图片大盒子 和小图片小盒子 让他们的比例一样,那就最准了
+		var xx=(bigpic.offsetWidth-big.offsetWidth)/(small.offsetWidth-msk.offsetWidth);
+		//大图片的宽减去小盒子的宽 除以 小盒子的宽-小黄的宽
+//		var xx=(bigpic.offsetWidth-small.offsetWidth)/(small.offsetWidth-msk.offsetWidth);
+		bigpic.style.left=-x*xx+"px";
+		bigpic.style.top=-y*xx+"px";
+
+	}
+	
+</script>

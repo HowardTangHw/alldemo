@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    *zoom: 1; /*IE/7/6*/
+}
+			.box {
+				width: 300px;
+				height: 252px;
+				margin: 100px auto;
+				border: 1px solid #CCCCCC;
+			}
+			.choice{margin: 20px;}
+			.ico {
+				width: 50px;
+				height: 50px;
+				background: url("img/Icon.png")no-repeat;
+				display: inline-block;
+				float: left;
+			}
+
+			.star {height: 20px;width: 80px;background: url(img/yunshi.png) top;display: inline-block;position: relative;top: 6px;}
+			.starA {background: url(img/yunshi.png)no-repeat left bottom;display: inline-block;position: absolute;top: -7px;  height: 20px;left: 1px;}
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+			<div>星座运势</div>
+			<div class="choice clearfix">
+				<span class="ico" id="ico"></span>
+				<select id="sele">
+					<option value="0">白羊座(03.21-04.19)</option>
+					<option value="1">金牛座(04.20-05.20)</option>
+					<option value="2">双子座(05.21-06.21)</option>
+					<option value="3">巨蟹座(06.22-07.22)</option>
+					<option value="4">狮子座(07.23-08.22)</option>
+					<option value="5">处女座(08.23-09.22)</option>
+					<option value="6">天秤座(09.23-10.23)</option>
+					<option value="7">天蝎座(10.24-11.22)</option>
+					<option value="8">射手座(11.23-12.21)</option>
+					<option value="9">摩羯座(12.22-01.19)</option>
+					<option value="10">水瓶座(01.20-02.18)</option>
+					<option value="11">双鱼座(02.19-03.20)</option>
+				</select>
+				<div>今日运势<span class="star"><span class="starA" id="starA"></span></span>
+				</div>
+			</div>
+			<div id="content">一直神经粗线条的你今天却像侦探一般，在工作上能够发现蛛丝马迹，处理很多细节，检查出以往不曾...</div>
+		</div>
+	</body>
+
+</html>
+<script>
+	var sele =document.getElementById("sele");
+	var ico =document.getElementById("ico");
+	var cont =document.getElementById("content");
+	var starA=document.getElementById("starA");
+	var arry =[8,4,2,1,3,5,7,9,4,7,8,9];
+	starA.style.width=arry[0] * 8 + "px";
+	var content = [];
+	content.push("一直神经粗线条的你今天却像侦探一般，在工作上能够发现蛛丝马迹，处理很多细节，检查出以往不曾...");
+	content.push("今天你容易产生对感情的幻想，甚至在感情中自欺欺人，丧失了原有的底线。友情以上恋人未满，特别...");
+	content.push("今天你的状态有些宅，内心戏超丰富，但是工作上却力不从心。关于房屋的事情能够顺利进展，有些人...");
+	content.push("今天的你状态有些down呢，理想化的态度只会让现状更煎熬拖延症也很可能泛滥，但可能会有贵人...");
+	content.push("天马行空的想法占据大脑，你会感到跃跃欲试，很难按捺住活跃的想法，学习上自然也容易事半功倍，...");
+	content.push("今天你的思维运作很顺畅，通过生活的体验来挖掘点点滴滴的感悟，很多负面情绪都能及时转换，想通...");
+	content.push("今天的你个人状态有些低迷，不仅容易失眠、健康下滑，也可能遇到生活中杂乱无章的现象，也可能感...");
+	content.push("你的工作欲望越来越强，职场表现力急剧提升，即将开启你的工作忙碌期，思考力也开始逐渐提升，只...");
+	content.push("职场是你目前最关注的领域，总是忙忙碌碌的，但是效率却不高，这也是最近让你最为苦恼的地方。心...");
+	content.push("今日你可能会思考理财问题，运用你的聪明才智，做一些投资和理财规划，都可能会实现盈利。你也非...");
+	content.push("今日你容易陷入深沉的情绪，适合暗中谋略，会有很深刻的感悟出现。有些人会有偏财运，他人的红包...");
+	content.push("你的学习能力提升了，工作上的企划力也不断的up。用更理性宏观的视角来看待问题，将会为你开启...");
+	sele.onchange= function(){
+		ico.style.backgroundPosition="0 "+-50 *this.value+"px";
+		cont.innerHTML=content[this.value];
+		starA.style.width=arry[this.value] * 8 + "px";
+	}
+</script>
