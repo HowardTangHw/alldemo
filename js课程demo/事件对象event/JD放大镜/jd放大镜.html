@@ -79,17 +79,17 @@
 		{
 			x=0;
 		}
-		else if(x>small.offsetWidth-msk.offsetWidth)
+		else if(x>small.clientWidth-msk.clientWidth)
 		{
-			x=small.offsetWidth-msk.offsetWidth;
+			x=small.clientWidth-msk.clientWidth;
 		}
 		 if(y<0)
 		{
 			y=0;
 		}
-		else if(y>small.offsetHeight-msk.offsetHeight)
+		else if(y>small.clientHeight-msk.clientHeight)
 		{
-			y=small.offsetHeight-msk.offsetHeight;
+			y=small.clientHeight-msk.clientHeight;
 		}
 		msk.style.left=x+"px";
 		msk.style.top=y+"px";

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="btn">按钮</button>
+	</body>
+</html>
+<script>
+	var btn =document.getElementById("btn");
+	btn.onclick=function(event){
+		
+		alert("点击了按钮");
+		//阻止冒泡
+		var event = event||window.event;
+		if(event && event.stopPropagation())
+		{
+			event.stopPropagation(); //w3c浏览器
+		}
+		else{
+			event.cancelBubble=true;//ie 6 7 8
+		}
+	}
+	document.onclick=function(){
+		alert("点击了空白处");
+	}
+	// btn也是document的一部分,所以点击时,也会除法document.onclick时间,所以要取消冒泡
+	//当元素事件执行时,所有父亲都是触发,这就是冒泡事件
+	//IE 6.0: div -> body -> html -> document   
+	//其他浏览器: div -> body -> html -> document -> window
+</script>

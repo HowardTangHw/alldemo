@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+window.onresize=changeColor;  //调用函数体,  如果是changeColor();就会立即执行,只能执行一次. 而这样 就是下面整个函数的函数体
+//例如setInterval(changeColor,1000)
+
+changeColor();
+function changeColor (){
+		if(client().width>960)
+	{
+	document.body.style.backgroundColor="red";
+	}
+	else if(client().width>650&&client().width<960)
+	{
+		document.body.style.backgroundColor="green";
+	}
+	else{
+		document.body.style.backgroundColor="blue";
+	}
+}
+
+
+
+//调用兼容性
+		function client() {
+		if(window.innerWidth != null) {
+			return {
+				width: window.innerWidth,
+				height: window.innerHeight
+			}
+		} else if(document.compatMode == "CSS1Compat") {
+			return {
+				width: document.documentElement.clientWidth,
+				height: document.documentElement.clientHeight
+			}
+		}
+		return {
+			width: document.body.clientWidth,
+			height:document.body.clientHeight
+		}
+	}
+</script>

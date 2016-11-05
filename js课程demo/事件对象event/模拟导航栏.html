@@ -50,20 +50,22 @@
 		var event = event||window.event;
 		var mousey=event.pageY-bar.offsetTop;//记录点击时,鼠标在的y坐标
 	
-		var yy=event.pageY-bar.offsetTop;
+		var yy=event.pageY-bar.offsetTop;//点击时鼠标的位置-导航栏距离顶部的距离
 
 		window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
 		document.onmousemove=function(event){
 			var event = event||window.event;
-			var y =event.pageY-mousey;//目标距离=鼠标现在的位置-鼠标刚刚的位置
+			var y =event.pageY-mousey;//导航栏距离顶部的距离=(现在鼠标的位置)-(点击时鼠标的位置-导航栏距离顶部的距离)
 //			console.log(y,bar.offsetTop);
 	
 			if(y<0)
 			{
 				y=0;
+				con.style.top=0;
 			}
 			else if (y>box.offsetHeight-bar.offsetHeight){
 				y=box.offsetHeight-bar.offsetHeight;
+				cons.style.top=bli*y+"px";
 			}
 		// 比例计算公式(内容高度-容器高度)/(容器高度-导航栏高度)*移动的距离
 			var bli= (con.offsetHeight-box.offsetHeight)/(box.offsetHeight-bar.offsetHeight);

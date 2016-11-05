@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+	<head lang="en">
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body {
+				height: 2000px;
+			}
+			
+			#mask {
+				width: 100%;
+				height: 100%;
+				opacity: 0.4;
+				/*半透明*/
+				filter: alpha(opacity=40);
+				/*ie 6半透明*/
+				background-color: black;
+				position: fixed;
+				top: 0;
+				left: 0;
+				display: none;
+			}
+			
+			#show {
+				width: 300px;
+				height: 300px;
+				background-color: #fff;
+				position: fixed;
+				left: 50%;
+				top: 50%;
+				margin: -150px 0 0 -150px;
+				display: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<a href="javascript:;" class="register">注册</a>
+		<a href="javascript:;" id="login">登录</a>
+		<div id="mask"></div>
+		<div id="show"></div>
+	</body>
+
+</html>
+<script>
+	var btn = document.getElementById("login");
+	var div1 = document.getElementsByTagName("div")[0];
+	var div2 = document.getElementsByTagName("div")[1];
+	btn.onclick = function(event) {
+		div1.style.display = "block";
+		div2.style.display = "block";
+		document.body.style.overflow="hidden";//隐藏滚动条
+		//阻止冒泡
+		var event = event || window.event;
+		if(event.stopPropagation()) {
+			event.stopPropagation();
+		} else {
+			event.cancelBubble = true;
+		}
+	}
+	document.onclick = function(event) {
+	var eventTargetId = event.target ? event.target.id : event.srcElement.id; //兼容性写法
+		if(eventTargetId != "show") {
+			div1.style.display = "none";
+			div2.style.display = "none";
+			document.body.style.overflow="visable";//显示滚动条
+			//overflow : hidden 隐藏 visable显示 auto自动 sroll
+		}
+	}
+</script>
