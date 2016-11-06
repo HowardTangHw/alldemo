@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{width: 100px;
+			height: 100px;}
+		</style>
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>
+<script>
+var div = document.getElementsByTagName("div")[0];
+console.log(getStyle(div,"width"));
+	function getStyle(obj,attr){
+		if(obj.currentStyle)
+		{
+			return obj.currentStyle[attr];
+		}
+		else{
+			return window.getComputedStyle(obj,null)[attr];
+		}
+	}
+</script>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width: 100px;
+				height: 100px;
+				background-color: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>
+<script>
+//内嵌CSS的获取
+var div =document.getElementsByTagName("div")[0];
+//console.log(div.currentStyle.width)   IE678
+console.log(window.getComputedStyle(div,null).width);//W3C
+////w3c  
+//window.getComputedStyle(元素,伪元素)
+//一般情况下没有伪元素，我们用 null 来替代。
+
+</script>

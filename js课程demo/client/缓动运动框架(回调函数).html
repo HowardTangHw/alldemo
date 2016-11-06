@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width: 100px;
+				height: 100px;
+				background-color: pink;
+				position: absolute;
+				top: 50px;
+				left: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<button id="btn">点击</button>
+		<div id="div"></div>
+		<div>回调函数，就是说，等我们的动画完毕了才执行的函数。</div>
+	</body>
+</html>
+<script>
+
+
+
+
+	var btn =document.getElementById("btn");
+	var box =document.getElementById("div");
+	btn.onclick=function(){
+		animate(box,{width:500,height:500,left:500},function(){animate(box,{width:100,height:100,left:0})});//一定要记得加引号
+	}
+	
+	//单个属性修改封装
+	function animate(obj,json,fn)
+	{
+		clearInterval(obj.timer);
+		obj.timer =setInterval(function(){
+			//判断计时器是否停止标志,一定要在计时器里面,每次调用都会给true,要在json遍历外面
+			var flag =true;
+			for (var k in json)//循环,讲json的每个属性和值传递给函数,
+		{
+//			var attr = k;
+//			var target =json[k];
+			//leader=leader+(target-leader)/10;
+			var leader =parseInt(getStyle(obj,k));
+			var step = (json[k]-leader)/10;
+			step=step>0?Math.ceil(step):Math.floor(step);
+			leader = leader +step;
+			obj.style[k]=leader+"px";
+//			if(leader==target)
+//			{
+//				clearInterval(obj,timer);
+//			}
+			if(leader!=json[k])//不断遍历,当json[k]有一个不等于leader,那么就会将标志改为false
+			{
+				flag=false;
+			}
+		}
+		console.log(flag);
+		 if(flag)//当标志为true,则停止计时器
+		 {
+		 	clearInterval(obj.timer);
+		 	console.log(flag,fn);
+		 	if(fn)//判断有没有回调函数 如果有 则为true执行下面语句
+		 	{
+		 		fn();//执行回调函数
+		 	}
+		 }
+		},30)
+	}
+	
+	
+	
+	
+	//获取当前样式
+	function getStyle(obj,attr)
+	{
+		if(obj.currentStyle)
+		{
+			return obj.currentStyle[attr];
+		}
+		else
+		{
+			return window.getComputedStyle(obj,null)[attr];
+		}
+	}
+</script>

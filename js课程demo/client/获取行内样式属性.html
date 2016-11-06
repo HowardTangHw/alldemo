@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+	</head>
+	<body>
+		<div style="width: 300px;height: 300px;background: pink;"></div>
+	</body>
+</html>
+<script>
+var div =document.getElementsByTagName("div")[0];
+fn("width");
+fn("background");
+//只能取到行内的样式
+	function fn(attr){
+		console.log(div.style[attr])
+	}
+</script>
