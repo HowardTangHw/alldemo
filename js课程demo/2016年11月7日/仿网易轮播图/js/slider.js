@@ -23,7 +23,7 @@ for(var i=1;i<imgs.length;i++)
 {
 	imgs[i].style.left=sliderWidth+"px";
 }
-//第四步  点击三个按钮
+//第四步  点击三个按钮 编写相应的点击按钮
 var spans =slider_ctrl.children;//获取所有按钮
 var iNow = 0;
 for(var k in spans)
@@ -31,7 +31,6 @@ for(var k in spans)
 	spans[k].onclick=function(){
 		if(this.className=="slider-ctrl-prev")
 		{
-			
 //			alert("点击了左侧");
 //			animate(imgs[iNow],{left:sliderWidth});
 //			--iNow < 0?iNow=imgs.length-1:iNow;
@@ -70,9 +69,6 @@ for(var k in spans)
 			animate(imgs[iNow],{left:0});
 			//蓝色小方块
 			fangkuai();
-
-			
-			
 		}
 		else {
 //			alert("点击了小span");
