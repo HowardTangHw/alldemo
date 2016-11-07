@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			img {
+				vertical-align: top;
+			}
+			
+			.w-slider {
+				width: 310px;
+				height: 265px;
+				margin: 100px auto;
+				background-color: pink;
+				position: relative;
+			}
+			
+			.slider {
+				width: 310px;
+				height: 220px;
+				overflow: hidden;
+			}
+			
+			.slide-block {
+				width: 620px;
+				height: 220px;
+			}
+			.slide-ctrl{padding: 10px;text-align: center;}
+			.slide-ctrl-con{
+				display: inline-block;
+				height: 24px;
+				width: 24px;
+				background: url(images/icon.png)no-repeat -24px -780px;
+				text-indent: -20000em;
+				overflow: hidden;
+				margin-left: 10px;
+				cursor: pointer;
+			}
+			.slider-ctrl-prev,
+			.slider-ctrl-next{
+				position: absolute;
+				width: 30px;
+				height: 35px;
+				background: url(images/icon.png)no-repeat ;
+				top:35%;
+			}
+			.slider-ctrl-prev{
+				left: 5%;
+			}
+			.slider-ctrl-next{
+				background-position: 0 -44px;
+				right: 5%;
+			}
+			.slide-ctrl span.current{
+				background-position: -24px -760px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="w-slider">
+			<div class="slider">
+				<div class="slide-block">
+					<div class="slide-img">
+						<a href="#"><img src="images/1.jpg" alt="" /></a>
+					</div>
+					<div class="slide-img">
+						<a href="#"><img src="images/2.jpg" alt="" /></a>
+					</div>
+					<div class="slide-img">
+						<a href="#"><img src="images/3.jpg" alt="" /></a>
+					</div>
+					<div class="slide-img">
+						<a href="#"><img src="images/4.jpg" alt="" /></a>
+					</div>
+					<div class="slide-img">
+						<a href="#"><img src="images/5.jpg" alt="" /></a>
+					</div>
+					<div class="slide-img">
+						<a href="#"><img src="images/6.jpg" alt="" /></a>
+					</div>
+				</div>
+			</div>
+			<div class="slide-ctrl">
+				<span class="slider-ctrl-prev"></span>
+				<span class="slide-ctrl-con current">1</span>
+				<span class="slide-ctrl-con">2</span>
+				<span class="slide-ctrl-con">3</span>
+				<span class="slide-ctrl-con">4</span>
+				<span class="slide-ctrl-con">5</span>
+				<span class="slide-ctrl-con">6</span>
+				<span class="slider-ctrl-next"></span>
+			</div>
+		</div>
+	</body>
+
+</html>
