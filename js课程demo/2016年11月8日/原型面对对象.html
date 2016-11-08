@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+		function Person(name,age){//大写 构造函数 就是一个普通的函数
+		this.name=name;
+		this.age=age;
+	}
+		//构造函数的外面
+		//只要有person的 永远都有这个方法
+		Person.prototype.showName=function(){
+			alert("我的名字是"+this.name);
+		}
+				Person.prototype.showAge=function(){
+			alert("我的年龄是"+this.age);
+		}
+		var xiaomi = new Person("邓皓文",18);
+		xiaomi.showAge();
+		xiaomi.showName();
+		var dami =new Person("哈哈哈哈",20);
+		alert(xiaomi.showName==dami.showName)//true 因为是继承过来的 还没调用
+		
+</script>
