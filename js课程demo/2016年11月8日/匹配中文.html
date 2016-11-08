@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="id"/>
+	</body>
+</html>
+<script>
+	var id = document.getElementById("id");
+	var regexp = /^[\u4e00-\u9fa5]{2,4}$/;
+	id.onblur=function(){
+		if(regexp.test(id.value))
+		{
+			alert("正确");
+		}
+		else
+		{
+			alert("错误");
+		}
+	}
+</script>

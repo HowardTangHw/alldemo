@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	function Person(name,age){//大写 构造函数 就是一个普通的函数
+		this.name=name;
+		this.age=age;
+		this.showName=function(){
+			alert("名字是" + this.name);
+		}
+		this.showAge=function(){
+			alert("年龄是" + this.age);
+		}
+	}
+	//new 将指针指向新的对象
+	var xiaomi = new Person("邓皓文",22);
+	xiaomi.showAge();
+	xiaomi.showName();
+</script>

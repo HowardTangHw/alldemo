@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<button>按钮</button>
+		<button>按钮</button>
+		<button>按钮</button>
+		<button>按钮</button>
+		<button>按钮</button>
+		<button>按钮</button>
+		<button>按钮</button>
+		<button>按钮</button>
+
+	</body>
+
+</html>
+<script type="text/javascript">
+	var btn =document.getElementsByTagName("button");
+//	for(var i =0;i<btn.length;i++)
+//	{
+//		btn[i].onclick=outFun(i);
+//		function outFun(i)
+//		{
+//			return function(){
+//				alert(i);
+//			}
+//		}
+//	}
+	//  fn();调用函数
+	//  fn函数体
+	//  function fn(){}  这是函数体 然后再加上个括号的意思就是立刻调用
+	// function fn(){} ()
+		for(var i =0;i<btn.length;i++)
+	{
+		btn[i].onclick=function(num){
+			return function(){
+				alert(num);
+			}
+		}(i);
+}
+</script>

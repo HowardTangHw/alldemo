@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	function outFun(){
+		var num =10;
+		function inFun(){//inFun在函数outFun里面,num算是一个全局变量可以使用
+			console.log(num);
+		}
+		return inFun;//返回的是函数体 返回的语句是 function inFun(){console.log(num);}
+	}
+	//要加小括号,那么就是执行return inFun,将函数体function inFun(){console.log(num);} 给了demo
+	var demo=outFun();
+	//其实就是
+	//demo=function inFun(){console.log(num);} 
+	demo();
+	//就是执行了inFun,然后调用了num, 曲线救国
+</script>

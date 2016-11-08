@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="tel" />
+	</body>
+</html>
+<script>
+	//座机号码  分两类  010-12345678    0000-1234567
+	var regexp = /^0[0-9]{2}-[0-9]{8}$/;
+	var regexp1=/^0[0-9]{3}-[0-9]{7}$/;
+	var demo=/^(0[0-9]{2}-[0-9]{8})|(0[0-9]{3}-[0-9]{7})$/
+	var tel =document.getElementById("tel");
+	tel.onblur=function(){
+		if(demo.test(this.value))
+		{
+			alert("输入正确");
+		}
+
+		else{
+			alert("输入错误");
+		}
+	}
+</script>

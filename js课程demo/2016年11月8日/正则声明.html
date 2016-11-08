@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+//声明方式
+//var 变量名 = new RegExp(/表达式/);
+var regexp = new RegExp(/\d/);
+console.log(regexp.test("abcde"));
+var regexp1=/\d/;
+console.log("<-----预定义类------>");
+//数字
+console.log(/\d/.test(567));
+//非数字
+console.log(/\D/.test(567));
+console.log("<-----简单类------>");
+console.log(/Zhuantou/.test("Zhuantou"));//True  
+console.log(/Zhuantou/.test("Zhuantouwen"));//True  包含了Zhuantou 只多 不能少
+console.log(/[Zhuantou]/.test("Zhuan"));//true  只要有这里面的单词就可以了
+console.log("<-----负向类------>");
+console.log(/[^abc]/.test("abc"));//^一定在方括号里面,取反, 只要有abc里面任何一个,都是为错
+console.log("<-----范围类------>");
+console.log(/[0-9]/.test("123"));//只能0-9
+console.log(/[a-z]/.test("123"));//只能小写
+console.log(/[A-Z]/.test("123"));//只能大写
+console.log("<-----组合类------>");
+console.log(/[a-zA-Z0-9]/.test("123"));//大小写加数字
+
+
+console.log("<-----正则边界------>");
+//^为开头,$为结束
+console.log(/^abc$/.test("abcabc"));//必须是abc,其他都为假;从^开始 到$里面所有的内容,完全匹配,精确匹配
+
+
+console.log("<-----量词------>");
+console.log("------*  重复零次或者更多次 >=0-----")
+console.log(/^a*$/.test("a"));
+console.log(/^a*$/.test(""));
+console.log(/^a*$/.test("aaaaa"));
+console.log(/^a*$/.test("b"));
+console.log(/^abc*$/.test("ab"));//只要重复前面的东西就可以了  重复的是c
+console.log("---- +  重复至少一次或者更多次 >=1-----")
+console.log(/^a+$/.test("a"));
+console.log(/^a+$/.test(""));
+console.log("---- ?  重复零次或一次   （0||1）  要么有 一个要么没有-----")
+console.log(/^a+$/.test("a"));
+console.log(/^a+$/.test(""));
+console.log(/^a+$/.test("aaa"));
+console.log("---- {} 可以有多少个-----");
+console.log("---- {n} 可以有n次-----");
+console.log(/^a{3}}$/.test("aaa"));
+console.log("银行卡密码");
+console.log(/^[0-9]{6}}$/.test("123456"));//在0-9范围里面,可以重复6次
+console.log("---- {n,} >=n  可以重复n次或n次以上-----");
+console.log("---- {n,m} --- 范围在[n,m]里面->=n <=m----");
+</script>

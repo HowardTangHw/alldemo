@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	function fun(){
+		this.y=10;
+	}
+
+	var demo =new fun();
+	//demo 是对象 fun是一个类
+	//加了new this就会指向demo
+	console.log(demo.y);
+</script>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+	<style type="text/css">
+		body {
+			background: #ccc;
+		}
+		
+		label {
+			width: 40px;
+			display: inline-block;
+		}
+		
+		.container {
+			margin: 100px auto;
+			width: 400px;
+			padding: 50px;
+			line-height: 40px;
+			border: 1px solid #999;
+			background: #efefef;
+		}
+		
+		span {
+			margin-left: 30px;
+			font-size: 12px;
+			padding: 2px 20px 0;
+			color: #ccc;
+		}
+		
+		.wrong {
+			color: red;
+			background: url(images/error.png) no-repeat;
+		}
+		
+		.right {
+			color: green;
+			background: url(images/right.png) no-repeat;
+		}
+		
+		.pwd {
+			width: 220px;
+			height: 20px;
+			background: url("images/strong.jpg") no-repeat;
+		}
+		
+		.str1 {
+			background-position: 0 -20px;
+		}
+		
+		.str2 {
+			background-position: 0 -40px;
+		}
+		
+		.str3 {
+			background-position: 0 -60px;
+		}
+		
+		.str4 {
+			background-position: 0 -80px;
+		}
+	</style>
+
+	<body>
+		<div class="container">
+			<label>QQ</label><input type="text" id="inp1"><span>输入正确的QQ号码</span><br>
+			<label>手机</label><input type="text" id="inp2"><span>输入11位手机号码</span><br>
+			<label>邮箱</label><input type="text" id="inp3"><span>输入正确邮箱</span><br>
+			<label>座机</label><input type="text" id="inp4"><span>输入您的座机</span><br>
+			<label>账号</label><input type="text" id="inp5"><span>亲输入您的账号</span><br>
+			<label>密码</label><input type="text" id="inp6"><span>请输入您的密码</span><br>
+			<div id="password" class="pwd"></div>
+		</div>
+	</body>
+
+</html>
+<script>
+	//获取id函数
+	function $(id) {
+		return document.getElementById(id);
+	}
+	//检测函数
+	function change(obj, fn) {
+		$(obj).onblur = fn;
+	}
+	//改变字体函数
+	function changeTxt(obj, txt) {
+		obj.nextSibling.innerHTML = txt;
+	}
+	//改变样式函数
+	function changeClass(obj, classname) {
+		obj.nextSibling.className = classname;
+	}
+	//验证QQ
+	change("inp1", function() {
+			if(/^[1-9][0-9]{4,}$/.test(this.value)) {
+				//改变文字
+				changeTxt(this, "输入正确");
+				//改变样式
+				changeClass(this, "right")
+			} else {
+				//改变文字
+				changeTxt(this, "输入错误");
+				//改变样式
+				changeClass(this, "wrong");
+			}
+		})
+		//11位手机号码
+	change("inp2", function() {
+			if(/^((13[0-9])|(15[^4,\D])|(18[0-9]))\d{8}$/.test(this.value)) {
+				//改变文字
+				changeTxt(this, "输入正确");
+				//改变样式
+				changeClass(this, "right")
+			} else {
+				//改变文字
+				changeTxt(this, "输入错误");
+				//改变样式
+				changeClass(this, "wrong");
+			}
+		})
+		//邮箱
+	change("inp3", function() {
+		if(/^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/.test(this.value)) {
+			//改变文字
+			changeTxt(this, "输入正确");
+			//改变样式
+			changeClass(this, "right")
+		} else {
+			//改变文字
+			changeTxt(this, "输入错误");
+			//改变样式
+			changeClass(this, "wrong");
+		}
+	})
+
+	//座机
+	change("inp4", function() {
+			if(/^0[0-9]{2}-[0-9]{8}$|^0[0-9]{3}-[0-9]{7}$/.test(this.value)) {
+				//改变文字
+				changeTxt(this, "输入正确");
+				//改变样式
+				changeClass(this, "right")
+			} else {
+				//改变文字
+				changeTxt(this, "输入错误");
+				//改变样式
+				changeClass(this, "wrong");
+			}
+		})
+		//账号
+	change("inp5", function() {
+			if(/^[a-z0-9A-Z]{3,16}$/.test(this.value)) {
+				//改变文字
+				changeTxt(this, "输入正确");
+				//改变样式
+				changeClass(this, "right")
+			} else {
+				//改变文字
+				changeTxt(this, "输入错误");
+				//改变样式
+				changeClass(this, "wrong");
+			}
+		})
+		//密码
+	change("inp6", function() {
+		if(/^[a-z0-9A-Z_-]{6,18}$/.test(this.value)) {
+			//改变文字
+			changeTxt(this, "输入正确");
+			//改变样式
+			changeClass(this, "right");
+			$("password").className = "pwd str1";
+			if(/^([a-z].*[A-Z])|([A-Z].*[a-z])$/.test(this.value)) {
+				//  既有大写也有小写
+				$("password").className = "pwd str2";
+			}
+			if(/^([a-z].*[0-9])|([A-Z].*[0-9])|[0-9].*[a-zA-Z]$/.test(this.value)) {
+				//  既有大写也有小写  添加了数字效果
+				$("password").className = "pwd str3";
+			}
+			if(/^[A-Za-z0-9]+[_][A-Za-z0-9]*$/.test(this.value)) {
+				//  既有大写也有小写  添加了数字  还有下滑线
+				$("password").className = "pwd str4";
+			}
+		} 
+		else {
+			//改变文字
+			changeTxt(this, "输入错误");
+			//改变样式
+			changeClass(this, "wrong");
+		}
+	})
+</script>
