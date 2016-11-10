@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script>
+			$(function(){
+				$("#find").click(function(){
+					$("#box").find("p").css("color","red");
+				});
+								$("#children").click(function(){
+					$("#box").children("p").css("color","red");
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<input type="button" value="find" id="find"/>
+		<input type="button" value="children" id="children"/>
+		<div id="box">
+			<div>我是子div<p>我是子div里面的p</p></div>
+			<p>我是大div里面的p</p>
+		</div>
+	</body>
+</html>
