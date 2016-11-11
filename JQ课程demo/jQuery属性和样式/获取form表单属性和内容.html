@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<input type="button" value="获取文本框的值" id="value">
+		<input type="button" value="设置文本框的值" id="setValue">
+		<input type="button" value="设置HTML内容" id="setHtml">
+		<input type="button" value="获取html内容" id="getHtml">
+		<input type="button" value="获取文本内容" id="getTxt">
+		<input type="button" value="设置文本内容" id="setTXt">
+		<input type="button" value="设置属性(将自己btn变成text)" id="attr">
+		<input type="button" value="删除属性(删除文字)" id="removeattr">
+		<input type="text">
+		<div><p>我是Div里面的P</p></div>
+	</body>
+
+</html>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script>
+	$(function() {
+		$("#value").click(function() {
+			alert($("input:text").val());
+		});
+		$("#setValue").click(function() {
+			$("input:text").val("设置的值");
+		});
+		$("#setHtml").click(function() {
+			$("div").html("<h1>我是内容</h1>");
+		});
+		$("#getHtml").click(function() {
+			alert($("div").html());
+		});
+				$("#getTxt").click(function() {
+			alert($("div").text());
+		});
+						$("#setTXt").click(function() {
+			$("div").text($("input:text").val());
+		});
+		$("#attr").click(function() {
+			if($("#attr").attr("type")=="button")
+			{
+			$("#attr").attr("type","text");
+			}
+			else{
+				$("#attr").attr("type","button");
+			}
+		});
+				$("#removeattr").click(function() {
+			$("#removeattr").removeAttr("value");
+		});
+				
+	});
+</script>

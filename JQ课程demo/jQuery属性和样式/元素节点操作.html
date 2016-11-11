@@ -26,6 +26,12 @@
 					var div = "<div>before在之前</div>"
 					$("div").before(div);
 				});
+				$("#Empty").click(function() {
+					$("body").empty("div");
+				});
+								$("#remove").click(function() {
+					$("body").remove("div");
+				});
 			});
 		</script>
 	</head>
@@ -34,6 +40,8 @@
 		<input type="button" value="append()在最后面添加(父子)" id="append" />
 		<input type="button" value="after在某个元素后面添加(同级)" id="after" />
 		<input type="button" value="before在某个元素之前添加(同级)" id="before" />
+		<input type="button" value="Empty清空子元素" id="Empty" />
+		<input type="button" value="remove删除元素(包括自己)" id="remove" />
 		<div></div>
 	</body>
 
