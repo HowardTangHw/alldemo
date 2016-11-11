@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div {
+				height: 200px;
+				background: pink;
+				margin-top: 20px;
+			}
+		</style>
+		<script src="../jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			$(function() {
+				$("#append").click(function() {
+					var div = "<div>我是append的元素</div>"
+					$("body").append(div);
+				});
+				$("#after").click(function() {
+					var div = "<div>我是after元素</div>"
+					$("div").after(div);
+				});
+				$("#before").click(function() {
+					var div = "<div>before在之前</div>"
+					$("div").before(div);
+				});
+			});
+		</script>
+	</head>
+
+	<body>
+		<input type="button" value="append()在最后面添加(父子)" id="append" />
+		<input type="button" value="after在某个元素后面添加(同级)" id="after" />
+		<input type="button" value="before在某个元素之前添加(同级)" id="before" />
+		<div></div>
+	</body>
+
+</html>

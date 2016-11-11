@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.itemli{
+				height: 30px;
+				background-color: pink;
+				font-size: 30px;
+			}
+		</style>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script>
+			$(function(){
+				$("#btnAddCss").click(function(){
+					$("li").addClass("itemli");
+				});
+				$("#btnDeleteCss").click(function(){
+					$("li").removeClass("itemli");
+				});
+				$("#btnToggle").click(function(){
+					$("li").toggleClass("itemli");
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<input type="button" id="btnAddCss" value="添加样式"/>
+		<input type="button" id="btnDeleteCss" value="删除样式"/>
+		<input type="button" id="btnToggle" value="切换样式"/>
+			<ul>
+				<li>我是样式1</li>
+				<li>我是样式2</li>
+				<li>我是样式3</li>
+				<li>我是样式4</li>
+				<li>我是样式5</li>
+				<li>我是样式6</li>
+				<li>我是样式7</li>
+				<li>我是样式8</li>
+			</ul>
+	</body>
+</html>

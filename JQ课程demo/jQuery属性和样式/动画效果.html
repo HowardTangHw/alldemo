@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div {
+				display: none;
+				width: 500px;
+				height: 300px;
+				background-color: pink;
+			}
+		</style>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script>
+			$(function() {
+				$("#show").click(function() {
+					$("div").show();
+				});
+				$("#hide").click(function() {
+					$("div").hide();
+				});
+				$("#fadeIn").click(function() {
+					$("div").fadeIn();
+				});
+				$("#fadeOut").click(function() {
+					$("div").fadeOut();
+				});
+				$("#fadeTo").click(function() {
+					$("div").fadeTo(1000, 0.3);
+				});
+				$("#slideDown").click(function() {
+					$("div").slideDown();
+				});
+				$("#slideUp").click(function() {
+					$("div").slideUp();
+				});
+				$("#toggle").click(function() {
+					$("div").toggle();
+				});
+
+				$("#fadeToggle").click(function() {
+					$("div").fadeToggle();
+				});
+				$("#slideToggle").click(function() {
+					$("div").slideToggle();
+				});
+			});
+		</script>
+	</head>
+
+	<body>
+		<input type="button" value="show()" id="show" />
+		<input type="button" value="hide()" id="hide" />
+		<input type="button" value="toggle()" id="toggle" />
+		<input type="button" value="fadeIn()" id="fadeIn" />
+		<input type="button" value="fadeOut()" id="fadeOut" />
+		<input type="button" value="fadeTo()" id="fadeTo" />
+		<input type="button" value="fadeToggle()" id="fadeToggle" />
+		<input type="button" value="slideDown()" id="slideDown" />
+		<input type="button" value="slideUp()" id="slideUp" />
+		<input type="button" value="slideToggle()" id="slideToggle" />
+
+		<div></div>
+	</body>
+
+</html>
