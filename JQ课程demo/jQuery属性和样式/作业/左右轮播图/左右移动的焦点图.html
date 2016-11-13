@@ -94,8 +94,7 @@
 				$("ol li").click(function() {
 					$(this).addClass("current").siblings().removeClass("current");
 					$("ul").stop().animate({
-						"left": $(this).index() * -400
-					}, 300);
+						"left": $(this).index() * -$("ul li").width()}, 300);
 					num = $(this).index();
 				});
 				$(".left").click(function() {
@@ -104,7 +103,7 @@
 						num = 5;
 					}
 					$("ul").stop().animate({
-						"left": num * -400
+						"left": num * -$("ul li").width()
 					}, 300);
 					$("ol li").eq(num).addClass("current").siblings().removeClass("current");
 				});
@@ -114,7 +113,7 @@
 					{
 						num=0;
 					}
-					$("ul").stop().animate({"left": num * -400}, 300);
+					$("ul").stop().animate({"left": num * -$("ul li").width()}, 300);
 					$("ol li").eq(num).addClass("current").siblings().removeClass("current");
 				});
 				timer=setInterval(autoplay,2000);
@@ -124,7 +123,7 @@
 					{
 						num=0;
 					}
-					$("ul").stop().animate({"left": num * -400}, 300);
+					$("ul").stop().animate({"left": num * -$("ul li").width()}, 300);
 					$("ol li").eq(num).addClass("current").siblings().removeClass("current");
 				}
 				$(".all").mouseover(function(){
