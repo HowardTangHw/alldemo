@@ -235,27 +235,27 @@
 			<div class="banner-pic" style="z-index: 1;">
 				<a href="#"><img src="images/banner1.jpg" /></a>
 			</div>
-			<div class="banner-pic" style="z-index: 0;">
+			<div class="banner-pic">
 				<a href="#"><img src="images/banner2.jpg" /></a>
 			</div>
-			<div class="banner-pic" style="z-index: 0;">
+			<div class="banner-pic" >
 				<a href="#"><img src="images/banner3.jpg" /></a>
 			</div>
-			<div class="banner-pic" style="z-index: 0;">
+			<div class="banner-pic" >
 				<a href="#"><img src="images/shoose.jpg" /></a>
 			</div>
-			<div class="banner-pic" style="z-index: 0;">
+			<div class="banner-pic" >
 				<a href="#"><img src="images/banner5.jpg" /></a>
 			</div>
-			<div class="banner-pic" style="z-index: 0;">
+			<div class="banner-pic" >
 				<a href="#"><img src="images/banner6.jpg" /></a>
 			</div>
-			<div class="main-banner-circle" style="z-index: 2;">
+			<div class="main-banner-circle" style="z-index: 9999;">
 				<ul>
-					<li>
+					<li class="circle-current">
 						<a href="#">1</a>
 					</li>
-					<li class="circle-current">
+					<li >
 						<a href="#">2</a>
 					</li>
 					<li>
@@ -272,7 +272,7 @@
 					</li>
 				</ul>
 			</div>
-			<div class="main-arrow" style="z-index: 2;">
+			<div class="main-arrow" style="z-index: 9999;">
 				<a href="javascript:;" class="main-arrow-l" onclick="btn(1)">&lt;</a>
 				<a href="javascript:;" class="main-arrow-r" onclick="btn(2)">&gt;</a>
 			</div>
@@ -536,20 +536,74 @@
 		</div>
 	</div>
 	<!--toolbar end-->
-	<script type="text/javascript" src="js/jquery.js"></script>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
 	<script>
 		$(function(){
-		$(".main-banner-circle").find("li").mouseover(function(){
+	var mytop=1;
+	var sx=0;
+	var speed=800
+	var timer=null;
+
+		$(".main-banner-circle").find("li").mouseenter(function(){
 			//小按钮选中的添加样式,兄弟的去除样式
+			mytop++
 			$(this).addClass("circle-current").siblings().removeClass();
 			//初始化显示级别
-			$(".banner-pic").css({"z-index":0,"opacity":0});
+			var index=$(this).index();
 			//联动按钮和背景图片
-			var _index =$(this).index();//获取小按钮的索引
+			
 			//背景图片级别为1,就是联动之后显示联动的图片
-			$(".banner-pic").eq(_index).css("z-index",1).fadeTo(1000,1);
+			$(".banner-pic").eq(index).css('z-index',mytop).hide().fadeIn()
+
+			$(".banner-pic").eq(index).css({zIndex:num}).hide().fadeIn(speed);
+			sx=index;
+			
+
+
 		});
-		});
+			
+	//箭头工作
+	$('.main-arrow-r').click(function(e) {
+        sx++;
+		mytop++
+		if(sx>4){sx=0}
+		//都有谁需要跟着这个顺序走。
+		$(".main-banner-circle").find("li").eq(sx).addClass('circle-current').siblings().removeClass('circle-current');//角标
+		
+		$(".banner-pic").eq(sx).css({zIndex:mytop}).hide().fadeIn(speed);
+    });
+	
+	$('.main-arrow-l').click(function(e) {
+        sx--;
+		mytop++;
+		if(sx<0){sx=4}
+		//都有谁需要跟着这个顺序走。
+		$(".main-banner-circle").find("li").eq(sx).addClass('circle-current').siblings().removeClass('circle-current');
+		
+		$(".banner-pic").eq(sx).css({zIndex:mytop}).hide().fadeIn(speed);
+    });
+
+		
+			//自动播放模块
+	timer=setInterval(autoplay,2000)
+	function autoplay(){
+		mytop++
+		sx++
+		if(sx>4){sx=0}
+		$(".main-banner-circle").find("li").eq(sx).addClass('circle-current').siblings().removeClass('circle-current');
+		$(".banner-pic").eq(sx).css({zIndex:mytop}).hide().fadeIn(speed);
+	}
+	
+	//鼠标移上停止定时器模块
+	$('.main-banner').hover(function(e) {
+        //停止自动播放，清除定时器；
+		clearInterval(timer)
+    },function(e){
+		clearInterval(timer)
+		timer=setInterval(autoplay,2000)
+    });
+
+});
 
 		
 </script>
