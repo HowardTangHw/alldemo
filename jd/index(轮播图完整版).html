@@ -552,10 +552,9 @@
 			var index=$(this).index();
 			//联动按钮和背景图片
 			
-			//背景图片级别为1,就是联动之后显示联动的图片
-			$(".banner-pic").eq(index).css('z-index',mytop).hide().fadeIn()
+			$(".banner-pic").eq(index).css('z-index',mytop).hide().fadeIn(speed);
 
-			$(".banner-pic").eq(index).css({zIndex:num}).hide().fadeIn(speed);
+//			$(".banner-pic").eq(index).css({zIndex:num}).hide().fadeIn(speed);
 			sx=index;
 			
 
@@ -569,7 +568,6 @@
 		if(sx>4){sx=0}
 		//都有谁需要跟着这个顺序走。
 		$(".main-banner-circle").find("li").eq(sx).addClass('circle-current').siblings().removeClass('circle-current');//角标
-		
 		$(".banner-pic").eq(sx).css({zIndex:mytop}).hide().fadeIn(speed);
     });
 	

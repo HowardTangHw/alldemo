@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style type="text/css">
+*{ padding:0; margin:0; list-style:none; border:0;}
+.all{ width:992px; height:420px; background:yellow; margin:100px auto; position:relative; overflow:hidden;}
+.all ul{ position:relative; z-index:1;}
+.all ul li{ position:absolute; left:0; top:0;}
+.all ul .current{ z-index:10;}
+
+.all ol{ position:absolute; bottom:10px; right:10px; z-index:2;}
+.all ol li{ width:30px; height:20px; border:1px solid #ccc; float:left; line-height:20px; text-align:center; color:#000; margin-left:10px; cursor:pointer;}
+.all ol .current{ background:#f60;}
+.all span{ width:40px; height:70px; background:url(img/images/arr.png) 0 0; position:absolute; left:0; top:50%; margin-top:-35px; z-index:11; cursor:pointer; display:none;}
+.all .right{ left:auto; right:0; background-position:right 0;}
+</style>
+<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	var timer=null;
+	var sx=0;
+	var num=10;
+	//两侧箭头
+	$(".all").mouseenter(function(){
+		$(".left,.right").show();
+		//停止计时器
+		clearInterval(timer);
+	});
+		$(".all").mouseleave(function(){
+		$(".left,.right").hide();
+		//开启计时器
+		clearInterval(timer);
+		timer=setInterval(autoplay,2000);
+	});
+	
+	//小按钮与图片
+	$("ol li").click(function(){
+		num++;
+		var index = $(this).index();
+		$(this).addClass("current").siblings().removeClass("current");
+		$("ul li").eq(index).css("z-index",num).hide().fadeIn();
+		sx=index;
+	});
+	//左右箭头
+	$(".left").click(function(){
+		sx--;
+		num++;
+		if(sx<0)
+		{
+			sx=$("ul li").length-1;
+		}
+		$("ol li").eq(sx).addClass("current").siblings().removeClass("current");
+		$("ul li").eq(sx).css("z-index",num).hide().fadeIn();
+	});
+	$(".right").click(function(){
+		sx++;
+		num++;
+		if(sx>$("ul li").length-1)
+		{
+			sx=0
+		}
+		$("ol li").eq(sx).addClass("current").siblings().removeClass("current");
+		$("ul li").eq(sx).css("z-index",num).hide().fadeIn();
+	});
+	//自动播放
+	timer=setInterval(autoplay,2000);
+	function autoplay(){
+		sx++;
+		num++;
+		if(sx>$("ul li").length-1)
+		{
+			sx=0
+		}
+		$("ol li").eq(sx).addClass("current").siblings().removeClass("current");
+		$("ul li").eq(sx).css("z-index",num).hide().fadeIn();
+	}
+	
+});
+</script>
+</head>
+
+<body>
+<div class="all">
+  <ul>
+  	<li class="current"><img src="img/images/1.jpg" width="992" height="420"></li>
+  	<li><img src="img/images/2.jpg" width="992" height="420"></li>
+  	<li><img src="img/images/3.jpg" width="992" height="420"></li>
+  	<li><img src="img/images/4.jpg" width="992" height="420"></li>
+  	<li><img src="img/images/5.jpg" width="992" height="420"></li>
+  </ul>
+  <ol>
+  	<li class="current">1</li>
+  	<li>2</li>
+  	<li>3</li>
+  	<li>4</li>
+  	<li>5</li>
+  </ol>
+  <span class="left"></span>
+  <span class="right"></span>
+</div>
+</body>
+</html>

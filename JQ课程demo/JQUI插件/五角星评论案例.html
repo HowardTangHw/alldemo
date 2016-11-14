@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>五角星评论案例</title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			
+			.comment {
+				font-size: 40px;
+				color: teal;
+			}
+			
+			.comment li {
+				float: left;
+			}
+			
+			ul {
+				list-style: none;
+			}
+		</style>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script>
+			$(function() {
+				var wjx_none = '☆',
+					wjx_sel = '★';
+				$(".comment li").mouseenter(function() {
+					$(this).text(wjx_sel).prevAll().text(wjx_sel).end().nextAll().text(wjx_none);
+				});
+				$(".comment li").mouseleave(function() {
+					$(".flag").text(wjx_sel).prevAll().text(wjx_sel).end().nextAll().text(wjx_none);
+				});
+				$(".comment li").click(function() {
+					$(this).addClass("flag").siblings().removeClass("flag");
+				});
+			});
+		</script>
+	</head>
+
+	<body>
+		<ul class="comment">
+			<li>☆</li>
+			<li>☆</li>
+			<li>☆</li>
+			<li>☆</li>
+			<li>☆</li>
+		</ul>
+	</body>
+
+</html>

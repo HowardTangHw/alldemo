@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head lang="en">
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="checkDemo.css" />
+	</head>
+
+	<body>
+		<div class="wrap">
+			<div>
+				<input type="button" value="GET选中" id="j_btnDelSel" />
+				<input type="button" value="添加数据" id="j_btnAddData" />
+			</div>
+			<table>
+				<thead>
+					<tr>
+						<th><input type="checkbox" id="j_cbAll" /></th>
+						<th>课程名称</th>
+						<th>所属学院</th>
+						<th>已学会</th>
+					</tr>
+				</thead>
+				<tbody id="j_tb">
+					<tr>
+						<td><input type="checkbox" /></td>
+						<td>JavaScript</td>
+						<td>百度</td>
+						<td>
+							<a href="javascrip:;" class="get">GET</a>
+						</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" /></td>
+						<td>css</td>
+						<td>百度</td>
+						<td>
+							<a href="javascrip:;" class="get">GET</a>
+						</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" /></td>
+						<td>html</td>
+						<td>百度</td>
+						<td>
+							<a href="javascrip:;" class="get">GET</a>
+						</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" /></td>
+						<td>jQuery</td>
+						<td>百度</td>
+						<td>
+							<a href="javascrip:;" class="get">GET</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div id="j_mask" class="mask"></div>
+		<div id="j_formAdd" class="form-add">
+			<div class="form-add-title">
+				<span>添加数据</span>
+				<div id="j_hideFormAdd">x</div>
+			</div>
+			<div class="form-item">
+				<label class="lb" for="j_txtLesson">课程名称：</label>
+				<input class="txt" type="text" id="j_txtLesson" placeholder="请输入课程名称">
+			</div>
+			<div class="form-item">
+				<label class="lb" for="j_txtBelSch">所属学院：</label>
+				<input class="txt" type="text" id="j_txtBelSch" value="百度">
+			</div>
+			<div class="form-submit">
+				<input type="button" value="添加" id="j_btnAdd">
+			</div>
+		</div>
+
+		<script src="../jquery-1.11.1.min.js"></script>
+		<!--<script src="checkDOM.js"></script>-->
+		<script>
+			$(function() {
+				var $j_cbAll = $("#j_cbAll"), // 获取全选checkbox：jQuery对象
+					$tb = $("#j_tb"), // 获取tbody
+					$cbs = $tb.find(":checkbox"); // 获取tbody中所有的复选框
+
+				// 给全选checkbox绑定单击事件：处理所有选项的checkbox选中状态
+				$j_cbAll.click(function() {
+					// 重新获取所有的checkbox
+					$cbs = $tb.find(":checkbox");
+					// 全选
+					if($(this).prop("checked") === true) {
+						// 设置复选框被选中
+						$cbs.prop("checked", true);
+					} else {
+						// 设置复选框不被选中
+						$cbs.prop("checked", false);
+					}
+
+				});
+
+				// 给所有 tbody中的 checkbox元素 绑定click事件
+				$tb.on("click",":checkbox",function() {
+					// todo:动态绑定事件
+					// 重新获取这个body里面的备选中的checkbox
+					$cbs = $tb.find(":checkbox");
+					// 获取所有被选中的checkbox个数
+					$tb.find(":checkbox:checked").length === $cbs.length ?
+						$j_cbAll.prop("checked", true) :
+						$j_cbAll.prop("checked", false);
+
+				});
+
+				//点击添加按钮 显示层 添加数据层
+				$("#j_btnAddData").click(function() {
+					$("#j_mask").show();
+					$("#j_formAdd").show();
+				});
+				//添加数据层
+				$("#j_btnAdd").click(function() {
+					var html =
+						"<tr>" +
+						"<td><input type='checkbox'></td>" +
+						"<td>" + $("#j_txtLesson").val() + "</td>" +
+						"<td>" + $("#j_txtBelSch").val() + "</td>" +
+						"<td><a href='javascrip:;' class='get'>GET</a></td>" +
+						"</tr>";
+					$tb.append(html);
+					$("#j_mask").hide();
+					$("#j_formAdd").hide();
+
+				});
+				//勾选的get
+				$("#j_btnDelSel").click(function() {
+					if($tb.find(":checkbox:checked").length == 0) {
+						$j_cbAll.prop("checked", false);
+						return false;
+					} else {
+						$tb.find(":checkbox:checked").parent().parent().remove();
+						$j_cbAll.prop("checked", false);
+					}
+				});
+
+				//后面的那个get
+//				$(".get").click(function() {
+//					$(this).parent().parent().remove();
+//				});
+				$tb.on("click",".get",function() {
+					$(this).parent().parent().remove();
+				});
+				//x的按钮
+				$("#j_hideFormAdd").click(function() {
+					$("#j_mask").hide();
+					$("#j_formAdd").hide();
+				});
+			});
+		</script>
+	</body>
+
+</html>
