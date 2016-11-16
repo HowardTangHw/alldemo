@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>百度LOGO</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #F7F7F7;
+		}
+
+		.logo {
+			width: 270px;
+			height: 129px;
+			margin: 100px auto;
+			background-image: url(./baidu.png);
+			background-position: 0 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="logo"></div>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script>
+		$(function(){
+			var num=0;
+			setInterval(function(){
+				num++;
+//				$(".logo")[0].style.backgroundPositionX=num*-270+"px";
+				$(".logo").css("backgroundPositionX",num*-270);
+				if(n>64)
+				{
+					n=0;
+				}
+			},30)
+		});
+	</script>
+</body>
+</html>
