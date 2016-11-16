@@ -32,35 +32,40 @@
 			top: 0;
 			transition: all 1s;
 			transform-origin: left center;
+			/*将文字跟住data-text添加到before和after里面,并且定了远点,*/
 		}
 
 		.text-box span::before {
 			z-index: 3;
 			color: #FFF;
 			transform: rotateY(-15deg);
+			/*before是白字,给层级,压住了本来的字,并且根据Y轴旋转了一点*/
+			
 		}
 
 		.text-box span::after {
 			z-index: 2;
 			color: rgba(0, 0, 0, 0.3);
+			/*after是阴影 层级比BEFORE低一级*/
 		}
 
 		.text-box:hover span::before {
 			transform: rotateY(-40deg) skew(0, 5deg);
+			/*鼠标经过时候,白字的动画,*/
 		}
 
 		.text-box:hover span::after {
 			transform: skew(0, 20deg);
+			/*鼠标经过 阴影鲜果*/
 		}
 
 	</style>
 </head>
 <body>
 	<div class="text-box">
-		<span data-text="传">传</span>
-		<span data-text="智">智</span>
-		<span data-text="播">播</span>
-		<span data-text="客">客</span>
+		<span data-text="邓">邓</span>
+		<span data-text="皓">皓</span>
+		<span data-text="文">文</span>
 	</div>
 </body>
 </html>
