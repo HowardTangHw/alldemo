@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3 过渡</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #F7F7F7;
+		}
+
+		h3 {
+			margin: 0;
+			padding: 0;
+		}
+
+		.box {
+			width: 500px;
+			margin:0 auto;
+		}
+
+		.list h3{
+			background-color: blueviolet;
+			border: 1px solid #000000;
+			transition: all 1s;
+		}
+		.list .pictxt{
+			background-color: pink;
+			height: 0px;
+			transition: all 0.3s;
+		}
+		.list:hover h3{
+			background-color: #0073B3;
+		}
+		.list:hover .pictxt{
+			height: 100px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="list">
+			<h3>今日新闻</h3>
+			<div class="pictxt"></div>
+		</div>
+
+
+		<div class="list">
+			<h3>今日新闻</h3>
+			<div class="pictxt"></div>
+		</div>
+
+
+		<div class="list">
+			<h3>今日新闻</h3>
+			<div class="pictxt"></div>
+		</div>
+
+		
+		<div class="list">
+			<h3>今日新闻</h3>
+			<div class="pictxt"></div>
+		</div>
+	</div>
+</body>
+</html>
