@@ -16,25 +16,33 @@
 			margin: 100px auto;
 			background-image: url(./baidu.png);
 			background-position: 0 0;
+			animation: run 20s ease-in infinite;
 		}
+
+@keyframes run{
+	0%{left: 0px;}
+	100%{
+		left: -17280px;
+	}
+}
 	</style>
 </head>
 <body>
 	<div class="logo"></div>
 	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
 	<script>
-		$(function(){
-			var num=0;
-			setInterval(function(){
-				num++;
-//				$(".logo")[0].style.backgroundPositionX=num*-270+"px";
-				$(".logo").css("backgroundPositionX",num*-270);
-				if(n>64)
-				{
-					n=0;
-				}
-			},30)
-		});
+//		$(function(){
+//			var num=0;
+//			setInterval(function(){
+//				num++;
+////				$(".logo")[0].style.backgroundPositionX=num*-270+"px";
+//				$(".logo").css("backgroundPositionX",num*-270);
+//				if(n>64)
+//				{
+//					n=0;
+//				}
+//			},30)
+//		});
 	</script>
 </body>
 </html>

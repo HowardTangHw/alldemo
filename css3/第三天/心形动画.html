@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.heart {
+				width: 500px;
+				height: 500px;
+				background: pink;
+				margin: 50px auto;
+				position: relative;
+			}
+			
+			.left {
+				width: 200px;
+				height: 200px;
+				border-radius: 100px;
+				background-color: red;
+				position: absolute;
+				left: 60px;
+				animation: run 1s linear infinite;
+			}
+			
+			.right {
+				width: 200px;
+				height: 200px;
+				border-radius: 100px;
+				background-color: red;
+				position: absolute;
+				right: 93px;
+				animation: run 1s linear infinite;
+			}
+			.bottom{
+				width: 200px;
+				height: 200px;
+				background-color: red;
+				position: absolute;
+				left: 133px;
+				bottom: 226px;
+				transform: rotate(45deg);
+				
+				animation: run 1s linear infinite;
+			}
+			
+			
+			@keyframes run{
+				0%{
+					transform: scale(1) rotate(45deg);
+				}
+				50%{
+					transform: scale(1.2) rotate(45deg);
+				}
+				100%{
+					transform: scale(1) rotate(45deg);
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="heart">
+			<div class="left"></div>
+			<div class="right"></div>
+			<div class="bottom"></div>
+		</div>
+	</body>
+
+</html>
