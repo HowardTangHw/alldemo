@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		html,body{
+			width: 100%;
+			height: 100%;
+		}
+		*{
+				margin: 0;
+				padding: 0;	
+			}
+		.pic{
+			position: relative;
+			width: 100%;
+			height: 100%;
+		}
+		.pic li{
+			position:absolute;
+			top:0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-size: cover;
+		}
+		.pic li:first-child{
+			background:url(images/bg1.jpg)no-repeat;
+			z-index: 3;
+		}
+		.pic li:nth-child(2){
+			background:url(images/bg2.jpg)no-repeat;
+			z-index: 2;
+		}
+				.pic li:nth-child(3){
+			background:url(images/bg3.jpg)no-repeat;
+			z-index: 1;
+		}
+		.flag{
+			position: absolute;
+			bottom: 20px;
+			width: 100%;
+			height: 60px;
+			z-index: 10;
+			text-align: center;
+			transform: translate(-5%,-50%);
+			
+		}
+		.flag li{
+			display: inline-block;
+			width: 60px;
+			height: 60px;
+			border-radius: 60px;
+			background-color: greenyellow;
+			z-index: 10;
+			margin:0 10px;
+			list-style: none;
+			text-align: center;
+			line-height: 60px;
+			font-size: 30px;
+		}
+		.flag li a{
+			text-decoration: none;	
+			color: white;
+		}
+		#img1:target{
+			z-index: 3;
+			animation: img1 1s;
+		}
+		#img2:target{
+			z-index: 3;
+			animation: img2 1s;
+		}
+		#img3:target{
+			z-index: 3;
+			animation: img3 1s;
+		}
+		
+@keyframes img1{
+	from{
+		transform: translateX(-1000px);
+	}
+	to{
+		transform: translateX(0);
+	}
+}
+@keyframes img2{
+	from{
+		transform: rotate(360deg) scale(0.5);
+	}
+	to{transform: rotate(0) scale(1);}
+}
+@keyframes img3{
+	from{
+		transform: rotateX(-90deg) scale(0.7);
+	}
+	to{transform: rotateX(0) scale(1);}
+}
+
+
+	</style>
+</head>
+<body>
+<ul class="pic">
+	<li id="img1"></li>
+	<li id="img2"></li>
+	<li id="img3"></li>
+</ul>
+<ul class="flag">
+	<li id="btn1"><a href="#img1">1</a></li>
+	<li id="btn2"><a href="#img2">2</a></li>
+	<li id="btn3"><a href="#img3">3</a></li>
+</ul>
+</body>
+</html>
