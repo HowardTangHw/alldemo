@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>携程网</title>
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+				font: 14px/1.5 Tahoma, "Lucida Grande", Verdana, "Microsoft Yahei", STXihei, hei;
+			}
+			
+			a {
+				color: #F7F7F7;
+				text-decoration: none;
+				text-align: center;
+			}
+			.warp{
+				min-width: 320px;
+			}
+			/*img{
+				display: block;
+			}*/
+			/*banner部分*/
+			
+			.banner {
+				display: flex;
+			}
+			
+			.banner a {
+				flex: 1;
+				/*a标签比图片大 多了一个边 可以给图片加display:block或者下面*/
+				font-size: 0;
+			}
+			
+			.banner a img {
+				width: 100%;
+			}
+			/*主体部分*/
+			
+			.main {
+				padding: 0px 5px 0px 5px;
+			}
+			
+			.item {
+				height: 90px;
+				background-color: #ff697a;
+				border-radius: 10px;
+				display: flex;
+				margin-top: 5px;
+			}
+			
+			.item .left {
+				flex: 1;
+			}
+			
+			.item .right {
+				flex: 2;
+				display: flex;
+				flex-wrap: wrap;
+			}
+			
+			.item .right a {
+				display: block;
+				width: 50%;
+				height: 45px;
+				line-height: 45px;
+				border-top: 1px solid #F7F7F7;
+				border-left: 1px solid #F7F7F7;
+				box-sizing: border-box;
+			}
+			
+			.item .right a:nth-child(-n+2) {
+				border-top: none;
+			}
+			
+			.item:nth-child(2) {
+				background-color: #3d98ff;
+			}
+			
+			.item:nth-child(3) {
+				background-color: #44c522;
+			}
+			
+			.item:nth-child(4) {
+				background-color: #fc9720;
+			}
+			
+			.item:nth-child(4) .right a {
+				width: 33.33%;
+			}
+			
+			.item:last-child .right a:nth-child(-n+3) {
+				border-top: none;
+			}
+			
+			.pic {
+				display: flex;
+			}
+			
+			.pic a {
+				font-size: 0;
+				flex: 1;
+			}
+			/*底部导航*/
+			
+			footer nav {
+				display: flex;
+			}
+			
+			footer nav a {
+				flex: 1;
+				height: 44px;
+				padding-top: 20px;
+				text-align: center;
+				line-height: 1;
+				border-top: 1px solid #CCC;
+				border-bottom: 1px solid #C2C2C2;
+				font-size: 12px;
+				color: #333;
+				box-sizing: border-box;
+			}
+			/*底部链接*/
+			
+			footer p {
+				text-align: center;
+				font-size: 12px;
+				color: #999;
+			}
+			
+			footer .link a {
+				color: #666;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<header>
+				<!--头部 轮播图-->
+				<section class="banner">
+					<a href="javascript:;"><img src="images/banner.jpg" /></a>
+				</section>
+			</header>
+			<!--主体部分-->
+			<div class="main">
+				<!--导航部分-->
+				<section class="nav">
+					<div class="item">
+						<div class="left"></div>
+						<div class="right">
+							<a href="javascript:;">海外酒店</a>
+							<a href="javascript:;">团购</a>
+							<a href="javascript:;">特惠酒店</a>
+							<a href="javascript:;">客栈公寓</a>
+						</div>
+					</div>
+					<div class="item">
+						<div class="left"></div>
+						<div class="right">
+							<a href="javascript:;">海外酒店</a>
+							<a href="javascript:;">团购</a>
+							<a href="javascript:;">特惠酒店</a>
+							<a href="javascript:;">客栈公寓</a>
+						</div>
+					</div>
+					<div class="item">
+						<div class="left"></div>
+						<div class="right">
+							<a href="javascript:;">海外酒店</a>
+							<a href="javascript:;">团购</a>
+							<a href="javascript:;">特惠酒店</a>
+							<a href="javascript:;">客栈公寓</a>
+						</div>
+					</div>
+					<div class="item">
+						<div class="right">
+							<a href="javascript:;">海外酒店</a>
+							<a href="javascript:;">团购</a>
+							<a href="javascript:;">海外酒店</a>
+							<a href="javascript:;">团购</a>
+							<a href="javascript:;">特惠酒店</a>
+							<a href="javascript:;">客栈公寓</a>
+						</div>
+					</div>
+				</section>
+				<!--广告图片部分-->
+				<section class="pic">
+					<a href="javascript:;"><img src="images/extra_1.png" /></a>
+					<a href="javascript:;"><img src="images/extra_2.png" /></a>
+				</section>
+				<!-- 底部 -->
+				<footer>
+					<!-- 底部导航 -->
+					<nav>
+						<a href="javascript:;">电话预订</a>
+						<a href="javascript:;">下载客户端</a>
+						<a href="javascript:;">我的</a>
+					</nav>
+					<!-- 版本信息 -->
+					<div class="copyright">
+						<!-- 网站链接 -->
+						<p class="link">
+							<a href="javascript:;">网站地图</a> |
+							<a href="javascript:;">ENGLISH</a> |
+							<a href="javascript:;">电脑版</a>
+						</p>
+						<p>&copy;2015 携程旅行</p>
+					</div>
+				</footer>
+
+			</div>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.item {
+				height: 90px;
+				width: 100%;
+				background-color: darkgoldenrod;
+				display: flex;
+				border-radius: 5px;
+				min-width: 320px;
+			}
+			
+			.left {
+				flex: 1;
+			}
+			
+			.right {
+				flex: 2;
+				display: flex;
+				flex-wrap: wrap;
+			}
+			
+			.right a {
+				width: 50%;
+				height: 45px;
+				text-align: center;
+				line-height: 45px;
+				border-left: 1px solid #FFF;
+				border-top: 1px solid #FFF;
+				color: darkblue;
+				font-size: 14px;
+				/*将宽变成boder-box 加了边框之后要加这句*/
+				/*不然就变成一排往下树的了*/
+				box-sizing: border-box;
+				text-decoration: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="item">
+			<div class="left"></div>
+			<div class="right">
+				<a href="javascript:;">啊啊啊啊啊啊啊啊</a>
+				<a href="javascript:;">啊啊啊啊啊啊啊啊</a>
+				<a href="javascript:;">啊啊啊啊啊啊啊啊</a>
+				<a href="javascript:;">啊啊啊啊啊啊啊啊</a>
+
+			</div>
+		</div>
+	</body>
+
+</html>
