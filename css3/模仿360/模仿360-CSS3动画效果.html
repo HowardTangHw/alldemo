@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>360</title>
+		<link rel="stylesheet" href="./css/360.css">
+	</head>
+
+	<body>
+		<div id="fullpage">
+			<!--第一屏-->
+			<div class="section first">
+				<div class="logo"></div>
+				<div class="text">
+					<!--动画文字-->
+					<img src="./images/text_1.png" alt="" />
+					<img src="./images/text_2.png" alt="" />
+					<img src="./images/text_3.png" alt="" />
+					<img src="./images/text_4.png" alt="" />
+					<img src="./images/text_5.png" alt="" />
+					<img src="./images/text_6.png" alt="" />
+					<img src="./images/text_7.png" alt="" />
+					<img src="./images/text_8.png" alt="" />
+				</div>
+				<!--信息-->
+				<div class="info"></div>
+			</div>
+			<!--第二屏-->
+			<div class="section second">
+				<!--盾牌-->
+				<div class="left">
+					<img src="./images/shield_1.png" alt="" />
+					<img src="./images/shield_2.png" alt="" />
+					<img src="./images/shield_3.png" alt="" />
+					<img src="./images/shield_4.png" alt="" />
+					<img src="./images/shield_5.png" alt="" />
+					<img src="./images/shield_6.png" alt="" />
+					<img src="./images/shield_7.png" alt="" />
+					<img src="./images/shield_8.png" alt="" />
+					<img src="./images/shield_9.png" alt="" />
+				</div>
+				<!--信息-->
+				<div class="info"></div>
+			</div>
+			<!--第三屏-->
+			<div class="section third">
+				<div class="info"></div>
+				<div class="rocket"><img src="./images/rocket.png" /></div>
+			</div>
+			<!--第四屏-->
+			<div class="section fourth">
+				<!--搜索框-->
+				<div class="search">
+					<!--关键字-->
+					<div class="key"></div>
+					<!--导航栏-->
+					<div class="input"></div>
+					<!--搜索结果-->
+					<div class="result">
+						<div class="jieguo"></div>
+					</div>
+				</div>
+				<!--信息-->
+				<div class="info"></div>
+			</div>
+			<!--第五屏-->
+			<div class="section fifth">
+				<div class="info"></div>
+				<div class="browser">
+					<!--四边框-->
+					<div class="left"></div>
+					<div class="top"></div>
+					<div class="right"></div>
+					<div class="bottom"></div>
+					<!--工具栏-->
+					<div class="toolbar"></div>
+					<!--工具栏里线-->
+					<div class="toolbarline"><span></span></div>
+					<!--底部工具栏线-->
+					<div class="line"></div>
+					<!--底部工具栏-->
+					<div class="extra"></div>
+				</div>
+			</div>
+		</div>
+		<script src="./js/jquery.min.js"></script>
+		<script src="./js/jquery.fullPage.min.js"></script>
+		<script>
+			$(function() {
+				$("#fullpage").fullpage({
+					//设置背景色
+					sectionsColor: ['#0da5d6', '#2AB561', '#DE8910', '#16BA9D', '#0DA5D6'],
+					afterLoad: function(anchorLink, index) {
+						//添加动画
+						//给个定时器 延时
+						setTimeout(function() {
+							$(".section").eq(index - 1).addClass("current").siblings().removeClass("current");
+						}, 100);
+
+					}
+				});
+			});
+		</script>
+	</body>
+
+</html>
