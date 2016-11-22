@@ -23,31 +23,31 @@
     </style>
 </head>
 <body>
-<div class="top" id="top">
-    <img src="images/top.png" alt=""/>
-</div>
-<div id="Q-nav">
-    <img src="images/nav.png" alt=""/>
-</div>
-<div class="main" id="main">
-    <img src="images/main.png" alt=""/>
-</div>
+    <div class="top" id="top">
+        <img src="images/top.png" alt=""/>
+    </div>
+    <div id="Q-nav">
+        <img src="images/nav.png" alt=""/>
+    </div>
+    <div class="main" id="main">
+        <img src="images/main.png" alt=""/>
+    </div>
 </body>
 </html>
 <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
 <script>
 
-$(window).load(function(){
-	var nav=$("#Q-nav").height();
-	$(window).scroll(function(){
-		var srollheight = $(window).scrollTop();
-		if(srollheight >= nav)
-		{
-			$("#Q-nav").addClass("fixed");
-		}
-		else{
-			$("#Q-nav").removeClass("fixed");
-		}
-	});
-});
+    $(window).load(function(){
+       var nav=$("#Q-nav").height();
+       $(window).scroll(function(){
+          var srollheight = $(window).scrollTop();
+          if(srollheight >= nav)
+          {
+             $("#Q-nav").addClass("fixed");
+         }
+         else{
+             $("#Q-nav").removeClass("fixed");
+         }
+     });
+   });
 </script>

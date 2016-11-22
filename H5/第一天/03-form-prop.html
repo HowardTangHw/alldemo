@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>智能表单</title>
+  <style>
+    * {
+      font-size: 30px;
+    }
+    
+    input {
+      font-size: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <!--[if lt IE 10]>
+    shit
+  <![endif]-->
+  <!-- emmet -->
+  <!--
+    form
+      autocomplete 设置整个表单是否开启自动完成 on|off
+      novalidate 设置H5的表单校验是否工作 true 不工作  不加该属性代表校验
+
+input:
+  autocomplete
+  autofocus
+  form
+  form overrides
+    (
+    formaction,
+    formenctype,
+    formmethod,
+    formnovalidate,
+    formtarget
+    )
+  list
+  min / max / step
+  multiple
+  pattern
+  placeholder
+  required
+  -->
+  <form id="main_form" action="#" method="get" autocomplete="off" novalidate="true">
+    <input type="submit" value="提交">
+    <hr>
+    <label for="">autofocus
+      <input type="text" name="input1" autofocus>
+    </label>
+    <hr>
+    <!-- 提交按钮重写表单属性 -->
+    <input type="submit" value="重写表单属性提交" formaction="01-tags.html">
+  </form>
+  <!-- form 属性是让表单外的表单元素也可以跟随表单一起提交 -->
+  <input type="text" name="input2" form="main_form">
+  <script>
+    var autofocuss = document.querySelectorAll('input[auto]');
+    for (var i = 0; i < autofocuss.length; i++) {
+      autofocuss[i].focus();
+    }
+  </script>
+</body>
+
+</html>
