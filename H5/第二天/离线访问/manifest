@@ -1,0 +1,12 @@
+CACHE MANIFEST
+
+#verison 1.0.0
+
+CACHE:
+	70396e5agw1f9l2bjldqdj20tz0mikcc.jpg
+	index.html
+	myjs.js
+	style.css
+	manifest
+NETWORK:
+	*

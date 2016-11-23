@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Element.classList</title>
+	</head>
+	<body>
+		<div class="class1 class2 class3"></div>
+	</body>
+</html>
+<script type="text/javascript">
+	var div1 =document.querySelector(".class1");
+	//添加一个类名 classList封装了我们对该元素的类名的操作入口
+	div1.classList.add('class4');
+	// 删除一个类名
+	div1.classList.remove("class2");
+	// 切换类名
+	div1.classList.toggle("class3");
+	// 加上false就是删除,true就是添加
+	div1.classList.toggle("class5",false);
+	//判断是否存在
+	div1.classList.contains("class1");//返回true 或者false
+	console.log(div1.classList.contains("class1"));
+</script>
