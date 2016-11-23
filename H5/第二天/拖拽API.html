@@ -26,11 +26,11 @@
 	</head>
 
 	<body>
-		<p draggable="true">拖拽元素</p>
+		<p draggable="true" data-source-id = "1">拖拽元素</p>
 		<!--html中 img 和a默认可以拖拽  drapggable="true" 就是可以拖拽-->
-		<img src="70396e5agw1f9l2bdsp59j20tz0miqq3.jpg" width="200px" />
+		<img src="70396e5agw1f9l2bdsp59j20tz0miqq3.jpg" width="200px" data-source-id = "2" id="img1"/>
 		<br/>
-		<a href="http://www.baidu.com">百度</a>
+		<a href="http://www.baidu.com" data-source-id = "3">百度</a>
 		<br/>
 		<div id="target" class="">将文件拖进这里</div>
 	</body>
@@ -41,10 +41,9 @@
 	var dropcurrent= "";
 	//draggstart
 	var p = document.querySelector("p");
-	p.addEventListener("dragstart", function(e) {
-		this.style.borderColor = "red";
-		dropcurrent=this;
-	});
+	var img =document.getElementById("img1");
+	p.addEventListener("dragstart", getData);
+	img.addEventListener("dragstart", getData);
 	//draggend
 	p.addEventListener("dragend", function(e) {
 		this.style.borderColor = "paleturquoise";
@@ -70,9 +69,27 @@
 		e.preventDefault();
 		e.stopPropagation();
 	});
-	//drop事件 放事件,当元素在此区域放下  ,首先要阻止系统默认拖拽
-	target.addEventListener("drop", function(e) {
-			dropcurrent.parentNode.removeChild(dropcurrent);
-			target.classList.remove("over");
+//	//drop事件 放事件,当元素在此区域放下  ,首先要阻止系统默认拖拽
+//	target.addEventListener("drop", function(e) {
+//			dropcurrent.parentNode.removeChild(dropcurrent);
+//			target.classList.remove("over");
+//	});
+	
+	//第二种方法
+	//获取data属性值函数
+	function getData(e)
+	{
+		var id = this.dataset["sourceId"];
+		e.dataTransfer.setData("id",id);
+	}
+	//drop事件 
+		target.addEventListener("drop", function(e) {
+			//获取id
+			var delid=e.dataTransfer.getData("id");
+			console.log(delid);
+			//要删除的元素
+			var delcurrent="[data-source-id='"+delid+"']";
+			var del = document.querySelector(delcurrent);
+			del.parentNode.removeChild(del);
 	});
 </script>
