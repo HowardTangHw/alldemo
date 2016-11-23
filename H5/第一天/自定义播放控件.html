@@ -28,81 +28,83 @@
     </div>
     <!-- 4功能效果 -->
     <script type="text/javascript">
-    var video = document.getElementById("video");
-    var play = document.getElementById("play");
-    var pause = document.getElementById("pause");
-    var muted = document.getElementById("muted");
-    var volume = document.getElementById("volume");
-    var screen1 = document.getElementById("screen");
-    var speed_up = document.getElementById("speed_up");
-    var speed_down = document.getElementById("speed_down");
-    var foward = document.getElementById("foward");
-    var back = document.getElementById("back");
-    var speed = document.getElementById("speed");
-    var nowtime = document.getElementById("nowtime");
-    var alltime = document.getElementById("alltime");
-    var progress = document.getElementById("progress");
-    // 点击事件  addEventListener =JQ的ON
-    //开始 暂停按钮
-    play.addEventListener('click', function() {
-        if (video.paused) {
-            video.play();
-            play.innerHTML = "暂停";
-        } else {
-            video.pause();
-            play.innerHTML = "开始";
-        }
-        //总的播放时间
-        var am = parseInt(video.duration / 60);
-        var as = parseInt(video.duration % 60);
-        console.log(am, as);
-        alltime.innerHTML = am + ":" + as;
-    });
-    //静音按钮
-    muted.addEventListener('click', function() {
-        //取非
-        video.muted = !video.muted;
-        muted.innerHTML = video.muted ? "取消静音" : "静音";
-    });
-    //音量控制
-    volume.addEventListener('change', function() {
-        //获取当前volume的值 然后赋值
-        video.volume = volume.value;
-    });
-    //加速  减速
-    speed_up.addEventListener('click', function() {
-        video.playbackRate += 0.1;
-        speed.innerHTML = "当前速率为" + parseFloat(video.playbackRate).toFixed(1) + "X";
-    });
-    speed_down.addEventListener('click', function() {
-        video.playbackRate -= 0.1;
-        speed.innerHTML = "当前速率为" + parseFloat(video.playbackRate).toFixed(1) + "X";
-    });
-    //前进5秒 后退5秒
-    foward.addEventListener('click', function() {
-        video.currentTime += 5;
-    });
-    back.addEventListener('click', function() {
-        video.currentTime -= 5;
-    });
-    //视频播放状态变化事件
-    video.addEventListener("timeupdate", function() {
-        progress.value = (video.currentTime / video.duration) * 100;
-        //当前播放时间
-        var nm = parseInt(video.currentTime / 60);
-        var ns = parseInt(video.currentTime % 60);
-        nowtime.innerHTML = nm + ":" + ns;
-    });
-    // 全屏按钮
-    screen1.addEventListener('click', function() {
-        if (video.requestFullscreen) {
-            video.requestFullscreen();
-        } else if (video.webkitRequestFullScreen) {
-            video.webkitRequestFullScreen();
-        } else if (video.mozRequestFullScreen) {
-            video.mozRequestFullScreen();
-        }
-          });
+        var video = document.getElementById("video");
+        var play = document.getElementById("play");
+        var pause = document.getElementById("pause");
+        var muted = document.getElementById("muted");
+        var volume = document.getElementById("volume");
+        var screen1 = document.getElementById("screen");
+        var speed_up = document.getElementById("speed_up");
+        var speed_down = document.getElementById("speed_down");
+        var foward = document.getElementById("foward");
+        var back = document.getElementById("back");
+        var speed = document.getElementById("speed");
+        var nowtime = document.getElementById("nowtime");
+        var alltime = document.getElementById("alltime");
+        var progress = document.getElementById("progress");
+        // 点击事件  addEventListener =JQ的ON
+        //开始 暂停按钮
+        play.addEventListener('click', function() {
+            if (video.paused) {
+                video.play();
+                play.innerHTML = "暂停";
+            } else {
+                video.pause();
+                play.innerHTML = "开始";
+            }
+            //总的播放时间
+            var am = parseInt(video.duration / 60);
+            var as = parseInt(video.duration % 60);
+            console.log(am, as);
+            alltime.innerHTML = am + ":" + as;
+        });
+        //静音按钮
+        muted.addEventListener('click', function() {
+            //取非
+            video.muted = !video.muted;
+            muted.innerHTML = video.muted ? "取消静音" : "静音";
+        });
+        //音量控制
+        volume.addEventListener('change', function() {
+            //获取当前volume的值 然后赋值
+            video.volume = volume.value;
+        });
+        //加速  减速
+        speed_up.addEventListener('click', function() {
+            video.playbackRate += 0.1;
+            speed.innerHTML = "当前速率为" + parseFloat(video.playbackRate).toFixed(1) + "X";
+        });
+        speed_down.addEventListener('click', function() {
+            video.playbackRate -= 0.1;
+            speed.innerHTML = "当前速率为" + parseFloat(video.playbackRate).toFixed(1) + "X";
+        });
+        //前进5秒 后退5秒
+        foward.addEventListener('click', function() {
+            video.currentTime += 5;
+        });
+        back.addEventListener('click', function() {
+            video.currentTime -= 5;
+        });
+        //视频播放状态变化事件
+        video.addEventListener("timeupdate", function() {
+            progress.value = (video.currentTime / video.duration) * 100;
+            //当前播放时间
+            var nm = parseInt(video.currentTime / 60);
+            var ns = parseInt(video.currentTime % 60);
+            nowtime.innerHTML = nm + ":" + ns;
+        });
+        // 全屏按钮
+        screen1.addEventListener('click', function() {
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.webkitRequestFullScreen) {
+                video.webkitRequestFullScreen();
+            } else if (video.mozRequestFullScreen) {
+                video.mozRequestFullScreen();
+            }
+        });
+        //退出全屏
+        
     </script>
 </body>
 

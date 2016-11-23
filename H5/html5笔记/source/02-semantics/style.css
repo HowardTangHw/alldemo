@@ -1,0 +1,71 @@
+/*
+* @Author: iceStone
+* @Date:   2015-12-20 14:22:58
+* @Last Modified by:   iceStone
+* @Last Modified time: 2015-12-20 15:06:13
+*/
+
+html {
+  color: #444;
+  background-color: #e6e6e6;
+}
+
+body {
+  width: 1024px;
+  background-color: #fff;
+  margin: 20px auto;
+  padding: 30px;
+  box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+}
+
+.page-header > nav {
+  background-color: #CCC;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.page-header > nav > ul {
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  overflow: hidden;
+}
+
+.page-header > nav > ul > li {
+  float: left;
+  margin-right: 5px;
+}
+
+.page-header > nav > ul > li > a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: inline-block;
+  border-radius: 3px;
+  font-size: 20px;
+}
+
+.page-header > nav > ul > li > a:hover {
+  background-color: #fff;
+  color: #666;
+}
+
+.main-section {
+  margin-right: 220px;
+}
+
+.post {
+  border-bottom: 1px dashed #c0c0c0;
+  margin-bottom: 50px;
+  padding-bottom: 20px;
+}
+
+.post p {
+  text-indent: 2em;
+  line-height: 1.3
+}
+
+.sidebar {
+  width: 200px;
+  float: right;
+}

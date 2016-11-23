@@ -1,0 +1,14 @@
+ADFHOST68="http://csdnim.qtmojo.com";
+ADFCID68=15;
+ADFBID68=68;
+ADFLOC='CNTJ0000';
+ADFUSER68="http://csdnim.qtmojo.com/c?d=csdnim&i=z15,10471216,68,149&rf=http%3A%2F%2Fblog.csdn.net%2Fhfahe%2Farticle%2Fdetails%2F7040310&a=dBC8koEpj3Oce2A5yG983VAcEDqw&u=";
+ALLYESID4="Cgck30Guc0BTexP5PwT";
+ADFPGC="2,5,15,0,71,68,149,10471216";
+
+document.write("<script type=\"text/javascript\">\n");
+document.write("/*博客频道内容页下方Banner728*90，创建于2014-7-3*/\n");
+document.write("var cpro_id = \"u1607657\";\n");
+document.write("</Scr"+"ipt>\n");
+document.write("<script src=\"http://cpro.baidustatic.com/cpro/ui/c.js\" type=\"text/javascript\"></Scr"+"ipt>");
+

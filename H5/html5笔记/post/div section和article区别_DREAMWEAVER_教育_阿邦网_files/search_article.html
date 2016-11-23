@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0051)http://z.abang.com/z/a_dc/search_article.htm?201503 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>阿邦搜索</title>
+<style type="text/css">
+body,body *{margin:0;padding:0;}
+.sem_search{margin:0 auto;width:290px;height:24px;overflow:hidden;position:relative;}
+label{color:#BDBDBD;font-size:12px;line-height:24px;position:absolute;top:0px;left:5px;}
+.input_text{float:left;display:inline;width:220px;height:22px;font:12px/22px '宋体';color:#333;margin-right:5px;border:1px solid #ccc;background:#fff;overflow:hidden;}
+.search_btn{float:left;display:inline;width:60px;height:24px;font-weight:bold;letter-spacing:2px;text-align:center;overflow:hidden;}
+</style>
+<script src="./jquery(1).js" type="text/javascript"></script>
+<script>var $j = jQuery.noConflict();</script>
+</head>
+
+<body>
+
+<div>
+    <form action="http://search.abang.com/s.htm" id="cse-search-box" method="get" target="_blank">
+      <div class="sem_search" id="sem_search">
+		<input type="hidden" id="o" name="o" value="0">
+        <input type="text" name="q" class="input_text" onclick="OnClickInputSearch();" id="inputSearch">
+        <input type="hidden" name="askid" id="askid" value="0">
+        <label id="label_cover" onclick="OnClickInputSearch();">请输入关键字</label>
+        <input type="submit" value="搜索" class="search_btn">
+      </div>
+    </form>
+</div>
+
+<script>
+$j('#inputSearch').keydown(function(event){
+	e = event ? event : (window.event ? window.event : null);
+	if(e.keyCode == 13){
+		$j("form:first").submit();
+		return false;
+	}
+});
+function OnClickInputSearch()
+{
+	var label_cover = document.getElementById('label_cover');
+	if (label_cover == null)
+		return;
+	document.getElementById('inputSearch').focus();
+	label_cover.innerHTML = "";
+	$j("#inputSearch").blur(function(){
+		if(document.getElementById('inputSearch').value == "")
+			label_cover.innerHTML = "请输入关键字";
+	});
+}
+
+$j("form:first").submit(function(){
+	var o =get_url_prament("o");
+	var askid = get_url_prament("askid");
+	if(false !== o)
+	{
+		$j("#o").val(o);
+	}
+	if(false !== askid)
+	{
+		$j("#askid").val(askid);
+	}		
+});
+
+//获得该链接参数，指定参数的值
+function get_url_prament(str)
+{
+	var url = window.location.href;
+	if(url.indexOf("?") == -1 )
+	{
+         return false;
+	}
+	var tmp_arr = url.split("?");
+	var arr = '';
+	if(tmp_arr[1].indexOf("&") != -1)
+	{
+        var url_par = tmp_arr[1].split("&");
+        for(i=0;i<url_par.length;i++)
+        {
+        	arr = url_par[i].split("=");
+        	if(arr[0] == str)
+		    {
+			   return arr[1];
+		    }
+        }
+	}
+	else
+	{
+	   arr = tmp_arr[1].split("=");	
+	   if(arr[0] == str)
+	   {
+		  return arr[1];
+	   }
+	}
+
+	return false;
+}
+</script>
+
+
+
+
+</body></html>

@@ -1,0 +1,2035 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 30px;
+}
+
+@font-face {
+  font-family: fontawesome-mini;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAYcAA0AAAAACjQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAABMAAAABwAAAAca8vGTk9TLzIAAAFMAAAARAAAAFZG1VHVY21hcAAAAZAAAAA+AAABQgAP9AdjdnQgAAAB0AAAAAQAAAAEACICiGdhc3AAAAHUAAAACAAAAAj//wADZ2x5ZgAAAdwAAADRAAABEKyikaNoZWFkAAACsAAAAC0AAAA2AtXoA2hoZWEAAALgAAAAHAAAACQHngNFaG10eAAAAvwAAAAQAAAAEAwAACJsb2NhAAADDAAAAAoAAAAKALIAVG1heHAAAAMYAAAAHwAAACABEAB2bmFtZQAAAzgAAALBAAAFu3I9x/Nwb3N0AAAF/AAAAB0AAAAvaoFvbwAAAAEAAAAAzBdyYwAAAADP2IQvAAAAAM/bz7t4nGNgZGFgnMDAysDB1Ml0hoGBoR9CM75mMGLkYGBgYmBlZsAKAtJcUxgcPsR8iGF2+O/AEMPsznAYKMwIkgMA5REMOXicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChED+h5j//yEk/3KoSgZGNgYYk4GRCUgwMaACRoZhDwCs7QgGAAAAIgKIAAAAAf//AAJ4nHWMMQrCQBBF/0zWrCCIKUQsTDCL2EXMohYGSSmorScInsRGL2DOYJe0Ntp7BK+gJ1BxF1stZvjz/v8DRghQzEc4kIgKwiAppcA9LtzKLSkdNhKFY3HF4lK69ExKslx7Xa+vPRVS43G98vG1DnkDMIBUgFN0MDXflU8tbaZOUkXUH0+U27RoRpOIyCKjbMCVejwypzJJG4jIwb43rfl6wbwanocrJm9XFYfskuVC5K/TPyczNU7b84CXcbxks1Un6H6tLH9vf2LRnn8Ax7A5WQAAAHicY2BkYGAA4teL1+yI57f5ysDNwgAC529f0kOmWRiYVgEpDgYmEA8AUzEKsQAAAHicY2BkYGB2+O/AEMPCAAJAkpEBFbAAADgKAe0EAAAiAAAAAAQAAAAEAAAAAAAAKgAqACoAiAAAeJxjYGRgYGBhsGFgYgABEMkFhAwM/xn0QAIAD6YBhwB4nI1Ty07cMBS9QwKlQapQW3VXySvEqDCZGbGaHULiIQ1FKgjWMxknMfLEke2A+IJu+wntrt/QbVf9gG75jK577Lg8K1qQPCfnnnt8fX1NRC/pmjrk/zprC+8D7tBy9DHgBXoWfQ44Av8t4Bj4Z8CLtBL9CniJluPXASf0Lm4CXqFX8Q84dOLnMB17N4c7tBo1AS/Qi+hTwBH4rwHHwN8DXqQ30XXAS7QaLwSc0Gn8NuAVWou/gFmnjLrEaEh9GmDdDGgL3B4JsrRPDU2hTOiMSuJUIdKQQayiAth69r6akSSFqIJuA19TrzCIaY8sIoxyrNIrL//pw7A2iMygkX5vDj+G+kuoLdX4GlGK/8Lnlz6/h9MpmoO9rafrz7ILXEHHaAx95s9lsI7AHNMBWEZHULnfAXwG9/ZqdzLI08iuwRloXE8kfhXYAvE23+23DU3t626rbs8/8adv+9DWknsHp3E17oCf+Z48rvEQNZ78paYM38qfk3v/u3l3u3GXN2Dmvmvpf1Srwk3pB/VSsp512bA/GG5i2WJ7wu430yQ5K3nFGiOqgtmSB5pJVSizwaacmUZzZhXLlZTq8qGGFY2YcSkqbth6aW1tRmlaCFs2016m5qn36SbJrqosG4uMV4aP2PHBmB3tjtmgN2izkGQyLWprekbIntJFing32a5rKWCN/SdSoga45EJykyQ7asZvHQ8PTm6cslIpwyeyjbVltNikc2HTR7YKh9LBl9DADC0U/jLcBZDKrMhUBfQBvXRzLtFtjU9eNHKin0x5InTqb8lNpfKv1s1xHzTXRqgKzek/mb7nB8RZTCDhGEX3kK/8Q75AmUM/eLkfA+0Hi908Kx4eNsMgudg5GLdRD7a84npi+YxNr5i5KIbW5izXas7cHXIMAau1OueZhfj+cOcP3P8MNIWLyYOBuxL6DRylJ4cAAAB4nGNgYoAALjDJyIAOWMCiTIxMLDmZedkABtIBygAAAA==) format('woff');
+}
+
+.markdown-body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body b,
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body sub,
+.markdown-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.markdown-body sup {
+  top: -0.5em;
+}
+.markdown-body sub {
+  bottom: -0.25em;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body .codehilitetable {
+  border: 0;
+  border-spacing: 0;
+}
+
+.markdown-body .codehilitetable tr {
+  border: 0;
+}
+
+.markdown-body .codehilitetable pre,
+.markdown-body .codehilitetable div.codehilite {
+  margin: 0;
+}
+
+.markdown-body .linenos,
+.markdown-body .code,
+.markdown-body .codehilitetable td {
+  border: 0;
+  padding: 0;
+}
+
+.markdown-body td:not(.linenos) .linenodiv {
+  padding: 0 !important;
+}
+
+.markdown-body .code {
+  width: 100%;
+}
+
+.markdown-body .linenos div pre,
+.markdown-body .linenodiv pre,
+.markdown-body .linenodiv {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.markdown-body .code div pre,
+.markdown-body .code div {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before,
+.markdown-body hr:after {
+  display: table;
+  content: " ";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 10px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  display: inline-block;
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .headeranchor-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+
+.markdown-body .headeranchor-link:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .headeranchor,
+.markdown-body h2 .headeranchor,
+.markdown-body h3 .headeranchor,
+.markdown-body h4 .headeranchor,
+.markdown-body h5 .headeranchor,
+.markdown-body h6 .headeranchor {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+
+.markdown-body h1:hover .headeranchor-link,
+.markdown-body h2:hover .headeranchor-link,
+.markdown-body h3:hover .headeranchor-link,
+.markdown-body h4:hover .headeranchor-link,
+.markdown-body h5:hover .headeranchor-link,
+.markdown-body h6:hover .headeranchor-link {
+  height: 1em;
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .headeranchor-link .headeranchor,
+.markdown-body h2:hover .headeranchor-link .headeranchor,
+.markdown-body h3:hover .headeranchor-link .headeranchor,
+.markdown-body h4:hover .headeranchor-link .headeranchor,
+.markdown-body h5:hover .headeranchor-link .headeranchor,
+.markdown-body h6:hover .headeranchor-link .headeranchor {
+  display: inline-block;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body .admonition {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code,
+.markdown-body samp {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .codehilite {
+  margin-bottom: 16px;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .codehilite pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+/* Admonition */
+.markdown-body .admonition {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  position: relative;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+  border-left: 6px solid #333;
+  padding: 10px 10px 10px 30px;
+}
+
+.markdown-body .admonition table {
+  color: #333;
+}
+
+.markdown-body .admonition p {
+  padding: 0;
+}
+
+.markdown-body .admonition-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.markdown-body .admonition>.admonition-title {
+  color: #333;
+}
+
+.markdown-body .attention>.admonition-title {
+  color: #a6d796;
+}
+
+.markdown-body .caution>.admonition-title {
+  color: #d7a796;
+}
+
+.markdown-body .hint>.admonition-title {
+  color: #96c6d7;
+}
+
+.markdown-body .danger>.admonition-title {
+  color: #c25f77;
+}
+
+.markdown-body .question>.admonition-title {
+  color: #96a6d7;
+}
+
+.markdown-body .note>.admonition-title {
+  color: #d7c896;
+}
+
+.markdown-body .admonition:before,
+.markdown-body .attention:before,
+.markdown-body .caution:before,
+.markdown-body .hint:before,
+.markdown-body .danger:before,
+.markdown-body .question:before,
+.markdown-body .note:before {
+  font: normal normal 16px fontawesome-mini;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.5;
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.markdown-body .admonition:before {
+  content: "\f056\00a0";
+  color: 333;
+}
+
+.markdown-body .attention:before {
+  content: "\f058\00a0";
+  color: #a6d796;
+}
+
+.markdown-body .caution:before {
+  content: "\f06a\00a0";
+  color: #d7a796;
+}
+
+.markdown-body .hint:before {
+  content: "\f05a\00a0";
+  color: #96c6d7;
+}
+
+.markdown-body .danger:before {
+  content: "\f057\00a0";
+  color: #c25f77;
+}
+
+.markdown-body .question:before {
+  content: "\f059\00a0";
+  color: #96a6d7;
+}
+
+.markdown-body .note:before {
+  content: "\f040\00a0";
+  color: #d7c896;
+}
+
+.markdown-body .admonition::after {
+  content: normal;
+}
+
+.markdown-body .attention {
+  border-left: 6px solid #a6d796;
+}
+
+.markdown-body .caution {
+  border-left: 6px solid #d7a796;
+}
+
+.markdown-body .hint {
+  border-left: 6px solid #96c6d7;
+}
+
+.markdown-body .danger {
+  border-left: 6px solid #c25f77;
+}
+
+.markdown-body .question {
+  border-left: 6px solid #96a6d7;
+}
+
+.markdown-body .note {
+  border-left: 6px solid #d7c896;
+}
+
+.markdown-body .admonition>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body .admonition>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* progress bar*/
+.markdown-body .progress {
+  display: block;
+  width: 300px;
+  margin: 10px 0;
+  height: 24px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #ededed;
+  position: relative;
+  box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
+}
+
+.markdown-body .progress-label {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  width: 100%; margin: 0;
+  line-height: 24px;
+  color: #333;
+  text-shadow: 1px 1px 0 #fefefe, -1px -1px 0 #fefefe, -1px 1px 0 #fefefe, 1px -1px 0 #fefefe, 0 1px 0 #fefefe, 0 -1px 0 #fefefe, 1px 0 0 #fefefe, -1px 0 0 #fefefe, 1px 1px 2px #000;
+  -webkit-font-smoothing: antialiased !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.markdown-body .progress-bar {
+  height: 24px;
+  float: left;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #96c6d7;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -1px 0 rgba(0, 0, 0, .1);
+  background-size: 30px 30px;
+  background-image: -webkit-linear-gradient(
+    135deg, rgba(255, 255, 255, .4) 27%,
+    transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%,
+    transparent 77%, transparent
+  );
+  background-image: -moz-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -ms-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -o-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+}
+
+.markdown-body .progress-100plus .progress-bar {
+  background-color: #a6d796;
+}
+
+.markdown-body .progress-80plus .progress-bar {
+  background-color: #c6d796;
+}
+
+.markdown-body .progress-60plus .progress-bar {
+  background-color: #d7c896;
+}
+
+.markdown-body .progress-40plus .progress-bar {
+  background-color: #d7a796;
+}
+
+.markdown-body .progress-20plus .progress-bar {
+  background-color: #d796a6;
+}
+
+.markdown-body .progress-0plus .progress-bar {
+  background-color: #c25f77;
+}
+
+.markdown-body .candystripe-animate .progress-bar{
+  -webkit-animation: animate-stripes 3s linear infinite;
+  -moz-animation: animate-stripes 3s linear infinite;
+  animation: animate-stripes 3s linear infinite;
+}
+
+@-webkit-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@-moz-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+.markdown-body .gloss .progress-bar {
+  box-shadow:
+    inset 0 4px 12px rgba(255, 255, 255, .7),
+    inset 0 -12px 0 rgba(0, 0, 0, .05);
+}
+
+/* Multimarkdown Critic Blocks */
+.markdown-body .critic_mark {
+  background: #ff0;
+}
+
+.markdown-body .critic_delete {
+  color: #c82829;
+  text-decoration: line-through;
+}
+
+.markdown-body .critic_insert {
+  color: #718c00 ;
+  text-decoration: underline;
+}
+
+.markdown-body .critic_comment {
+  color: #8e908c;
+  font-style: italic;
+}
+
+.markdown-body .headeranchor {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.headeranchor:before {
+  content: '\f05c';
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+
+/* Media */
+@media only screen and (min-width: 480px) {
+  .markdown-body {
+    font-size:14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .markdown-body {
+    font-size:16px;
+  }
+}
+
+@media print {
+  .markdown-body * {
+    background: transparent !important;
+    color: black !important;
+    filter:none !important;
+    -ms-filter: none !important;
+  }
+
+  .markdown-body {
+    font-size:12pt;
+    max-width:100%;
+    outline:none;
+    border: 0;
+  }
+
+  .markdown-body a,
+  .markdown-body a:visited {
+    text-decoration: underline;
+  }
+
+  .markdown-body .headeranchor-link {
+    display: none;
+  }
+
+  .markdown-body a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  .markdown-body abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .markdown-body .ir a:after,
+  .markdown-body a[href^="javascript:"]:after,
+  .markdown-body a[href^="#"]:after {
+    content: "";
+  }
+
+  .markdown-body pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .markdown-body pre,
+  .markdown-body blockquote {
+    border: 1px solid #999;
+    padding-right: 1em;
+    page-break-inside: avoid;
+  }
+
+  .markdown-body .progress,
+  .markdown-body .progress-bar {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .markdown-body .progress {
+    border: 1px solid #ddd;
+  }
+
+  .markdown-body .progress-bar {
+    height: 22px;
+    border-right: 1px solid #ddd;
+  }
+
+  .markdown-body tr,
+  .markdown-body img {
+    page-break-inside: avoid;
+  }
+
+  .markdown-body img {
+    max-width: 100% !important;
+  }
+
+  .markdown-body p,
+  .markdown-body h2,
+  .markdown-body h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .markdown-body h2,
+  .markdown-body h3 {
+    page-break-after: avoid;
+  }
+}
+</style><title>note</title></head><body><article class="markdown-body"><h1 id="html5"><a name="user-content-html5" href="#html5" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HTML5 基础</h1>
+<blockquote>
+<ol>
+<li>HTML5 肯定不是多了一些标签就完事了</li>
+<li>HTML5 根酷炫没什么关系，更多的职责是功能，而不是外观</li>
+</ol>
+</blockquote>
+<hr />
+<h2 id="1"><a name="user-content-1" href="#1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1. 概要</h2>
+<h3 id="11-web"><a name="user-content-11-web" href="#11-web" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.1. WEB技术阶段</h3>
+<ol>
+<li>Web 1.0 内容为主，主要流行HTML和CSS</li>
+<li>Web 2.0 动态网页，流行AJAX/JavaScript/DOM</li>
+<li>HTML5 时代，WEB开发回归富客户端</li>
+</ol>
+<h3 id="12-html5"><a name="user-content-12-html5" href="#12-html5" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.2. 什么是HTML5</h3>
+<ul>
+<li>是HTML的超集，不仅仅是HTML，更多的是JavaScript API和CSS的提升，</li>
+<li>构建 Web 应用程序整体解决方案</li>
+</ul>
+<blockquote>
+<p>API的概念就是我们编程时所依赖的东西的总称</p>
+</blockquote>
+<h3 id="13-web-application"><a name="user-content-13-web-application" href="#13-web-application" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.3. 什么是Web Application</h3>
+<ul>
+<li>HTML5 前身，由WHATWG组织提出</li>
+<li>推出的目的主要是提高Web应用程序的功能</li>
+<li>2007年提交到W3C组织，成了现在我们看到的HTML5</li>
+</ul>
+<h3 id="14-html5"><a name="user-content-14-html5" href="#14-html5" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.4. HTML5应用场景</h3>
+<ul>
+<li>极具表现力的网页<ul>
+<li>案例非常多</li>
+</ul>
+</li>
+<li>网页应用程序<ul>
+<li>PC端：iCloud、百度脑图、Office 365···</li>
+<li>APP端：淘宝、京东、美团···</li>
+<li>WeChat端：淘宝、京东、美团···</li>
+</ul>
+</li>
+<li>混合式本地应用<ul>
+<li>PC端：网易云音乐、有道词典···</li>
+<li>APP端：淘宝、京东、美团···</li>
+</ul>
+</li>
+<li>简单的游戏</li>
+</ul>
+<h3 id="15-h5"><a name="user-content-15-h5" href="#15-h5" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.5. H5新特性概要</h3>
+<blockquote>
+<p>我们这里只是列出了H5中所有的新特性，大部分内容会在以后的课程中专门学习</p>
+</blockquote>
+<h4 id="151-html"><a name="user-content-151-html" href="#151-html" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.5.1. HTML</h4>
+<ul>
+<li>标签<ul>
+<li>更语义化标签</li>
+</ul>
+</li>
+<li>智能表单<ul>
+<li>新的表单类型，如：email,url,number</li>
+<li>新增表单功能属性，如：autocomplete，autofocus</li>
+<li>虚拟键盘适配，通过表单的类型决定移动端弹出的键盘类型</li>
+</ul>
+</li>
+<li>网页多媒体，我们可以在网页中直接通过原生方式播放视频音频<ul>
+<li>音频</li>
+<li>视频</li>
+<li>字幕</li>
+</ul>
+</li>
+<li>属性，语义化属性，在移动Web bootstrap的课程中用到<ul>
+<li>链接关系描述</li>
+<li>结构数据标记</li>
+<li>ARIA</li>
+<li>自定义属性</li>
+</ul>
+</li>
+<li>Canvas，提供网页绘图的可能，后面在Canvas课程会专门去学习<ul>
+<li>2D 绘图</li>
+<li>3D (WebGL)</li>
+</ul>
+</li>
+<li>SVG，仅仅了解即可</li>
+</ul>
+<h4 id="152-javascript-api"><a name="user-content-152-javascript-api" href="#152-javascript-api" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.5.2. JavaScript API</h4>
+<ul>
+<li>核心平台提升，JS在DOM和BOM两个方向上都新增了很多api，便于开发应用程序<ul>
+<li>新的选择器</li>
+<li>Element.classList</li>
+<li>访问历史API</li>
+<li>全屏API</li>
+</ul>
+</li>
+<li>网页存储，提供网页中操作客户端本地存储的API<ul>
+<li>Application Cache</li>
+<li>localStorage</li>
+<li>sessionStorage</li>
+<li>WebSQL</li>
+<li>IndexedDB</li>
+</ul>
+</li>
+<li>设备信息访问，JS可以访问硬件的一些信息，我们在移动手机APP的课程中再看<ul>
+<li>网络状态</li>
+<li>硬件访问</li>
+<li>设备方向</li>
+<li>地理围栏</li>
+</ul>
+</li>
+<li>拖放操作<ul>
+<li>网页内拖放</li>
+<li>桌面拖入</li>
+</ul>
+</li>
+<li>文件<ul>
+<li>文件系统API</li>
+<li>FileReader</li>
+</ul>
+</li>
+<li>网络访问，后面AJAX和服务端编程的课程再去看<ul>
+<li>XMLHttpRequest</li>
+<li>fetch</li>
+<li>WebSocket</li>
+</ul>
+</li>
+<li>多线程</li>
+<li>桌面通知</li>
+</ul>
+<h4 id="153-css"><a name="user-content-153-css" href="#153-css" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.5.3. CSS</h4>
+<ul>
+<li>后面详细讨论</li>
+</ul>
+<hr />
+<h3 id="16-html5"><a name="user-content-16-html5" href="#16-html5" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.6. HTML5 骨架</h3>
+<pre><code class="html">&lt;!-- HTML5的DOCTYPE声明做了最大简化 --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;!-- lang属性根据当前网页大量使用的语言种类决定，大量使用中文则使用zh-CN，英文则使用en --&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;!-- 在标准的HTML5骨架中charset是直接在meta中设置charset --&gt;
+    &lt;!-- 字符编码的设置一定是在head中的第一行 --&gt;
+    &lt;title&gt;页面标题&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<ul>
+<li>HTML5的DOCTYPE声明做了最大简化</li>
+<li>在标准的HTML5骨架中charset是直接在meta中设置charset</li>
+<li>字符编码的设置一定是在head中的第一行，再晚就来不及了</li>
+<li>lang属性根据当前网页大量使用的语言种类决定，大量使用中文则使用zh-CN，英文则使用en</li>
+</ul>
+<h2 id="2"><a name="user-content-2" href="#2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2. 语义化标签</h2>
+<h3 id="21"><a name="user-content-21" href="#21" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2.1. 什么是语义化标签</h3>
+<ul>
+<li>HTML5中制定了一系列语义化标签：<ul>
+<li>section：独立的内容节块，一般包含标题和内容</li>
+<li>article：一种特殊的section，定义文档中的具体的文章内容</li>
+<li>nav：页面导航的链接组</li>
+<li>aside：标签用来装载非正文的内容，此标签中的文字权重低</li>
+<li>header：定义文档的页眉，不仅仅是文档的页头可以使用header，一个独立块的头部也应该使用header</li>
+<li>footer：定义section或document的页脚</li>
+</ul>
+</li>
+<li>我们应该根据内容的性质决定使用特定的标签</li>
+<li>
+<p>h1一定只能出现一个，不是HTML的约定，页面中最重要的内容</p>
+</li>
+<li>
+<p>time标签专门用于时间，</p>
+<ul>
+<li>datetime应该是一个标准时间格式，</li>
+<li>pubdate指的是当前时间为article的发布时间 </li>
+</ul>
+</li>
+<li>
+<p>在H5中，主体结构标签默认和DIV都是相同的块级效果，</p>
+</li>
+<li>但是DIV没有语义，而以上标签有特定语义</li>
+</ul>
+<h3 id="22"><a name="user-content-22" href="#22" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2.2. 为什么要有语义化标签</h3>
+<ul>
+<li>能够便于开发者阅读和写出更优雅的代码，代码如诗</li>
+<li>同时让浏览器或是网络爬虫可以很好地解析，从而更好分析其中的内容</li>
+<li>使用语义化标签会具有更好地搜索引擎优化</li>
+</ul>
+<h4 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>切记</h4>
+<ul>
+<li>HTML的职责是描述一块内容是什么（或其意义）</li>
+<li>而不是它长的什么样子，它的外观应该由CSS来决定。</li>
+</ul>
+<hr />
+<h2 id="3"><a name="user-content-3" href="#3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3. 智能表单</h2>
+<h3 id="31"><a name="user-content-31" href="#31" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3.1. 新的表单类型</h3>
+<ul>
+<li>email - 限定输入内容为邮箱地址，表单提交时会校验格式</li>
+<li>url - 限定输入内容为URL，表单提交时会校验格式</li>
+<li>number - 限定输入内容为数字，表单提交时会校验格式</li>
+<li>range - 数值范围选择器</li>
+<li>Date Pickers - 日期时间选择器<ul>
+<li>样式不能修改，移动端用的比较多，因为移动端显示的是系统的时间或日期选择器</li>
+<li>date - 选取日、月、年</li>
+<li>month - 选取月、年</li>
+<li>week - 选取周和年</li>
+<li>time - 选取时间（小时和分钟）</li>
+<li>datetime - 选取时间、日、月、年，浏览器兼容性不好，效果等同于datetime-local</li>
+<li>datetime-local - 选取本地时间、日、月、年</li>
+</ul>
+</li>
+<li>search - 搜索域，语义化，表示定义搜索框</li>
+</ul>
+<h3 id="32"><a name="user-content-32" href="#32" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3.2. 新的表单属性</h3>
+<ul>
+<li>
+<p>form 上使用的新属性</p>
+<ul>
+<li>autocomplete 设置整个表单是否开启自动完成 on|off</li>
+<li>novalidate 设置H5的表单校验是否工作 true 不工作  不加该属性代表校验</li>
+</ul>
+</li>
+<li>
+<p>input 上使用的新属性</p>
+<ul>
+<li>autocomplete 单独设置每个文本框的自动完成</li>
+<li>autofocus 设置当前文本域页面加载完了过后自动得到焦点</li>
+<li>form 属性是让表单外的表单元素也可以跟随表单一起提交</li>
+<li>form overrides<ul>
+<li>formaction 在submit上重写表单的特定属性，当点击当前submit时会以当前值使用</li>
+<li>formenctype,</li>
+<li>formmethod,</li>
+<li>formnovalidate,</li>
+<li>formtarget</li>
+</ul>
+</li>
+<li>list 作用就是指定当前文本框的自动完成列表的数据 datalist 在界面上是看不见的，只是用于定义数据列表的</li>
+<li>min / max / step<ul>
+<li>min max 限制值的范围，但是不会再输入时限制，提交时校验，</li>
+<li>step设置的是每次加减的增量</li>
+<li>主要使用在number range datepicker上</li>
+</ul>
+</li>
+<li>multiple<ul>
+<li>文本域的多选</li>
+</ul>
+</li>
+<li>pattern<ul>
+<li>设置文本框的匹配格式（正则）</li>
+</ul>
+</li>
+<li>placeholder<ul>
+<li>文本框占位符</li>
+</ul>
+</li>
+<li>required<ul>
+<li>限制当前input为必须的</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="33"><a name="user-content-33" href="#33" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3.3. 虚拟键盘适配</h3>
+<ul>
+<li>在移动端中，我们可以通过不同的表单类型控制弹出的键盘类型</li>
+</ul>
+<h3 id="34-h5"><a name="user-content-34-h5" href="#34-h5" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3.4. 关于什么时候使用H5的新特性，能不能使用新特性的问题</h3>
+<ul>
+<li>无伤大雅的地方直接用<ul>
+<li>比如一个文本框，加上placeholder就具备占位文本提示功能，浏览器不支持也不会报错，那就可以直接使用</li>
+<li>再比如<code>&lt;input type="email"&gt;</code>，如果浏览器不支持，默认会显示文本框，那也可以直接用。</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="4"><a name="user-content-4" href="#4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4. 网页多媒体</h2>
+<h3 id="41"><a name="user-content-41" href="#41" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4.1. 音频</h3>
+<ul>
+<li>定义音频播放组件</li>
+</ul>
+<pre><code class="html">&lt;audio src=&quot;要播放的音频文件&quot;&gt;&lt;/audio&gt;
+</code></pre>
+
+<h3 id="42"><a name="user-content-42" href="#42" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4.2. 视频</h3>
+<ul>
+<li>定义播放视频组件</li>
+</ul>
+<pre><code class="html">&lt;video src=&quot;要播放的视频文件&quot;&gt;&lt;/video&gt;
+</code></pre>
+
+<h3 id="43"><a name="user-content-43" href="#43" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4.3. 旧版本浏览器提示</h3>
+<ul>
+<li>如果HTML中遇到不能识别的标签，就会将该标签当做DIV(块级元素) </li>
+<li>那么video中的innerHTML也就会直接显示在界面上</li>
+<li>利用这个特点我们可以实现不支持video标签的浏览器提示</li>
+</ul>
+<pre><code class="html">&lt;video src=&quot;demo.mp4&quot;&gt;
+  &lt;!-- 如果浏览器不识别video标签，以下内容可以直接显示在浏览器上 --&gt;
+  &lt;p&gt;抱歉，您的浏览器不支持视频播放！&lt;/p&gt;
+&lt;/video&gt;
+</code></pre>
+
+<h3 id="44"><a name="user-content-44" href="#44" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4.4. 格式兼容</h3>
+<ul>
+<li>每个浏览器的音视频格式支持不同（版权问题）</li>
+<li>需要兼容更多的浏览器，可以通过定义多个<code>&lt;source&gt;</code>的方式实现</li>
+<li>html解析过程中会找其中第一个能认识的格式播放，一旦找到认识的视频格式，就不会再往后找了</li>
+</ul>
+<pre><code class="html">&lt;video controls width=&quot;500&quot;&gt;
+  &lt;!-- 分析第一个source格式是否支持，如果支持则加载该文件，不支持继续往下解析 --&gt;
+  &lt;source src=&quot;chrome.mp4&quot;&gt;
+  &lt;source src=&quot;chrome.ogv&quot;&gt;
+  &lt;source src=&quot;chrome.webm&quot;&gt;
+  &lt;p&gt;抱歉，您的浏览器不支持视频播放！&lt;/p&gt;
+&lt;/video&gt;
+</code></pre>
+
+<ul>
+<li>因此不管是audio还是video都不要直接设置标签的src</li>
+</ul>
+<h3 id="45"><a name="user-content-45" href="#45" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4.5. 多媒体标签属性</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>controls</td>
+<td>决定是否显示控制菜单</td>
+</tr>
+<tr>
+<td>autoplay</td>
+<td>自动播放</td>
+</tr>
+<tr>
+<td>loop</td>
+<td>循环播放</td>
+</tr>
+<tr>
+<td>height/width</td>
+<td>定义播放器的宽高，只会在视频标签中生效</td>
+</tr>
+<tr>
+<td>preload</td>
+<td>预加载 是否在页面加载完成并且没有开始播放时就开始加载文件，如果有自动播放属性则该属性无意义</td>
+</tr>
+</tbody>
+</table>
+<h3 id="46"><a name="user-content-46" href="#46" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4.6. 自定义播放器外观</h3>
+<ol>
+<li>隐藏原生的控制菜单，也就是删除标签中的controls属性</li>
+<li>自己设计一套界面控制元素，比如播放按钮，音量控制开关之类</li>
+<li>为每个不同的控制元素注册对应的事件</li>
+<li>在事件中通过视频元素的API实现自定义播放器的效果</li>
+<li>具体的多媒体元素API表：</li>
+</ol>
+<h4 id="461"><a name="user-content-461" href="#461" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4.6.1. 方法</h4>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>addTextTrack()</td>
+<td>向音频/视频添加新的文本轨道</td>
+</tr>
+<tr>
+<td>canPlayType()</td>
+<td>检测浏览器是否能播放指定的音频/视频类型</td>
+</tr>
+<tr>
+<td>load()</td>
+<td>重新加载音频/视频元素</td>
+</tr>
+<tr>
+<td>play()</td>
+<td>开始播放音频/视频</td>
+</tr>
+<tr>
+<td>pause()</td>
+<td>暂停当前播放的音频/视频</td>
+</tr>
+</tbody>
+</table>
+<h4 id="462"><a name="user-content-462" href="#462" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4.6.2. 属性</h4>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>audioTracks</td>
+<td>返回表示可用音轨的 AudioTrackList 对象</td>
+</tr>
+<tr>
+<td>autoplay</td>
+<td>设置或返回是否在加载完成后随即播放音频/视频</td>
+</tr>
+<tr>
+<td>buffered</td>
+<td>返回表示音频/视频已缓冲部分的 TimeRanges 对象</td>
+</tr>
+<tr>
+<td>controller</td>
+<td>返回表示音频/视频当前媒体控制器的 MediaController 对象</td>
+</tr>
+<tr>
+<td>controls</td>
+<td>设置或返回音频/视频是否显示控件（比如播放/暂停等）</td>
+</tr>
+<tr>
+<td>crossOrigin</td>
+<td>设置或返回音频/视频的 CORS 设置</td>
+</tr>
+<tr>
+<td>currentSrc</td>
+<td>返回当前音频/视频的 URL</td>
+</tr>
+<tr>
+<td>currentTime</td>
+<td>设置或返回音频/视频中的当前播放位置（以秒计）</td>
+</tr>
+<tr>
+<td>defaultMuted</td>
+<td>设置或返回音频/视频默认是否静音</td>
+</tr>
+<tr>
+<td>defaultPlaybackRate</td>
+<td>设置或返回音频/视频的默认播放速度</td>
+</tr>
+<tr>
+<td>duration</td>
+<td>返回当前音频/视频的长度（以秒计）</td>
+</tr>
+<tr>
+<td>ended</td>
+<td>返回音频/视频的播放是否已结束</td>
+</tr>
+<tr>
+<td>error</td>
+<td>返回表示音频/视频错误状态的 MediaError 对象</td>
+</tr>
+<tr>
+<td>loop</td>
+<td>设置或返回音频/视频是否应在结束时重新播放</td>
+</tr>
+<tr>
+<td>mediaGroup</td>
+<td>设置或返回音频/视频所属的组合（用于连接多个音频/视频元素）</td>
+</tr>
+<tr>
+<td>muted</td>
+<td>设置或返回音频/视频是否静音</td>
+</tr>
+<tr>
+<td>networkState</td>
+<td>返回音频/视频的当前网络状态</td>
+</tr>
+<tr>
+<td>paused</td>
+<td>设置或返回音频/视频是否暂停</td>
+</tr>
+<tr>
+<td>playbackRate</td>
+<td>设置或返回音频/视频播放的速度</td>
+</tr>
+<tr>
+<td>played</td>
+<td>返回表示音频/视频已播放部分的 TimeRanges 对象</td>
+</tr>
+<tr>
+<td>preload</td>
+<td>设置或返回音频/视频是否应该在页面加载后进行加载</td>
+</tr>
+<tr>
+<td>readyState</td>
+<td>返回音频/视频当前的就绪状态</td>
+</tr>
+<tr>
+<td>seekable</td>
+<td>返回表示音频/视频可寻址部分的 TimeRanges 对象</td>
+</tr>
+<tr>
+<td>seeking</td>
+<td>返回用户是否正在音频/视频中进行查找</td>
+</tr>
+<tr>
+<td>src</td>
+<td>设置或返回音频/视频元素的当前来源</td>
+</tr>
+<tr>
+<td>startDate</td>
+<td>返回表示当前时间偏移的 Date 对象</td>
+</tr>
+<tr>
+<td>textTracks</td>
+<td>返回表示可用文本轨道的 TextTrackList 对象</td>
+</tr>
+<tr>
+<td>videoTracks</td>
+<td>返回表示可用视频轨道的 VideoTrackList 对象</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>设置或返回音频/视频的音量</td>
+</tr>
+</tbody>
+</table>
+<h4 id="463"><a name="user-content-463" href="#463" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4.6.3. 事件</h4>
+<table>
+<thead>
+<tr>
+<th>事件</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>abort</td>
+<td>当音频/视频的加载已放弃时</td>
+</tr>
+<tr>
+<td>canplay</td>
+<td>当浏览器可以播放音频/视频时</td>
+</tr>
+<tr>
+<td>canplaythrough</td>
+<td>当浏览器可在不因缓冲而停顿的情况下进行播放时</td>
+</tr>
+<tr>
+<td>durationchange</td>
+<td>当音频/视频的时长已更改时</td>
+</tr>
+<tr>
+<td>emptied</td>
+<td>当目前的播放列表为空时</td>
+</tr>
+<tr>
+<td>ended</td>
+<td>当目前的播放列表已结束时</td>
+</tr>
+<tr>
+<td>error</td>
+<td>当在音频/视频加载期间发生错误时</td>
+</tr>
+<tr>
+<td>loadeddata</td>
+<td>当浏览器已加载音频/视频的当前帧时</td>
+</tr>
+<tr>
+<td>loadedmetadata</td>
+<td>当浏览器已加载音频/视频的元数据时</td>
+</tr>
+<tr>
+<td>loadstart</td>
+<td>当浏览器开始查找音频/视频时</td>
+</tr>
+<tr>
+<td>pause</td>
+<td>当音频/视频已暂停时</td>
+</tr>
+<tr>
+<td>play</td>
+<td>当音频/视频已开始或不再暂停时</td>
+</tr>
+<tr>
+<td>playing</td>
+<td>当音频/视频在已因缓冲而暂停或停止后已就绪时</td>
+</tr>
+<tr>
+<td>progress</td>
+<td>当浏览器正在下载音频/视频时</td>
+</tr>
+<tr>
+<td>ratechange</td>
+<td>当音频/视频的播放速度已更改时</td>
+</tr>
+<tr>
+<td>seeked</td>
+<td>当用户已移动/跳跃到音频/视频中的新位置时</td>
+</tr>
+<tr>
+<td>seeking</td>
+<td>当用户开始移动/跳跃到音频/视频中的新位置时</td>
+</tr>
+<tr>
+<td>stalled</td>
+<td>当浏览器尝试获取媒体数据，但数据不可用时</td>
+</tr>
+<tr>
+<td>suspend</td>
+<td>当浏览器刻意不获取媒体数据时</td>
+</tr>
+<tr>
+<td>timeupdate</td>
+<td>当目前的播放位置已更改时</td>
+</tr>
+<tr>
+<td>volumechange</td>
+<td>当音量已更改时</td>
+</tr>
+<tr>
+<td>waiting</td>
+<td>当视频由于需要缓冲下一帧而停止</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="javascript">// 获取界面上的video元素，所有的操作必须通过它实现
+var video = document.getElementById('video');
+var btn_play = document.getElementById('btn_play');
+// 注册点击事件
+// addEventListener 用于注册事件， 将事件属性的on去掉 作为第一个参数传入
+btn_play.addEventListener('click', function() {
+  video.play();
+  btn_play.disabled = true;
+  btn_pause.disabled = false;
+});
+var btn_pause = document.getElementById('btn_pause');
+btn_pause.addEventListener('click', function() {
+  video.pause();
+  btn_play.disabled = false;
+  btn_pause.disabled = true;
+});
+var btn_muted = document.getElementById('btn_muted');
+btn_muted.addEventListener('click', function() {
+  // 交互变化true或false
+  video.muted = !video.muted;
+  btn_muted.innerHTML = video.muted ? &quot;取消静音&quot; : &quot;静音&quot;;
+});
+var volume = document.getElementById('volume');
+volume.addEventListener('change', function(e) {
+  // 拿一下当前volume的值
+  video.volume = volume.value;
+});
+var btn_speed_up = document.getElementById('btn_speed_up');
+btn_speed_up.addEventListener('click', function(e) {
+  // 加速
+  video.playbackRate += 0.1;
+});
+var btn_speed_down = document.getElementById('btn_speed_down');
+btn_speed_down.addEventListener('click', function(e) {
+  // 减速
+  video.playbackRate -= 0.1;
+});
+var btn_forward = document.getElementById('btn_forward');
+btn_forward.addEventListener('click', function(e) {
+  // 前进5秒
+  video.currentTime += 5;
+});
+var btn_back = document.getElementById('btn_back');
+btn_back.addEventListener('click', function(e) {
+  // 后退5秒
+  video.currentTime -= 5;
+});
+
+// 注册视频播放状态变化事件
+video.addEventListener('timeupdate', function() {
+  // console.log(1111);
+  progress.value = (video.currentTime / video.duration) * 100;
+});
+</code></pre>
+
+<h3 id="47-api"><a name="user-content-47-api" href="#47-api" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4.7. 全屏 API</h3>
+<ul>
+<li>HTML5中提供了可以通过JS实现网页全屏的效果</li>
+<li>具体的方式就是通过特定元素的<code>requestFullScreen</code>方法实现</li>
+<li>由于在不同浏览器中该方法需要加上特定前缀</li>
+<li>退出全屏通过<code>exitFullScreen</code>方法</li>
+</ul>
+<pre><code class="javascript">// 全屏
+function fullScreen(element) {
+  if (element.requestFullScreen) {
+    element.requestFullScreen();
+  } else if (element.webkitRequestFullScreen) {
+    element.webkitRequestFullScreen()
+  } else if (element.mozRequestFullScreen) {
+    element.mozRequestFullScreen()
+  } else if (element.oRequestFullScreen) {
+    element.oRequestFullScreen()
+  } else if (element.msRequestFullScreen) {
+    element.msRequestFullScreen()
+  }
+}
+var btnFullScreen = document.getElementById('btn_fullscreen');
+btnFullScreen.addEventListener('click', function() {
+  fullScreen(video);
+  // fullScreen(document.body);
+});
+</code></pre>
+
+<blockquote>
+<p>解决问题的思路比如何实现一个需求更重要，因为你不可能每次都遇到相同的需求</p>
+</blockquote>
+<h3 id="48-svg"><a name="user-content-48-svg" href="#48-svg" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4.8. SVG 了解*</h3>
+<ol>
+<li>iframe的作用就是在网页中挖个坑，在这个坑里再展示一个页面</li>
+<li>svg本身也是文档 所以可以使用iframe的方式载入</li>
+</ol>
+<hr />
+<h2 id="5-js-api"><a name="user-content-5-js-api" href="#5-js-api" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>5. JS 基础 API</h2>
+<h3 id="51"><a name="user-content-51" href="#51" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>5.1. 新选择器</h3>
+<ul>
+<li>JavaScript在HTML5中多了一套原生选择器API</li>
+<li>其功能类似jQuery选择器</li>
+<li>写法上类似原本的document.getElementById(&lsquo;xxx&rsquo;)</li>
+</ul>
+<pre><code class="javascript">var element1 = document.getElementById('section1'); √ 已经get
+var elements2 = document.getElementsByTagName('div'); √ 已经get
+var elements3 = document.getElementsByClassName('section');
+</code></pre>
+
+<ul>
+<li>除了这种简单的类名选择器，H5中新增了很多更高级的API：</li>
+</ul>
+<pre><code class="javascript">document.querySelectorAll('ul');
+document.querySelectorAll('.container');
+document.querySelector('div#container &gt; .inner');
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>描述</th>
+<th>返回结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>querySelector</td>
+<td>获取第一个满足选择器条件的元素</td>
+<td>一个DOM对象</td>
+</tr>
+<tr>
+<td>querySelectorAll</td>
+<td>获取所有满足选择器条件的元素</td>
+<td>包含多个DOM对象的数组</td>
+</tr>
+<tr>
+<td>getElementsByClassName</td>
+<td>获取所有使用指定类名的元素</td>
+<td>包含多个DOM对象的数组</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>小提示：h5大部分时候就是将我们经常需要的操作原生支持一下，让我们使用起来更方便，不用再借助第三方的框架</p>
+</blockquote>
+<ul>
+<li>querySelector 和 querySelectorAll 是每一个DOM对象都具备的函数</li>
+<li>其作用就是在这个dom对象下根据选择器找到对应元素</li>
+</ul>
+<h3 id="52-elementclasslist"><a name="user-content-52-elementclasslist" href="#52-elementclasslist" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>5.2. Element.classList</h3>
+<ul>
+<li>H5中DOM对象多了一个classList属性</li>
+<li>该属性其实就是是一个数组</li>
+<li>这个数组中的内容就是当前DOM元素的每一个类</li>
+<li>具体的操作如下：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>描述</th>
+<th>对比jQuery</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>element.classList.add()</td>
+<td>给当前元素添加指定类名</td>
+<td>$element.addClass()</td>
+</tr>
+<tr>
+<td>element.classList.remove()</td>
+<td>在当前元素中删除指定类名</td>
+<td>$element.removeClass()</td>
+</tr>
+<tr>
+<td>element.classList.contains()</td>
+<td>判断当前元素中是否存在指定类名</td>
+<td>$element.hasClass()</td>
+</tr>
+<tr>
+<td>element.classList.toggleClass()</td>
+<td>在当前元素上切换指定类名的存在</td>
+<td>$element.toggleClass()</td>
+</tr>
+</tbody>
+</table>
+<h3 id="53-data-"><a name="user-content-53-data-" href="#53-data-" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>5.3. 自定义属性 DATA-* !</h3>
+<ul>
+<li>在HTML5中，如果想要给元素添加一些自定义属性</li>
+<li>可以DOM对象添加一些data-xxx的属性</li>
+<li>HTML5中<strong>data-</strong>是自定义属性的前缀</li>
+<li>一般用来记录与当前DOM强相关的数据</li>
+</ul>
+<pre><code class="html">&lt;ul id=&quot;users&quot;&gt;
+  &lt;li data-id=&quot;1&quot; data-age=&quot;18&quot; data-gender=&quot;true&quot;&gt;张三&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<ul>
+<li>如果需要用JS的方式操作自定义属性，可以通过getAttribute()/setAttribute()方式</li>
+<li>当然HTML5在JavaScript中提供了一个新的 API：<strong>dataset</strong>， </li>
+<li>用于操作元素的自定义属性</li>
+</ul>
+<pre><code class="javascript">var liElement = document.querySelector('#users &gt; li');
+
+// 添加一个自定义属性
+liElement.dataset['name'] = '张三';
+
+// 获取liElement中所有的自定义属性
+console.log(liElement.dataset);
+// output: {id: 1, age: 18, gender: true, name: '张三'}
+
+</code></pre>
+
+<hr />
+<h2 id="6"><a name="user-content-6" href="#6" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>6. 离线 &amp; 存储</h2>
+<h3 id="61-application-cache"><a name="user-content-61-application-cache" href="#61-application-cache" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>6.1. Application Cache</h3>
+<p>Application Cache 就是让网页可以离线访问的技术</p>
+<p>使用方式：</p>
+<ol>
+<li>
+<p>创建一个缓存清单文件（比如：cache.manifest）</p>
+<pre><code>CACHE MANIFEST
+# version 1.0.7
+
+CACHE:
+  css/style.css
+  js/script.js
+  img/logo.png
+  index.html
+
+NETWORK:
+  *
+</code></pre>
+
+</li>
+<li>
+<p>回到HTML中，给HTML标签添加manifest属性，指向刚刚创建的缓存清单文件</p>
+<pre><code class="html">&lt;html manifest=&quot;cache.manifest&quot;&gt;
+...
+&lt;/html&gt;
+</code></pre>
+
+</li>
+<li>
+<p>JS中可以捕获到Application Cache的更新事件：</p>
+</li>
+</ol>
+<pre><code class="javascript">if (window.applicationCache) {
+  window.applicationCache.addEventListener('updateready', function(e) {
+    // 更新完成触发
+    if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
+      window.applicationCache.swapCache();
+      if (confirm('更新成功，是否刷新页面?')) {
+        window.location.reload();
+      }
+    }
+  });
+}
+</code></pre>
+
+<h3 id="62-web-storage"><a name="user-content-62-web-storage" href="#62-web-storage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>6.2. Web Storage</h3>
+<blockquote>
+<p>HTML5中提供了可以离线操作的数据存储接口：</p>
+</blockquote>
+<ul>
+<li>localStorage （永久，除非用户手动清除）</li>
+<li>sessionStorage （会话，关闭浏览器清除）</li>
+</ul>
+<p>两者操作方式完全相同，只不过是数据存储的周期不同</p>
+<pre><code class="javascript">var btnSet = document.querySelector('#btn_set');
+var btnGet = document.querySelector('#btn_get');
+var txtValue = document.querySelector('#txt_value');
+btnGet.addEventListener('click', function() {
+  // txtValue.value = localStorage.getItem('key1');
+  txtValue.value = localStorage['key1'];
+});
+btnSet.addEventListener('click', function() {
+  // localStorage.setItem('key1', txtValue.value);
+  localStorage['key1'] = txtValue.value;
+});
+</code></pre>
+
+<blockquote>
+<ol>
+<li>getItem方式获取一个不存在的键 返回空字符串</li>
+<li>[]方式获取一个不存在的键 返回undefined</li>
+</ol>
+</blockquote>
+<h2 id="7-api"><a name="user-content-7-api" href="#7-api" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>7. 文件 API</h2>
+<blockquote>
+<p><a href="http://www.cnblogs.com/Joans/p/3158582.html">input file类型，文件类型的限制</a></p>
+</blockquote>
+<h3 id="71"><a name="user-content-71" href="#71" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>7.1. 读取本地文件信息</h3>
+<p>文件域对象可以获取用户选择文件的信息：</p>
+<ul>
+<li>文件名</li>
+<li>最近修改时间</li>
+<li>文件大小</li>
+<li>文件类型</li>
+</ul>
+<pre><code class="javascript">var input = document.querySelector('#input_1');
+var file = input.files[0];
+file.name // 获取文件名
+file.lastModifiedDate // 获取最近修改时间
+file.size // 获取文件大小（单位KB）
+file.type // 获取文件类型（如：text/plain、image/png）
+</code></pre>
+
+<h3 id="72"><a name="user-content-72" href="#72" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>7.2. 文件域改变事件</h3>
+<h3 id="73"><a name="user-content-73" href="#73" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>7.3. 文件域样式</h3>
+<h3 id="74-filereader"><a name="user-content-74-filereader" href="#74-filereader" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>7.4. 使用FileReader读取文件内容</h3>
+<p>FileReader就是用来读取本地文件的对象</p>
+<pre><code class="javascript">var reader = new FileReader();
+reader.addEventListener('load', function () {
+  this.result; // 读取出来的结果
+});
+reader.readAsText(file); // 以文本的形式读取
+reader.readAsDataURL(file); // 以DataURI的形式读取
+// 以下（后台工程师用，前端不会用到）
+reader.readAsBinaryString(file); // 二进制格式
+reader.readAsArrayBuffer(file); // 字节数组
+</code></pre>
+
+<h2 id="8"><a name="user-content-8" href="#8" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>8. 拖放操作</h2>
+<h3 id="81"><a name="user-content-81" href="#81" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>8.1. 网页内元素拖放</h3>
+<ul>
+<li>拖放是 HTML5 中非常常见的功能</li>
+<li>我们可以通过在元素上添加<code>draggable="true"</code>属性实现元素允许被拖拽</li>
+</ul>
+<blockquote>
+<p>提示：链接和图片默认是可拖动的，不需要 draggable 属性。</p>
+</blockquote>
+<ul>
+<li>ondrag 事件在元素或者选取的文本被拖动时触发。</li>
+<li>在拖放的过程中会触发以下事件：</li>
+<li>在拖动目标上触发事件 (源元素):<ul>
+<li>ondragstart - 用户开始拖动元素时触发</li>
+<li>ondrag - 元素正在拖动时触发</li>
+<li>ondragend - 用户完成元素拖动后触发</li>
+</ul>
+</li>
+<li>释放目标时触发的事件（目标元素）:<ul>
+<li>ondragenter - 当被鼠标拖动的对象进入其容器范围内时触发此事件</li>
+<li>ondragover - 当某被拖动的对象在另一对象容器范围内拖动时触发此事件</li>
+<li>ondragleave - 当被鼠标拖动的对象离开其容器范围内时触发此事件</li>
+<li>ondrop - 在一个拖动过程中，释放鼠标键时触发此事件</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>注意： 在拖动元素时，每隔 350 毫秒会触发 ondrag 事件。</p>
+</blockquote>
+<h3 id="82"><a name="user-content-82" href="#82" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>8.2. 拖拽删除效果</h3>
+<ul>
+<li>作业</li>
+</ul>
+<h3 id="83"><a name="user-content-83" href="#83" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>8.3. 桌面文件拖拽至网页</h3>
+<pre><code class="javascript">// 找到目标位置框框
+var target = document.querySelector('#target');
+var fileList = document.querySelector('#result');
+// 注册拖拽进入
+target.addEventListener('dragenter', function() {
+  this.classList.add('actived');
+});
+// 离开
+target.addEventListener('dragleave', function() {
+  this.classList.remove('actived');
+});
+
+// 如果想要捕获drop事件 就一定得在该事件中阻止默认事件
+target.addEventListener('dragover', function(e) {
+  e.preventDefault();
+  e.stopPropagation();
+});
+
+// 当元素放到该对象上
+target.addEventListener('drop', function(e) {
+  if (e.dataTransfer.files.length) {
+    var files = e.dataTransfer.files;
+    for (var i = 0; i &lt; files.length; i++) {
+      var li = document.createElement('li');
+      li.setAttribute('class', 'list-group-item');
+      // 创建信息的子节点
+      li.innerHTML = '&lt;h5 class=&quot;list-group-item-heading&quot;&gt;' + files[i].name + '&lt;/h5&gt;&lt;p class=&quot;list-group-item-text&quot;&gt;' + files[i].lastModifiedDate.toLocaleDateString() + ' ' + files[i].lastModifiedDate.toLocaleTimeString() + ' ' + (files[i].size / 1024).toFixed(2) + 'KB&lt;/p&gt;';
+      fileList.appendChild(li);
+    }
+  } else {
+    // 短路运算
+    // var data = e.dataTransfer.getData('text/plain') || e.dataTransfer.getData('text/uri-list');
+    var data = e.dataTransfer.getData('text/plain');
+    if (data) {
+      // 拖入的是文本
+      target.innerHTML = data;
+    } else {
+      var img = document.createElement('img');
+      img.src = e.dataTransfer.getData('text/uri-list');
+      target.appendChild(img);
+    }
+  }
+  this.classList.remove('actived');
+  e.preventDefault();
+  e.stopPropagation();
+});
+</code></pre></article></body></html>

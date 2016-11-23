@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>网页元素拖拽</title>
+  <style>
+    #target {
+      height: 300px;
+      border: 5px dashed #c0c0c0;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="source">
+    <p draggable="true">标准通用标记语言下的一个应用HTML标准自1999年12月发布的HTML4.01后，后继的HTML5和其它标准被束之高阁，为了推动Web标准化运动的发展，一些公司联合起来，成立了一个叫做 Web Hypertext Application Technology Working Group （Web超文本应用技术工作组 -WHATWG） 的组织。WHATWG 致力于 Web 表单和应用程序，而W3C（World Wide Web Consortium，万维网联盟） 专注于XHTML2.0。在 2006 年，双方决定进行合作，来创建一个新版本的 HTML。</p>
+    <img src="h5.png" alt="" border="2">
+    <a href="http://web.itcast.cn">前端与移动开发学院</a>
+  </div>
+  <div id="target">
+  </div>
+  <script>
+    var source = document.getElementById('source');
+
+    source.addEventListener('dragstart', function(e) {
+      e.dataTransfer.setData('hello', new Date());
+      console.log('dragstart');
+      console.log(e);
+    });
+
+    var target = document.getElementById('target');
+    target.addEventListener('dragover', function(e) {
+      e.stopPropagation();
+      e.preventDefault();
+    });
+    target.addEventListener('drop', function(e) {
+      var data = e.dataTransfer.getData('text/plain');
+      e.preventDefault();
+    });
+  </script>
+</body>
+
+</html>

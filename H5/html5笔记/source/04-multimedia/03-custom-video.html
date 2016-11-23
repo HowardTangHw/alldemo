@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>自定义播放器</title>
+  <style>
+    body > div {
+      width: 640px;
+      margin: 0 auto;
+    }
+    
+    #progress_demo {
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <video id="video_demo" src="Google_Developer_Stories.webm"></video>
+  </div>
+  <div>
+    <progress id="progress_demo" max="100" value="0"></progress>
+    <span id="current_time"></span>/<span id="duration"></span>
+  </div>
+  <div>
+    <button id="btn_play">播放</button>
+    <button id="btn_pause">暂停</button>
+    <button id="btn_forward">前进5s</button>
+    <button id="btn_back">后退5s</button>
+    <button id="btn_speed_up">加速播放</button>
+    <button id="btn_speed_down">减速播放</button>
+    <button id="btn_mute">静音</button>
+    <button id="btn_volume_up">音量+</button>
+    <button id="btn_volume_down">音量-</button>
+    <button id="btn_fullscreen">全屏</button>
+  </div>
+  <script>
+    function convertToTime(second) {
+      var h = Math.floor(second / 3600);
+      var m = Math.floor(second % 3600 / 60);
+      var s = Math.floor(second % 60);
+      return h + ':' + m + ':' + s;
+    }
+
+    var video = document.getElementById('video_demo');
+
+
+    var progress = document.getElementById('progress_demo');
+    var currentTime = document.getElementById('current_time');
+    var duration = document.getElementById('duration');
+    video.addEventListener('timeupdate', function(e) {
+      progress.value = video.currentTime / video.duration * 100;
+      currentTime.innerHTML = convertToTime(video.currentTime);
+      duration.innerHTML = convertToTime(video.duration);
+    });
+    video.addEventListener('loadedmetadata', function(e) {
+      // 加载完视频元数据（包含时长）触发
+      duration.innerHTML = convertToTime(video.duration);
+    });
+
+    var btnPlay = document.getElementById('btn_play');
+    btnPlay.addEventListener('click', function(e) {
+      video.play();
+    });
+    video.addEventListener('play', function(e) {
+      btnPlay.disabled = true;
+      btnPause.disabled = false;
+    });
+
+    var btnPause = document.getElementById('btn_pause');
+    btnPause.addEventListener('click', function(e) {
+      video.pause();
+    });
+    video.addEventListener('pause', function(e) {
+      btnPlay.disabled = false;
+      btnPause.disabled = true;
+    });
+
+    var btnForward = document.getElementById('btn_forward');
+    btnForward.addEventListener('click', function() {
+      if (video.currentTime < video.duration - 5) {
+        video.currentTime += 5;
+      }
+    });
+
+    var btnBack = document.getElementById('btn_back');
+    btnBack.addEventListener('click', function() {
+      if (video.currentTime > 5) {
+        video.currentTime -= 5;
+      }
+    });
+
+    var btnSpeedUp = document.getElementById('btn_speed_up');
+    btnSpeedUp.addEventListener('click', function(e) {
+      video.playbackRate += 0.1;
+    });
+
+    var btnSpeedDown = document.getElementById('btn_speed_down');
+    btnSpeedDown.addEventListener('click', function(e) {
+      video.playbackRate -= 0.1;
+    });
+
+    var btnMute = document.getElementById('btn_mute');
+    btnMute.addEventListener('click', function(e) {
+      video.muted = !video.muted;
+      if (video.muted) {
+        btnMute.innerHTML = '取消静音';
+      } else {
+        btnMute.innerHTML = '静音';
+      }
+    });
+
+    var btnVolumeUp = document.getElementById('btn_volume_up');
+    btnVolumeUp.addEventListener('click', function(e) {
+      video.volume += 0.1;
+    });
+
+    var btnVolumeDown = document.getElementById('btn_volume_down');
+    btnVolumeDown.addEventListener('click', function(e) {
+      video.volume -= 0.1;
+    });
+
+    var btnFullScreen = document.getElementById('btn_fullscreen');
+    btnFullScreen.addEventListener('click', function() {
+      if (video.mozRequestFullScreen)
+        video.mozRequestFullScreen();
+      if (video.webkitRequestFullScreen)
+        video.webkitRequestFullScreen();
+      if (video.requestFullScreen)
+        video.requestFullScreen();
+    });
+  </script>
+</body>
+
+</html>

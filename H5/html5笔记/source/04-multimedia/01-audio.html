@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>音频</title>
+</head>
+
+<body>
+  <h2>基本使用</h2>
+  <audio src="rushus-modal_blues.mp3" controls="controls"></audio>
+  <h2>多数据源选择</h2>
+  <audio controls>
+    <!-- 不识别下一个 -->
+    <source src="rushus-modal_blues.mp3" type="audio/mpeg">
+    <source src="rushus-modal_blues.ogg" type="audio/ogg">
+  </audio>
+  <h2>老版本浏览器提示</h2>
+  <audio src="rushus-modal_blues.mp3" controls="controls">
+    shit 浏览器不支持
+  </audio>
+  <pre>
+    属性介绍：
+      autoplay:自动播放；
+      controls:显示播放控件；
+      loop:循环播放；
+      preload:预加载；如果使用 "autoplay"，则忽略该属性。
+  </pre>
+</body>
+
+</html>

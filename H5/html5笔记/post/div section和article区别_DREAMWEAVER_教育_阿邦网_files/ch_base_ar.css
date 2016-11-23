@@ -1,0 +1,249 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0;padding:0;}
+body{text-align:center;font-family:"宋体","微软雅黑",Arial;}
+ul,ol,li{list-style:none;}
+img{border:0;}
+a:link,a:visited{text-decoration:none}
+a:hover{text-decoration:underline}
+/*2015新头的修改*/
+.head_top{text-align:left;width:100%;}
+.abang_headtop{background:#bc111a;border-bottom:3px solid #930d14;height:37px;}
+.abang_headtop_con{width:960px;margin:0 auto;position:relative}	
+.abang_headtop .head_link{float:left;color:#fff;padding:0 15px;}
+.abang_headtop .head_link a:link,.abang_headtop .head_link a:visited{color:#fff;font-family:"宋体"}
+.abang_headtop .head_link span{float:left;display:inline-block;width:auto;line-height:44px;text-align:center;}
+.abang_headtop .head_link span a{width:auto;display:inline-block;line-height:44px;text-align:center;padding:0 5px;}
+.abang_headtop .head_link span.now a{font-weight:bold;background:#930d14;}
+.abang_headtop .head_link{float:left;color:#fff;padding:0;margin-right:20px;font-family:"宋体"}
+.abang_headtop .head_link .hlink{padding:13px 5px 0 30px;line-height:18px;position:relative;float:left;}
+.abang_headtop .head_link .hl_home i{position:absolute;background:url(http://z.abang.com/i/chhead/head.gif) no-repeat -20px 0;width:17px;height:14px;left:0;top:14px;}
+.abang_headtop .head_link .hl_home{padding-left:25px;margin-right:10px;border-left:0;}
+	/*未登录*/
+.abang_headtop .headlogin,.abang_headtop .headloginok{float:right;margin-top:6px;padding:0 15px 0 12px;height:27px;display:inline;width:auto;border-radius:14px;color:#fff;background:#930d14;}
+.abang_headtop .headloginok{padding:0 2px 0 12px;}
+.abang_headtop .headlogin a{color:#fff;}
+.abang_headtop #login_refer_url_click{margin-top:5px;padding-left:25px;background:url(http://z.abang.com/i/chhead/head1.gif) no-repeat -42px 0;height:18px;line-height:18px;display:inline-block;}
+	/*登录成功*/	
+.abang_headtop #headLoginOk .head_ok_btn1{margin-top:5px;padding:0 10px 0 25px;color:#fff;height:18px;line-height:18px;display:inline-block;background:url(http://z.abang.com/i/chhead/head1.gif) no-repeat -42px 0;}
+.abang_headtop #headLoginOk .head_ok_btn1:hover{text-decoration:none;}
+.abang_headtop #headUserName{display:block;width:auto;max-width:94px;_width:expression((document.documentElement.clientWidth||document.body.clientWidth)>94?"94px":"auto");overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-family:verdana;}
+.abang_headtop .big_nav_c2{display:inline;}
+.abang_headtop .big_nav_c2 .user_write,.abang_headtop .big_nav_c2 .user_menu,.abang_headtop .big_nav_c2 .user_msg{float:right;height:25px;padding:5px 10px 0 10px;position:relative;}
+.abang_headtop .big_nav_c2 .user_write{padding-right:0;padding-top:1px}
+.abang_headtop .big_nav_c2 .big_nav1{display:block;width:25px;height:25px;background:url(http://z.abang.com/i/chhead/head1.gif) no-repeat 0 -72px;}
+.abang_headtop .big_nav_c2 .big_nav2{display:block;width:16px;height:16px;background:url(http://z.abang.com/i/chhead/head1.gif) no-repeat 0 -46px;}
+.abang_headtop .big_nav_c2 .big_nav3{display:block;width:23px;height:16px;background:url(http://z.abang.com/i/chhead/head1.gif) no-repeat -20px -21px;}
+.abang_headtop .big_nav_c2 .big_nav1:hover{background-position:-32px -72px;}
+.abang_headtop .big_nav_c2 .big_nav2:hover{background-position:-26px -46px;}
+.abang_headtop .big_nav_c2 .big_nav3:hover{background-position:-53px -21px}
+.abang_headtop .small_nav{position:absolute;right:-26px;top:28px;z-index:99;text-align:center;font-size:12px;background:url(http://z.abang.com/i/chhead/headlink.gif) no-repeat -2px -54px;padding-top:6px;width:86px;overflow:hidden;}
+.abang_headtop .small_nav li{background:#b92a26;color:#fff;height:26px;padding:2px;margin:0;float:left;width:76px;}
+.abang_headtop .small_nav li a{line-height:24px;text-align:center;display:block;font-size:12px;color:#fff;width:100%;}
+.abang_headtop .small_nav2{position:absolute;right:-3px;top:40px;z-index:99;background:#fff;box-shadow:2px 2px 3px rgba(0, 0, 0, 0.7);border-bottom-right-radius:3px;border-bottom-left-radius:3px;font-size:12px;width:210px;color:#252525;display:none;overflow:hidden;}
+.abang_headtop .small_nav2 ul{margin:0 auto;margin:5px 25px 10px;overflow:hidden;}
+.abang_headtop .small_nav2 li{font-size:12px;line-height:24px;}
+.abang_headtop .small_nav2 li a{color:#3399ff;}
+.abang_headtop .small_nav2 #close_msg{position:absolute;z-index:99;right:8px;top:8px;cursor:pointer;font-size:14px;font-weight:bold;}
+.abang_headtop .user_msg #userMsgCon{line-height:14px;cursor:pointer;font-style:normal;color:#fff;padding:0 2px;display:none;position:absolute;top:-4px;left:23px;text-align:center;border-radius:2px;border:1px solid #fff;background:#ffae00;}
+.abang_headtop .user_msg #userMsgCon #userMsgNum{font-weight:normal;}
+/*20131016文章页新头搜索框*/
+.article_head_top .article_search {width:100%;height:25px;padding-top:4px;background:#930d14;border-bottom:0;overflow:hidden;}
+/*顶部广告*/
+.head01{clear: both;margin:0 auto;width:960px;text-align:left;position:relative;}
+.head01 .top_navi {border-left:1px solid #E0E0E0;border-right:1px solid #e0e0e0;}
+.head01 .top_ad{padding:4px;width:950px;background:#fff;height:92px;border:1px solid #f2f2f2;}	
+.head01 .top_ad .lt01{float:left;width:728px;border:1px solid #eaeaea;height:90px;}
+.head01 .top_ad .lt01 img{display:block;}
+.head01 .top_ad .rt01{float:right;width:210px;height:90px;display:block;overflow:hidden;}
+.head01 .top_ad .rt01 ul.n_ul01 li{width:190px;padding-left:15px;line-height:18px;font-family:verdana;background:url(http://z.abang.com/i/chhead/top_link.gif) no-repeat 0 center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.head01 .top_ad .rt01 ul.n_ul01 li a{color:#252525}
+.head01 .top_ad .rt01 ul.n_ul01 li a:hover{color:#39f}
+.top_ad_b{float:left;width:950px;height:22px;line-height:22px;padding-top:5px;overflow:hidden;}
+/*2013内容页新顶部广告*/
+.article_head_top .head01 .top_ad{width:960px;border:0;padding:4px 0;}
+.head_float{left:0;z-index:99999;}
+/*频道导航2013*/
+.cdn_mainnav{width:960px;margin:6px auto 0;padding-bottom:3px;overflow:hidden;}
+.cdn_navlogo{float:left;width:135px;height:33px;overflow:hidden;background:url(http://z.abang.com/i/chhead/cdn_navlogo2.png) no-repeat;text-indent:-9999px;margin:0 0 0 10px;display:inline-block;}
+.cdn_zthot{float:left;width:auto;height:14px;padding:18px 0 0 10px;font-size:12px;overflow:hidden;}
+.cdn_zthot strong{float:left;width:68px;display:inline-block;}
+.cdn_zthot .hot_word{float:left;width:420px;overflow:hidden;}
+.cdn_zthot span{float:left;display:inline-block;white-space:nowrap;overflow:hidden;}
+.cdn_zthot a{margin:0 3px}
+.baidu_search{float:right;width:auto;padding-right:10px;padding-top:7px;}
+/*fashion*/
+.fashion_mainnav .cdn_navlogo{background-position:0 0;}
+.fashion_mainnav .cdn_zthot{color:#4708a6;}
+.fashion_mainnav .cdn_zthot a{color:#4708a6;}
+.fashion_subnav {border-top:4px solid #4708a6;}
+.fashion_subnav .sub_type{color:#4708a6}
+/*food*/
+.food_mainnav .cdn_navlogo{background-position:0 -37px}
+.food_mainnav .cdn_zthot{color:#ff7e00;}
+.food_mainnav .cdn_zthot a{color:#ff7e00;}
+.food_subnav {border-top:4px solid #ff7e00;}
+.food_subnav .sub_type{color:#ff7e00}
+/*home*/
+.home_mainnav .cdn_navlogo{background-position:0 -74px}
+.home_mainnav .cdn_zthot{color:#ffb305;}
+.home_mainnav .cdn_zthot a{color:#ffb305;}
+.home_subnav {border-top:4px solid #ffb305;}
+.home_subnav .sub_type{color:#ffb305}
+/*health*/
+.health_mainnav .cdn_navlogo{background-position:0 -185px}
+.health_mainnav .cdn_zthot{color:#02a571;}
+.health_mainnav .cdn_zthot a{color:#02a571;}
+.health_subnav {border-top:4px solid #02a571;}
+.health_subnav .sub_type{color:#02a571}
+/*hobbies*/
+.hobbies_mainnav .cdn_navlogo{background-position:0 -259px}
+.hobbies_mainnav .cdn_zthot{color:#ff2a00;}
+.hobbies_mainnav .cdn_zthot a{color:#ff2a00;}
+.hobbies_subnav {border-top:4px solid #ff2a00;}
+.hobbies_subnav .sub_type{color:#ff2a00}
+/*digi*/
+.digi_mainnav .cdn_navlogo{background-position:0 -222px}
+.digi_mainnav .cdn_zthot{color:#0000a3;}
+.digi_mainnav .cdn_zthot a{color:#0000a3;}
+.digi_subnav {border-top:4px solid #0000a3;}
+.digi_subnav .sub_type{color:#0000a3}
+/*travel*/
+.travel_mainnav .cdn_navlogo{background-position:0 -111px}
+.travel_mainnav .cdn_zthot{color:#7daa13;}
+.travel_mainnav .cdn_zthot a{color:#7daa13;}
+.travel_subnav {border-top:4px solid #7daa13;}
+.travel_subnav .sub_type{color:#7daa13}
+/*edu*/
+.edu_mainnav .cdn_navlogo{background-position:0 -148px}
+.edu_mainnav .cdn_zthot{color:#bc111a;}
+.edu_mainnav .cdn_zthot a{color:#bc111a;}
+.edu_subnav {border-top:4px solid #bc111a;}
+.edu_subnav .sub_type{color:#bc111a}
+/*pets*/
+.pets_mainnav .cdn_navlogo{background-position:0 -215px}
+.pets_mainnav .cdn_zthot{color:#ff858c;}
+.pets_mainnav .cdn_zthot a{color:#ff858c;}
+.pets_subnav {border-top:4px solid #ff858c;}
+/*sports*/
+.sports_mainnav .cdn_navlogo{background-position:0 -386px}
+.sports_mainnav .cdn_zthot{color:#0074af;}
+.sports_mainnav .cdn_zthot a{color:#0074af;}
+.sports_subnav {border-top:4px solid #0074af;}
+/*toys*/
+.toys_mainnav .cdn_navlogo{background-position:0 -429px}
+.toys_mainnav .cdn_zthot{color:#333;}
+.toys_mainnav .cdn_zthot a{color:#333;}
+.toys_subnav {border-top:4px solid #333;}
+/*games*/
+.games_mainnav .cdn_navlogo{background-position:0 -472px}
+.games_mainnav .cdn_zthot{color:#ffb400;}
+.games_mainnav .cdn_zthot a{color:#ffb400;}
+.games_subnav {border-top:4px solid #ffb400;}
+/*finance*/
+.finance_mainnav{border-bottom:4px solid #0e9ad8;}
+.finance_mainnav .cdn_navlogo{background-position:0 -296px}
+.finance_mainnav .cdn_zthot{color:#0e9ad8;}
+.finance_mainnav .cdn_zthot a{color:#0e9ad8;}
+.finance_subnav {border-top:4px solid #0e9ad8;}
+.finance_subnav .sub_type{color:#0e9ad8}
+/*mojing*/
+.mojing_mainnav {border-bottom:4px solid #930744;}
+.mojing_mainnav .cdn_navlogo{background-position:0 -333px}
+.mojing_mainnav .cdn_zthot{color:#930744;}
+.mojing_mainnav .cdn_zthot a{color:#930744;}
+.mojing_subnav {border-top:4px solid #930744;}
+.mojing_subnav .sub_type{color:#930744}
+/*japantravel*/
+.japantravel_subnav{border-top:4px solid #720409;}
+/*频道副导航subnav*/
+.cdn_subnav{clear:both;width:960px;margin:0 auto;overflow:hidden;}
+.cdn_subnav a{float:left;display:inline-block;white-space:nowrap;margin:0 5px;color:#333;line-height:18px;text-decoration:none}
+.cdn_subnav a:hover{color:#333;text-decoration:underline;}
+.cdn_subnav table{border-collapse:collapse;width:100%;margin-bottom:5px;overflow:hidden;}
+.cdn_subnav table td{vertical-align:top;font-size:12px;padding:4px;line-height:18px;border-top:1px dashed #cdcdcd;overflow:hidden;top:-1px;position:relative;}
+.cdn_subnav table tr.first_tr td{border-top:0}
+.sub_type{font-weight:bold;letter-spacing:1px;text-align:center;}
+/*邮件激活*/
+#checkTopMail{height:36px;line-height:36px;border-bottom:1px solid #d0c38e;background:#fcf8c8;text-align:center;}
+.checkmail_con{width:960px;margin:0 auto;line-height:36px;color:#ae8433;}
+.checkmail_link{font-weight:bold;color:#b92a26;}
+/*登录浮动层*/
+/*.new_layer .l_blk01{padding:5px 15px 7px;border-bottom:1px solid #cecece;margin:0px 20px 20px 20px;font-size:14px;font-weight:bold;text-align:left;line-height:16px;color:#666666;}
+.new_layer .lname2{font-size:14px;padding:0 0 0 70px;text-align:left;color:#353535;font-weight:bold;}
+.new_layer .lname2 .textr,.new_layer .lpass2 .textr{width:190px;border:1px solid #B6B6B6;color:#000;height:17px;padding:2px;background:url(http://z.abang.com/m/user/new_layer_bg2.gif) repeat-x;}
+.new_layer .lpass2{font-size:14px;padding:15px 0 0 70px;text-align:left;color:#353535;font-weight:bold;}
+.new_layer .lpass2 a{color:#32659c;font-size:12px;padding:0 10px;}
+.new_layer .l_blk01 .cname3{font-size:14px;padding:18px 0 0;}
+.new_layer .l_blk01 .cname3 .textr,.cpass3 .textr{width:90px;border:1px solid #B6B6B6;color:#000;height:14px;padding:2px;}
+.new_layer .l_blk01 .cpass3{font-size:14px;padding:15px 0 0;}
+.new_layer .l_blk01 .cval3{font-size:14px;padding:15px 0 0;}
+.new_layer .l_blk02{padding:10px 0 20px;text-align:center;font-size:16px;font-weight:700;}
+.new_layer .l_blk03{padding:5px 10px 15px;background:#f8f8f8;margin:0 25px 20px;}
+.new_layer .submit_confirm{padding:15px 0 ;clear:both;text-align:center}
+.new_layer .submit_confirm .submit22{background:url(http://z.abang.com/m/user/confirm.gif?002) no-repeat;width:101px;height:31px;border:0;cursor:pointer;}
+.new_layer .submit_confirm a{color:#32659c;font-size:12px;padding:0 10px;}
+.open_error{font-size:12px;line-height:20px;text-align:center;color:#d00002;}
+.open_error span{width:auto;padding-left:25px;background:url(http://z.abang.com/i/abang_reg/reg_5.png) no-repeat 0 center;display:inline-block;}
+*/
+/*2015新的登录弹出层height:264px;*/
+#messageBox{position:fixed;background:#fff;text-align:left;}
+* html #messageBox{position:absolute;}
+.new_layer {width:390px;border:3px solid #d7d7d7;position:absolute;overflow:hidden;}
+.new_layer .close{border-top:3px solid #bc111a;width:auto;height:15px;padding:2px 2px 0 0;text-align:right;overflow:hidden;}
+.new_login{width:auto;padding:0 0 20px 75px;color:#4c4c4c;background:url(http://z.abang.com/f/user_new/newlogin_logo.gif) no-repeat 75px 0;overflow:hidden;}
+.new_login .new_login_tit,.new_login .new_coope_tit{margin-left:138px;padding-top:45px;color:#365f9d}
+.new_login .new_login_tit a{padding:0 8px;color:#365f9d;}
+.new_login .name_psd{width:238px;margin-top:9px;border:1px solid #cdcdcd;border-radius:5px;background:#f0f0f0;}
+.new_login .username,.new_login .userpsd{width:218px;padding:10px;position:relative}
+.new_login .name_psd label{color:#999;position:absolute;left:40px;line-height:22px;}
+.new_login .username{border-bottom:1px solid #e7e7e7;}
+.new_login .userpsd{border-top:1px solid #f5f5f5;}
+.new_login .name_psd input{width:auto;height:22px;line-height:22px;padding-left:30px;border:0;}
+.new_login .name_psd input.name{background:url(http://z.abang.com/f/user_new/username_ico.gif) no-repeat 0 center;}
+.new_login .name_psd input.pssd{background:url(http://z.abang.com/f/user_new/userpsd_ico.gif) no-repeat 0 center;}
+
+.new_login .captcha{width:240px;margin-top:7px;height:25px;position:relative;}
+.new_login .captcha a{float:left;width:100px;height:25px;}
+.new_login .captcha input{float:right;width:134px;height:23px;background:#fbfbfb;border:1px solid #cdcdcd;border-radius:3px;box-shadow:0 2px 2px #e5e5e5 inset;}
+.new_login .captcha label{color:#999;position:absolute;left:115px;line-height:22px;}
+.new_login .newsubmit_confirm{clear:both;width:240px;margin-top:10px;overflow:hidden;}
+.new_login .newsubmit_confirm label{float:right;margin-right:5px;line-height:22px;}
+.new_login .newsubmit_confirm label input{vertical-align:middle;margin-top:-2px;margin-bottom:1px}
+.new_login .newsubmit_confirm span{margin-left:5px;}
+.new_login .newsubmit_confirm .submit22{float:right;width:108px;height:23px;color:#fff;text-align:center;letter-spacing:5px;border:1px solid #6fc0e7;border-radius:5px;background:#2491d0;background:-moz-linear-gradient(top,#249ed9,#1879c0);background:-webkit-linear-gradient(top,#249ed9,#1879c0);background:-o-linear-gradient(top,#249ed9,#1879c0);filter:progid:DXImage.Transform.Microsoft.gradient(GradientType=0,startColorstr=#249ed9,endColorstr=#1879c0);cursor:pointer;}
+.new_login .error{color:#fd9500;padding-left:18px;background:url(http://z.abang.com/f/user_new/login_error.gif) no-repeat 0 center;position:absolute;left:245px;top:15px;word-wrap:break-word;white-space:nowrap;display:none;}
+.new_login .captcha .error{top:5px;}
+/*foot*/
+#pagefooter{margin:5px auto;padding:10px 0;width:960px;border-top:1px solid #939393;background:#fff;color:#010101;line-height:25px;text-align:center;clear:both}
+#pagefooter a{line-height:25px;color:#16387c;}
+#pagefooter p{line-height:150%;text-align:center;}
+#pagefooter .copy{padding-top:5px;text-align:center;}
+/*商品评论newreviews*/
+.top01 .top_mark{margin:0 auto;padding:4px 10px;width:938px;_width:938px;background:url(http://z.abang.com/i/new_channels/n_2011_04.gif) left center repeat-x;height:32px;_height:32px;}
+.top01 .top_mark .lt01{float:left;width:530px;}
+.top01 .top_mark .rt01{float:right;width:320px;}
+.top01 .top_mark span.s01{padding:0 10px 0 3px;font-size:26px;font-weight:bold;line-height:30px;color:#333;float:left;}
+.top01 .top_mark span.s02{padding-left:10px;font-size:12px;color:#999999;float:left;padding:9px 0 0 0;}
+/*第三方补全资料弹出框*/
+.reg_win{background:url(http://z.abang.com/i/abang_reg/reg_open.png) no-repeat;width:450px;height:265px;padding:120px 0 0 50px;position:relative}
+.reg_win .reg_close{background:url(http://z.abang.com/i/abang_reg/regist_space.gif) no-repeat;width:20px;height:20px;position:absolute;top:0px;right:0px;}
+.tab02 td{height:35px;text-align:left;vertical-align:middle;}
+.tab02 td.td01{width:160px;}
+.tab02 td.td02{font-size:14px;}
+.tab02 td.td02 input{padding-right:10px;}
+.tab02 td.td03{font-size:12px;color:#999999}
+.tab02 td.td03 a{color:#336699;text-decoration:underline;}
+.tab02 td.td03 input{padding-right:10px;}
+.tab02 td.td04 a{line-height:35px;}
+.tab02 .info01{height:22px;line-height:22px;}
+.reg_input06{border:0px;background:url(http://z.abang.com/i/abang_reg/regist_input06.gif) no-repeat;width:100px;height:31px;vertical-align:middle;margin-right:10px;}
+/*文章左下角文字广告*/
+.group_ad{padding:0;margin-right:10px;width:auto;font:12px/18px "宋体";padding-bottom:15px;color:#000;letter-spacing:1px;overflow:hidden;}
+.group_ad *{margin:0;padding:0;}
+.group_ad img{border:0;}
+.group_ad a:hover{text-decoration:underline;}
+.ad_title a:link,.ad_title a:visited{text-decoration:none;font-size:14px;color:#336699;line-height:22px;}
+.ad_title a:hover{color:#336699;}
+.ad_url a:link,.ad_url a:visited{color:#0b7f6c;display:block;}
+.ad_url a:hover{color:#0b7f6c;}

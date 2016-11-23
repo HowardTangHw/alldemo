@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>回收站</title>
+  <style>
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    #item_container > ul {
+      list-style: none;
+      padding: 0;
+      margin-left: 50px;
+    }
+    
+    #item_container > ul > li {
+      width: 128px;
+      height: 150px;
+      text-align: center;
+      background-color: #fff;
+    }
+    
+    #recycle {
+      background-image: url(MovieGenres/Romance-icon.png);
+      width: 128px;
+      height: 128px;
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="item_container">
+    <ul>
+      <li data-id="01" draggable="true"><img draggable="false" src="MovieGenres/Action-icon.png" alt=""><span>item 01</span></li>
+      <li data-id="02" draggable="true"><img draggable="false" src="MovieGenres/Adventure-icon.png" alt=""><span>item 02</span></li>
+      <li data-id="03" draggable="true"><img draggable="false" src="MovieGenres/Animation-icon.png" alt=""><span>item 03</span></li>
+    </ul>
+  </div>
+  <div id="recycle"></div>
+</body>
+
+</html>

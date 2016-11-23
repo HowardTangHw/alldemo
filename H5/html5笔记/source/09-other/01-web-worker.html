@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>WebWorker</title>
+</head>
+
+<body>
+  <input type="text">
+  <button id="btn">开始</button>
+  <p id="result"></p>
+  <script>
+    var fibonacci = function(n) {
+      return n < 2 ? n : arguments.callee(n - 1) + arguments.callee(n - 2);
+    };
+
+    var btn = document.querySelector('#btn');
+    var result = document.querySelector('#result');
+    btn.addEventListener('click', function(e) {
+      // var webWorker = new Worker('background-work.js');
+      // webWorker.addEventListener('message', function(e) {
+      //   result.innerHTML = e.data;
+      // });
+      result.innerHTML = fibonacci(39);
+    });
+  </script>
+</body>
+
+</html>

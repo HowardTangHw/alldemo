@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>移动界面元素</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      font-size: 0;
+      overflow: hidden;
+    }
+    
+    body > section {
+      display: inline-block;
+      height: 100%;
+      width: 50%;
+      font-size: 20px;
+      overflow: scroll;
+    }
+    
+    body > section + section {
+      border-left: 5px dashed #c0c0c0;
+      margin-left: -5px;
+    }
+    
+    body > section > ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    body > section > ul > li {
+      padding: 10px 20px;
+      font-size: 22px;
+      border: 2px solid #e0e0e0;
+      margin-bottom: -2px;
+      background-color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <section id="left">
+    <h2 style="text-align: center;">LEFT</h2>
+    <ul>
+      <li draggable="true" data-index="left-01">left list item 01</li>
+      <li draggable="true" data-index="left-02">left list item 02</li>
+      <li draggable="true" data-index="left-03">left list item 03</li>
+      <li draggable="true" data-index="left-04">left list item 04</li>
+      <li draggable="true" data-index="left-05">left list item 05</li>
+      <li draggable="true" data-index="left-06">left list item 06</li>
+      <li draggable="true" data-index="left-07">left list item 07</li>
+      <li draggable="true" data-index="left-08">left list item 08</li>
+      <li draggable="true" data-index="left-09">left list item 09</li>
+      <li draggable="true" data-index="left-10">left list item 10</li>
+      <li draggable="true" data-index="left-11">left list item 11</li>
+      <li draggable="true" data-index="left-12">left list item 12</li>
+      <li draggable="true" data-index="left-13">left list item 13</li>
+      <li draggable="true" data-index="left-14">left list item 14</li>
+      <li draggable="true" data-index="left-15">left list item 15</li>
+      <li draggable="true" data-index="left-16">left list item 16</li>
+      <li draggable="true" data-index="left-17">left list item 17</li>
+      <li draggable="true" data-index="left-18">left list item 18</li>
+      <li draggable="true" data-index="left-19">left list item 19</li>
+      <li draggable="true" data-index="left-20">left list item 20</li>
+    </ul>
+  </section>
+  <section id="right">
+    <h2 style="text-align: center;">RIGHT</h2>
+    <ul>
+      <li draggable="true" data-index="right-01">right list item 01</li>
+      <li draggable="true" data-index="right-02">right list item 02</li>
+      <li draggable="true" data-index="right-03">right list item 03</li>
+      <li draggable="true" data-index="right-04">right list item 04</li>
+      <li draggable="true" data-index="right-05">right list item 05</li>
+      <li draggable="true" data-index="right-06">right list item 06</li>
+      <li draggable="true" data-index="right-07">right list item 07</li>
+      <li draggable="true" data-index="right-08">right list item 08</li>
+      <li draggable="true" data-index="right-09">right list item 09</li>
+      <li draggable="true" data-index="right-10">right list item 10</li>
+      <li draggable="true" data-index="right-11">right list item 11</li>
+      <li draggable="true" data-index="right-12">right list item 12</li>
+      <li draggable="true" data-index="right-13">right list item 13</li>
+      <li draggable="true" data-index="right-14">right list item 14</li>
+      <li draggable="true" data-index="right-15">right list item 15</li>
+      <li draggable="true" data-index="right-16">right list item 16</li>
+      <li draggable="true" data-index="right-17">right list item 17</li>
+      <li draggable="true" data-index="right-18">right list item 18</li>
+      <li draggable="true" data-index="right-19">right list item 19</li>
+      <li draggable="true" data-index="right-20">right list item 20</li>
+    </ul>
+  </section>
+  <script>
+    (function(window) {
+      // 获取界面上的拖拽元素和容器
+      var leftContainer = window.document.querySelector('#left ul');
+      var rightContainer = window.document.querySelector('#right ul');
+      var leftElements = window.document.querySelectorAll('#left li');
+      var rightElements = window.document.querySelectorAll('#right li');
+
+      // 遍历每一个元素添加拖拽事件
+      for (var i = 0; i < leftElements.length; i++) {
+        leftElements[i].addEventListener('dragstart', function(e) {
+          e.dataTransfer.setData('current_item_index', this.dataset['index']);
+        })
+      }
+
+      leftContainer.addEventListener('dragover', function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+      });
+      leftContainer.addEventListener('drop', function(e) {
+        var item = e.dataTransfer.getData('current_item_index');
+        this.appendChild(rightContainer.querySelector('[data-index="' + item + '"]'));
+      });
+
+
+      for (var i = 0; i < rightElements.length; i++) {
+        rightElements[i].addEventListener('dragstart', function(e) {
+          e.dataTransfer.setData('current_item_index', this.dataset['index']);
+        })
+      }
+      rightContainer.addEventListener('dragover', function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+      });
+      rightContainer.addEventListener('drop', function(e) {
+        var item = e.dataTransfer.getData('current_item_index');
+        this.appendChild(leftContainer.querySelector('[data-index="' + item + '"]'));
+      });
+
+    })(window);
+  </script>
+</body>
+
+</html>
