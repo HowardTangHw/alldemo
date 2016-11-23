@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<body>
+	<!-- 所有文件api都基于文件域(确保用户选择了该文件) -->
+	<input type="file" name="" value="" placeholder="" id="filess" multiple="multiple">
+
+	<!-- 入口是文件域id+files -->
+
+	<!-- 获得文件信息按钮 -->
+	<input type="button" name="" value="提交" id="get">
+	<ul id="ul1"></ul>
+</body>
+
+</html>
+<script type="text/javascript">
+	var filess =document.querySelector("#filess");
+	var get =document.getElementById("get")
+	var ul1 =document.querySelector("#ul1");
+	//文件api可以获得的属性
+	//文件名字 文件大小(单位是b,字节) 文件最后修改时间 文件类型
+	get.addEventListener("click",function() {
+		for(var i = 0; i < filess.files.length; i++) {
+			var abc = filess.files[i];
+			var liEments = document.createElement("li");
+			liEments.innerHTML=abc.name+";"+parseInt(abc.size/1024/1024)+"mb;"+ abc.lastModifiedDate.toLocaleDateString()+ " "+abc.lastModifiedDate.toLocaleTimeString() ;
+			ul1.appendChild(liEments);
+		}
+	});
+</script>

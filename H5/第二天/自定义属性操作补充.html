@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="div" data-name="张三" data-nick-name="可爱的张三">
+		张三
+	</div>
+	<script>
+		var content=document.querySelector("#div");
+		//DOMStringMap {name: "张三", nickName: "可爱的"}
+		//data-nick-name会变成data-nickName
+		//获取
+		console.log(content.dataset['nickName']);
+	</script>
+</body>
+</html>

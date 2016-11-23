@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>文件选择域样式</title>
+	</head>
+	<body>
+		<!--文件选择域不能改变外观,用其他btn来触发他 绑定事件-->
+		<a href="javascript:;" id="get">选择文件</a>
+		<!--<button id="get2">选择文件</button>-->
+		<input type="file" name="" id="btn_file"  style="display: none;" multiple/>
+		<ul id="list"></ul>
+		
+	</body>
+</html>
+<script type="text/javascript">
+	var get =document.getElementById("get");
+	var get2=document.getElementById("get2");
+	var btnfile =document.getElementById("btn_file");
+	var ul1=document.querySelector("#list");
+	//文件域与a标签绑定click事件
+	get.addEventListener("click",function(e){
+		btnfile.click();
+	});
+	//文件选择域发生变化时触发
+	btnfile.addEventListener("change",function(){
+		ul1.innerHTML="";
+		for(var i = 0; i < btnfile.files.length; i++) {
+			var abc = btnfile.files[i];
+			var liEments = document.createElement("li");
+			liEments.innerHTML=abc.name+";"+parseInt(abc.size/1024/1024)+"mb;"+ abc.lastModifiedDate.toLocaleDateString()+ " "+abc.lastModifiedDate.toLocaleTimeString() ;
+			ul1.appendChild(liEments);
+		}
+	});
+
+</script>
