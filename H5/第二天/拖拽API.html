@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>拖拽API</title>
+		<style>
+			p {
+				border: 1px solid paleturquoise;
+			}
+			
+			#target {
+				width: 100%;
+				height: 300px;
+				border: 5px dashed #ccc;
+				font-size: 50px;
+				line-height: 300px;
+				color: #ccc;
+				text-align: center;
+			}
+			
+			.over {
+				box-shadow: 0px 0px 36px #000000 inset;
+			}
+		</style>
+	</head>
+
+	<body>
+		<p draggable="true">拖拽元素</p>
+		<!--html中 img 和a默认可以拖拽  drapggable="true" 就是可以拖拽-->
+		<img src="70396e5agw1f9l2bdsp59j20tz0miqq3.jpg" width="200px" />
+		<br/>
+		<a href="http://www.baidu.com">百度</a>
+		<br/>
+		<div id="target" class="">将文件拖进这里</div>
+	</body>
+
+</html>
+<script type="text/javascript">
+	//在html5中 为每个dom元素添加了一组ondragXXX事件
+	var dropcurrent= "";
+	//draggstart
+	var p = document.querySelector("p");
+	p.addEventListener("dragstart", function(e) {
+		this.style.borderColor = "red";
+		dropcurrent=this;
+	});
+	//draggend
+	p.addEventListener("dragend", function(e) {
+		this.style.borderColor = "paleturquoise";
+	});
+	//设置target 有元素经过时的样式
+	var target = document.querySelector("#target");
+	target.addEventListener("dragenter", function() {
+		//元素进入当前区域触发
+		target.classList.add("over");
+	});
+	//离开时
+	target.addEventListener("dragleave", function() {
+		//元素进入当前区域触发
+		target.classList.remove("over");
+	});
+	
+	
+	
+	
+	
+	//阻止系统默认拖拽事件
+	target.addEventListener("dragover",function(e){
+		e.preventDefault();
+		e.stopPropagation();
+	});
+	//drop事件 放事件,当元素在此区域放下  ,首先要阻止系统默认拖拽
+	target.addEventListener("drop", function(e) {
+			dropcurrent.parentNode.removeChild(dropcurrent);
+			target.classList.remove("over");
+	});
+</script>
