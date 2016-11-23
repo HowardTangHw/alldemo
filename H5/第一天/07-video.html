@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
+    <meta charset="UTF-8">
+    <title>Document</title>
 </head>
+
 <body>
-	<!-- 
+    <!-- 
 		不管是audio还是video都不要直接设置src 
 		因为会触发格式问题:每个浏览器的音频视频支持格式都不同
 		希望兼容各种格式
 	 -->
-	 <!-- 如果HTML遇到不能识别的标签 就会当div来识别(块级元素) -->
-	<video controls="controls" width="500">
+    <!-- 如果HTML遇到不能识别的标签 就会当div来识别(块级元素) -->
+    <video controls="controls" width="500">
 		<!-- 
 		html解析过程中 会找第一个能识别的格式播放
 		找到识别到的,就不会往后找了
@@ -23,4 +25,5 @@
 		<span>识别不出来</span>
 	</video>
 </body>
+
 </html>
