@@ -4,9 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <title>文件读取</title>
-    <script>
+  
+</head>
+
+<body>
+    <input type="file" name="" id="input_file">
+    <div id="div1"></div>
+</body>
+  <script>
         var input_file = document.querySelector("#input_file");
-        var result = document.querySelector("#img_result");
+        var result = document.querySelector("#div1");
         input_file.addEventListener("change", function(e) {
             var files = input_file.files[0];
             if (files) {
@@ -21,16 +28,22 @@
                 reader.addEventListener("load",function(e){
                 	//在回调函数中,最想要的数据往往可以通过e拿到,如果e拿不到就在this里面
                 	//e.target=this
+                	result.innerHTML=htmlEncode(e.target.result);
                 	console.log(this.result);
+                	
                 });
             }
         });
+        //转码函数
+          function htmlEncode(str) {  
+         var s = "";  
+         if (str.length == 0) return "";  
+         s = str.replace(/&/g, "&amp;");  
+         s = s.replace(/</g, "&lt;");  
+         s = s.replace(/>/g, "&gt;");    
+         s = s.replace(/'/g, "&apos;");  
+         s = s.replace(/"/g, "&quot;");  
+         return s;  
+    };
     </script>
-</head>
-
-<body>
-    <input type="file" name="" id="input_file">
-    <img src="" alt="" id="img_result">
-</body>
-
 </html>

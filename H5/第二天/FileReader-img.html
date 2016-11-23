@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>文件读取</title>
+  
+</head>
+
+<body>
+    <input type="file" name="" id="input_file">
+    <div id="result"></div>
+</body>
+  <script>
+        var input_file = document.querySelector("#input_file");
+        var result = document.querySelector("#result");
+        input_file.addEventListener("change", function(e) {
+            var files = input_file.files[0];
+            if (files) {
+                //如果用户选择了文件
+                //则执行
+                var reader = new FileReader();
+                reader.readAsDataURL(files);
+                 reader.addEventListener("load",function(e){
+                 	//创建图像
+                	var img =document.createElement("img");
+                	//将结果赋值给src
+                	img.src=this.result;
+                	//添加元素
+                	result.appendChild(img);
+                });
+              }
+         });
+
+    </script>
+</html>
