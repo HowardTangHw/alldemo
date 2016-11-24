@@ -1,0 +1,121 @@
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img {
+    margin: 0;
+    padding: 0;
+}
+
+fieldset, img, input, button { 			/*fieldset组合表单中的相关元素*/
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline-style: none;
+}
+
+ul, ol {
+    list-style: none;				/*清除列表风格*/
+}
+
+input {
+    padding-top: 0;
+    padding-bottom: 0;
+    font-family: "SimSun", "宋体";
+}
+
+select, input {
+    vertical-align: middle;
+}
+
+select, input, textarea {
+    font-size: 12px;
+    margin: 0;
+}
+
+textarea {
+    resize: none;
+}
+
+/*防止多行文本框拖动*/
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+/*  去掉图片低测默认的3像素空白缝隙*/
+table {
+    border-collapse: collapse;			/*合并外边线*/
+}
+
+
+body {
+    font: 12px/150% Arial, Verdana, "\5b8b\4f53";	/*宋体，Unicode，统一码*/
+    color: #666;
+    background: #fff
+}
+/*整体*/
+.warp{
+	min-width: 320px;
+}
+.warp{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+
+/*头部*/
+.header{
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	background-color:#343439;
+	height: 50px;
+	justify-content: center;
+	color: white;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	z-index: 9999;
+}
+.header>h1{
+	font-size: 25px;
+}
+.header>span{
+	position: absolute;
+	right: 0;
+	top:50%;
+	display: block;
+	font-size: 40px;
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+	transform: translateY(-15%);
+}
+/*中间*/
+.main{
+	margin-top: 50px;
+	margin-bottom: 50px;
+	flex: 1;
+	width: 100%;
+	display: flex;
+}
+
+/*脚部*/
+.footer{
+	width: 100%;
+	display: flex;
+	border-top: 1px solid #ccc;
+	height: 50px;
+	background-color: #f8f8f8;
+	position: fixed;
+	bottom: 0;
+}
+.footer>span{
+	flex: 1;
+	width: 25%;
+	font-size: 30px;
+	text-align: center;
+	line-height: 50px;
+	cursor: pointer;
+}
+.footer span.current{
+	color: #1aad19;
+}
