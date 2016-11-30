@@ -1,41 +1,42 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-	</head>
-	<body>
-		<!--用来存储数据 有网的时候上传-->
-		<textarea id="txt-editor" rows="10" cols="80"></textarea>
-		<button id="set">存储</button>
-		<button id="get">获得</button>
-	</body>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+    <!--用来存储数据 有网的时候上传-->
+    <textarea id="txt-editor" rows="10" cols="80"></textarea>
+    <button id="set">存储</button>
+    <button id="get">获得</button>
+</body>
+
 </html>
 <script type="text/javascript">
-	var set1 =document.querySelector("#set");
-	var get  =document.querySelector("#get");
-	var txt =document.querySelector("#txt-editor");
-	//注册点击事件
-	//存储
-	set1.addEventListener("click",function(){
-		//获取文本内容
-		var value =txt.value;
-		//存起来
-		//localStorage属性,用于操作本地存储
-		//兼容检测
-		if(window.localStorage)
-		{
-//			localStorage['text']=value;
-			localStorage.setItem('text',value);
-		}
-	});
-	//获取值
-	get.addEventListener("click",function(){
-			//兼容检测
-		txt.value="";
-		if(window.localStorage)
-		{
-			txt.value=localStorage.getItem("text");
-		}
-	});
+    var set1 = document.querySelector("#set");
+    var get = document.querySelector("#get");
+    var txt = document.querySelector("#txt-editor");
+    //注册点击事件
+    //存储
+    set1.addEventListener("click", function() {
+        //获取文本内容
+        var value = txt.value;
+        //存起来
+        //localStorage属性,用于操作本地存储
+        //兼容检测
+        if (window.localStorage) {
+            //			localStorage['text']=value;
+            localStorage.setItem('text', value);
+        }
+    });
+    //获取值
+    get.addEventListener("click", function() {
+        //兼容检测
+        txt.value = "";
+        if (window.localStorage) {
+            txt.value = localStorage.getItem("text");
+        }
+    });
 </script>
