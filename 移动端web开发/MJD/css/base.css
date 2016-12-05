@@ -57,3 +57,8 @@ textarea {
 .f_right {
     float: right;
 }
+
+[class^="icon_"] {
+    background: url("../images/sprites.png") no-repeat;
+    background-size: 200px 200px;
+}
