@@ -17,8 +17,16 @@
 <body>
     <div></div>
     <script>
-        document.querSeletor("div").addEventListener("touchstar", function() {
-
+        document.querySelector("div").addEventListener("touchstart", function() {
+		 console.log("touchstart");
+        }, false);
+         document.querySelector("div").addEventListener("touchmove", function() {
+		 console.log("touchmove");
+		 
+        }, false);
+                 document.querySelector("div").addEventListener("touchend", function() {
+		 console.log("touchend");
+		 
         }, false);
     </script>
 </body>

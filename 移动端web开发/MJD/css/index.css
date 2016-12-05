@@ -93,6 +93,8 @@ body {
 
 .jd_banner ul:nth-child(1) {
     width: 1000%;
+    transform: translateX(-10%);
+    -webkit-transform: translateX(-10%);
 }
 
 .jd_banner ul:nth-child(1) li {
