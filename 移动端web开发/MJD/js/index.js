@@ -2,6 +2,7 @@
 window.onload = function() {
     search();
     scrollPic();
+
 };
 // 搜索框特效
 var search = function() {
@@ -52,7 +53,7 @@ var scrollPic = function() {
         pic.style.transition = "none";
         pic.style.webkitTransition = "none";
     };
-    //播放效果
+    //1.播放效果
     //ul动画效果
     var changeTranslateX = function(x) {
         // 动画效果 改变ul的位置
@@ -66,8 +67,10 @@ var scrollPic = function() {
         index++;
         // 加过渡
         addTransition();
+        // 小点动画
+        setPoint();
         changeTranslateX(-index * bannerWidth);
-    }, 1000);
+    }, 3000);
     // 面对对象编程 在common.js写好了transitionEnd方法,第一个为obj,第二个为回调函数
     Howard.transitionEnd(pic, function(e) {
         if (index >= 9) {
@@ -85,7 +88,71 @@ var scrollPic = function() {
             changeTranslateX(-index * bannerWidth);
         }
     });
-    // pic.addEventListener("transitionend", function() {
+    //2.小点动画效果
+    var setPoint = function() {
+        for (var i = 0; i < pointList.length; i++) {
+            pointList[i].className = "";
+        }
+        // index是0-9;
+        var pointIndex = index; //先让索引和图片索引一致
+        if (index >= 9) {
+            pointIndex = 1;
+        } else if (index <= 0) {
+            pointIndex = 8;
+        }
+        // 设置样式
+        pointList[pointIndex - 1].className = "now";
+    }
 
-    // });
+    //3.滑动事件
+    var starX = 0; //开始的x轴位置
+    var endX = 0; //结束时x轴的位置
+    var changeX = 0; //X轴改变的距离
+    pic.addEventListener("touchstart", function(e) {
+        // 点击时 starX的坐标
+        starX = e.touches[0].clientX;
+        // 清除定时器
+        clearInterval(timer);
+    }, false);
+    pic.addEventListener("touchmove", function(e) {
+        // 每一次移动的时候都获取当前位置的坐标
+        endX = e.touches[0].clientX;
+        // 改变的距离
+        changeX = starX - endX;
+        // 去除过渡
+        removeTransition();
+
+        // 当前图片的定位 加上 改变的距离
+        changeTranslateX(-index * bannerWidth - changeX);
+    }, false);
+    pic.addEventListener("touchend", function(e) {
+        // 4.当不满足1/3移动的时候 吸附回去 超过1/3的时候 变成下一张
+        //满足超过3分之一 ,而且滑动之后
+        if (Math.abs(changeX) >= (1 / 3 * bannerWidth) && endX != 0) {
+            if (changeX > 0) {
+                index++;
+            } else {
+                index--;
+            }
+        }
+        // 加过渡
+        addTransition();
+        changeTranslateX(-index * bannerWidth);
+        setPoint();
+        // 计时器
+        // 防止多次绑定
+        clearInterval(timer);
+        timer = setInterval(function() {
+            index++;
+            // 加过渡
+            addTransition();
+            // 小点动画
+            setPoint();
+            changeTranslateX(-index * bannerWidth);
+        }, 3000);
+        //将数据清0;不要污染
+        starX = 0;
+        changeX = 0;
+        endX = 0;
+    }, false);
 }
