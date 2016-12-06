@@ -21,10 +21,12 @@ window.Howard.tap = function(obj, callback) {
         obj.addEventListener("touchmove", function() {
             isMove = true;
         }, false);
-        document.addEventListener("touchend", function(e) {
+        window.addEventListener("touchend", function(e) {
             if (Date.now() - clickTime < 200 && !isMove) {
                 callback && callback(e);
             }
+            clickTime = 0;
+            isMove = false;
         }, false);
     }
 };

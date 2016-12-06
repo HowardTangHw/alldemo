@@ -101,3 +101,34 @@
             }
         }, false);
 ```
+
+3. 获取lis.而且通过tap返回的事件源的target.找到相应的li.为他添加样式,并且赋予每个li相应的索引值
+    - 当移动的距离(-li.index * 50)比最后整版距离(minY)要小(大,因为是负数)的时候,则可以进行动画
+    - 否则就给一个最后整版的大小(minY),并记录下来
+```javascript
+    var lis = ulDom.getElementsByTagName("li");
+    Howard.tap(ulDom, function(e) {
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].className = "";
+            // 给每个li索引值
+            lis[i].index = i;
+        }
+        // 点击的元素,通过e.target获取点击的
+        var li = e.target.parentNode;
+        li.className = "now";
+        // console.log(li.index);
+        var moveY = -li.index * 50
+        if (li.index <= 15) {
+            addTransition();
+            changeTranslateY(moveY);
+            // 要记录当前定位!!!!重点!
+            now = moveY;
+        } else {
+            addTransition();
+            changeTranslateY(minY);
+            now = minY;
+        }
+
+    });
+``` 
+# 重点!!!移动的都是一定要记录当前ul移动的距离! now = -li.index * 50; 否则就会卡壳不动了

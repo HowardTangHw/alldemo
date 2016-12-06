@@ -74,11 +74,39 @@ var leftCategory = function() {
         }
         addTransition();
         changeTranslateY(move);
-        console.log(move);
+        // console.log(move);
         // 松手的时候 记录当前位置的距离
         now = move;
         starY = 0;
         endY = 0;
         changeY = 0;
     }, false);
+    //点击效果
+    var lis = ulDom.getElementsByTagName("li");
+    Howard.tap(ulDom, function(e) {
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].className = "";
+            // 给每个li索引值
+            lis[i].index = i;
+        }
+        // 点击的元素,通过e.target获取点击的
+        var li = e.target.parentNode;
+        li.className = "now";
+        // console.log(li.index);
+        var moveY = -li.index * 50;
+        // 如果移动的距离一直大于 最底的贴边距离,那么可以一直动画
+        if (moveY > minY) {
+            addTransition();
+            changeTranslateY(moveY);
+            // 要记录当前定位
+            now = -li.index * 50;
+        }
+        //否则就给一个固定值 
+        else {
+            addTransition();
+            changeTranslateY(minY);
+            now = minY;
+        }
+
+    });
 }

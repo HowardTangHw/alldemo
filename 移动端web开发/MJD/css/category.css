@@ -86,6 +86,8 @@ body {
 .jd_category_left .jd_category_left_con {}
 
 .jd_category_left_con li {
+    height: 50px;
+    width: 90px;
     border-right: 1px solid #e0e0e0;
     border-bottom: 1px solid #e0e0e0;
     text-align: center;
@@ -94,11 +96,19 @@ body {
     cursor: pointer;
 }
 
+.jd_category_left_con li.now {
+    background: #fff;
+    border-right: 1px solid #fff;
+}
+
+.jd_category_left_con li.now a {
+    color: #f15353;
+}
+
 .jd_category_left_con li a {
-    height: 50px;
-    width: 90px;
     font-size: 12px;
     font-family: sans-serif;
+    display: block
 }
 
 
