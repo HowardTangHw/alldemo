@@ -2,6 +2,7 @@
 window.onload = function() {
     search();
     scrollPic();
+    secondKill();
 
 };
 // 搜索框特效
@@ -155,4 +156,30 @@ var scrollPic = function() {
         changeX = 0;
         endX = 0;
     }, false);
+}
+
+// 倒计时效果
+var secondKill = function() {
+    // 获取dom
+    var parentTimeBox = document.querySelector(".sk_time");
+    var spans = parentTimeBox.getElementsByTagName("span");
+    // 倒计时
+    var time = 8 * 60 * 60;
+    var timer;
+    timer = setInterval(function() {
+        time--;
+        if (time <= 0) {
+            time = 8 * 60 * 60;
+        }
+        var hours = Math.floor(time / 60 / 60);
+        var minutes = Math.floor(time % (360) / 60);
+        var second = time % 60;
+        spans[0].innerHTML = hours > 10 ? Math.floor(hours / 10) : 0;
+        spans[1].innerHTML = hours % 10;
+        spans[3].innerHTML = minutes > 10 ? Math.floor(minutes / 10) : 0;
+        spans[4].innerHTML = minutes % 10;
+        spans[6].innerHTML = second > 10 ? Math.floor(second / 10) : 0;
+        spans[7].innerHTML = second % 10;
+    }, 1000);
+
 }
