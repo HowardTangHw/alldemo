@@ -68,7 +68,8 @@ var scrollPic = function() {
         addTransition();
         changeTranslateX(-index * bannerWidth);
     }, 1000);
-    pic.addEventListener("transitionend", function() {
+    // 面对对象编程 在common.js写好了transitionEnd方法,第一个为obj,第二个为回调函数
+    Howard.transitionEnd(pic, function(e) {
         if (index >= 9) {
             // 瞬间定位到第一张
             index = 1;
@@ -84,4 +85,7 @@ var scrollPic = function() {
             changeTranslateX(-index * bannerWidth);
         }
     });
+    // pic.addEventListener("transitionend", function() {
+
+    // });
 }
