@@ -11,3 +11,20 @@ window.Howard.transitionEnd = function(obj, callback) {
         }, false);
     }
 };
+window.Howard.tap = function(obj, callback) {
+    if (typeof obj == "object") {
+        var clickTime = 0,
+            isMove = false;
+        obj.addEventListener("touchstart", function() {
+            clickTime = Date.now();
+        }, false);
+        obj.addEventListener("touchmove", function() {
+            isMove = true;
+        }, false);
+        document.addEventListener("touchend", function(e) {
+            if (Date.now() - clickTime < 200 && !isMove) {
+                callback && callback(e);
+            }
+        }, false);
+    }
+};

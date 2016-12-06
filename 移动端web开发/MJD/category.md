@@ -27,3 +27,77 @@
     padding: 10px 12px;
     }
     ```
+## 动画效果
+
+1. 左侧滑动效果
+    - 首先加一个普通的滑动效果,需要记录点击时的Y坐标,移动时的Y左边,然后算出改变的y坐标,然后进行移动效果
+    - 还要一个参数,记录当前移动的位置,那么下一次移动,就是当前移动的位置-移动的距离
+    ```javascript
+    var starY = 0;
+    var endY = 0;
+    var changeY = 0;
+    // 记录当前滑动的位置
+    var now = 0;
+    // 计算出滑动的距离
+    var move;
+    ulDom.addEventListener("touchstart", function(e) {
+        starY = e.touches[0].clientY;
+
+    }, false);
+    ulDom.addEventListener("touchmove", function(e) {
+        endY = e.touches[0].clientY;
+        changeY = starY - endY;
+        // 计算滑动的距离
+        move = now - changeY;
+        // 判断是否在缓冲区间内
+        //2.滑动区间  只允许在[minY-cushion,maxY+cushion]当中滑动
+        if (move < maxY + cushion && move > minY - cushion) {
+            //清除过渡效果
+            removeTransition();
+            changeTranslateY(move);
+        }
+    }, false);
+    ```
+2. 吸附效果,当移动距离比最小的还小时,比最大的还要大的时候,要赋值,并且加过渡动画,然后弹回去,
+    ```javascript
+     ulDom.addEventListener("touchend", function(e) {
+        //限制now的值
+        if (move < minY ) {
+            move = minY;
+        }
+        if (move > maxY ) {
+            move = 0;
+        }
+        addTransition();
+        changeTranslateY(move);
+        console.log(move);
+        // 松手的时候 记录当前位置的距离
+        now = move;
+        starY = 0;
+        endY = 0;
+        changeY = 0;
+    }, false);
+    ```
+3. 当touchend的时候,要记录下ul移动到的位置
+    ```javascript
+     now = move;
+    ```
+
+##模拟点击事件 tap
+1. tap事件就是模拟的click事件,可是比click要先执行
+2. 首先要记录下点击的时间,然后判断是否移动,然后判断点击的时间长久,
+```javascript
+        var clickTime = 0,
+            isMove = false;
+        document.querySelector("div").addEventListener("touchstart", function() {
+            clickTime = Date.now();
+        }, false);
+        document.querySelector("div").addEventListener("touchmove", function() {
+            isMove = true;
+        }, false);
+        document.querySelector("div").addEventListener("touchend", function() {
+            if (Date.now() - clickTime < 200 && !isMove) {
+                console.log("tap");
+            }
+        }, false);
+```

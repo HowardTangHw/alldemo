@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: #aaa;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        // tap事件就是模拟的click事件,可是比click要先执行
+        // 首先要记录下点击的时间,然后判断是否移动,然后判断点击的时间长久,
+        var clickTime = 0,
+            isMove = false;
+        document.querySelector("div").addEventListener("touchstart", function() {
+            clickTime = Date.now();
+        }, false);
+        document.querySelector("div").addEventListener("touchmove", function() {
+            isMove = true;
+        }, false);
+        document.querySelector("div").addEventListener("touchend", function() {
+            if (Date.now() - clickTime < 200 && !isMove) {
+                console.log("tap");
+            }
+        }, false);
+    </script>
+</body>
+
+</html>
