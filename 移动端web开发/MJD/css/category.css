@@ -104,6 +104,58 @@ body {
 
 /*给左边加个 float: left; 右边加了overflow:hidden 我们就会认为右边是一个绝缘的盒子 就不会和外界元素有接触*/
 
+
+/*这样就能占满右边的空间了*/
+
 .jd_category_right {
     overflow: hidden;
+    height: 100%;
+    padding: 10px 12px;
+}
+
+.jd_category_right .jd_category_right_con {
+    width: 100%;
+}
+
+.jd_category_right .jd_category_right_con .category_banner {
+    width: 100%;
+    display: block;
+}
+
+.jd_category_right .jd_category_right_con .category_banner img {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.jd_category_right .jd_category_right_con .category_box {}
+
+.jd_category_right .jd_category_right_con .category_box h3 {
+    font-size: 12px;
+    color: #666;
+    line-height: 30px;
+}
+
+.jd_category_right .jd_category_right_con .category_box ul {}
+
+.jd_category_right .jd_category_right_con .category_box ul li {
+    width: 33.33%;
+    float: left;
+}
+
+.jd_category_right .jd_category_right_con .category_box ul li a {
+    width: 100%;
+}
+
+.jd_category_right .jd_category_right_con .category_box ul li a img {
+    width: 62px;
+    height: 62px;
+    margin: 0 auto;
+    display: block;
+}
+
+.jd_category_right .jd_category_right_con .category_box ul li a p {
+    text-align: center;
+    font-size: 12px;
+    margin: 5px 0;
 }
