@@ -209,6 +209,12 @@ body {
     background-size: 20px 5px;
 }
 
+.open {
+    transition: all 1s ease;
+    transform-origin: 0px 5px 0px;
+    transform: rotate(-45deg);
+}
+
 
 /*桶子*/
 
@@ -234,4 +240,92 @@ body {
 
 .jd_check_box[checked] {
     background-position: -25px 0;
+}
+
+
+/*弹出层*/
+
+.jd_popwin {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .4);
+    display: none;
+}
+
+.jd_popwin .jd_popwin_box {
+    width: 85%;
+    margin: 0 auto;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background: #fff;
+    padding: 0 20px;
+    margin-top: 40%;
+}
+
+.jd_popwin .jd_popwin_box .text {
+    line-height: 75px;
+    text-align: center;
+    font-size: 18px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.jd_popwin .jd_popwin_box .button {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.jd_popwin .jd_popwin_box .button .cancel {
+    width: 45%;
+    height: 36px;
+    float: left;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+    line-height: 36px;
+    font-size: 16px;
+    border-radius: 6px;
+}
+
+.jd_popwin .jd_popwin_box .button .submit {
+    width: 45%;
+    height: 36px;
+    float: left;
+    margin-left: 10%;
+    text-align: center;
+    line-height: 36px;
+    font-size: 16px;
+    background: #c80707;
+    color: #fff;
+    border-radius: 6px;
+}
+
+.move {
+    animation: move 1s;
+}
+
+
+/*动画*/
+
+@keyframes move {
+    0% {
+        opacity: 0;
+        transform: translateY(-2000px);
+        webkitTransform: translateY(-2000px);
+    }
+    65% {
+        opacity: 1;
+        transform: translateY(30px);
+        webkitTransform: translateY(30px);
+    }
+    75% {
+        transform: translateY(-10px);
+        webkitTransform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+        webkitTransform: translateY(0);
+    }
 }
