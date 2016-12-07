@@ -5,3 +5,32 @@ body {
 .jd_topBar {
     position: relative;
 }
+
+
+/*安全提示*/
+
+.jd_safeTip {
+    width: 100%;
+    background: #fff;
+    height: 34px;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: center;
+    line-height: 34px;
+}
+
+.jd_safeTip p {
+    display: inline-block;
+    color: #8b8787;
+    position: relative;
+}
+
+.jd_safeTip p::before {
+    content: "";
+    position: absolute;
+    top: 7px;
+    left: -25px;
+    background: url("../images/safe_icon.png")no-repeat;
+    background-size: 18px 18px;
+    width: 18px;
+    height: 18px;
+}
