@@ -69,6 +69,26 @@ body {
 .jd_shopBox .jd_shopBox_top .top_right {
     width: 100%;
     padding-left: 40px;
+    line-height: 34px;
+}
+
+.jd_shopBox .jd_shopBox_top .top_right img {
+    width: 15px;
+    height: 13px;
+    float: left;
+    margin-top: 10px;
+}
+
+.jd_shopBox .jd_shopBox_top .top_right .top_right_name {
+    font-size: 15px;
+    margin-left: 8px;
+}
+
+.jd_shopBox .jd_shopBox_top .top_right .top_right_tip {
+    font-size: 14px;
+    color: #c80707;
+    float: right;
+    margin-right: 10px;
 }
 
 .jd_shopBox .jd_shopBox_con {}
