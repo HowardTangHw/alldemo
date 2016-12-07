@@ -102,7 +102,7 @@ var RightCategory = function() {
     var childDom = document.querySelector(".jd_category_right_con");
     var maxY = 0,
         minY = -(childDom.offsetHeight - parentDom.offsetHeight),
-        cushion = 150;
+        cushion = 50;
     //1.滑动
     var starY = 0,
         endY = 0,
