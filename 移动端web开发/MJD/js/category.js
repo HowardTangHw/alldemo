@@ -1,5 +1,6 @@
 window.onload = function() {
     leftCategory();
+    RightCategory();
 };
 
 
@@ -19,22 +20,8 @@ var leftCategory = function() {
     var minY = -(ulHeight - parentHeight);
     // 滑动缓冲距离
     var cushion = 150;
-    //动画函数
-    var changeTranslateY = function(x) {
-        // 动画效果 改变ul的位置
-        ulDom.style.transform = "translateY(" + x + "px" + ")";
-        ulDom.style.webkitTransition = "translateY(" + x + "px" + ")";
-    };
-    // 加过渡  即系动画效果
-    var addTransition = function() {
-        ulDom.style.transition = "all .2s ease";
-        ulDom.style.webkitTransition = "all .2s ease"; //兼容老版本
-    };
-    //清除过渡
-    var removeTransition = function() {
-        ulDom.style.transition = "none";
-        ulDom.style.webkitTransition = "none";
-    };
+
+
     //1.滑动
     var starY = 0;
     var endY = 0;
@@ -55,8 +42,8 @@ var leftCategory = function() {
         // 判断是否在缓冲区间内
         //2.滑动区间
         if (move < maxY + cushion && move > minY - cushion) {
-            removeTransition();
-            changeTranslateY(move);
+            removeTransition(ulDom);
+            changeTranslateY(this, move);
         }
         // console.log(move);
 
@@ -72,8 +59,8 @@ var leftCategory = function() {
         if (move > maxY) {
             move = 0;
         }
-        addTransition();
-        changeTranslateY(move);
+        addTransition(ulDom);
+        changeTranslateY(this, move);
         // console.log(move);
         // 松手的时候 记录当前位置的距离
         now = move;
@@ -96,17 +83,76 @@ var leftCategory = function() {
         var moveY = -li.index * 50;
         // 如果移动的距离一直大于 最底的贴边距离,那么可以一直动画
         if (moveY > minY) {
-            addTransition();
-            changeTranslateY(moveY);
+            addTransition(ulDom);
+            changeTranslateY(ulDom, moveY);
             // 要记录当前定位
             now = -li.index * 50;
         }
         //否则就给一个固定值 
         else {
-            addTransition();
-            changeTranslateY(minY);
+            addTransition(ulDom);
+            changeTranslateY(ulDom, minY);
             now = minY;
         }
 
     });
 }
+var RightCategory = function() {
+    var parentDom = document.querySelector(".jd_category_right");
+    var childDom = document.querySelector(".jd_category_right_con");
+    var maxY = 0,
+        minY = -(childDom.offsetHeight - parentDom.offsetHeight),
+        cushion = 150;
+    //1.滑动
+    var starY = 0,
+        endY = 0,
+        changeY = 0,
+        now = 0,
+        move = 0;
+    childDom.addEventListener('touchstart', function(e) {
+
+        starY = e.touches[0].clientY;
+    });
+    childDom.addEventListener('touchmove', function(e) {
+        // console.log(changeY);
+        // console.log(minY);
+        endY = e.touches[0].clientY;
+        changeY = starY - endY;
+        move = now - changeY;
+        if (move < maxY + cushion && move > minY - cushion - 10) {
+            removeTransition(childDom);
+            changeTranslateY(childDom, move);
+
+        }
+    });
+    childDom.addEventListener('touchend', function(e) {
+        if (move > maxY) {
+            move = maxY;
+        } else if (move < minY - 10) {
+            move = minY - 10;
+        }
+        addTransition(this);
+        changeTranslateY(this, move);
+        now = move;
+        starY = 0;
+        endY = 0;
+        changeY = 0;
+    });
+};
+
+//动画函数
+var changeTranslateY = function(obj, y) {
+    // 动画效果 改变ul的位置
+    obj.style.transform = "translateY(" + y + "px" + ")";
+    obj.style.webkitTransform = "translateY(" + y + "px" + ")";
+};
+// 加过渡  即系动画效果
+var addTransition = function(obj) {
+    obj.style.transition = "all .2s ease";
+    obj.style.webkitTransition = "all .2s ease"; //兼容老版本
+};
+//清除过渡
+var removeTransition = function(obj) {
+    obj.style.transition = "none";
+    obj.style.webkitTransition = "none";
+};
