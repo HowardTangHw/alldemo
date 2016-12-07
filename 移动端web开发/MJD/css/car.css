@@ -91,7 +91,134 @@ body {
     margin-right: 10px;
 }
 
-.jd_shopBox .jd_shopBox_con {}
+
+/*内容区块*/
+
+.jd_shopBox .jd_shopBox_con {
+    position: relative;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+.jd_shopBox .jd_shopBox_con .con_check {
+    width: 40px;
+    position: absolute;
+}
+
+.jd_shopBox .jd_shopBox_con .con_check .jd_check_box {
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+
+/*内容右边大盒子*/
+
+.jd_shopBox .jd_shopBox_con .con_right {
+    width: 100%;
+    padding-left: 40px;
+    padding-top: 10px;
+}
+
+
+/*图片盒子*/
+
+.jd_shopBox .jd_shopBox_con .con_right .img_box {
+    width: 80px;
+    height: 80px;
+    float: left;
+}
+
+.jd_shopBox .jd_shopBox_con .con_right .img_box img {
+    width: 100%;
+    display: block;
+}
+
+.jd_shopBox .jd_shopBox_con .con_right .info_box {
+    overflow: hidden;
+    padding: 0px 10px;
+}
+
+.jd_shopBox .jd_shopBox_con .con_right .info_box .info_box_name {
+    height: 30px;
+    line-height: 15px;
+    font-size: 14px;
+    overflow: hidden;
+    display: block;
+}
+
+.jd_shopBox .jd_shopBox_con .con_right .info_box .info_box_price {
+    font-size: 14px;
+    color: #c80707;
+}
+
+
+/*选择数量区块*/
+
+.info_box_option {}
+
+
+/*数量区块*/
+
+.option_change_num {}
+
+.option_change_num span:first-child {
+    border: 1px solid #e0e0e0;
+    width: 32px;
+    height: 24px;
+    float: left;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    text-align: center;
+    line-height: 24px;
+}
+
+.option_change_num input {
+    float: left;
+    width: 32px;
+    height: 24px;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: center;
+    line-height: 24px;
+}
+
+.option_change_num span:last-child {
+    border: 1px solid #e0e0e0;
+    width: 32px;
+    height: 24px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    float: left;
+    text-align: center;
+    line-height: 24px;
+}
+
+
+/*垃圾桶*/
+
+.option_delete_product {}
+
+
+/*盖子*/
+
+.option_delete_product span:first-child {
+    width: 20px;
+    height: 5px;
+    display: block;
+    background: url("../images/delete_up.png")no-repeat;
+    background-size: 20px 5px;
+}
+
+
+/*桶子*/
+
+.option_delete_product span:last-child {
+    width: 20px;
+    height: 18px;
+    display: block;
+    background: url("../images/delete_down.png")no-repeat;
+    background-size: 20px 18px;
+}
 
 
 /*公用的复选框*/
