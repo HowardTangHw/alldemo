@@ -34,3 +34,56 @@ body {
     width: 18px;
     height: 18px;
 }
+
+
+/*店铺大盒子*/
+
+.jd_shopBox {
+    width: 100%;
+    margin-top: 10px;
+    border-top: 1px solid #e0e0e0;
+    background: #fff;
+}
+
+.jd_shopBox .jd_shopBox_top {
+    border-bottom: 1px solid #e0e0e0;
+    height: 34px;
+}
+
+
+/*复选框盒子*/
+
+.jd_shopBox .jd_shopBox_top .top_check {
+    position: absolute;
+    width: 40px;
+}
+
+.jd_shopBox .jd_shopBox_top .top_check .jd_check_box {
+    margin-left: 10px;
+    margin-top: 7px;
+}
+
+
+/*TOP的右边*/
+
+.jd_shopBox .jd_shopBox_top .top_right {
+    width: 100%;
+    padding-left: 40px;
+}
+
+.jd_shopBox .jd_shopBox_con {}
+
+
+/*公用的复选框*/
+
+.jd_check_box {
+    width: 20px;
+    height: 20px;
+    background: url("../images/shop-icon.png")no-repeat;
+    background-size: 50px 100px;
+    display: block;
+}
+
+.jd_check_box[checked] {
+    background-position: -25px 0;
+}
