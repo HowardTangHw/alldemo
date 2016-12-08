@@ -115,7 +115,8 @@ fieldset[disabled] .btn-register.active {
 
 .link-mobile img {
     position: absolute;
-    left: -14px;
+    left: 50%;
+    margin-left: -60px;
     top: 16px;
     display: none;
     z-index: 2000;
