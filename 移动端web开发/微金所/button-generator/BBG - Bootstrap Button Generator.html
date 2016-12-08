@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)http://blog.koalite.com/bbg/ -->
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>BBG - Bootstrap Button Generator</title>
+	
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<link type="text/css" href="./BBG - Bootstrap Button Generator_files/bootstrap.min.css" rel="stylesheet">
+	
+	
+	<!--[if lt IE 9]>
+		<script src="../js/html5.js"></script>
+	<![endif]-->
+	
+	<script type="text/javascript" async="" src="./BBG - Bootstrap Button Generator_files/ga.js"></script><script src="./BBG - Bootstrap Button Generator_files/ca-pub-5282064712731801.js"></script><script type="text/javascript" src="./BBG - Bootstrap Button Generator_files/jquery-1.7.min.js"></script>
+	<script type="text/javascript" src="./BBG - Bootstrap Button Generator_files/bootstrap.min.js"></script>
+	
+	<script type="text/javascript" src="./BBG - Bootstrap Button Generator_files/jquery.miniColors.js"></script>
+	<link type="text/css" href="./BBG - Bootstrap Button Generator_files/jquery.miniColors.css" rel="stylesheet">
+	
+	<style type="text/css">
+	body {
+		background-image: url('img/tiny_grid.png');
+	}
+	.content {
+		width: 1000px;
+		margin: 0 auto;
+		background-color: rgba(255, 255, 255, .95);
+		box-shadow: 3px 0px 5px #E0E0E0, -3px 0px 5px #E0E0E0;
+	}
+	.container {
+		max-width: none !important;
+		width: 1000px;
+		padding-left: 30px;
+		padding-right: 30px;
+  }
+	.row { 
+		margin-top: 25px;
+	}
+	.center {
+		text-align: center;
+	}
+	strong {
+		font-size: 15px;
+	}
+	
+	input[type="text"].form-control.color-picker {
+		width: 83%;
+		display: inline-block;
+	}
+	
+	.miniColors-selector {
+		width: 188px;
+		height: 163px;
+	}
+	
+	#select-all {
+		padding-left: 15px;
+	}
+	</style>
+<style type="text/css" data-role="custom">.btn-sample { 
+  color: #ffffff; 
+  background-color: #611BBD; 
+  border-color: #130269; 
+} 
+ 
+.btn-sample:hover, 
+.btn-sample:focus, 
+.btn-sample:active, 
+.btn-sample.active, 
+.open .dropdown-toggle.btn-sample { 
+  color: #ffffff; 
+  background-color: #49247A; 
+  border-color: #130269; 
+} 
+ 
+.btn-sample:active, 
+.btn-sample.active, 
+.open .dropdown-toggle.btn-sample { 
+  background-image: none; 
+} 
+ 
+.btn-sample.disabled, 
+.btn-sample[disabled], 
+fieldset[disabled] .btn-sample, 
+.btn-sample.disabled:hover, 
+.btn-sample[disabled]:hover, 
+fieldset[disabled] .btn-sample:hover, 
+.btn-sample.disabled:focus, 
+.btn-sample[disabled]:focus, 
+fieldset[disabled] .btn-sample:focus, 
+.btn-sample.disabled:active, 
+.btn-sample[disabled]:active, 
+fieldset[disabled] .btn-sample:active, 
+.btn-sample.disabled.active, 
+.btn-sample[disabled].active, 
+fieldset[disabled] .btn-sample.active { 
+  background-color: #611BBD; 
+  border-color: #130269; 
+} 
+ 
+.btn-sample .badge { 
+  color: #611BBD; 
+  background-color: #ffffff; 
+}</style><meta name="chromesniffer" id="chromesniffer_meta" content="{&quot;Google Analytics&quot;:-1,&quot;jQuery&quot;:&quot;1.7&quot;}"><script type="text/javascript" src="chrome-extension://homgcnaoacgigpkkljjjekpignblkeae/detector.js"></script></head>
+<body id="top">
+	<div class="content">
+	
+		<div class="container">
+			<header class="page-header">
+				<div class="row">
+					<div class="col-xs-12">
+						<h1>Bootstrap Button Generator<br><small>The simplest way to generate new button styles for <a href="http://getbootstrap.com/">Twitter's Bootstrap 3.x</a></small></h1>
+					</div>
+				</div>
+			</header>
+			
+			<section id="intro">
+			
+				<div class="row alert alert-warning">
+					Generated buttons are compatible with <strong>Bootstrap 3.x</strong>. If you are still using Bootstrap 2.x, use the <a href="http://blog.koalite.com/bbg/v2/">older version of Bootstrap Button Generator</a>.
+				</div>
+			
+				<div class="row">
+					<div class="col-xs-12">
+						<h2>How to use BBG</h2>
+					</div>			
+				</div>
+				<div class="row">
+					<div class="col-xs-8">
+						<p>
+							It's easy. Really. Just enter the css class you want to assign to your new button style and 
+							play with the different button colors to update the live previews in the right.
+						</p>
+						<p>
+						   When you are ready, copy the code below and 
+						   add it to your page <strong>below</strong> <em>bootstrap.min.css</em> to use the button.
+						</p>
+						<p>
+							<strong>What if I need to...</strong>
+						</p>
+						<p>
+							Sorry, but this is a very simple tool to do a very simple thing: <em>generate button syles</em>.
+							If you need to customize other Boostrap aspects, take a look at the 
+							<a href="http://getbootstrap.com/customize/">official customization tool</a>.
+						</p>
+					</div>
+					<div class="col-xs-4">
+						<img src="./BBG - Bootstrap Button Generator_files/bootstrap_twitter.gif" class="img-responsive" alt="Bootstrap">
+					</div>
+				</div>
+			</section>
+			
+			<hr>
+			
+			<script async="" src="./BBG - Bootstrap Button Generator_files/adsbygoogle.js"></script>
+			<!-- Banner central -->
+			<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5282064712731801" data-ad-slot="5832133978" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe width="728" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;"></iframe></ins></ins></ins>
+			<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+			
+			<hr>
+			
+			<section id="generator">
+				<div class="row">
+				
+					<div class="col-xs-5 col-xs-offset-1">
+						<form class="form-horizontal">
+							<h2>Generate Button</h2>
+							<br>
+							<div class="form-group">
+								<label class="control-label col-xs-6" for="class-name">Class Name:</label>
+								<div class="col-xs-6">
+									<input type="text" name="class-name" id="class-name" class="form-control input-sm" value="btn-sample">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-xs-6" for="text-color">Text:</label>
+								<div class="col-xs-6">
+									<input type="text" name="text-color" id="text-color" class="color-picker form-control input-sm miniColors" size="7" value="#ffffff" maxlength="7" autocomplete="off"><a class="miniColors-trigger" style="background-color: #ffffff" href="http://blog.koalite.com/bbg/#"></a>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-xs-6" for="back-color">Background:</label>
+								<div class="col-xs-6">
+									<input type="text" name="back-color" id="back-color" class="color-picker form-control input-sm miniColors" size="7" value="#611BBD" maxlength="7" autocomplete="off"><a class="miniColors-trigger" style="background-color: #611BBD" href="http://blog.koalite.com/bbg/#"></a>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-xs-6" for="border-color">Border:</label>
+								<div class="col-xs-6">
+									<input type="text" name="border-color" id="border-color" class="color-picker form-control input-sm miniColors" size="7" value="#130269" maxlength="7" autocomplete="off"><a class="miniColors-trigger" style="background-color: #130269" href="http://blog.koalite.com/bbg/#"></a>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-xs-6" for="active-back-color">Active Background:</label>
+								<div class="col-xs-6">
+									<input type="text" name="active-back-color" id="active-back-color" class="color-picker form-control input-sm miniColors" size="7" value="#49247A" maxlength="7" autocomplete="off"><a class="miniColors-trigger" style="background-color: #49247A" href="http://blog.koalite.com/bbg/#"></a>
+								</div>
+							</div>
+						</form>
+					</div>
+					
+					<div class="col-xs-5 col-xs-offset-1">
+						<h2><small>Button Previews</small></h2>
+						<br>
+						<p>
+							<button class="btn sample btn-lg btn-sample">Large Button</button>
+							<button class="btn sample btn-lg active btn-sample">Active</button>
+							<button class="btn sample btn-lg disabled btn-sample">Disabled</button>
+						</p>
+						<p>
+							<button class="btn sample btn-sample">Default Button</button>
+							<button class="btn sample active btn-sample">Active</button>
+							<button class="btn sample disabled btn-sample">Disabled</button>
+						</p>
+						<p>
+							<button class="btn sample btn-sm btn-sample">Small Button</button>
+							<button class="btn sample btn-sm active btn-sample">Active</button>
+							<button class="btn sample btn-sm disabled btn-sample">Disabled</button>
+						</p>
+						<p>
+							<button class="btn sample btn-xs btn-sample">Mini Button</button>
+							<button class="btn sample btn-xs active btn-sample">Active</button>
+							<button class="btn sample btn-xs disabled btn-sample">Disabled</button>
+						</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-10 col-xs-offset-1">
+						<form>
+							<h2><small>CSS Code</small></h2>
+							<label class="control-label" for="css-text">Add the following CSS <strong>below</strong> <em>bootstrap.min.css</em> to use this button: <a href="http://blog.koalite.com/bbg/#" id="select-all">[Select all]</a>
+							</label>
+							<textarea class="form-control" id="css-text" rows="10"></textarea>
+						</form>
+					</div>
+				</div>
+			</section>
+			
+			<footer>
+				<div class="row">
+					<div class="col-xs-12 center">
+						<hr>
+						<small>
+							By Juan M. Hernández [<a href="http://blog.koalite.com/">blog.koalite.com</a>]
+						</small>
+					</div>
+				</div>
+			</footer>
+			
+		</div>
+	
+	</div>
+   
+	<script type="text/javascript">
+	$(function() {
+	
+		$('.color-picker').miniColors({
+			letterCase: 'upercase',
+			change: function(hex, rgb) {
+				refreshSample();
+			}
+		});
+		
+		$('#class-name').on('blur', function() {
+			refreshSample();
+		});
+		
+		$('#select-all').on('click', function(e) {
+			e.preventDefault();
+			$('#css-text').select();
+		});
+		
+		refreshSample();
+		
+		function refreshSample() {
+			
+			var cssTemplate = 
+".@class-name { \n\
+  color: @text-color; \n\
+  background-color: @back-color; \n\
+  border-color: @border-color; \n\
+} \n\
+ \n\
+.@class-name:hover, \n\
+.@class-name:focus, \n\
+.@class-name:active, \n\
+.@class-name.active, \n\
+.open .dropdown-toggle.@class-name { \n\
+  color: @text-color; \n\
+  background-color: @active-back-color; \n\
+  border-color: @border-color; \n\
+} \n\
+ \n\
+.@class-name:active, \n\
+.@class-name.active, \n\
+.open .dropdown-toggle.@class-name { \n\
+  background-image: none; \n\
+} \n\
+ \n\
+.@class-name.disabled, \n\
+.@class-name[disabled], \n\
+fieldset[disabled] .@class-name, \n\
+.@class-name.disabled:hover, \n\
+.@class-name[disabled]:hover, \n\
+fieldset[disabled] .@class-name:hover, \n\
+.@class-name.disabled:focus, \n\
+.@class-name[disabled]:focus, \n\
+fieldset[disabled] .@class-name:focus, \n\
+.@class-name.disabled:active, \n\
+.@class-name[disabled]:active, \n\
+fieldset[disabled] .@class-name:active, \n\
+.@class-name.disabled.active, \n\
+.@class-name[disabled].active, \n\
+fieldset[disabled] .@class-name.active { \n\
+  background-color: @back-color; \n\
+  border-color: @border-color; \n\
+} \n\
+ \n\
+.@class-name .badge { \n\
+  color: @back-color; \n\
+  background-color: @text-color; \n\
+}";
+
+			var css = cssTemplate
+				.replace(/@text-color/g, $('#text-color').val())
+				.replace(/@back-color/g, $('#back-color').val())
+				.replace(/@border-color/g, $('#border-color').val())
+				.replace(/@class-name/g, $('#class-name').val())
+				.replace(/@active-back-color/g, $('#active-back-color').val())
+				.replace();
+		
+			$('head style[data-role="custom"]').remove();
+			$('<style type="text/css" data-role="custom">').appendTo('head').html(css);
+			$('#css-text').val(css);
+			
+			$('.sample').addClass($('#class-name').val())
+		}
+	});
+	</script>
+	
+	<script type="text/javascript">//<![CDATA[
+	// Google Analytics for WordPress by Yoast v4.2.3 | http://yoast.com/wordpress/google-analytics/
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount','UA-25366517-1']);
+	_gaq.push(['_trackPageview']);
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+	//]]></script>
+  
+</body></html>

@@ -24,7 +24,9 @@
     <![endif]-->
     <!--头部区域-->
     <header id="header">
-        <div class="topbar">
+        <!--visible-md-block指的是 在中等尺寸屏幕下才能看到-->
+        <!--visible-md-block visible-lg-block=hidden-xs hidden-sm-->
+        <div class="topbar hidden-xs hidden-sm">
             <div class="container">
                 <div class="row">
                     <div class="col-md-2 text-center">
@@ -43,8 +45,8 @@
                     </div>
 
                     <div class="col-md-3 text-center">
-                        <a href="#" class="">免费注册</a>
-                        <a href="#" class="">登陆</a>
+                        <a href="#" class="btn btn-sm btn-register">免费注册</a>
+                        <a href="#" class="link-login text-muted">登陆</a>
                     </div>
 
 
@@ -76,7 +78,6 @@
     <!-- 脚注区域 -->
     <footer></footer>
     <!-- /脚注区域 -->
-
 
     <script src="lib/jquery/jquery.js"></script>
     <script src="lib/bootstrap/js/bootstrap.js"></script>

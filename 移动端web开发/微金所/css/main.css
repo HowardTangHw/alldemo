@@ -25,6 +25,55 @@
 }
 
 
+/*样式拓展*/
+
+.btn-register {
+    color: #ffffff;
+    background-color: #E9232C;
+    border-color: #DB3B4C;
+}
+
+.btn-register:hover,
+.btn-register:focus,
+.btn-register:active,
+.btn-register.active,
+.open .dropdown-toggle.btn-register {
+    color: #ffffff;
+    background-color: #E9232C;
+    border-color: #DB3B4C;
+}
+
+.btn-register:active,
+.btn-register.active,
+.open .dropdown-toggle.btn-register {
+    background-image: none;
+}
+
+.btn-register.disabled,
+.btn-register[disabled],
+fieldset[disabled] .btn-register,
+.btn-register.disabled:hover,
+.btn-register[disabled]:hover,
+fieldset[disabled] .btn-register:hover,
+.btn-register.disabled:focus,
+.btn-register[disabled]:focus,
+fieldset[disabled] .btn-register:focus,
+.btn-register.disabled:active,
+.btn-register[disabled]:active,
+fieldset[disabled] .btn-register:active,
+.btn-register.disabled.active,
+.btn-register[disabled].active,
+fieldset[disabled] .btn-register.active {
+    background-color: #E9232C;
+    border-color: #DB3B4C;
+}
+
+.btn-register .badge {
+    color: #E9232C;
+    background-color: #ffffff;
+}
+
+
 /*头部通栏*/
 
 #header {
@@ -48,6 +97,10 @@
     font-size: 12px;
 }
 
+.link-login {
+    margin-left: 10px;
+}
+
 
 /*#header>.topbar>.container>.row>div {
     height: 40px;
@@ -63,7 +116,7 @@
 
 body>section {
     height: 200px;
-    background: #f1f1f1;
+    background: #e43c3c;
 }
 
 body>section:nth-of-type(2n) {

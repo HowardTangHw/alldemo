@@ -92,7 +92,6 @@
 > 字体实际上就是记录一个字体相对应的图形
 > 在CSS中为元素设置字体 以前只能设置客户端具有的字体
 > webfont 在线字体
-
 ```css
 @font-face {
   font-family: 'weijinsuo';
@@ -103,13 +102,14 @@
 }
 ```
 
-```html
-
-```
-
 #### 字体文件格式
 
 - eot : embedded-opentype
 - svg : svg
 - ttf : truetype
 - woff : woff
+
+### 1.10 按钮样式生成
+
+- http://blog.koalite.com/bbg/
+- 可以通过界面生成一个新的按钮样式
