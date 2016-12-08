@@ -1,3 +1,30 @@
+/*字体图标引入*/
+
+@font-face {
+    font-family: "weijinsuo";
+    src: url("../font/MiFie-Web-Font.eot") format('embedded-opentype'), url("../font/MiFie-Web-Font.svg") format('svg'), url("../font/MiFie-Web-Font.ttf") format('truetype'), url("../font/MiFie-Web-Font.woff") format('woff');
+}
+
+
+/*字体图标都用i标签 字体图标使用*/
+
+.icon {
+    font-family: "weijinsuo";
+    font-style: normal;
+    font-weight: normal;
+}
+
+.icon.icon-mobilephone::before {
+    content: '\e908';
+    font-size: 13px;
+}
+
+.icon.icon-telephone::before {
+    content: '\e909';
+    font-size: 13px;
+}
+
+
 /*头部通栏*/
 
 #header {
@@ -6,8 +33,30 @@
 
 #header>.topbar {
     height: 40px;
-    border: 1px solid #e0e0e0;
+    line-height: 40px;
+    border-bottom: 1px solid #e0e0e0;
 }
+
+
+/*兄弟选择器*/
+
+#header>.topbar>.container>.row>div+div {
+    border-left: 1px solid #e0e0e0;
+}
+
+#header>.topbar>.container>.row>div .text-muted {
+    font-size: 12px;
+}
+
+
+/*#header>.topbar>.container>.row>div {
+    height: 40px;
+    background-color: #f40;
+}
+
+#header>.topbar>.container>.row>div:nth-child(2n) {
+    background-color: blueviolet;
+}*/
 
 
 /*测试样式*/

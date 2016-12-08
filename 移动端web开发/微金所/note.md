@@ -69,3 +69,47 @@
             }
         }
 ```
+
+### 1.7栅格系统
+- bootstarp一般分为12栅格
+- 利用col-\*-\* 来控制某个元素在某种屏幕情况下展示几列
+- col-md-6 在中等屏幕下 占6列 占屏幕的1/2
+- col-xs-12 在超屏幕下 占全部
+- 使用栅格系统 要在在container类下的row类下
+
+### 1.7.1 row类
+- 里面的padding margin 抵消掉版心里面定义的padding margin
+
+### 1.8兄弟选择器 
+> 选择到第一个元素后 再加上+号
+> 例如#header>.topbar>.container>.row>div+div 就会为了第一个之后的加上样式
+> 就是每一个都找到自己下一个为他添加样式(第一个没有上一个)
+> .item1 + li  只能找到后面的一个 
+> .item1 ~ li  后面的所有的兄弟
+
+
+### 1.9 字体图标
+> 字体实际上就是记录一个字体相对应的图形
+> 在CSS中为元素设置字体 以前只能设置客户端具有的字体
+> webfont 在线字体
+
+```css
+@font-face {
+  font-family: 'weijinsuo';
+  src: url('../font/MiFie-Web-Font.eot') format('embedded-opentype'), 
+  url('../font/MiFie-Web-Font.svg') format('svg'), 
+  url('../font/MiFie-Web-Font.ttf') format('truetype'), 
+  url('../font/MiFie-Web-Font.woff') format('woff');
+}
+```
+
+```html
+
+```
+
+#### 字体文件格式
+
+- eot : embedded-opentype
+- svg : svg
+- ttf : truetype
+- woff : woff
