@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .container {
+            height: 200px;
+            background-color: #f40;
+        }
+        /*媒体查询
+          根据屏幕情况决定是否执行某一段css代码
+        */
+        
+        @media(min-width:750px) {
+            /*最小值为1170 就是要大于1170才会显示*/
+            .container {
+                width: 750px;
+            }
+        }
+        
+        @media(min-width:970px) {
+            /*最小值为1170 就是要大于1170才会显示*/
+            .container {
+                width: 970px;
+            }
+        }
+        
+        @media(min-width:1170px) {
+            /*最小值为1170 就是要大于1170才会显示*/
+            .container {
+                width: 1170px;
+            }
+        }
+        
+        @media(min-width:1170px) and(max-width:1280px) {}
+    </style>
+</head>
+
+<body>
+    <div class="container"></div>
+</body>
+
+</html>

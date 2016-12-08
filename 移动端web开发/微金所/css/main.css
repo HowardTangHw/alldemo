@@ -1,0 +1,22 @@
+/*头部通栏*/
+
+#header {
+    height: 200px;
+}
+
+#header>.topbar {
+    height: 40px;
+    border: 1px solid #e0e0e0;
+}
+
+
+/*测试样式*/
+
+body>section {
+    height: 200px;
+    background: #f1f1f1;
+}
+
+body>section:nth-of-type(2n) {
+    background-color: #f40;
+}
