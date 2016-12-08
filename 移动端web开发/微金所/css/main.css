@@ -1,4 +1,4 @@
-/*字体图标引入*/
+/*å­—ä½“å›¾æ ‡å¼•å…¥*/
 
 @font-face {
     font-family: "weijinsuo";
@@ -6,7 +6,7 @@
 }
 
 
-/*字体图标都用i标签 字体图标使用*/
+/*å­—ä½“å›¾æ ‡éƒ½ç”¨iæ ‡ç­¾ å­—ä½“å›¾æ ‡ä½¿ç”¨*/
 
 .icon {
     font-family: "weijinsuo";
@@ -25,7 +25,7 @@
 }
 
 
-/*样式拓展*/
+/*æ ·å¼æ‹“å±•*/
 
 .btn-register {
     color: #ffffff;
@@ -74,7 +74,7 @@ fieldset[disabled] .btn-register.active {
 }
 
 
-/*头部通栏*/
+/*å¤´éƒ¨é€šæ */
 
 #header {
     height: 200px;
@@ -87,7 +87,7 @@ fieldset[disabled] .btn-register.active {
 }
 
 
-/*兄弟选择器*/
+/*å…„å¼Ÿé€‰æ‹©å™¨*/
 
 #header>.topbar>.container>.row>div+div {
     border-left: 1px solid #e0e0e0;
@@ -101,6 +101,26 @@ fieldset[disabled] .btn-register.active {
     margin-left: 10px;
 }
 
+#header .link-mobile {
+    position: relative;
+}
+
+#header .link-mobile:hover {
+    text-decoration: none;
+}
+
+#header .link-mobile:hover img {
+    display: block;
+}
+
+.link-mobile img {
+    position: absolute;
+    left: -16px;
+    top: 16px;
+    display: none;
+    z-index: 2000;
+}
+
 
 /*#header>.topbar>.container>.row>div {
     height: 40px;
@@ -112,7 +132,7 @@ fieldset[disabled] .btn-register.active {
 }*/
 
 
-/*测试样式*/
+/*æµ‹è¯•æ ·å¼*/
 
 body>section {
     height: 200px;
