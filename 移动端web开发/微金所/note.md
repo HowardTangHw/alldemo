@@ -138,6 +138,20 @@
 - 所以需要设置css3中的background-size
 
 #### 1.13.background-size
+#### 1.13.1由于轮播图片超宽造成的影响
+
+- 一个超宽的图片在容器中居中显示：
+- position方式
+- background方式 通过背景图的定位方式
+
+- 美工为了在不同屏幕下更好地展示将图片两边做的非常宽，但是我们大多数情况的页面宽度都无法满足这样的图片宽度
+- 而且Bootstrap的样式中默认将图片的max-width设置为100%；
+- 造成界面图片缩放
+- 想在一个较小屏幕下展示一个超宽的图片，并让图片居中显示
+  + 两种办法：
+    * 换用背景图的方式，background-position: center center;
+    * 使img元素绝对定位，left:50%，margin-left: -width/2
+    * translate方式
 
 - length
   + 如 background-size: 100px 100px，将背景图固定到多大尺寸
