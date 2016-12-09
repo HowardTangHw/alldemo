@@ -1,3 +1,8 @@
+body {
+    font-family: 'Helvetica Neue', Helvetica, 'Microsoft Yahei', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', sans-serif
+}
+
+
 /*字体引入*/
 
 @font-face {
@@ -14,14 +19,22 @@
     font-weight: normal;
 }
 
-.icon.icon-mobilephone::before {
+.icon-mobilephone::before {
     content: '\e908';
-    font-size: 13px;
+    font-size: 12px;
 }
 
-.icon.icon-telephone::before {
+.icon-telephone::before {
     content: '\e909';
-    font-size: 13px;
+    font-size: 12px;
+}
+
+.icon-icon::before {
+    content: "\e920";
+}
+
+.icon-logo::before {
+    content: "\e93e";
 }
 
 
@@ -76,14 +89,21 @@ fieldset[disabled] .btn-register.active {
 
 /*顶部通栏*/
 
+
+/*22222222222222222222222222*/
+
 #header {
-    height: 200px;
+    /*height: 200px;*/
 }
 
 #header>.topbar {
     height: 40px;
-    line-height: 40px;
+    line-height: 39px;
     border-bottom: 1px solid #e0e0e0;
+}
+
+#header>.topbar i {
+    font-size: 12px;
 }
 
 
@@ -122,6 +142,18 @@ fieldset[disabled] .btn-register.active {
     z-index: 2000;
 }
 
+#header .icon-icon {
+    color: #E9232C;
+    font-size: 50px;
+    vertical-align: middle;
+}
+
+#header .icon-logo {
+    color: #444;
+    font-size: 40px;
+    vertical-align: middle;
+}
+
 
 /*#header>.topbar>.container>.row>div {
     height: 40px;
@@ -133,10 +165,66 @@ fieldset[disabled] .btn-register.active {
 }*/
 
 
+/*导航栏*/
+
+#header .navbar-mynav {
+    background-color: #fff;
+    border-color: #f0f0f0;
+}
+
+.navbar-mynav .navbar-brand {
+    height: 70px;
+    line-height: 50px;
+    padding: 10px 15px;
+}
+
+.navbar-mynav .navbar-nav>li>a {
+    line-height: 50px;
+    font-size: 14px;
+    font-weight: 500;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.navbar-mynav .navbar-nav>.active>a,
+.navbar-mynav .navbar-nav>.active>a:hover,
+.navbar-mynav .navbar-nav>.active>a:focus {
+    color: #424242;
+    background-color: transparent;
+    border-bottom: 2px solid #E9232C;
+    line-height: 47px;
+}
+
+
+/*11111111111111111111111111111111111111*/
+
+.navbar-mynav {
+    margin-bottom: 0;
+}
+
+.navbar-mynav .navbar-nav>li>a:hover,
+.navbar-mynav .navbar-nav>li>a:focus {
+    color: #424242;
+    background-color: transparent;
+    border-bottom: 2px solid #E9232C;
+    line-height: 47px;
+}
+
+
+/*广告轮播*/
+
+#ad_carousel>.carousel-inner>.item {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 410px;
+}
+
+
 /*测试样式*/
 
 body>section {
-    height: 200px;
+    /*height: 200px;*/
     background: #e43c3c;
 }
 
