@@ -289,3 +289,26 @@ fieldset[disabled] .btn-register.active {
 #features .media {
     margin-bottom: 20px;
 }
+
+
+/*预约板块*/
+
+#order {
+    padding: 20px 0 10px;
+    border: 1px solid #e0e0e0;
+}
+
+#order p {
+    font-size: 16px;
+}
+
+#order p strong {
+    font-weight: normal;
+    color: #E9232C;
+}
+
+#order .pull-left a {
+    color: #E9232C;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+}

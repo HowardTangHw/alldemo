@@ -214,3 +214,10 @@
             // 然后就要去CSS里面配合了
         }
 ```
+
+### 1.15 属性选择器
+- <i class="icon-applen"></i>
+- <i class="icon-apple"></i>
+- 可以通过[class^="icon-"]找到
+- <i class="asdfsa icon-apple"></i>找不到
+- 则可以[class*=" icon-"]找到 前面空格重要 否则会出现asdfa-icon-applen也能找到
