@@ -286,7 +286,8 @@ fieldset[disabled] .btn-register.active {
     color: #424242
 }
 
-#features a:hover {
+#features a:hover,
+#features a:focus {
     text-decoration: none;
     color: #E9232C
 }
@@ -344,4 +345,51 @@ fieldset[disabled] .btn-register.active {
     border: 0;
     background: transparent;
     border-bottom: 3px solid #E9232C;
+}
+
+#products .tab-content {
+    padding: 20px 0px;
+}
+
+.panel-product {
+    border-radius: 0;
+    border: 0;
+    box-shadow: 1px 1px 2px #c0c0c0;
+}
+
+.panel-product .panel-heading {
+    float: right;
+    width: 120px;
+    height: 150px;
+    background-color: transparent;
+    border: 0;
+    border-left: 1px dashed #c0c0c0;
+    position: relative;
+}
+
+.panel-product .panel-heading::before,
+.panel-product .panel-heading::after {
+    content: " ";
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    display: block;
+    position: absolute;
+}
+
+.panel-product .panel-heading::before {
+    left: -10px;
+    top: -10px;
+}
+
+.panel-product .panel-heading::after {
+    left: -10px;
+    bottom: -10px;
+    box-shadow: 0px 3px 1px #e0e0e0 inset;
+}
+
+.panel-product .panel-body {
+    margin-right: 120px;
+    height: 150px;
 }
