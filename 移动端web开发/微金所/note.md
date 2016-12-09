@@ -167,3 +167,50 @@
   + 2.让背景图相对较大边放大到目标容器大小结束
     * 如：一张100\*200的背景图放到一个300\*400的盒子中，最终背景图片的大小是200\*400
     * 因为背景图的较大边为200，将200放大到目标容器400的高度，放大了2倍，最终结果200\*400
+
+### 1.14 大图小图切换
+- 大图
+  + 图片超宽
+  + 使用background-image方式
+  + background-position:center center
+  + 然后使用background-size : cover 
+
+- 小图
+  + 使用img的方式 
+  + 然后还要跟随屏幕变化而自适应
+
+- 在元素中使用data用来记录当前元素强相关的大图和小图地址
+```html 
+ <div class="item active" data-lg-img='img/slide_01_2000x410.jpg' data-sm-img="img/slide_01_640x340.jpg">
+    </div>
+```
+- 根据屏幕大小来判断采用大图还是小图
+```js
+ // 1.获取屏幕宽度
+    var screenWidth = $(window).width();
+ // 2.判断是否小屏幕
+    var isMiddleScreen = screenWidth < 992;
+ // 3.获取界面上每个轮播项
+    var $slideItems = $("#ad_carousel .item");
+ // 4.遍历 将轮播项背景图变成相应的大图或小图(小图用img方式 ,大图用background-img方式)
+    $slideItems.each(function(key, element) {
+        // 将dom转换为jquer对象
+        $element = $(element);
+          var attr = isMiddleScreen ? $element.data("sm-img") : $element.data("lg-img");
+        // 拼接字符串 首先将想要的样式写出来 "url('asdfasdfasd')";
+        // 然后分为前后两个字符串 "url('"++"')";
+        // 再加上参数"url('"+attr+"')"
+        var url = "url('" + attr + "')";
+        $element.css("background-image", url);
+    });
+```
+
+- 如果小图仍然使用背景方式的话,效果不好 则选用img方式来动态添加到div里面
+```javascript
+ // 5. 小图就是创建img标签 动态append到里面
+        if (isMiddleScreen) {
+            var $img = $('<img src="' + attr + '" alt="红包雨">');
+            $element.append($img);
+            // 然后就要去CSS里面配合了
+        }
+```

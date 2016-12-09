@@ -217,7 +217,20 @@ fieldset[disabled] .btn-register.active {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 410px;
+    /*height: 410px;*/
+}
+
+#ad_carousel>.carousel-inner>.item img {
+    width: 100%;
+}
+
+
+/*当超过992的时候 才给高*/
+
+@media (min-width:768px) {
+    #ad_carousel>.carousel-inner>.item {
+        height: 410px;
+    }
 }
 
 
