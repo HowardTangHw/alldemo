@@ -37,6 +37,38 @@ body {
     content: "\e93e";
 }
 
+.icon-uniE900::before {
+    content: "\e900";
+}
+
+.icon-uniE901::before {
+    content: "\e901";
+}
+
+.icon-uniE902::before {
+    content: "\e902";
+}
+
+.icon-uniE903::before {
+    content: "\e903";
+}
+
+.icon-uniE904::before {
+    content: "\e904";
+}
+
+.icon-uniE905::before {
+    content: "\e905";
+}
+
+.icon-uniE906::before {
+    content: "\e906";
+}
+
+.icon-uniE907::before {
+    content: "\e907";
+}
+
 
 /*bootstrap样式拓展*/
 
@@ -234,13 +266,26 @@ fieldset[disabled] .btn-register.active {
 }
 
 
-/*测试样式*/
+/*网站特色*/
 
-body>section {
-    /*height: 200px;*/
-    background: #e43c3c;
+#features {
+    padding: 50px 0 30px;
+    border: 1px solid #e0e0e0;
 }
 
-body>section:nth-of-type(2n) {
-    background-color: #f40;
+#features i {
+    font-size: 32px;
+}
+
+#features a {
+    color: #424242
+}
+
+#features a:hover {
+    text-decoration: none;
+    color: #E9232C
+}
+
+#features .media {
+    margin-bottom: 20px;
 }
