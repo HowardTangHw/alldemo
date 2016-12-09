@@ -26,6 +26,7 @@
     <header id="header">
         <!--visible-md-block指的是 在中等尺寸屏幕下才能看到-->
         <!--visible-md-block visible-lg-block=hidden-xs hidden-sm-->
+
         <div class="topbar hidden-xs hidden-sm">
             <div class="container">
                 <div class="row">
@@ -55,37 +56,47 @@
         <nav class="navbar navbar-default navbar-mynav navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav_menu">
+            <span class="sr-only">切换导航</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+
+
                     <a href="#" class="navbar-brand">
                         <i class="icon icon-icon"></i>
                         <i class="icon icon-logo"></i>
                     </a>
                 </div>
-                <ul class="nav navbar-nav">
-                    <li class="active">
-                        <a href="#">我要投资</a>
-                    </li>
-                    <li>
-                        <a href="#">我要借款</a>
-                    </li>
-                    <li>
-                        <a href="#">平台介绍</a>
-                    </li>
-                    <li>
-                        <a href="#">新手专区</a>
-                    </li>
-                    <li>
-                        <a href="#">最新动态</a>
-                    </li>
-                    <li>
-                        <a href="#">微论坛</a>
-                    </li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="#">个人中心</a>
-                    </li>
-                </ul>
-            </div>
+                <div id="nav_menu" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="#">我要投资</a>
+                        </li>
+                        <li>
+                            <a href="#">我要借款</a>
+                        </li>
+                        <li>
+                            <a href="#">平台介绍</a>
+                        </li>
+                        <li>
+                            <a href="#">新手专区</a>
+                        </li>
+                        <li>
+                            <a href="#">最新动态</a>
+                        </li>
+                        <li>
+                            <a href="#">微论坛</a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right hidden-sm hidden-xs">
+                        <li>
+                            <a href="#">个人中心</a>
+                        </li>
+                    </ul>
+                </div>
         </nav>
     </header>
     <!--头部区域-->
@@ -231,7 +242,30 @@
     </section>
     <!--立即预约-->
     <!-- 产品列表 -->
-    <section></section>
+    <section id="products">
+        <div class="container">
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#category_1" role="tab" data-toggle="tab">特别推荐</a></li>
+                <li role="presentation"><a href="#category_2" role="tab" data-toggle="tab">微投资</a></li>
+                <li role="presentation"><a href="#category_3" role="tab" data-toggle="tab">微小宝</a></li>
+                <li role="presentation"><a href="#category_4" role="tab" data-toggle="tab">微消费</a></li>
+                <li role="presentation"><a href="#category_5" role="tab" data-toggle="tab">微增利</a></li>
+                <li role="presentation"><a href="#category_6" role="tab" data-toggle="tab">微金宝</a></li>
+                <li role="presentation"><a href="#category_7" role="tab" data-toggle="tab">微转让</a></li>
+                <li class="pull-right"><a href="#">更多</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane fade in active" id="category_1">...</div>
+                <div role="tabpanel" class="tab-pane fade" id="category_2">...</div>
+                <div role="tabpanel" class="tab-pane fade" id="category_3">...</div>
+                <div role="tabpanel" class="tab-pane fade" id="category_4">...</div>
+                <div role="tabpanel" class="tab-pane fade" id="category_5">...</div>
+                <div role="tabpanel" class="tab-pane fade" id="category_6">...</div>
+                <div role="tabpanel" class="tab-pane fade" id="category_7">...</div>
+            </div>
+        </div>
+    </section>
     <!-- /产品列表 -->
     <!-- 新闻中心 -->
     <section></section>

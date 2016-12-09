@@ -145,6 +145,11 @@ fieldset[disabled] .btn-register.active {
     border-left: 1px solid #e0e0e0;
 }
 
+#header .navbar-toggle {
+    margin-top: 18px;
+    margin-bottom: 18px;
+}
+
 #header>.topbar>.container>.row>div .text-muted {
     font-size: 12px;
 }
@@ -311,4 +316,32 @@ fieldset[disabled] .btn-register.active {
     color: #E9232C;
     text-decoration: underline;
     text-decoration-style: dotted;
+}
+
+
+/*商品板块*/
+
+#products {
+    padding: 30px 0;
+    border-bottom: 1px solid #e0e0e0;
+    background-color: #f0f0f0;
+}
+
+#products .nav-tabs {
+    padding-left: 15px;
+}
+
+#products .nav-tabs li a {}
+
+#products .nav-tabs li a {
+    font-size: 16px;
+    color: #888;
+}
+
+#products .nav-tabs>li.active>a,
+#products .nav-tabs>li.active>a:hover,
+#products .nav-tabs>li.active>a:focus {
+    border: 0;
+    background: transparent;
+    border-bottom: 3px solid #E9232C;
 }
