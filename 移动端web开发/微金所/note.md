@@ -216,8 +216,40 @@
 ```
 
 ### 1.15 属性选择器
+```javascript
 - <i class="icon-applen"></i>
 - <i class="icon-apple"></i>
+```
 - 可以通过[class^="icon-"]找到
-- <i class="asdfsa icon-apple"></i>找不到
+```javascript
+- <i class="asdfsa icon-apple"></i>
+```
 - 则可以[class*=" icon-"]找到 前面空格重要 否则会出现asdfa-icon-applen也能找到
+
+### 1.16 导航栏响应式
+- 在完成包一个div 然后style="overflow:auto"
+- ul想要滚动,就必须要有一个宽度 宽度=所有li的宽度
+- JS动态添加ul的宽度
+```javascript
+    function ulChangeStyle() {
+        // 只能在较小屏幕
+        var $ulElements = $('#products .nav-tabs')
+            // $(selector,context) 在$ulElements中 找li[role="presentation"]
+        var $liElements = $('li[role="presentation"]', $ulElements);
+        var width = 20;
+        $liElements.each(function(key, element) {
+            // 遍历li 获取总宽度
+            width += $(element).width();
+        });
+        // 判断ul内容有没有溢出
+        // 获取整体宽度
+        var ulElementsWidth = $ulElements.width();
+        if (width > ulElementsWidth) {
+              $ulElements.width(width);
+              
+            } else {
+            $ulElements.css("width", "auto");
+        }
+
+    }
+```

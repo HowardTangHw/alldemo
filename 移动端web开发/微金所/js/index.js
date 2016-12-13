@@ -1,6 +1,7 @@
 $(function() {
-    $(window).on("resize", changeImage).trigger("resize");
-
+    $(window).on("resize", changeImage);
+    $(window).on("resize", ulChangeStyle).trigger("resize");
+    //轮播图响应式动画
     function changeImage() {
         //当屏幕小于一定值(中小屏幕 992PX)的时候,轮播图使用回img模式(使用小图)
         // 1.获取屏幕宽度
@@ -37,5 +38,27 @@ $(function() {
             }
         });
     }
+    //ul滚动条 动态计算宽度并且添加样式
+    function ulChangeStyle() {
+        // 只能在较小屏幕
+        var $ulElements = $('#products .nav-tabs')
+            // $(selector,context) 在$ulElements中 找li[role="presentation"]
+        var $liElements = $('li[role="presentation"]', $ulElements);
+        var width = 20;
+        $liElements.each(function(key, element) {
+            // 遍历li 获取总宽度
+            width += $(element).width();
+        });
+        // 判断ul内容有没有溢出
+        // 获取整体宽度
+        var ulElementsWidth = $ulElements.width();
+        if (width > ulElementsWidth) {
+            	$ulElements.width(width);
+            	
+            } else {
+            $ulElements.css("width", "auto");
+        }
 
+    }
+    $("[data-toggle='tooltip']").tooltip();
 });

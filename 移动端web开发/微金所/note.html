@@ -1246,4 +1246,40 @@ webfont 在线字体<br />
         }
 </code></pre></p>
 </li>
+</ul>
+<h3 id="115"><a name="user-content-115" href="#115" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.15 属性选择器</h3>
+<p><pre><code class="javascript">- &lt;i class=&quot;icon-applen&quot;&gt;&lt;/i&gt;
+- &lt;i class=&quot;icon-apple&quot;&gt;&lt;/i&gt;
+</code></pre><br />
+- 可以通过[class^=&rdquo;icon-&ldquo;]找到<br />
+<pre><code class="javascript">- &lt;i class=&quot;asdfsa icon-apple&quot;&gt;&lt;/i&gt;
+</code></pre><br />
+- 则可以[class*=&rdquo; icon-&ldquo;]找到 前面空格重要 否则会出现asdfa-icon-applen也能找到</p>
+<h3 id="116"><a name="user-content-116" href="#116" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.16 导航栏响应式</h3>
+<ul>
+<li>在完成包一个div 然后style=&rdquo;overflow:auto&rdquo;</li>
+<li>ul想要滚动,就必须要有一个宽度 宽度=所有li的宽度</li>
+<li>JS动态添加ul的宽度<br />
+<pre><code class="javascript">    function ulChangeStyle() {
+        // 只能在较小屏幕
+        var $ulElements = $('#products .nav-tabs')
+            // $(selector,context) 在$ulElements中 找li[role=&quot;presentation&quot;]
+        var $liElements = $('li[role=&quot;presentation&quot;]', $ulElements);
+        var width = 20;
+        $liElements.each(function(key, element) {
+            // 遍历li 获取总宽度
+            width += $(element).width();
+        });
+        // 判断ul内容有没有溢出
+        // 获取整体宽度
+        var ulElementsWidth = $ulElements.width();
+        if (width &gt; ulElementsWidth) {
+              $ulElements.width(width);
+
+            } else {
+            $ulElements.css(&quot;width&quot;, &quot;auto&quot;);
+        }
+
+    }
+</code></pre></li>
 </ul></article></body></html>

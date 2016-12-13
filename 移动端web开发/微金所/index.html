@@ -11,7 +11,6 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>微金所</title>
     <!--站点图标-->
-
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" type="" href="lib/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" type="" href="css/main.css">
@@ -26,7 +25,6 @@
     <header id="header">
         <!--visible-md-block指的是 在中等尺寸屏幕下才能看到-->
         <!--visible-md-block visible-lg-block=hidden-xs hidden-sm-->
-
         <div class="topbar hidden-xs hidden-sm">
             <div class="container">
                 <div class="row">
@@ -57,14 +55,11 @@
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav_menu">
-            <span class="sr-only">切换导航</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-
-
-
+                        <span class="sr-only">切换导航</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
                     <a href="#" class="navbar-brand">
                         <i class="icon icon-icon"></i>
                         <i class="icon icon-logo"></i>
@@ -109,7 +104,6 @@
             <li data-target="#ad_carousel" data-slide-to="2"></li>
             <li data-target="#ad_carousel" data-slide-to="3"></li>
         </ol>
-
         <!-- 图片列表容器 -->
         <div class="carousel-inner" role="listbox">
             <div class="item active" data-lg-img='img/slide_01_2000x410.jpg' data-sm-img="img/slide_01_640x340.jpg">
@@ -124,9 +118,7 @@
             <div class="item" data-lg-img='img/slide_04_2000x410.jpg' data-sm-img="img/slide_04_640x340.jpg">
                 <!--<img src="img/slide_04_2000x410.jpg" height="410" width="2000" alt="红包雨">-->
             </div>
-
         </div>
-
         <!-- 左右控制 -->
         <a class="left carousel-control" href="#ad_carousel" role="button" data-slide="prev">
             <span class="glyphicon glyphicon-chevron-left"></span>
@@ -136,7 +128,6 @@
             <span class="glyphicon glyphicon-chevron-right"></span>
             <span class="sr-only">Next</span>
         </a>
-
     </section>
     <!--广告轮播-->
     <!--网站特色-->
@@ -244,45 +235,1405 @@
     <!-- 产品列表 -->
     <section id="products">
         <div class="container">
-            <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active"><a href="#category_1" role="tab" data-toggle="tab">特别推荐</a></li>
-                <li role="presentation"><a href="#category_2" role="tab" data-toggle="tab">微投资</a></li>
-                <li role="presentation"><a href="#category_3" role="tab" data-toggle="tab">微小宝</a></li>
-                <li role="presentation"><a href="#category_4" role="tab" data-toggle="tab">微消费</a></li>
-                <li role="presentation"><a href="#category_5" role="tab" data-toggle="tab">微增利</a></li>
-                <li role="presentation"><a href="#category_6" role="tab" data-toggle="tab">微金宝</a></li>
-                <li role="presentation"><a href="#category_7" role="tab" data-toggle="tab">微转让</a></li>
-                <li class="pull-right hidden-sm hidden-xs"><a href="#">更多</a></li>
-            </ul>
-
+            <div style="overflow:auto">
+                <!--ul想要滚动,就必须要有一个宽度 宽度=所有li的宽度-->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#category_1" role="tab" data-toggle="tab">特别推荐</a></li>
+                    <li role="presentation"><a href="#category_2" role="tab" data-toggle="tab">微投资</a></li>
+                    <li role="presentation"><a href="#category_3" role="tab" data-toggle="tab">微小宝</a></li>
+                    <li role="presentation"><a href="#category_4" role="tab" data-toggle="tab">微消费</a></li>
+                    <li role="presentation"><a href="#category_5" role="tab" data-toggle="tab">微增利</a></li>
+                    <li role="presentation"><a href="#category_6" role="tab" data-toggle="tab">微金宝</a></li>
+                    <li role="presentation"><a href="#category_7" role="tab" data-toggle="tab">微转让</a></li>
+                    <li class="pull-right hidden-sm hidden-xs"><a href="#">更多</a></li>
+                </ul>
+            </div>
             <div class="tab-content">
                 <div role="tabpanel" class="tab-pane fade in active" id="category_1">
                     <div class="col-lg-4 col-md-6">
-                        <div class="panel panel-default panel-product">
-                            <div class="panel-heading">Panel heading without title</div>
+                        <div class="panel panel-default panel-product active">
+                            <div class="panel-heading">
+                                <P>
+                                    <strong data-toggle="tooltip" data-placement="top" title="傻逼才会买">8</strong>
+                                    <sub>%</sub>
+                                </P>
+                                <p>年利率</p>
+                            </div>
                             <div class="panel-body">
-                                Panel content
+                                <h3>新手体验标000期</h3>
+                                <div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6"></div>
-                    <div class="col-lg-4 col-md-6"></div>
-                    <div class="col-lg-4 col-md-6"></div>
-                    <div class="col-lg-4 col-md-6"></div>
-                    <div class="col-lg-4 col-md-6"></div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-default panel-product state-1">
+                            <div class="panel-heading">
+                                <P>
+                                    <strong data-toggle="tooltip" data-placement="top" title="傻逼才会买">8</strong>
+                                    <sub>%</sub>
+                                </P>
+                                <p>年利率</p>
+                            </div>
+                            <div class="panel-body">
+                                <h3>新手体验标000期</h3>
+                                <div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-default panel-product state-2">
+                            <div class="panel-heading">
+                                <P>
+                                    <strong data-toggle="tooltip" data-placement="top" title="傻逼才会买">8</strong>
+                                    <sub>%</sub>
+                                </P>
+                                <p>年利率</p>
+                            </div>
+                            <div class="panel-body">
+                                <h3>新手体验标000期</h3>
+                                <div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-default panel-product state-3">
+                            <div class="panel-heading">
+                                <P>
+                                    <strong data-toggle="tooltip" data-placement="top" title="傻逼才会买">8</strong>
+                                    <sub>%</sub>
+                                </P>
+                                <p>年利率</p>
+                            </div>
+                            <div class="panel-body">
+                                <h3>新手体验标000期</h3>
+                                <div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-default panel-product ">
+                            <div class="panel-heading">
+                                <P>
+                                    <strong data-toggle="tooltip" data-placement="top" title="傻逼才会买">8</strong>
+                                    <sub>%</sub>
+                                </P>
+                                <p>年利率</p>
+                            </div>
+                            <div class="panel-body">
+                                <h3>新手体验标000期</h3>
+                                <div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-default panel-product ">
+                            <div class="panel-heading">
+                                <P>
+                                    <strong data-toggle="tooltip" data-placement="top" title="傻逼才会买">8</strong>
+                                    <sub>%</sub>
+                                </P>
+                                <p>年利率</p>
+                            </div>
+                            <div class="panel-body">
+                                <h3>新手体验标000期</h3>
+                                <div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div role="tabpanel" class="tab-pane fade" id="category_2">...</div>
-                <div role="tabpanel" class="tab-pane fade" id="category_3">...</div>
-                <div role="tabpanel" class="tab-pane fade" id="category_4">...</div>
-                <div role="tabpanel" class="tab-pane fade" id="category_5">...</div>
-                <div role="tabpanel" class="tab-pane fade" id="category_6">...</div>
-                <div role="tabpanel" class="tab-pane fade" id="category_7">...</div>
+                <div role="tabpanel" class="tab-pane fade " id="category_2">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-default panel-product active">
+                            <div class="panel-heading">
+                                <P>
+                                    <strong data-toggle="tooltip" data-placement="top" title="傻逼才会买">8</strong>
+                                    <sub>%</sub>
+                                </P>
+                                <p>年利率</p>
+                            </div>
+                            <div class="panel-body">
+                                <h3>新手体验标000期</h3>
+                                <div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-default panel-product ">
+                            <div class="panel-heading">
+                                <P>
+                                    <strong data-toggle="tooltip" data-placement="top" title="傻逼才会买">8</strong>
+                                    <sub>%</sub>
+                                </P>
+                                <p>年利率</p>
+                            </div>
+                            <div class="panel-body">
+                                <h3>新手体验标000期</h3>
+                                <div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-default panel-product ">
+                            <div class="panel-heading">
+                                <P>
+                                    <strong data-toggle="tooltip" data-placement="top" title="傻逼才会买">8</strong>
+                                    <sub>%</sub>
+                                </P>
+                                <p>年利率</p>
+                            </div>
+                            <div class="panel-body">
+                                <h3>新手体验标000期</h3>
+                                <div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-default panel-product ">
+                            <div class="panel-heading">
+                                <P>
+                                    <strong data-toggle="tooltip" data-placement="top" title="傻逼才会买">8</strong>
+                                    <sub>%</sub>
+                                </P>
+                                <p>年利率</p>
+                            </div>
+                            <div class="panel-body">
+                                <h3>新手体验标000期</h3>
+                                <div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-default panel-product ">
+                            <div class="panel-heading">
+                                <P>
+                                    <strong data-toggle="tooltip" data-placement="top" title="傻逼才会买">8</strong>
+                                    <sub>%</sub>
+                                </P>
+                                <p>年利率</p>
+                            </div>
+                            <div class="panel-body">
+                                <h3>新手体验标000期</h3>
+                                <div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-default panel-product ">
+                            <div class="panel-heading">
+                                <P>
+                                    <strong data-toggle="tooltip" data-placement="top" title="傻逼才会买">8</strong>
+                                    <sub>%</sub>
+                                </P>
+                                <p>年利率</p>
+                            </div>
+                            <div class="panel-body">
+                                <h3>新手体验标000期</h3>
+                                <div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="category_3">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-default panel-product active">
+                            <div class="panel-heading">
+                                <P>
+                                    <strong data-toggle="tooltip" data-placement="top" title="傻逼才会买">8</strong>
+                                    <sub>%</sub>
+                                </P>
+                                <p>年利率</p>
+                            </div>
+                            <div class="panel-body">
+                                <h3>新手体验标000期</h3>
+                                <div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-default panel-product ">
+                            <div class="panel-heading">
+                                <P>
+                                    <strong data-toggle="tooltip" data-placement="top" title="傻逼才会买">8</strong>
+                                    <sub>%</sub>
+                                </P>
+                                <p>年利率</p>
+                            </div>
+                            <div class="panel-body">
+                                <h3>新手体验标000期</h3>
+                                <div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-default panel-product ">
+                            <div class="panel-heading">
+                                <P>
+                                    <strong data-toggle="tooltip" data-placement="top" title="傻逼才会买">8</strong>
+                                    <sub>%</sub>
+                                </P>
+                                <p>年利率</p>
+                            </div>
+                            <div class="panel-body">
+                                <h3>新手体验标000期</h3>
+                                <div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-default panel-product ">
+                            <div class="panel-heading">
+                                <P>
+                                    <strong data-toggle="tooltip" data-placement="top" title="傻逼才会买">8</strong>
+                                    <sub>%</sub>
+                                </P>
+                                <p>年利率</p>
+                            </div>
+                            <div class="panel-body">
+                                <h3>新手体验标000期</h3>
+                                <div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-default panel-product ">
+                            <div class="panel-heading">
+                                <P>
+                                    <strong data-toggle="tooltip" data-placement="top" title="傻逼才会买">8</strong>
+                                    <sub>%</sub>
+                                </P>
+                                <p>年利率</p>
+                            </div>
+                            <div class="panel-body">
+                                <h3>新手体验标000期</h3>
+                                <div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-default panel-product ">
+                            <div class="panel-heading">
+                                <P>
+                                    <strong data-toggle="tooltip" data-placement="top" title="傻逼才会买">8</strong>
+                                    <sub>%</sub>
+                                </P>
+                                <p>年利率</p>
+                            </div>
+                            <div class="panel-body">
+                                <h3>新手体验标000期</h3>
+                                <div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="category_4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-default panel-product active">
+                            <div class="panel-heading">
+                                <P>
+                                    <strong data-toggle="tooltip" data-placement="top" title="傻逼才会买">8</strong>
+                                    <sub>%</sub>
+                                </P>
+                                <p>年利率</p>
+                            </div>
+                            <div class="panel-body">
+                                <h3>新手体验标000期</h3>
+                                <div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-default panel-product ">
+                            <div class="panel-heading">
+                                <P>
+                                    <strong data-toggle="tooltip" data-placement="top" title="傻逼才会买">8</strong>
+                                    <sub>%</sub>
+                                </P>
+                                <p>年利率</p>
+                            </div>
+                            <div class="panel-body">
+                                <h3>新手体验标000期</h3>
+                                <div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-default panel-product ">
+                            <div class="panel-heading">
+                                <P>
+                                    <strong data-toggle="tooltip" data-placement="top" title="傻逼才会买">8</strong>
+                                    <sub>%</sub>
+                                </P>
+                                <p>年利率</p>
+                            </div>
+                            <div class="panel-body">
+                                <h3>新手体验标000期</h3>
+                                <div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-default panel-product ">
+                            <div class="panel-heading">
+                                <P>
+                                    <strong data-toggle="tooltip" data-placement="top" title="傻逼才会买">8</strong>
+                                    <sub>%</sub>
+                                </P>
+                                <p>年利率</p>
+                            </div>
+                            <div class="panel-body">
+                                <h3>新手体验标000期</h3>
+                                <div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-default panel-product ">
+                            <div class="panel-heading">
+                                <P>
+                                    <strong data-toggle="tooltip" data-placement="top" title="傻逼才会买">8</strong>
+                                    <sub>%</sub>
+                                </P>
+                                <p>年利率</p>
+                            </div>
+                            <div class="panel-body">
+                                <h3>新手体验标000期</h3>
+                                <div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-default panel-product ">
+                            <div class="panel-heading">
+                                <P>
+                                    <strong data-toggle="tooltip" data-placement="top" title="傻逼才会买">8</strong>
+                                    <sub>%</sub>
+                                </P>
+                                <p>年利率</p>
+                            </div>
+                            <div class="panel-body">
+                                <h3>新手体验标000期</h3>
+                                <div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="category_5">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-default panel-product active">
+                            <div class="panel-heading">
+                                <P>
+                                    <strong data-toggle="tooltip" data-placement="top" title="傻逼才会买">8</strong>
+                                    <sub>%</sub>
+                                </P>
+                                <p>年利率</p>
+                            </div>
+                            <div class="panel-body">
+                                <h3>新手体验标000期</h3>
+                                <div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-default panel-product ">
+                            <div class="panel-heading">
+                                <P>
+                                    <strong data-toggle="tooltip" data-placement="top" title="傻逼才会买">8</strong>
+                                    <sub>%</sub>
+                                </P>
+                                <p>年利率</p>
+                            </div>
+                            <div class="panel-body">
+                                <h3>新手体验标000期</h3>
+                                <div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-default panel-product ">
+                            <div class="panel-heading">
+                                <P>
+                                    <strong data-toggle="tooltip" data-placement="top" title="傻逼才会买">8</strong>
+                                    <sub>%</sub>
+                                </P>
+                                <p>年利率</p>
+                            </div>
+                            <div class="panel-body">
+                                <h3>新手体验标000期</h3>
+                                <div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-default panel-product ">
+                            <div class="panel-heading">
+                                <P>
+                                    <strong data-toggle="tooltip" data-placement="top" title="傻逼才会买">8</strong>
+                                    <sub>%</sub>
+                                </P>
+                                <p>年利率</p>
+                            </div>
+                            <div class="panel-body">
+                                <h3>新手体验标000期</h3>
+                                <div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-default panel-product ">
+                            <div class="panel-heading">
+                                <P>
+                                    <strong data-toggle="tooltip" data-placement="top" title="傻逼才会买">8</strong>
+                                    <sub>%</sub>
+                                </P>
+                                <p>年利率</p>
+                            </div>
+                            <div class="panel-body">
+                                <h3>新手体验标000期</h3>
+                                <div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-default panel-product ">
+                            <div class="panel-heading">
+                                <P>
+                                    <strong data-toggle="tooltip" data-placement="top" title="傻逼才会买">8</strong>
+                                    <sub>%</sub>
+                                </P>
+                                <p>年利率</p>
+                            </div>
+                            <div class="panel-body">
+                                <h3>新手体验标000期</h3>
+                                <div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="category_6">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-default panel-product active">
+                            <div class="panel-heading">
+                                <P>
+                                    <strong data-toggle="tooltip" data-placement="top" title="傻逼才会买">8</strong>
+                                    <sub>%</sub>
+                                </P>
+                                <p>年利率</p>
+                            </div>
+                            <div class="panel-body">
+                                <h3>新手体验标000期</h3>
+                                <div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-default panel-product ">
+                            <div class="panel-heading">
+                                <P>
+                                    <strong data-toggle="tooltip" data-placement="top" title="傻逼才会买">8</strong>
+                                    <sub>%</sub>
+                                </P>
+                                <p>年利率</p>
+                            </div>
+                            <div class="panel-body">
+                                <h3>新手体验标000期</h3>
+                                <div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-default panel-product ">
+                            <div class="panel-heading">
+                                <P>
+                                    <strong data-toggle="tooltip" data-placement="top" title="傻逼才会买">8</strong>
+                                    <sub>%</sub>
+                                </P>
+                                <p>年利率</p>
+                            </div>
+                            <div class="panel-body">
+                                <h3>新手体验标000期</h3>
+                                <div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-default panel-product ">
+                            <div class="panel-heading">
+                                <P>
+                                    <strong data-toggle="tooltip" data-placement="top" title="傻逼才会买">8</strong>
+                                    <sub>%</sub>
+                                </P>
+                                <p>年利率</p>
+                            </div>
+                            <div class="panel-body">
+                                <h3>新手体验标000期</h3>
+                                <div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-default panel-product ">
+                            <div class="panel-heading">
+                                <P>
+                                    <strong data-toggle="tooltip" data-placement="top" title="傻逼才会买">8</strong>
+                                    <sub>%</sub>
+                                </P>
+                                <p>年利率</p>
+                            </div>
+                            <div class="panel-body">
+                                <h3>新手体验标000期</h3>
+                                <div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-default panel-product ">
+                            <div class="panel-heading">
+                                <P>
+                                    <strong data-toggle="tooltip" data-placement="top" title="傻逼才会买">8</strong>
+                                    <sub>%</sub>
+                                </P>
+                                <p>年利率</p>
+                            </div>
+                            <div class="panel-body">
+                                <h3>新手体验标000期</h3>
+                                <div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="category_7">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-default panel-product active">
+                            <div class="panel-heading">
+                                <P>
+                                    <strong data-toggle="tooltip" data-placement="top" title="傻逼才会买">8</strong>
+                                    <sub>%</sub>
+                                </P>
+                                <p>年利率</p>
+                            </div>
+                            <div class="panel-body">
+                                <h3>新手体验标000期</h3>
+                                <div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-default panel-product ">
+                            <div class="panel-heading">
+                                <P>
+                                    <strong data-toggle="tooltip" data-placement="top" title="傻逼才会买">8</strong>
+                                    <sub>%</sub>
+                                </P>
+                                <p>年利率</p>
+                            </div>
+                            <div class="panel-body">
+                                <h3>新手体验标000期</h3>
+                                <div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-default panel-product ">
+                            <div class="panel-heading">
+                                <P>
+                                    <strong data-toggle="tooltip" data-placement="top" title="傻逼才会买">8</strong>
+                                    <sub>%</sub>
+                                </P>
+                                <p>年利率</p>
+                            </div>
+                            <div class="panel-body">
+                                <h3>新手体验标000期</h3>
+                                <div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-default panel-product ">
+                            <div class="panel-heading">
+                                <P>
+                                    <strong data-toggle="tooltip" data-placement="top" title="傻逼才会买">8</strong>
+                                    <sub>%</sub>
+                                </P>
+                                <p>年利率</p>
+                            </div>
+                            <div class="panel-body">
+                                <h3>新手体验标000期</h3>
+                                <div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-default panel-product ">
+                            <div class="panel-heading">
+                                <P>
+                                    <strong data-toggle="tooltip" data-placement="top" title="傻逼才会买">8</strong>
+                                    <sub>%</sub>
+                                </P>
+                                <p>年利率</p>
+                            </div>
+                            <div class="panel-body">
+                                <h3>新手体验标000期</h3>
+                                <div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-default panel-product ">
+                            <div class="panel-heading">
+                                <P>
+                                    <strong data-toggle="tooltip" data-placement="top" title="傻逼才会买">8</strong>
+                                    <sub>%</sub>
+                                </P>
+                                <p>年利率</p>
+                            </div>
+                            <div class="panel-body">
+                                <h3>新手体验标000期</h3>
+                                <div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-left">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <p>起始金额</p>
+                                        <p>0.0001万</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
     <!-- /产品列表 -->
     <!-- 新闻中心 -->
-    <section></section>
+    <section id="news">
+        <div class="container">
+            <div class="row">
+            <!-- 大标题 -->
+                <div class="col-md-2 col-md-offset-2">
+                    <h3 class="title">全部新闻</h3>
+                </div>
+                <!-- 导航条 -->
+                <div class="col-md-1">
+                    <ul class="nav nav-pills" role="tablist">
+                        <li role="presentation" class="active"><a href="#"><i class="icon icon-uniE904"></i></a></li>
+                        <li role="presentation"><a href="#"><i class="icon icon-uniE904"></i></a></li>
+                        <li role="presentation"><a href="#"><i class="icon icon-uniE904"></i></a></li>
+                        <li role="presentation"><a href="#"><i class="icon icon-uniE904"></i></a></li>
+                        <li class="divider"></li>
+                    </ul>
+                </div>
+                <!-- 内容 -->
+                <div class="col-md-7"></div>
+            </div>
+        </div>
+    </section>
     <!-- /新闻中心 -->
     <!-- 合作伙伴 -->
     <section></section>
@@ -290,7 +1641,6 @@
     <!-- 脚注区域 -->
     <footer></footer>
     <!-- /脚注区域 -->
-
     <script src="lib/jquery/jquery.js"></script>
     <script src="lib/bootstrap/js/bootstrap.js"></script>
     <script src="js/index.js"></script>
