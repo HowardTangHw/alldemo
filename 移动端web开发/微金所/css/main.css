@@ -207,6 +207,8 @@ fieldset[disabled] .btn-register.active {
 #header .navbar-mynav {
     border-color: #f0f0f0;
     background-color: #fff;
+    width: 100%;
+    top: 0;
 }
 
 .navbar-mynav .navbar-brand {
