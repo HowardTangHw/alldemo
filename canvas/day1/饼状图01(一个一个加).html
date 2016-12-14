@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>饼状图01</title>
+</head>
+<body>
+	<canvas id="demo"></canvas>
+	<script type="text/javascript">
+		var canvas = document.getElementById("demo");
+		canvas.width=600;
+		canvas.height=600;
+		canvas.style.border="1px solid #e0e0e0";
+		var ctx = canvas.getContext("2d");
+		var data = [{
+			"value":.4,
+			"color":"red",
+			"title":"应届生"
+		},{
+			"value":.2,
+			"color":"blue",
+			"title":"社会招生"
+		},{
+			"value":.3,
+			"color":"green",
+			"title":"老学员推荐"
+		},{
+			"value":.1,
+			"color":"orange",
+			"title":"公开课"
+		}];
+		var beginAngle=0;
+		var endAngle=0;
+		var data1 = data[0];
+		ctx.beginPath();
+		ctx.moveTo(300, 300);
+		ctx.arc(300, 300, 100, 0, 0.4*360*Math.PI/180);
+		ctx.fillStyle=data1.color;
+		ctx.fill();
+				ctx.beginPath();
+		ctx.moveTo(300, 300);
+		ctx.arc(300, 300, 100, 0.4*360*Math.PI/180, 0.6*360*Math.PI/180);
+		ctx.fillStyle=data[1].color;
+		ctx.fill();
+						ctx.beginPath();
+		ctx.moveTo(300, 300);
+		ctx.arc(300, 300, 100, 0.6*360*Math.PI/180, 0.9*360*Math.PI/180);
+		ctx.fillStyle=data[2].color;
+		ctx.fill();
+								ctx.beginPath();
+		ctx.moveTo(300, 300);
+		ctx.arc(300, 300, 100, 0.9*360*Math.PI/180, 1*360*Math.PI/180);
+		ctx.fillStyle=data[3].color;
+		ctx.fill();
+	</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>this</title>
+</head>
+<body>
+	<canvas id="demo"></canvas>
+	<script type="text/javascript">
+		var canvas = document.getElementById("demo");
+		canvas.width=600;
+		canvas.height=600;
+		canvas.style.border="1px solid #e0e0e0";
+		var ctx = canvas.getContext("2d");
+		var data = [{
+			"value":.4,
+			"color":"red",
+			"title":"应届生"
+		},{
+			"value":.2,
+			"color":"blue",
+			"title":"社会招生"
+		},{
+			"value":.3,
+			"color":"green",
+			"title":"老学员推荐"
+		},{
+			"value":.1,
+			"color":"orange",
+			"title":"公开课"
+		}];
+		var centerX=canvas.width/2;
+		var centerY=canvas.height/2;
+		var bA=-90;
+		var eA=-90;
+		var textA=0;
+
+		for(var i =0;i<data.length;i++){
+			ctx.beginPath();
+			ctx.moveTo(centerX, centerY);
+			eA = data[i].value*360+bA;
+			ctx.arc(centerX,centerY, 100, bA*Math.PI/180, eA*Math.PI/180);
+			ctx.fillStyle=data[i].color;
+			ctx.fill();
+			// 算角度
+			textA= bA+1/2*(data[i].value*360);
+			if(textA>90&&textA<270){
+				ctx.textAlign="end";
+			}
+			var x = centerX+120*Math.cos(textA*Math.PI/180);
+			var y = centerY+120*Math.sin(textA*Math.PI/180);
+			ctx.fillText(data[i].value*100+"%",x, y);
+			bA=eA;
+		}
+	</script>
+</body>
+</html>

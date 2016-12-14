@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>水平方向上改变文字</title>
+</head>
+<body>
+	<canvas id="demo"></canvas>
+	<script type="text/javascript">
+		var canvas = document.getElementById("demo");
+		canvas.width=600;
+		canvas.height=600;
+		canvas.style.border="1px solid #e0e0e0";
+		var ctx = canvas.getContext("2d");
+		ctx.beginPath();
+		ctx.moveTo(300, 0);
+		ctx.lineTo(300, canvas.height);
+		ctx.stroke();
+		ctx.textAlign="start";
+		ctx.font="20px 宋体";
+		ctx.fillText("start", 300, 20);
+
+
+        ctx.beginPath();
+		ctx.textAlign="end";
+		ctx.font="20px 宋体";
+		ctx.fillText("end", 300, 50);
+
+
+
+        ctx.beginPath();
+		ctx.textAlign="center";
+		ctx.font="20px 宋体";
+		ctx.fillText("center", 300, 80);
+
+
+
+		ctx.beginPath();
+		ctx.textAlign="left";
+		ctx.font="20px 宋体";
+		ctx.fillText("left", 300, 100);
+
+
+		ctx.beginPath();
+		ctx.textAlign="right";
+		ctx.font="20px 宋体";
+		ctx.fillText("right", 300, 130);
+	</script>
+</body>
+</html>

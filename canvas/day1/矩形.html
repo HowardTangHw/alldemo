@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>矩形</title>
+</head>
+<body>
+	<canvas id="demo"></canvas>
+	<script type="text/javascript">
+		var canvas = document.getElementById("demo");
+		canvas.width=600;
+		canvas.height=600;
+		canvas.style.border="1px solid #e0e0e0";
+		var ctx = canvas.getContext("2d");
+		ctx.rect(100,100,200,100);
+		ctx.stroke();
+		ctx.strokeRect(400, 100, 200, 100);
+		ctx.fillRect(100, 300, 200, 100);
+		ctx.clearRect(100, 300, 50, 50);
+	</script>
+</body>
+</html>
