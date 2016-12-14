@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="demo">
+
+    </canvas>
+    <script>
+        var canvas = document.getElementById("demo");
+        canvas.style.backgroundColor = "#f40";
+        canvas.width = 600;
+        canvas.height = 600;
+        //取得控制权
+        var context = canvas.getContext("2d"); //只能在这个控制权中操作2D图形;如果要操作3D 就要传入webgl;
+        //开始点,如果没有moveTO,就将第一个lineTO默认为起点
+        context.moveTo(100, 100);
+        // 直接设计一条线到结束点
+        context.lineTo(200, 100);
+        context.lineTo(100, 200);
+        // context.lineTo(100, 100);
+        // 找到终点 自动闭合
+        context.closePath();
+        // 属性
+        // 描边颜色
+        context.strokeStyle="white";
+        // 描边的宽度
+        context.lineWidth=4;
+        //填充颜色
+        context.fillStyle="#231f20";
+        // 将线描绘出来
+        context.stroke();
+
+        // 填充
+        context.fill();
+    </script>
+</body>
+
+</html>

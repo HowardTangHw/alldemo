@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>曲线图</title>
+</head>
+<body>
+	<canvas id="demo"></canvas>
+	<script type="text/javascript">
+		var data=[40,48,50,70,60,40,20,60,80,90];
+		var canvas=document.getElementById("demo");
+		canvas.width=600;
+		canvas.height=200;
+		var ctx=canvas.getContext("2d");
+		ctx.moveTo(50,50);
+		ctx.lineTo(45, 55);
+		ctx.moveTo(50, 50);
+		ctx.lineTo(55, 55);
+		ctx.moveTo(50, 50);
+		ctx.lineTo(50, 150);
+		ctx.lineTo(600, 150);
+		ctx.moveTo(600, 150);
+		ctx.lineTo(595, 145);
+		ctx.moveTo(600, 150);
+		ctx.lineTo(595, 155);
+		ctx.strokeStyle="blue";
+		ctx.stroke();
+		ctx.beginPath();
+		ctx.moveTo(50, 150);
+		var a=50;
+		for(var i=0;i<data.length;i++){
+			a+=50;
+			var b = data[i]/100;
+			b=150-(b*150);
+			ctx.lineTo(a, b);
+			
+		}
+		ctx.strokeStyle="red";
+		ctx.stroke();
+
+	</script>
+</body>
+</html>
