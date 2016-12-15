@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		//this第一种模式:函数执行模式
+		function add(){
+			this.x=1;
+			y=1;
+			//如果在函数中定义一个变量,并且没有加var修饰,那么这个变量相当于全局变量,相当于在window下面定义的
+			// this指向window
+			alert(this.x);
+
+		}
+
+		add();
+		alert(x);
+		//变形
+		var x =1;
+		function add(){
+			alert(this.x);
+		}
+		add();
+		//this 第二种模式:对象方法的调用模式
+		function show(){
+			alert(this.x);
+		};
+		var o ={};
+		o.x=2;
+		o.m=show;
+		o.m();
+
+		//this 第三种模式:构造器模式
+		function Cat(){
+			this.x=1;
+		}
+		var c = new Cat();
+		alert(c.x);//构造器调用模式:this指向构造出来的对象
+
+
+
+		//
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

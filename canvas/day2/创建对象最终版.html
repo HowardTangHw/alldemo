@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+	function person(option){
+		this._init(option);
+	}
+	// 初始化 交给原型
+	person.prototype={
+		// 加下划线 代表只希望内部使用
+		_init:function(option){
+			this.name=option.name;
+			this.age=option.age;
+		},
+		jieshao:function(){
+            alert("我是"+this.name);
+        },
+    
+        sayhi:function(){
+            alert("hi");
+        }
+	}
+	var abc = {
+        "name": "邓皓文",
+        "age": "22",
+        "sex": "male"
+    };
+    var me = new person(abc);
+    alert(me.name);
+    alert(me.age);
+    me.jieshao();
+    me.sayhi();
+    
+	</script>
+</body>
+</html>

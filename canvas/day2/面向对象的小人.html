@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>this</title>
+</head>
+<body>
+	<canvas id="demo"></canvas>
+	
+
+
+
+<input type="button" id="top" value="top" />
+	<input type="button" id="bottom" value="bottom" />
+	<input type="button" id="left" value="left" />
+	<input type="button" id="right" value="right" />
+	<script type="text/javascript" src="spirit.js"></script>
+	<script type="text/javascript">
+		var canvas = document.getElementById("demo");
+		canvas.width=600;
+		canvas.height=600;
+		canvas.style.border="1px solid #e0e0e0";
+		var ctx = canvas.getContext("2d");
+		//对象添加属性
+		//小人在页面上的坐标
+		// this.x=option.x;
+		// this.y=option.y;
+		// //小人在图片上的宽高
+		// this.width=option.width;
+		// this.height=option.height;
+		// //小人在画布上的宽高
+		// this.inCanW = option.inCanW;
+		// this.inCanH = option.inCanH;
+		// // 图片路径
+		// this.imgSrc = option.imgSrc;
+		// // speed
+		// this.speed = option.speed;
+		// //运动方向
+		// this.dir = option.dir;
+		var option={
+			x:canvas.width/2,
+			y:canvas.height/2,
+			width:40,
+			height:65,
+			inCanW:40,
+			inCanH:65,
+			imgSrc:"img/1.png",
+			speed:10,
+			dir:0
+		}
+		// 创建一个小人对象
+		var spirit = new Spirit(option);
+		spirit.render(ctx);
+		document.getElementById("top").onclick=function(){
+			spirit.changeDir("top");
+		}
+				document.getElementById("bottom").onclick=function(){
+			spirit.changeDir("bottom");
+		}
+						document.getElementById("left").onclick=function(){
+			spirit.changeDir("left");
+		}
+						document.getElementById("right").onclick=function(){
+			spirit.changeDir("right");
+		}
+
+	</script>
+</body>
+</html>

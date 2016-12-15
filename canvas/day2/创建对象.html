@@ -18,7 +18,21 @@
             this.name = option.name;
             this.age = option.age;
             this.sex = option.sex;
-            this.sayhi = function() {
+            // 不使用原型的时候,方法会占空间
+       //     this.sayhi = function() {
+      //          alert("hi");
+            }
+     //   }
+     //   person.prototype.jieshao = function(){
+    //        alert("我是"+this.name);
+   //     }
+
+        person.prototype={
+            jieshao:function(){
+                alert("我是"+this.name);
+            },
+        
+            sayhi:function(){
                 alert("hi");
             }
         }
@@ -26,7 +40,11 @@
         alert(me.name);
         alert(me.age);
         alert(me.sex);
+        me.jieshao();
         me.sayhi();
+        
+            
+        
     </script>
 </body>
 
