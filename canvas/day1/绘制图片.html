@@ -1,40 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>this</title>
+    <meta charset="UTF-8">
+    <title>this</title>
 </head>
+
 <body>
-<img src="img/a.jpg" id="img"/>
-	<canvas id="demo"></canvas>
-	<script type="text/javascript" >
-		
-		var canvas = document.getElementById("demo");
-		canvas.width=600;
-		canvas.height=600;
-		canvas.style.border="1px solid #e0e0e0";
-		var ctx = canvas.getContext("2d");
-		// 绘制图片
-		// 得到图片
-		var img =document.getElementById("img");
-		// 画
-		// 有可能图片会没有加载成功,所以绘制要放在onload里面
-
-
-		
-		img.onload=function(){
-			// 三个参数
-			ctx.drawImage(img, 100, 100);
-			//5个参数
-			ctx.drawImage(img, 100, 100,200,200);
-			//9个参数
-			ctx.drawImage(img,5,5,10,10,40,40,100,100);
-		}
+    <img src="img/a.jpg" id="img" />
+    <canvas id="demo"></canvas>
+    <script type="text/javascript">
+        var canvas = document.getElementById("demo");
+        canvas.width = 600;
+        canvas.height = 600;
+        canvas.style.border = "1px solid #e0e0e0";
+        var ctx = canvas.getContext("2d");
+        // 绘制图片
+        // 得到图片
+        var img = document.getElementById("img");
+        // 画
+        // 有可能图片会没有加载成功,所以绘制要放在onload里面
 
 
 
-
-
-	</script>
+        img.onload = function() {
+            // 三个参数
+            ctx.drawImage(img, 100, 100);
+            //5个参数
+            ctx.drawImage(img, 100, 100, 200, 200);
+            //9个参数
+            ctx.drawImage(img, 5, 5, 10, 10, 40, 40, 100, 100);
+        }
+    </script>
 </body>
+
 </html>

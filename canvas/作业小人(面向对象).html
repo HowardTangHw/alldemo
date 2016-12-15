@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>this</title>
+</head>
+
+<body>
+    <canvas id="demo"></canvas><br/>
+    <input type="button" value="left" id="left" />
+    <input type="button" value="lefttop" id="lefttop" />
+    <input type="button" value="top" id="top" />
+    <input type="button" value="righttop" id="righttop" />
+    <input type="button" value="right" id="right" />
+    <input type="button" value="rightdown" id="rightdown" />
+    <input type="button" value="down" id="down" />
+    <input type="button" value="leftdown" id="leftdown" />
+    <script type="text/javascript">
+        var canvas = document.getElementById("demo");
+        canvas.width = 600;
+        canvas.height = 600;
+        canvas.style.border = "1px solid #e0e0e0";
+        var ctx = canvas.getContext("2d");
+        // 构造函数
+        var Small = function(option) {
+            this._init(option);
+        }
+        Small.prototype = {
+            _init: function(option) {
+                this.x = option.x;
+                this.y = option.y;
+                this.width = option.width;
+                this.height = option.height;
+                this.inCanW = option.inCanW;
+                this.inCanH = option.inCanH;
+                this.dir = option.dir;
+                this.imgSrc = option.imgSrc;
+                this.speed = option.speed;
+            },
+            run: function(ctx) {
+                var img = new Image();
+                img.src = this.imgSrc;
+                var self = this;
+                var stateX = 0;
+                img.onload = function() {
+                    setInterval(function() {
+                        ctx.clearRect(0, 0, 600, 600);
+                        ctx.drawImage(img, self.width * stateX, self.height * self.dir, self.width, self.height, self.x, self.y, self.inCanW, self.inCanH);
+                        stateX++;
+                        stateX %= 8;
+                    }, 1000 / self.speed)
+                }
+            },
+            changeDir: function(dir) {
+                switch (dir) {
+                    case "left":
+                        this.dir = 0;
+                        break;
+                    case "lefttop":
+                        this.dir = 1;
+                        break;
+                    case "top":
+                        this.dir = 2;
+                        break;
+                    case "righttop":
+                        this.dir = 3;
+                        break;
+                    case "right":
+                        this.dir = 4;
+                        break;
+                    case "rightdown":
+                        this.dir = 5;
+                        break;
+                    case "down":
+                        this.dir = 6;
+                        break;
+                    case "leftdown":
+                        this.dir = 7;
+                        break;
+
+                }
+            }
+        }
+
+        var option = {
+            x: 100,
+            y: 100,
+            width: 256,
+            height: 256,
+            inCanW: 200,
+            inCanH: 200,
+            dir: 0,
+            imgSrc: "1.png",
+            speed: 10
+        }
+        var small = new Small(option);
+        small.run(ctx);
+        document.getElementById("left").onclick = function() {
+            small.changeDir("left");
+        }
+        document.getElementById("lefttop").onclick = function() {
+            small.changeDir("lefttop");
+        }
+        document.getElementById("leftdown").onclick = function() {
+            small.changeDir("leftdown");
+        }
+        document.getElementById("righttop").onclick = function() {
+            small.changeDir("righttop");
+        }
+        document.getElementById("top").onclick = function() {
+            small.changeDir("top");
+        }
+        document.getElementById("right").onclick = function() {
+            small.changeDir("right");
+        }
+        document.getElementById("rightdown").onclick = function() {
+            small.changeDir("rightdown");
+        }
+        document.getElementById("down").onclick = function() {
+            small.changeDir("down");
+        }
+    </script>
+</body>
+
+</html>
