@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var abc = {
+            "name": "邓皓文",
+            "age": "22",
+            "sex": "male"
+        };
+
+        function person(option) {
+            this.name = option.name;
+            this.age = option.age;
+            this.sex = option.sex;
+            this.sayhi = function() {
+                alert("hi");
+            }
+        }
+        var me = new person(abc);
+        alert(me.name);
+        alert(me.age);
+        alert(me.sex);
+        me.sayhi();
+    </script>
+</body>
+
+</html>
