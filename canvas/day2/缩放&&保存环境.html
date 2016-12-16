@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>this</title>
+</head>
+<body>
+	<canvas id="demo"></canvas>
+	<script type="text/javascript">
+		var canvas = document.getElementById("demo");
+		canvas.width=600;
+		canvas.height=600;
+		canvas.style.border="1px solid #e0e0e0";
+		var ctx = canvas.getContext("2d");
+		ctx.strokeRect(0, 0, 100, 100);
+		//保存环境状态
+		ctx.save();
+
+		//缩放语句  缩放的是画布,之后画的图像还是会放大缩小
+		ctx.scale(2, 2);
+		// 下面的数字全部变大了
+		ctx.strokeRect(0, 0, 100, 100);
+		// 环境状态还原
+		ctx.restore();
+		ctx.strokeRect(200,200, 100, 100);
+	</script>
+</body>
+</html>

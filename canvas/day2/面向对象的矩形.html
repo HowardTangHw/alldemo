@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>this</title>
+</head>
+<body>
+	<script type="text/javascript" src="rect.js"></script>
+	<canvas id="demo"></canvas>
+	<script type="text/javascript">
+		var canvas = document.getElementById("demo");
+		canvas.width=600;
+		canvas.height=600;
+		canvas.style.border="1px solid #e0e0e0";
+		var ctx = canvas.getContext("2d");
+	// _init:function(option){
+	// 	this.width=option.width;
+	// 	this.height=option.height;
+	// 	this.x=option.x;
+	// 	this.y=option.y;
+	// 	this.scaleX = option.scaleX;
+	// 	this.scaleY = option.scaleY;
+	// 	this.angle=Math.Pi *option.angle/180;
+	// 	this.opacity = option.opacity;
+	// 	this.lineWidth= option.lineWidth;
+	// 	this.stroke= option.stroke;
+	// 	this.fill = option.fill;
+	// }
+		var options={
+			width:100,
+			height:100,
+			x:100,
+			y:100,
+			scaleX:2,
+			scaleY:2,
+			angle:60,
+			opacity:0.6,
+			lineWidth:4,
+			stroke:"black",
+			fill:"red"
+		};
+		var rect = new Rect(options);
+		rect.run(ctx);
+	</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>this</title>
+</head>
+<body>
+	<canvas id="demo"></canvas>
+	<img src="" id="img"  />
+	<script type="text/javascript">
+		var canvas = document.getElementById("demo");
+		canvas.width=600;
+		canvas.height=600;
+		canvas.style.border="1px solid #e0e0e0";
+		var ctx = canvas.getContext("2d");
+		ctx.fillStyle="red";
+		var x = 10;
+		ctx.fillRect(x, 10, 50, 50);
+		setInterval(function(){
+			x++;
+			x%=600;
+			canvas.width=canvas.width;
+			ctx.fillStyle="red";
+			ctx.fillRect(x, 10, 50, 50);
+					var img = document.getElementById("img");
+		img.src=canvas.toDataURL("image/png", 1);
+		}, 10);
+
+
+
+
+	</script>
+</body>
+</html>

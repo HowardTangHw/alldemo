@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>this</title>
+</head>
+<body>
+	<canvas id="demo"></canvas>
+	<script type="text/javascript">
+		var canvas = document.getElementById("demo");
+		canvas.width=600;
+		canvas.height=600;
+		canvas.style.border="1px solid #e0e0e0";
+		var ctx = canvas.getContext("2d");
+		ctx.strokeRect(0,0,100,100);
+
+
+		// 旋转 以当前画布的原点平移的
+		ctx.rotate(30*Math.PI/180);
+		ctx.moveTo(200, 200);
+		ctx.lineTo(600, 200);
+		ctx.lineTo(200, 200);
+		ctx.lineTo(200, 600);
+		ctx.stroke();
+		// 平移
+		ctx.translate(200, 200);
+		ctx.strokeRect(0, 0, 50, 50);
+	</script>
+</body>
+</html>

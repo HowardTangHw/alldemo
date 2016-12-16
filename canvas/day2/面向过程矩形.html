@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>this</title>
+</head>
+<body>
+	<canvas id="demo"></canvas>
+	<script type="text/javascript">
+		var canvas = document.getElementById("demo");
+		canvas.width=600;
+		canvas.height=600;
+		canvas.style.border="1px solid #e0e0e0";
+		var ctx = canvas.getContext("2d");
+		// 画一个 100 100 在100 100 缩放2 2 旋转60 透明度为.6 描边为黑色 线宽为4 填充色为红色
+		ctx.save();
+		ctx.scale(2, 2);
+		ctx.rotate(60*Math.PI/180);
+		ctx.rect(100, 100, 100, 100);
+		ctx.strokeStyle="black";
+		ctx.fillStyle="red";
+		ctx.lineWidth=4;
+		ctx.globalAlpha=0.6;
+		ctx.stroke();
+		ctx.fill();
+		ctx.restore();
+	</script>
+</body>
+</html>
