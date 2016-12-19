@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>this</title>
+	<script type="text/javascript" src="../konva//konva.min.js"></script>
+	<script type="text/javascript" src="js/group.js"></script>
+	<style type="text/css">
+		body{
+			padding: 0;
+			margin: 0;
+		}
+	</style>
+</head>
+<body>
+	<div id="demo"></div>
+	<script type="text/javascript">
+	//================================================静止部分 ================================================
+		var width = window.innerWidth;
+		var height  = window.innerHeight;
+		var cenX = width/2;
+		var cenY = height/2;
+		var stage = new Konva.Stage({
+		 	container:"demo",
+		 	width:width,
+		 	height:height
+		 });
+		var layer =new Konva.Layer();
+		stage.add(layer);
+		
+		var outerCircle1 = new Konva.Circle({
+			x:cenX,
+			y:cenY,
+			radius:430/2,
+			stroke:"#E0E4EE",
+			dash:[4,4]
+		});
+		layer.add(outerCircle1);
+
+		var outerCircle2 = new Konva.Circle({
+			x:cenX,
+			y:cenY,
+			radius:274/2,
+			stroke:"#E0E4EE",
+			dash:[3,3]
+		});
+		layer.add(outerCircle2);
+
+		var outerCircle3 = new Konva.Circle({
+			x:cenX,
+			y:cenY,
+			radius:252/2,
+			stroke:"#2A3466",
+			dash:[8,5]
+		});
+		layer.add(outerCircle3);
+
+		var innerRing = new Konva.Ring({
+			x:cenX,
+			y:cenY,
+			innerRadius:130/2,
+			outerRadius:180/2,
+			fill:"#E0E4EE",
+			opacity:.8
+		});
+		layer.add(innerRing);
+
+		var innerCircle = new Konva.Circle({
+			x:cenX,
+			y:cenY,
+			radius:130/2,
+			fill:"#2A3466"
+		});
+		layer.add(innerCircle);
+
+
+		var innerText = new Konva.Text({
+			x:cenX-130/2,
+			y:cenY-10,
+			width:130,
+			text:"中心文字",
+			fontSize:20,
+			fill:"white",
+			align:"center"
+		}); 
+		layer.add(innerText);
+//================================================静止部分 ================================================
+
+///==============================================测试封装==================================================
+// 封装每个运动的小球
+		// this.x=option.x||0;
+		// this.y=option.y||0;
+		// this.innerRadius=option.innerRadius ||0;
+		// this.outerRadius=option.outerRadius ||0;
+		// this.innerFill=option.innerFill||"red";
+		// this.outerFill=option.outerFill||"blue";
+		// this.outerOpacity = option.outerOpacity||1;
+		// this.text=option.text||"";
+		// this.fontSize=option.fontSize ||20;
+		// this.fontColor=option.fontColor||"white";
+
+		// var group1=new Group({
+		// 	x:100,
+		// 	y:100,
+		// 	innerRadius:50,
+		// 	outerRadius:100,
+		// 	innerFill:"red",
+		// 	outerFill:"blue",
+		// 	outerOpacity:0.3,
+		// 	text:"test",
+		// 	fontSize:20
+		// });
+		// group1.render();
+		// group1.addToGroupOrLayer(layer);
+///==============================================测试封装====================================================
+// 分两组  一组是顺时针旋转  另一组逆时针旋转
+		var outGroup = new Konva.Group({
+			x:cenX,
+			y:cenY,
+		});
+		layer.add(outGroup);
+
+		//第一个小圆 0度
+		var small1A = 100/2;
+		var small1r= 78/2;
+		var small1 = new Group({
+			x:430/2*Math.cos(0*Math.PI/180),
+			y:430/2*Math.sin(0*Math.PI/180),
+			innerRadius:small1r,
+			outerRadius:small1A,
+			innerFill:"red",
+			outerFill:"blue",
+			outerOpacity:0.3,
+			text:"第一个球",
+			fontSize:20
+		});
+		small1.render();
+		small1.addToGroupOrLayer(outGroup);
+
+		var small2 = new Group({
+			x:430/2*Math.cos(72*Math.PI/180),
+			y:430/2*Math.sin(72*Math.PI/180),
+			innerRadius:small1r,
+			outerRadius:small1A,
+			innerFill:"#353442",
+			outerFill:"blue",
+			outerOpacity:0.3,
+			text:"第二个球",
+			fontSize:20
+		});
+		small2.render();
+		small2.addToGroupOrLayer(outGroup);
+
+
+
+			var small3 = new Group({
+			x:430/2*Math.cos(72*2*Math.PI/180),
+			y:430/2*Math.sin(72*2*Math.PI/180),
+			innerRadius:small1r,
+			outerRadius:small1A,
+			innerFill:"pink",
+			outerFill:"red",
+			outerOpacity:0.3,
+			text:"第三个球",
+			fontSize:20
+		});
+		small3.render();
+		small3.addToGroupOrLayer(outGroup);
+
+				var small4 = new Group({
+			x:430/2*Math.cos(72*3*Math.PI/180),
+			y:430/2*Math.sin(72*3*Math.PI/180),
+			innerRadius:small1r,
+			outerRadius:small1A,
+			innerFill:"orange",
+			outerFill:"pink",
+			outerOpacity:0.3,
+			text:"第四个球",
+			fontSize:20
+		});
+		small4.render();
+		small4.addToGroupOrLayer(outGroup);
+
+						var small5 = new Group({
+			x:430/2*Math.cos(72*4*Math.PI/180),
+			y:430/2*Math.sin(72*4*Math.PI/180),
+			innerRadius:small1r,
+			outerRadius:small1A,
+			innerFill:"green",
+			outerFill:"orange",
+			outerOpacity:0.3,
+			text:"第五个球",
+			fontSize:20
+		});
+		small5.render();
+		small5.addToGroupOrLayer(outGroup);
+		//第一组完成
+
+
+		//第二组
+			var innrGroup = new Konva.Group({
+			x:cenX,
+			y:cenY,
+		});
+		layer.add(innrGroup);
+
+
+		var inner1 = new Group({
+			x:252/2*Math.cos(0*Math.PI/180),
+			y:252/2*Math.sin(0*Math.PI/180),
+			innerRadius:small1r*2/3,
+			outerRadius:small1A*2/3,
+			innerFill:"#f922",
+			outerFill:"#343",
+			outerOpacity:0.3,
+			text:"第一个球",
+			fontSize:20
+		});
+		inner1.render();
+		inner1.addToGroupOrLayer(innrGroup);
+
+
+		var inner4 = new Group({
+			x:252/2*Math.cos(90*Math.PI/180),
+			y:252/2*Math.sin(90*Math.PI/180),
+			innerRadius:small1r*2/3,
+			outerRadius:small1A*2/3,
+			innerFill:"#272",
+			outerFill:"#374",
+			outerOpacity:0.3,
+			text:"第四个球",
+			fontSize:20
+		});
+		inner4.render();
+		inner4.addToGroupOrLayer(innrGroup);
+
+		var inner3 = new Group({
+			x:252/2*Math.cos(180*Math.PI/180),
+			y:252/2*Math.sin(180*Math.PI/180),
+			innerRadius:small1r*2/3,
+			outerRadius:small1A*2/3,
+			innerFill:"#f40",
+			outerFill:"#c30",
+			outerOpacity:0.3,
+			text:"第三个球",
+			fontSize:20
+		});
+		inner3.render();
+		inner3.addToGroupOrLayer(innrGroup);
+
+		var inner2 = new Group({
+			x:252/2*Math.cos(270*Math.PI/180),
+			y:252/2*Math.sin(270*Math.PI/180),
+			innerRadius:small1r*2/3,
+			outerRadius:small1A*2/3,
+			innerFill:"#c63",
+			outerFill:"#911",
+			outerOpacity:0.3,
+			text:"第二个球",
+			fontSize:20
+		});
+		inner2.render();
+		inner2.addToGroupOrLayer(innrGroup);
+
+
+
+
+layer.draw();
+
+		//动画
+		var angle = 60;
+		var outAnimation = new Konva.Animation(
+			function(frame){
+				var rotateAngle = frame.timeDiff *angle / 1000;
+				// 外面的圈转
+				outGroup.rotate(rotateAngle);
+				//让里面的文字转
+				var outArr =outGroup.getChildren();
+				for(var i =0;i<outArr.length;i++){
+					outArr[i].rotate(-rotateAngle);
+				}
+			},layer);
+
+
+		outAnimation.start();
+
+
+		var innerAnimation = new Konva.Animation(
+			function(frame){
+				var rotateAngle = frame.timeDiff *angle / 1000;
+				// 外面的圈转
+				innrGroup.rotate(-rotateAngle);
+				//让里面的文字转
+				var innerArr =innrGroup.getChildren();
+				for(var i =0;i<innerArr.length;i++){
+					innerArr[i].rotate(rotateAngle);
+				}
+			},layer);
+
+
+		innerAnimation.start();
+		layer.addEventListener("mouseenter",function(){
+			angle=30;
+		});
+				layer.addEventListener("mouseleave",function(){
+			angle=60;
+		})
+	</script>
+</body>
+</html>

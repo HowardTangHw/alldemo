@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>this</title>
+	<script type="text/javascript" src="../konva//konva.min.js"></script>
+	<style type="text/css">
+		body{
+			padding: 0;
+			margin: 0;
+		}
+	</style>
+</head>
+<body>
+	<div id="demo"></div>
+	<script type="text/javascript">
+		var width = window.innerWidth;
+		var height  = window.innerHeight;
+		var cenX = width/2;
+		var cenY = height/2;
+		var stage = new Konva.Stage({
+		 	container:"demo",
+		 	width:width,
+		 	height:height
+		 });
+		var layer =new Konva.Layer();
+		stage.add(layer);
+		
+		//外面的大框
+		var outRect = new Konva.Rect({
+			x:1/8*stage.width(),
+			y:1/2*stage.height(),
+			width:3/4*stage.width(),
+			height:1/16*stage.height(),
+			stroke:"#e0e0e0",
+			cornerRadius:4
+		});
+
+		layer.add(outRect);
+		var innerRect = new Konva.Rect({
+			x:1/8*stage.width(),
+			y:1/2*stage.height(),
+			width:10,
+			height:1/16*stage.height(),
+			fill:"green",
+			cornerRadius:4
+		});
+
+			layer.add(innerRect);
+			innerRect.to({
+				width:3/4*stage.width(),
+				duration:6
+			});
+
+		 layer.draw();
+	</script>
+</body>
+</html>

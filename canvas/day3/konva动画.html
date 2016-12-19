@@ -29,15 +29,15 @@
 		});
 		
 		layer.add(rect);
-		// 画出来
-		layer.draw();
+		// // 画出来
+		 layer.draw();
 
 		// 动画对象
 		var tween  = new Konva.Tween({
 			// 动画的对象
 			node:rect,
 			// 动画时间
-			duration:1,
+			duration:2,
 			x:200,
 			y:200,
 			strokeWidth:6,
@@ -46,11 +46,13 @@
 		});
 		
 
-		tween.play();
-///第二个
+		
 
 
-		var rect1 = new Konva.Rect({
+
+
+		//第二个
+	var rect1 = new Konva.Rect({
 			x:300,
 			y:300,
 			width:100,
@@ -59,21 +61,66 @@
 			fill:"red",
 			strokeWidth:4
 		});
-				var tween1  = new Konva.Tween({
-			// 动画的对象
-			node:rect1,
-			// 动画时间
-			duration:1,
-			x:500,
-			y:500,
-			strokeWidth:6,
-			rotation:360,
-			opacity:0,
-			// yoyo:true
-		});
+
+
+		// //第一种方法tween
+		// var tween1  = new Konva.Tween({
+		// 	// 动画的对象
+		// 	node:rect1,
+		// 	// 动画时间
+		// 	duration:1,
+		// 	rotation:360,
+		// 	onFinish:function(){
+		// 		this.reset();
+		// 		this.play();
+		// 	}
+		// 	// yoyo:true
+		// });
+		// tween1.play();
 layer.add(rect1);
+// tween.play();
+		
+
+
+	// 	//第二种方法 
+	// 	var tween = new Konva.Tween({
+	// 		node:rect1,
+	// 		rotation:360,
+	// 		duration:1,
+	// 		onFinish:function(){
+	// 			rect1.rotation(0);
+	// 			tto();
+	// 		}
+	// 	});
+	// 	function tto(){
+	// 		rect1.to({
+	// 			rotation:360,
+	// 			duration:1,
+	// 			onFinish:function(){
+	// 				tween.play();
+	// 			}
+	// 		});
+	// 	}
+	// tween.play();
+
+
 layer.draw();
 
+	//3 第三种方法 to +setInterval
+	// var rotate=0;
+	// setInterval(function(){
+	// 	rotate+=360;
+	// 		rect1.to({
+	// 	rotation:rotate,
+	// 	duration:1,
+	// })
+	// }, 1000);
+	var rotate=0;
+	var animation = new Konva.Animation(function(frame){
+		rotate++;
+		rect.rotate(rotate);
+	},layer);
+	animation.start();
 	</script>
 </body>
 </html>
