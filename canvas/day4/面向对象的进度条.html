@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>this</title>
+	<script type="text/javascript" src="../konva//konva.min.js"></script>
+	<script type="text/javascript" src="js/Schedule.js"></script>
+	<style type="text/css">
+		body{
+			padding: 0;
+			margin: 0;
+		}
+	</style>
+</head>
+<body>
+	<div id="demo"></div>
+	<script type="text/javascript">
+		var width = window.innerWidth;
+		var height  = window.innerHeight;
+		var cenX = width/2;
+		var cenY = height/2;
+		var stage = new Konva.Stage({
+		 	container:"demo",
+		 	width:width,
+		 	height:height
+		 });
+		var layer =new Konva.Layer();
+		stage.add(layer);
+
+
+
+
+		/////////////////
+		
+		var schedule = new Schedule({
+			x:stage.width()/8,
+			y:stage.height()/2,
+			innerW:0,
+			h:stage.height()/16,
+			fill:"green",
+			innerCornerRadius:10,
+			outerW:3/4 *stage.width(),
+			outerCornerRadius:10,
+			stroke:"blue",
+			stage:stage,
+			text:"努力加载中  ：0%",
+			fontSize:20
+		});
+
+
+
+
+
+
+
+		schedule.addToGroupOrLayer(layer);
+		schedule.changeVal(100);
+		layer.draw();
+
+	</script>
+</body>
+</html>

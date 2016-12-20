@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>this</title>
+	<script type="text/javascript" src="../konva//konva.min.js"></script>
+	<style type="text/css">
+		body{
+			padding: 0;
+			margin: 0;
+		}
+	</style>
+</head>
+<body>
+	<div id="demo"></div>
+	<script type="text/javascript">
+		var width = window.innerWidth;
+		var height  = window.innerHeight;
+		var cenX = width/2;
+		var cenY = height/2;
+		var stage = new Konva.Stage({
+		 	container:"demo",
+		 	width:width,
+		 	height:height
+		 });
+		var layer =new Konva.Layer();
+		stage.add(layer);
+		var data = [ 
+	    	{ name: "前端", value: .25, color: '#e0e'  },
+	    	{ name: "php",  value: .2,  color: 'orange'},
+	    	{ name: "UI",	value: .3,	color: 'blue'  },
+			{ name: "C++",	value: .05,	color: 'green' },
+			{ name: "游戏",	value: .1,	color: 'purple'},
+			{ name: "Java",	value: .1,	color: 'red'   }
+		];
+		var circle = new Konva.Circle({
+			x:stage.getWidth()/2,
+			y:stage.getHeight()/2,
+			radius:210,
+			stroke:"#ccc",
+			strokeWidht:2
+		});
+		var textAngle=0;
+		var endAngle=-90;
+		data.forEach(function(item,index){
+			var arc = new Konva.Arc({
+				x:stage.getWidth()/2,
+				y:stage.getHeight()/2,
+				outerRadius:200,
+				angle:item.value*360,
+				fill:item.color,
+				rotation:endAngle,
+				name:"arc"
+			});
+			textAngle=endAngle+item.value*1/2*360;
+			endAngle +=item.value*360;
+			layer.add(arc);
+			//绘制文字
+				var text = new Konva.Text({
+				x:stage.getWidth()/2+220*Math.cos(textAngle*Math.PI/180),
+				y:stage.getHeight()/2+220*Math.sin(textAngle*Math.PI/180),
+				text:item.value*100+"%",
+				fontSize:15,
+				fill:item.color,
+				align:"left"
+			});
+				if(textAngle>90 && textAngle<270)
+				{
+					text.x(text.x()-text.width());
+				}
+			layer.add(text);
+			
+		});
+		layer.add(circle);
+		layer.draw();
+		function moveTo(){
+			layer.find(".arc").forEach(function(item,index){
+				var oldA = item.angle();
+				item.angle(0);
+				item.to({
+					angle:oldA,
+					duration:1
+				});
+			});
+		}
+		moveTo();
+		stage.on("contentClick",function(){
+			moveTo();
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>this</title>
+	<script type="text/javascript" src="../konva//konva.min.js"></script>
+	<script type="text/javascript" src="js/histogram.js"></script>
+	<style type="text/css">
+		body{
+			padding: 0;
+			margin: 0;
+		}
+	</style>
+</head>
+<body>
+	<div id="demo"></div>
+	<script type="text/javascript">
+		var width = window.innerWidth;
+		var height  = window.innerHeight;
+		var cenX = width/2;
+		var cenY = height/2;
+		var stage = new Konva.Stage({
+		 	container:"demo",
+		 	width:width,
+		 	height:height
+		 });
+		var data = [
+			{ name: '前端', value: '.8', color: 'green'},
+			{ name: 'PHP', value: '.3', color: 'blue'},
+			{ name: 'Java', value: '.7', color: 'red'},
+			{ name: 'UI', value: '.9', color: 'orange'},
+			{ name: 'IOS', value: '.4', color: 'purple'},
+			{ name: 'Android', value: '.9', color: 'pink'}
+		];
+		var layer =new Konva.Layer();
+		stage.add(layer);
+		var histogram = new Histogram({
+			x:1/8*stage.width(),
+			y:3/4*stage.height(),
+			data: data,
+			width:3/4*stage.width(),
+			height:1/3*stage.height()
+		});
+
+
+
+
+
+		histogram.addToGroupOrLayer(layer);
+		histogram.moveTo();
+		 layer.draw();
+		stage.on("contentClick",function(){
+			histogram.moveTo();
+		});
+	</script>
+</body>
+</html>
