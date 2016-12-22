@@ -27,10 +27,10 @@ Histogram.prototype={
 		this.data.forEach(function(item,index){
 			var rect = new Konva.Rect({
 				x:(1/4+index)*dataWidth,
-				y:-this.data[index].value*_this.height,
+				y:-item.value*_this.height,
 				width:dataWidth/2,
-				height:this.data[index].value*_this.height,
-				fill:this.data[index].color,
+				height:item.value*_this.height,
+				fill:item.color,
 				shadowColor:"teal",
 				shadowBlur:10,
 				name:"rect",
@@ -39,7 +39,7 @@ Histogram.prototype={
 			_this.group.add(rect);
 			var Toptext =new Konva.Text({
 				x:index*dataWidth,
-				y:-this.data[index].value*_this.height-20,
+				y:-item.value*_this.height-20,
 				width:dataWidth,
 				fill:item.color,
 				text:item.value*100+"%",

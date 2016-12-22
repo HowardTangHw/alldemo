@@ -41,14 +41,14 @@ PieChart.prototype={
 			_this.group.add(arc);
 			//绘制文字
 				var text = new Konva.Text({
-				x:220*Math.cos(textAngle*Math.PI/180),
-				y:220*Math.sin(textAngle*Math.PI/180),
+				x:_this.outerR*Math.cos(textAngle*Math.PI/180),
+				y:_this.outerR*Math.sin(textAngle*Math.PI/180),
 				text:item.value*100+"%",
 				fontSize:15,
 				fill:item.color,
 				align:"left"
 			});
-				if(textAngle>90 && textAngle<270)
+				if(endAngle>90 && endAngle<=270)
 				{
 					text.x(text.x()-text.width());
 				}
