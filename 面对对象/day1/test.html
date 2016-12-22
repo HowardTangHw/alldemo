@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var b = 2;
+
+        function test2() {
+            window.b = 3;
+            console.log(b); //就是全局变量b 值为3
+        }
+        test2();
+        console.log(b);
+    </script>
+</body>
+
+</html>
