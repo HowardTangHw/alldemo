@@ -96,9 +96,10 @@ console.log("===============函数===============");
 function bar() {
     return foo;
     foo = 10;
+    var foo = 11;
 
     function foo() {}
-    //var foo = 11;
+
 }
 alert(typeof bar()); //"function"
 
@@ -124,12 +125,21 @@ function a() {}
 console.log(a); ////3
 
 //相当于
+
+
+
+console.log(a); //是一个函数
+function a() {}
+var a = 3;
+console.log(a) //3
+    ///等于
 var a;
 
 function a() {}
-console.log(a); //是一个函数
+console.log(a);
 a = 3;
-console.log(a) //3
+console.log(a);
+
 
 
 console.log("===============函数参数===============");

@@ -8,14 +8,13 @@
 
 <body>
     <script>
-        var b = 2;
+        function bar() {
+            return foo;
 
-        function test2() {
-            window.b = 3;
-            console.log(b); //就是全局变量b 值为3
+            function foo() {};
+            var foo = 10;
         }
-        test2();
-        console.log(b);
+        alert(typeof bar());
     </script>
 </body>
 
