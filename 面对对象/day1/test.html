@@ -8,13 +8,13 @@
 
 <body>
     <script>
-        function bar() {
-            return foo;
-
-            function foo() {};
-            var foo = 10;
+        function test() {
+            console.log("test函数");
         }
-        alert(typeof bar());
+        setTimeout(function() {
+            console.log("定时器回调函数");
+        }, 0)
+        test();
     </script>
 </body>
 

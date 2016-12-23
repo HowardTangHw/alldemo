@@ -101,7 +101,7 @@ function bar() {
     function foo() {}
 
 }
-alert(typeof bar()); //"function"
+alert(typeof bar()); //"function"  函数声明优先级较高,一般情况下不会被变量覆盖
 
 //第2题：
 var foo = 1;

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .product-container {
+            width: 100%;
+            height: 400px;
+        }
+        
+        .product-container .right,
+        .product-container .left {
+            float: left;
+        }
+        
+        .product-container .right div {
+            display: inline-block;
+        }
+        .product-container .right .topic{
+            width: 100%;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-left: 20px;
+        }
+        .product-container .right .topic .title{
+                color: #969494;
+                font-size: : 12px;
+                width: 80px;
+        }
+          .product-container .right .topic .data{
+                border: 1px solid #ccc;
+                cursor: pointer;
+        }
+        .product-container .right .topic .data:hover{
+            border-color: #f40;
+        }
+        .product-container .right .topic a{
+            text-decoration: none;
+            color: white;
+            background: #f40;
+            display: block;
+            width: 100px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            font-size: 14px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="product-container">
+        <div class="left">
+			<img />
+        </div>
+        <div class="right">
+            <div class="topic">
+                <div class="title">版本</div>
+                <div class="data" labelName="version"></div>
+            </div>
+            <div class="topic">
+                <div class="title">网络类型</div>
+                <div class="data" labelName="networkType"></div>
+            </div>
+            <div class="topic">
+                <div class="title">机身颜色</div>
+                <div class="data" labelName="color"></div>
+            </div>
+            <div class="topic">
+                <div class="title">套餐类型</div>
+                <div class="data" labelName="combo"></div>
+            </div>
+            <div class="topic">
+                <div class="title">内存</div>
+                <div class="data" labelName="ram"></div>
+            </div>
+            <div class="topic">
+                <div class="title">数量</div>
+                <div class="data"><input></div>
+            </div>
+            <div class="topic">
+                <div class="addcart"><a href="javascript:;">加入购物车</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="cart-container">
+    <p>购物车里面有<span class="data" labelName="productCount"></span>件商品</p>
+    </div>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script>
+        //商品
+        var iphone = {
+            version: "非合约6s plus",
+            ram: "16GB",
+            color: "金色",
+            combo: "官方标配",
+            networkType: "全网通",
+            img: "img/6s plus.jpg"
+        };
+        //购物车
+        var cart = {
+            productCount: 0
+        };
+        //页面对象
+        var prouctInfo = {
+            init: function() {
+                //绑定dom
+                this.binDom();
+                //绑定事件
+                this.bindEvents();
+            },
+            binDom: function() {
+            	//绑定图片
+            	$(".product-container img").attr("src",iphone.img);
+                //绑定数据
+                // $(".product-container .data[labelName=version]").html(iphone.version);
+                // $(".product-container .data[labelName=networkType]").html(iphone.networkType);
+                // $(".product-container .data[labelName=color]").html(iphone.color);
+                // $(".product-container .data[labelName=combo]").html(iphone.combo);
+                // $(".product-container .data[labelName=ram]").html(iphone.ram);
+    			$(".cart-container .data[labelName=productCount]").html(cart.productCount);
+                //利用for....in来遍历
+                for(var attrName in iphone)
+                {   
+                    if(attrName!="img")
+                    {
+                     $(".product-container .data[labelName="+attrName+"]").html(iphone[attrName]);
+                    }
+                }
+            },
+            bindEvents: function() {
+                $(".addcart").on("click",function(){
+                    //获取树池
+                    var count = parseInt($(".product-container input").val());//字符串
+                    if(isNaN(count)){
+                        count=0;
+                    }
+                    var cartCount = parseInt($(".cart-container span").html());//字符串
+                    if(isNaN(cartCount)){
+                        cartCount=0;
+                    }
+                    cartCount+=count;
+                    $(".cart-container span").html(cartCount);
+                    cart.productCount=cartCount;
+                    console.log(cart.productCount);
+                });
+            },
+            addCart: function() {}
+        };
+        prouctInfo.init();
+    </script>
+</body>
+
+</html>
