@@ -18,25 +18,30 @@
         .product-container .right div {
             display: inline-block;
         }
-        .product-container .right .topic{
+        
+        .product-container .right .topic {
             width: 100%;
             margin-top: 10px;
             margin-bottom: 10px;
             margin-left: 20px;
         }
-        .product-container .right .topic .title{
-                color: #969494;
-                font-size: : 12px;
-                width: 80px;
+        
+        .product-container .right .topic .title {
+            color: #969494;
+            font-size: 12px;
+            width: 80px;
         }
-          .product-container .right .topic .data{
-                border: 1px solid #ccc;
-                cursor: pointer;
+        
+        .product-container .right .topic .data {
+            border: 1px solid #ccc;
+            cursor: pointer;
         }
-        .product-container .right .topic .data:hover{
+        
+        .product-container .right .topic .data:hover {
             border-color: #f40;
         }
-        .product-container .right .topic a{
+        
+        .product-container .right .topic a {
             text-decoration: none;
             color: white;
             background: #f40;
@@ -46,7 +51,6 @@
             text-align: center;
             line-height: 30px;
             font-size: 14px;
-
         }
     </style>
 </head>
@@ -54,7 +58,7 @@
 <body>
     <div class="product-container">
         <div class="left">
-			<img />
+            <img />
         </div>
         <div class="right">
             <div class="topic">
@@ -87,7 +91,7 @@
         </div>
     </div>
     <div class="cart-container">
-    <p>购物车里面有<span class="data" labelName="productCount"></span>件商品</p>
+        <p>购物车里面有<span class="data" labelName="productCount"></span>件商品</p>
     </div>
     <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
     <script>
@@ -113,38 +117,36 @@
                 this.bindEvents();
             },
             binDom: function() {
-            	//绑定图片
-            	$(".product-container img").attr("src",iphone.img);
+                //绑定图片
+                $(".product-container img").attr("src", iphone.img);
                 //绑定数据
                 // $(".product-container .data[labelName=version]").html(iphone.version);
                 // $(".product-container .data[labelName=networkType]").html(iphone.networkType);
                 // $(".product-container .data[labelName=color]").html(iphone.color);
                 // $(".product-container .data[labelName=combo]").html(iphone.combo);
                 // $(".product-container .data[labelName=ram]").html(iphone.ram);
-    			$(".cart-container .data[labelName=productCount]").html(cart.productCount);
+                $(".cart-container .data[labelName=productCount]").html(cart.productCount);
                 //利用for....in来遍历
-                for(var attrName in iphone)
-                {   
-                    if(attrName!="img")
-                    {
-                     $(".product-container .data[labelName="+attrName+"]").html(iphone[attrName]);
+                for (var attrName in iphone) {
+                    if (attrName != "img") {
+                        $(".product-container .data[labelName=" + attrName + "]").html(iphone[attrName]);
                     }
                 }
             },
             bindEvents: function() {
-                $(".addcart").on("click",function(){
+                $(".addcart").on("click", function() {
                     //获取树池
-                    var count = parseInt($(".product-container input").val());//字符串
-                    if(isNaN(count)){
-                        count=0;
+                    var count = parseInt($(".product-container input").val()); //字符串
+                    if (isNaN(count)) {
+                        count = 0;
                     }
-                    var cartCount = parseInt($(".cart-container span").html());//字符串
-                    if(isNaN(cartCount)){
-                        cartCount=0;
+                    var cartCount = parseInt($(".cart-container span").html()); //字符串
+                    if (isNaN(cartCount)) {
+                        cartCount = 0;
                     }
-                    cartCount+=count;
+                    cartCount += count;
                     $(".cart-container span").html(cartCount);
-                    cart.productCount=cartCount;
+                    cart.productCount = cartCount;
                     console.log(cart.productCount);
                 });
             },

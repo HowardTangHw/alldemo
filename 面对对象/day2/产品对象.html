@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>产品</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script type="text/javascript">
+// 属性放在构造函数里面, 方法放在原型里面
+	function Product(){
+		this.name="Apple iPhone 6s(A1700) 16G 金色 移动联通电信4G手机";
+		this.price = "6666";
+		this.description="66666666666666666666";
+		this.comments="";
+
+
+	}
+	Product.prototype ={
+		//购买
+		buy:function(){},
+		//加入购物车
+		addCart:function(){}
+	}
+	//实例化
+	var iphone6s = new Product();
+	iphone6s.price="4388";
+	iphone6s.name="Apple iPhone 6s(A1700) 16G 金色 移动联通电信4G手机";
+	iphone6s.comments="66227";
+	iphone6s.description="手机中的战斗机";
+
+
+	console.log(iphone6s.name);
+
+
+	//学生
+
+	function Student(){
+		this.name="";
+		this.sex="";
+		this.age="";
+		this.aihao="";
+	}
+	Student.prototype={
+		studyAjax:function(){},
+		chidao:function(){},
+		huodong:function(){}
+	}
+	//实例化
+	var zhuantou  = new Student();
+	zhuantou.name="邓皓文";
+	zhuantou.aihao="睡觉";
+</script>
