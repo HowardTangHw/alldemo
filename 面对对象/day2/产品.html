@@ -1,10 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title></title>
+    <meta charset="UTF-8">
+    <title></title>
 </head>
+
 <body>
-	<div>
+    <div id="itemInfo">
+        <div id="name">
+            <h1 id="pname">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</h1>
+            <div id="pdes">bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</div>
+            <div>价格<strong id="pprice">699999</strong>元</div>
+        </div>
+    </div>
+    <button id="btn">加入购物车</button>
 </body>
+
 </html>
+<script>
+    // 通过AJAX从后台读取的数据
+    // var json = {
+    //     name: "ipone7",
+    //     price: 6666,
+    //     des: "手机中的战斗机"
+    // }
+
+
+
+    // ------------------------------------创建对象--------------------------------------
+    //通过自定义对象 获取对象
+    function Product() {
+        this.name = "Apple iPhone 6s(A1700) 16G 金色 移动联通电信4G手机";
+        this.price = "6666";
+        this.description = "66666666666666666666";
+        this.comments = "";
+    }
+    Product.prototype = {
+            //初始化
+            init: function() {
+                this.bindDom();
+                this.bindEvents();
+            },
+            //购买
+            buy: function() {},
+            //加入购物车
+            addCart: function() {},
+            //绑定对象
+            bindDom: function() {
+                var domName = document.getElementById("pname");
+                var domPrice = document.getElementById("pprice");
+                var domPdes = document.getElementById("pdes");
+                domName.innerHTML = this.name;
+                domPrice.innerHTML = this.price;
+                domPdes.innerHTML = this.description;
+            },
+            //绑定事件
+            bindEvents: function() {
+                var btnAddCart = document.getElementById("btn");
+                btnAddCart.onclick = function() {
+                    alert("添加产品到购物车");
+                }
+            }
+        }
+        //实例化
+    var iphone6s = new Product();
+    iphone6s.price = "4388";
+    iphone6s.name = "Apple iPhone 6s(A1700) 16G 金色 移动联通电信4G手机";
+    iphone6s.comments = "66227";
+    iphone6s.description = "手机中的战斗机";
+
+    // ------------------------------------使用对象--------------------------------------
+    //面向对象编程 组装
+    iphone6s.init();
+</script>
