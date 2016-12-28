@@ -1062,4 +1062,95 @@ body .markdown-body
 <p>对象就是抽象的东西<br />
 实例:具体的东西<br />
 我们只能使用具体的东西 而无法使用看不见摸不着的东西 </p>
+<p>简单版 <br />
+第一步 创建对象 <br />
+<pre><code class="javascript"> //通过自定义对象 获取对象
+    function Product() {
+        this.name = &quot;Apple iPhone 6s(A1700) 16G 金色 移动联通电信4G手机&quot;;
+        this.price = &quot;6666&quot;;
+        this.description = &quot;66666666666666666666&quot;;
+        this.comments = &quot;&quot;;
+    }
+    Product.prototype = {
+            //初始化
+            init: function() {
+                this.bindDom();
+                this.bindEvents();
+            },
+            //购买
+            buy: function() {},
+            //加入购物车
+            addCart: function() {},
+            //绑定对象
+            bindDom: function() {
+                var domName = document.getElementById(&quot;pname&quot;);
+                var domPrice = document.getElementById(&quot;pprice&quot;);
+                var domPdes = document.getElementById(&quot;pdes&quot;);
+                domName.innerHTML = this.name;
+                domPrice.innerHTML = this.price;
+                domPdes.innerHTML = this.description;
+            },
+            //绑定事件
+            bindEvents: function() {
+                var btnAddCart = document.getElementById(&quot;btn&quot;);
+                btnAddCart.onclick = function() {
+                    alert(&quot;添加产品到购物车&quot;);
+                }
+            }
+        }
+        //实例化
+    var iphone6s = new Product();
+    iphone6s.price = &quot;4388&quot;;
+    iphone6s.name = &quot;Apple iPhone 6s(A1700) 16G 金色 移动联通电信4G手机&quot;;
+    iphone6s.comments = &quot;66227&quot;;
+    iphone6s.description = &quot;手机中的战斗机&quot;;
+</code></pre><br />
+使用对象<br />
+<pre><code class="javascript">iphone6s.init();
+</code></pre></p>
+</blockquote>
+<h3 id="json"><a name="user-content-json" href="#json" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Json</h3>
+<blockquote>
+<p>json是JS对象的一种简写<br />
+json 是前面对象的简写 省略了抽象的过程<br />
+Json 本身就是具体的 可以直接使用 不需要定义抽象,<br />
+<pre><code class="javascript">var iphone ={
+    name:&quot;iphone7&quot;,
+    price:&quot;6666&quot;
+}
+</code></pre></p>
+<p>Json一般用于ajax中接收数据 但是不能用原型<br />
+Json对象一般被称为对象的字面量形式<br />
+原型:用途很广,运用在任何领域(用于框架封装)<br />
+原型:是一个完整定义对象的过程 先抽象 再具体(实例化) 然后使用</p>
+</blockquote>
+<h5 id="jsonjson"><a name="user-content-jsonjson" href="#jsonjson" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Json对象和Json协议有什么区别</h5>
+<blockquote>
+<p>Json协议事实上已经作为一种前端与服务器端的数据交换格式,是一种<strong>国际标准</strong>,他不是语言,是一种规范,按照这种规范写法就能实现数据传递</p>
+</blockquote>
+<hr />
+<h2 id="_6"><a name="user-content-_6" href="#_6" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>基本术语总结</h2>
+<blockquote>
+<p>抽象对象----类<br />
+分两部分&mdash;构造函数,原型(原型对象)<br />
+<pre><code class="javascript">function Product(){
+    //里面放的是属性 
+    //属性定义方式 
+    this.属性名称=值
+}
+Product.prototype={
+    //方法
+}
+</code></pre></p>
+<p>实例化 将一个抽象的对象(类) 具体化<br />
+为什么要实例化?<br />
+因为抽象的对象 是一种概念,比如手机,是一种概念,是抽象的,我们只能使用具体的看得见,摸得着的东西,所以要实例化,通过new,将他定义为某一部具体的手机,<br />
+如何实例化?  new<br />
+<pre><code class="javascript">   //实例化
+    var iphone6s = new Product();
+    iphone6s.price = &quot;4388&quot;;
+    iphone6s.name = &quot;Apple iPhone 6s(A1700) 16G 金色 移动联通电信4G手机&quot;;
+    iphone6s.comments = &quot;66227&quot;;
+    iphone6s.description = &quot;手机中的战斗机&quot;;
+</code></pre></p>
 </blockquote></article></body></html>

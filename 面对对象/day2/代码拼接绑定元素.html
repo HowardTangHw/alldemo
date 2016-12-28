@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+	<div id="itemInfo">
+	</div>
+    <button id="btn">加入购物车</button>
+</body>
+
+</html>
+<script>
+    // 通过AJAX从后台读取的数据
+    // var json = {
+    //     name: "ipone7",
+    //     price: 6666,
+    //     des: "手机中的战斗机"
+    // }
+
+
+
+    // ------------------------------------创建对象--------------------------------------
+    //通过自定义对象 获取对象
+    function Product() {
+        this.name = "Apple iPhone 6s(A1700) 16G 金色 移动联通电信4G手机";
+        this.price = "6666";
+        this.description = "66666666666666666666";
+        this.comments = "";
+        //存放临时的
+        this.config = "";
+    }
+    Product.prototype = {
+            //初始化
+            init: function(container) {
+
+                this.bindDom(container);
+                this.bindEvents();
+            },
+            //购买
+            buy: function() {},
+            //加入购物车
+            addCart: function() {},
+
+           	//代码拼接绑定元素
+            bindDom:function(container){
+            	var str="";
+            	str+=" <div id='name'>";
+            	str+="<h1 id='pname'>"+this.name+"</h1>";
+            	str+="<div id='pdes'>"+this.description+"</div>";
+            	str+="<div>价格<strong id='pprice'>"+this.price+"</strong>元</div>";
+            	str+="</div>";
+            	container.innerHTML =str;
+
+
+            },
+            //绑定对象
+            bindDomOld: function() {
+                var domName = document.getElementById("pname");
+                var domPrice = document.getElementById("pprice");
+                var domPdes = document.getElementById("pdes");
+                var btnAddCart = document.getElementById("btn");
+
+                domName.innerHTML = this.name;
+                domPrice.innerHTML = this.price;
+                domPdes.innerHTML = this.description;
+            },
+            //绑定事件
+            bindEvents: function() {
+                var btnAddCart = document.getElementById("btn");
+                btnAddCart.onclick = function() {
+                    alert("添加产品到购物车");
+                }
+            }
+        }
+        //实例化
+    var iphone6s = new Product();
+    iphone6s.price = "4388";
+    iphone6s.name = "Apple iPhone 6s(A1700) 16G 金色 移动联通电信4G手机";
+    iphone6s.comments = "66227";
+    iphone6s.description = "手机中的战斗机";
+
+    // ------------------------------------使用对象--------------------------------------
+    //面向对象编程 组装
+    var container=document.getElementById("itemInfo");
+    iphone6s.init(container);
+</script>
