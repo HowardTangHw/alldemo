@@ -1,5 +1,5 @@
 //定义一个产品对象
-function Product() {
+function Product(cart) {
     //名称
     this.name = "";
     //简介
@@ -10,6 +10,8 @@ function Product() {
     this.GroupPrice = 0;
     //购买人数
     this.sum = 0;
+    //将购物车对象传进来,因为我的产品对象,需要使用其他对象,可以通过参数来传递
+    this.cart = cart;
     //图片
     this.images = [{ small: '', big: '' }, { small: '', big: '' }, { small: '', big: '' }];
 
@@ -40,7 +42,6 @@ Product.prototype = {
     //绑定图片
     bindImages: function() {
         var str = '';
-
         for (var i = 0; i < this.images.length; i++) {
             var item = this.images[i];
             str += ' <li>';
@@ -57,4 +58,9 @@ Product.prototype = {
             thumb_image_height: 300,
         });
     },
+    init: function() {
+        this.bindDom();
+        this.bindImages();
+        this.bindEvents();
+    }
 }
