@@ -1084,19 +1084,19 @@ p是简单类型的变量,储存在栈中, p中保存的其实是地址值<br />
 <p>当我们实例化的时候,会在内存中开辟一段区域,然后自动拷贝构造函数中的所有属性和方法]<br />
 原型是隐藏的属性,所以实例化的时候,也会将原型的地址所复制拷贝</p>
 </blockquote>
-<h3 id="_8"><a name="user-content-_8" href="#_8" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>为什么方法要放在原型里面</h3>
+<h3 id="_8"><a name="user-content-_8" href="#_8" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>属性搜索机制</h3>
+<blockquote>
+<p>当调用属性/方法的时候,会先在自身中寻找,如果找不到,则会根据原型地址值(自身隐藏属性__proto__),根据指向的空间,在原型对象中遍历,如果发现则返回</p>
+</blockquote>
+<h3 id="_9"><a name="user-content-_9" href="#_9" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>为什么方法要放在原型里面</h3>
 <blockquote>
 <p>因为如果放在构造函数中,每实例化一次就会在堆中开辟一部分空间,就会同样的内容却重复的占用内存空间,浪费内存<br />
 原型对象中的属性和方法被所有实例共享 那么只会在内存中创建一次,所有实例通过指针指向<br />
 将不一样的放在构造函数中,将一样的东西放在原型中</p>
 </blockquote>
-<h3 id="_9"><a name="user-content-_9" href="#_9" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>原型</h3>
+<h3 id="_10"><a name="user-content-_10" href="#_10" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>原型对象的本质</h3>
 <blockquote>
 <p>原型对象中的属性和方法被所有实例共享 那么只会在内存中创建一次</p>
-</blockquote>
-<h3 id="_10"><a name="user-content-_10" href="#_10" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>属性搜索机制</h3>
-<blockquote>
-<p>当调用属性/方法的时候,会先在实例化空间中寻找,如果找不到,则会根据原型地址值,根据指向的空间,在原型对象中遍历,如果发现则返回</p>
 </blockquote>
 <h2 id="_11"><a name="user-content-_11" href="#_11" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>原型进阶(总结)</h2>
 <blockquote>
@@ -1105,4 +1105,269 @@ p是简单类型的变量,储存在栈中, p中保存的其实是地址值<br />
 <p>原型可以被所有实例化共享,并且只会创建一次</p>
 <p>每次实例化的时候,会然后自动拷贝构造函数中的所有属性和方法,包括隐藏的原型空间地址(属性拷贝法则)</p>
 <p>当调用属性/方法的时候,会先在实例化空间中寻找,如果找不到,则会根据原型地址值,根据指向的空间,在原型对象中遍历,如果发现则返回(属性搜索机制)</p>
-</blockquote></article></body></html>
+</blockquote>
+<h3 id="_12"><a name="user-content-_12" href="#_12" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>测试题</h3>
+<pre><code class="javascript">        var fun =function(){};
+        fun.prototype={
+            info:{
+                name:'peter',
+                age:'25'
+            }
+        }
+        var a = new fun();
+        var b = new fun();
+        a.info.name='jack';
+        b.info.name='tom';
+        console.log(a.info.name);
+        console.log(b.info.name);
+        //tom tom
+
+</code></pre>
+
+<blockquote>
+<p>原型区域只有一个,而不是每个实例都有一个,都是指向的同一片区域,所以修改的时候,是修改的同一个内存区域<br />
+只有复杂类型才会共享</p>
+</blockquote>
+<h4 id="_13"><a name="user-content-_13" href="#_13" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>测试题</h4>
+<pre><code class="javascript">var fun = function(){}
+fun.prototype = {
+    name:&quot;111&quot;,
+    buy:function(){
+    console.log(&quot;原型里面的方法&quot;)
+},
+    info:{
+    name:&quot;tom&quot;
+}
+
+}
+var a = new fun();
+var b = new fun();
+a.name=&quot;222&quot;;
+//额外加的
+a.buy=function (){
+    console.log(&quot;a的方法&quot;)
+}
+console.log(a.name);//222
+console.log(b.name);//111
+//
+a.buy(); //a的方法
+b.buy(); //原型里面的方法
+</code></pre>
+
+<blockquote>
+<p>因为修改的是实例（构造函数）直接在a实例当中添加了name:&rdquo;111&rdquo;;<br />
+因为！只有复杂类型才会共享</p>
+</blockquote>
+<h4 id="_14"><a name="user-content-_14" href="#_14" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>测试题</h4>
+<pre><code class="javascript">console.log(sum);// 函数体
+var sum =1;
+function sum(){
+    console.log(&quot;函数&quot;)；
+}
+console.log(sum);//1
+</code></pre>
+
+<blockquote>
+<p>先是变量提升 然后 函数变量也提升 然后再从上到下执行 就会变成</p>
+</blockquote>
+<pre><code class="javascript">var sum;
+function sum(){
+    console.log(&quot;函数&quot;)；
+}
+console.log(sum);// 函数体
+sum=1;
+console.log(sum);//1
+</code></pre>
+
+<h3 id="_15"><a name="user-content-_15" href="#_15" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>双对象法则</h3>
+<blockquote>
+<p>js里面定义对象和其他语言不太一样,他通过两个对象来完成定义对象的功能(构造函数 原型对象)</p>
+</blockquote>
+<h3 id="_16"><a name="user-content-_16" href="#_16" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>原型链</h3>
+<ol>
+<li>任何构造函数都包含一个隐藏的属性 <strong>proto</strong></li>
+</ol>
+<blockquote>
+<p>里面存储的是原型对象在内存中的地址 </p>
+</blockquote>
+<ol>
+<li>原型对象中有一个隐藏的属性 constructor 回址给构造函数</li>
+</ol>
+<h5 id="proto"><strong>proto</strong> 就像一条链 将构造函数和原型连接起来 这就是原型链</h5>
+<h5 id="_17"><a name="user-content-_17" href="#_17" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>属性过滤机制</h5>
+<blockquote>
+<p>hasOwnProperty 用于过滤原型中的属性(判断属性是否自身的)</p>
+</blockquote>
+<h5 id="_18"><a name="user-content-_18" href="#_18" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>属性屏蔽理论</h5>
+<blockquote>
+<p>构造函数和原型中,如果有同名的的属性和方法,那么 原型中的并不是被删除了,只是被屏蔽了</p>
+<p>可以使用delete product.buy 将构造函数对象删除,那么就会展示原型中的同名属性和方法了</p>
+<p>或者 product.prototype.buy() 访问</p>
+</blockquote>
+<h3 id="_19"><a name="user-content-_19" href="#_19" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>案例</h3>
+<p>1 产品js<br />
+<pre><code class="javascript">//定义一个产品对象
+function Product(cart) {
+    //名称
+    this.name = &quot;&quot;;
+    //简介
+    this.description = '';
+    //原价
+    this.price = 0;
+    //团购价
+    this.GroupPrice = 0;
+    //购买人数
+    this.sum = 0;
+    //将购物车对象传进来,因为我的产品对象,需要使用其他对象,可以通过参数来传递
+    this.cart = cart;
+    //图片
+    this.images = [{ small: '', big: '' }, { small: '', big: '' }, { small: '', big: '' }];
+
+}
+Product.prototype = {
+    //  绑定基本信息
+    bindDom: function() {
+        var str = &quot;&quot;;
+        str += '&lt;h1 id=&quot;pname&quot;&gt;' + this.name + '&lt;/h1&gt;';
+        str += ' &lt;ul class=&quot;rating&quot;&gt;';
+        str += ' &lt;li&gt;';
+        str += ' &lt;a class=&quot;product-rate&quot; href=&quot;#&quot;&gt; &lt;/a&gt; &lt;span&gt; &lt;/span&gt;&lt;/li&gt;';
+        str += '&lt;li&gt;&lt;a href=&quot;#&quot; id=&quot;buyCount&quot;&gt;' + this.sum + '&lt;/a&gt;人购买&lt;/li&gt;';
+        str += ' &lt;div class=&quot;clearfix&quot;&gt;&lt;/div&gt;';
+        str += ' &lt;/ul&gt;';
+        str += '&lt;div class=&quot;price_single&quot;&gt;';
+        str += ' &lt;span class=&quot;reducedfrom&quot; id=&quot;price&quot;&gt;$' + this.price + '&lt;/span&gt;';
+        str += '&lt;span class=&quot;actual&quot; id=&quot;groupPric&quot;&gt;$' + this.GroupPrice + '&lt;/span&gt;&lt;a href=&quot;#&quot;&gt;团购&lt;/a&gt;';
+        str += ' &lt;/div&gt;';
+        str += '&lt;h2 class=&quot;quick&quot;&gt;简述:&lt;/h2&gt;';
+        str += '&lt;p class=&quot;quick_desc&quot; id=&quot;description&quot;&gt; ' + this.description + '&lt;/p&gt;';
+        $(&quot;.pdetail&quot;).html(str);
+    },
+    //绑定事件
+    bindEvents: function() {
+
+    },
+    //绑定图片
+    bindImages: function() {
+        var str = '';
+        for (var i = 0; i &lt; this.images.length; i++) {
+            var item = this.images[i];
+            str += ' &lt;li&gt;';
+            str += '&lt;img class=&quot;etalage_thumb_image&quot; src=&quot;' + item.small + '&quot; class=&quot;img-responsive&quot; /&gt;';
+            str += '&lt;img class=&quot;etalage_source_image&quot; src=&quot;' + item.big + '&quot; class=&quot;img-responsive&quot; /&gt;';
+            str += '&lt;/li&gt;';
+        }
+        $('.etalage').html(str);
+
+
+        /*jquery插件实现的幻灯片特效*/
+        $('#etalage').etalage({
+            thumb_image_width: 250,
+            thumb_image_height: 300,
+        });
+    },
+    init: function() {
+        this.bindDom();
+        this.bindImages();
+        this.bindEvents();
+    }
+}
+
+</code></pre></p>
+<p>2 购物车js</p>
+<pre><code class="javascript">//定义一个购物车对象
+function Cart() {
+    this.sum = 0;
+    this.price = 0;
+    this.products = [];
+
+
+}
+Cart.prototype = {
+    // 绑定基本信息
+    bindBasic: function() {
+        //绑定产品个数
+        $('.cartsum').html(this.getProductSum());
+        //绑定产品总价格
+        $('.allPrice').html(this.getProductPrice());
+    },
+    //绑定产品列表
+    bindProductsList: function() {
+        var str = ' ';
+        for (var i = 0; i &lt; this.products.length; i++) {
+            var item = this.products[i];
+            var img = item.images[0];
+            str += '&lt;div class=&quot;cart_box&quot;&gt;';
+            str += ' &lt;div class=&quot;message&quot;&gt;';
+            str += ' &lt;div class=&quot;alert-close&quot;&gt; &lt;/div&gt;';
+            str += ' &lt;div class=&quot;list_img&quot;&gt;&lt;img src=&quot;' + img.small + '&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/div&gt;';
+            str += '&lt;div class=&quot;list_desc&quot;&gt;';
+            str += '  &lt;h4&gt;&lt;a href=&quot;#&quot;&gt;' + item.name + '&lt;/a&gt;&lt;/h4&gt;1 x&lt;span class=&quot;actual&quot;&gt; ' + item.price + '&lt;/span&gt;&lt;/div&gt;';
+            str += ' &lt;div class=&quot;clearfix&quot;&gt;&lt;/div&gt;';
+            str += '&lt;/div&gt;';
+            str += '&lt;/div&gt;';
+        }
+        $('.shopping_cart').html(str);
+    },
+    //
+    init: function() {
+        this.bindBasic();
+        this.bindProductsList();
+    },
+    //计算产品个数
+    getProductSum: function() {
+        var sum = 0;
+        if (this.products.length &gt; 0 &amp;&amp; this.products) {
+            sum = this.products.length;
+        } else {
+            sum = 0;
+        }
+        this.sum = sum;
+        return sum;
+    },
+    //计算产品总价格
+    getProductPrice: function() {
+        var sum = 0;
+        for (var i = 0, len = this.products.length; i &lt; len; i++) {
+            var item = this.products[i];
+            sum += item.price;
+        }
+        this.price = sum;
+        return sum;
+    }
+}
+</code></pre>
+
+<p>3 index js</p>
+<pre><code class="javascript">//面向对象编程
+//模拟购物车
+
+var hm = new Product(cart);
+hm.name = &quot;hhhhhhhhhhhhhhhhhhhhhhh&quot;;
+hm.description = &quot;233333333333&quot;;
+hm.price = 168;
+hm.GroupPrice = 168888;
+hm.sum = 100;
+hm.images = [
+    { small: 'images/s11.jpg', big: 'images/s11.jpg' },
+    { small: 'images/s12.jpg', big: 'images/s12.jpg' },
+    { small: 'images/s13.jpg', big: 'images/s13.jpg' }
+];
+hm.init();
+var cart = new Cart();
+cart.products.push(hm);
+cart.products.push(hm);
+cart.products.push(hm);
+
+
+cart.init();
+$('#btnaddcart').click(function() {
+    //将当前产品添加到购物车里面
+    cart.products.push(hm);
+    //重新绑定
+    cart.init();
+    //回到顶部
+    $(window).scrollTop(0);
+});
+
+</code></pre></article></body></html>
