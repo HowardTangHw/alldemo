@@ -62,10 +62,10 @@ Product.prototype = {
     bindOneImage: function(data) {
         var str = '';
         str += ' <li>';
-        str += '<img class="etalage_thumb_image" src="@(small)" class="img-responsive" />';
-        str += '<img class="etalage_source_image" src="@(big)" class="img-responsive" />';
+        str += '<img class="etalage_thumb_image" src="{{small}}" class="img-responsive" />';
+        str += '<img class="etalage_source_image" src="{{big}}" class="img-responsive" />';
         str += '</li>';
-        var html = $$.formateString(str, data);
+        var html = $$.bindArtTemplate(str, data);
         return html;
     },
     bindImages: function() {
