@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>artTemplate复习</title>
+    <script type="text/javascript" src='template.js'></script>
+    <script type="text/javascript" src='frame.js'></script>
+</head>
+
+<body>
+    <div id="mydiv"></div>
+
+
+    <script type="text/javascript">
+        var str = '';
+        str += '<h2>电影名称:</h2>{{name}}<br>';
+        str += '<h2>主演:</h2>{{protagonist}}<br/>';
+        str += '<h2>上映时间:</h2>{{time}}';
+        var film = {
+            name: "木木不哭",
+            protagonist: "木木",
+            time: "2017年1月11日"
+        }
+
+        $$.$id('mydiv').innerHTML = $$.bindArtTemplate(str, film);
+
+        function bindArtTemplate(str, data) {
+            var render = template.compile(str)
+            var html = render(data);
+            return html;
+        }
+    </script>
+</body>
+
+</html>

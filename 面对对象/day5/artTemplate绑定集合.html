@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="template.js">
+    </script>
+</head>
+
+<body>
+    <div id="mydiv"></div>
+    <script type="text/html" id="art">
+        <ul>
+            {{each films as film}}
+            <li>
+                <h2>电影名称:</h2>{{film.name}}<br/>
+                <h2>主演:</h2>{{film.protagonist}}<br/>
+                <h2>上映时间:</h2>{{film.time}}
+            </li> {{/each}}
+        </ul>
+    </script>
+    <script type="text/javascript">
+        var data = {
+            films: [{
+                name: "木木不哭",
+                protagonist: "木木",
+                time: "2017年1月11日"
+            }, {
+                name: "木木不哭",
+                protagonist: "木木",
+                time: "2017年1月11日"
+            }, {
+                name: "木木不哭",
+                protagonist: "木木",
+                time: "2017年1月11日"
+            }, ]
+        }
+        var html = template('art', data);
+        document.getElementById('mydiv').innerHTML = html;
+    </script>
+</body>
+
+</html>
