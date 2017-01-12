@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+	var a = {n:1};
+	var b = a;
+	//a.x=a={n:2};//拆分
+	a.x={n:2};
+	a={n:2};
+	// console.log(a.x);//undefined
+	// console.log(b.x);//n:2
+
+var boy ={
+    name:'111',
+    sex:'male'
+}
+
+var gril ={
+    name:'222',
+    sex:'male'
+}
+
+var baojian = {
+    bjname:'666',
+    JN:'777'
+    }
+
+//属性拷贝方法
+function extend(target,source){
+    //遍历对象
+    for(i in source){
+    target[i]=source[i];
+}
+    return target;
+}
+// extend(boy,baojian);//将宝剑的属性拷贝给boy
+// console.log(boy);//boy{name:'111',sex:'male',bjname:'666,JN:'777};
+
+var jianxiake = extend(boy,baojian);
+console.log(jianxiake);
+console.log(boy);
+//jianxiake{name:'111',sex:'male',bjname:'666,JN:'777};
+</script>
+
+</body>
+</html>

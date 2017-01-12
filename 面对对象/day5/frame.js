@@ -64,6 +64,12 @@ itcast.prototype = {
     },
     ajax: function() {},
     dateFormate: function() {},
+    extend: function(target, source) {
+        //遍历对象
+        for (i in source) {
+            target[i] = source[i];
+        }
+    },
     tab: function(id) {
         //如何获取某个父元素下面的子元素
         var box = $$.$id(id);
