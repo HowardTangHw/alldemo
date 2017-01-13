@@ -1,5 +1,6 @@
 //单个星座
 function Xingzuo(data, num) {
+    this.index = num;
     this.data = data;
     this.dom = $('<div></div>').addClass('item num-' + num);
     this.init();
@@ -27,6 +28,7 @@ Xingzuo.prototype = {
         });
         this.dom.on('click', function() {
             _this.dom.toggleClass("selected");
+            window.location = 'detail.html?num=' + _this.index;
         });
     },
     init: function() {
