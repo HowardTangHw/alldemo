@@ -8,20 +8,6 @@ function itcast() {
 }
 
 itcast.prototype = {
-    querystring: function() {
-        var str = window.location.search.substring(1);
-        var arr = str.split("&");
-        var json = {};
-        //遍历
-        for (var i = 0; i < arr.length; i++) {
-            var c = arr[i].indexOf('=');
-            if (c == -1) continue;
-            var d = arr[i].substring(0, c);
-            var e = arr[i].substring(c + 1);
-            json[d] = e;
-        }
-        return json;
-    },
     $id: function(str) {
         return document.getElementById(str)
     },
@@ -59,6 +45,11 @@ itcast.prototype = {
     trim: function(str) {
         return str.replace(/(^\s*)|(\s*$)/g, '');
     },
+    query:function (){
+    var params = window.location.search;
+    var arr =params.substring(1).split(',');
+    return arr;
+},
     formateString: function(str, data) {
         return str.replace(/@\((\w+)\)/g, function(match, key) {
             return data[key]

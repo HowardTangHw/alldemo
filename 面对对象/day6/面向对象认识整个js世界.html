@@ -1025,8 +1025,10 @@ body .markdown-body
 </blockquote>
 </li>
 <li>
-<p>Bom对象----window document location screen navigator<br />
-2.1 Location&mdash;地址栏</p>
+<p>Bom对象----window document location screen navigator</p>
+</li>
+</ol>
+<h5 id="location-"><a name="user-content-location-" href="#location-" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Location&mdash;地址栏</h5>
 <blockquote>
 <p>URL网址 <a href="http://www.baidu.com">http://www.baidu.com</a><br />
 协议 http/ftp<br />
@@ -1036,10 +1038,25 @@ body .markdown-body
 <p>location.href返回整个URL<br />
 search是从当前URL?号开始的字符串</p>
 </blockquote>
-</li>
-<li>
-<p>自定义对象</p>
-</li>
+<h5 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>如何获取传递的值</h5>
+<blockquote>
+<p>window.location.search;</p>
+</blockquote>
+<pre><code class="javascript">function query(){
+    var params = window.location.search;
+    var arr =params.substring(1).split(',');
+    return arr;
+}
+</code></pre>
+
+<blockquote>
+<p>第二种方式 (常用)</p>
+<blockquote>
+<p>传参方式</p>
+</blockquote>
+</blockquote>
+<ol>
+<li>自定义对象</li>
 </ol>
 <blockquote>
 <p>例子 产品对象 星座对象</p>
