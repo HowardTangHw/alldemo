@@ -1014,43 +1014,196 @@ body .markdown-body
     page-break-after: avoid;
   }
 }
-</style><title>面向对象认识整个js世界</title></head><body><article class="markdown-body"><h1 id="js"><a name="user-content-js" href="#js" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>面向对象认识整个js世界</h1>
-<ol>
+</style><title>复习</title></head><body><article class="markdown-body"><h1 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>复习</h1>
+<h3 id="1"><a name="user-content-1" href="#1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1. 面向对象基础</h3>
+<p><strong>面向对象编程</strong></p>
+<ul>
 <li>
-<p>内置对象<br />
-1.1 总结js中的内置对象</p>
-<blockquote>
-<p>其实除了Math及全局对象，其余的为构造函数<br />
-全局对象 Number Boolean String Array Object Function Date Math Regex </p>
-</blockquote>
+<p>如何提炼对象的属性方法</p>
+<ul>
+<li>产品对象:名称,价格,面熟,购买,查看详细信息,图片列表[{},{},{}]</li>
+<li>bindDom bindEvents</li>
+<li>将代码进行分类管理</li>
+<li>购物车:产品列表[],总价格,计算产品总价格,计算产品总个数</li>
+<li>需求:就是客服让你怎么做,根据客户的需求,用面对对象的方法编程</li>
+</ul>
 </li>
 <li>
-<p>Bom对象----window document location screen navigator</p>
+<p><strong>好处</strong>: </p>
+<ul>
+<li>分类管理 可以把和产品相关的代码用一个对象统一管理</li>
+<li>方便别人使用(不单单自己,也考虑他人使用)</li>
+<li>封装性(只需要知道如何使用,不需要知道如何实现)</li>
+<li>方便找出错误,易于维护,缩小错误范围(可以快速定位到哪个对象出错;一旦代码出现错误,只会影响单个对象,而不会影响全局)</li>
+</ul>
 </li>
-</ol>
-<h5 id="location-"><a name="user-content-location-" href="#location-" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Location&mdash;地址栏</h5>
-<blockquote>
-<p>URL网址 <a href="http://www.baidu.com">http://www.baidu.com</a><br />
-协议 http/ftp<br />
-端口号 默认80<br />
-查询字符串 ?name=&lsquo;111&rsquo;</p>
-<h6 id="locationhrefsearch"><a name="user-content-locationhrefsearch" href="#locationhrefsearch" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>location.href和search</h6>
-<p>location.href返回整个URL<br />
-search是从当前URL?号开始的字符串</p>
-</blockquote>
-<h5 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>如何获取传递的值</h5>
-<blockquote>
-<p>window.location.search;<br />
-<pre><code class="javascript">function query(){
+</ul>
+<h3 id="2"><a name="user-content-2" href="#2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2. 面对对象进阶</h3>
+<ul>
+<li>
+<p>构造函数进阶</p>
+<ul>
+<li>就是普通的js的函数,也就是说js本身没有面对对象这个实现方式,他是通过js的函数间接实现了面向对象,所以js的构造函数其实就是普通的js函数</li>
+</ul>
+</li>
+<li>
+<p>属性进阶</p>
+<ul>
+<li>this.name(定义属性)</li>
+</ul>
+</li>
+<li>
+<p>实例进阶</p>
+<ul>
+<li>实例拷贝理论:当我们实例化的时候,先在内存中开辟区域,然后会自动拷贝构造函数中的所有属性方法</li>
+</ul>
+</li>
+<li>
+<p>原型进阶</p>
+<ul>
+<li>通过原型链(构造函数中的隐藏属性:__proto__) </li>
+<li>属性(方法)搜索机制:先在本身对象中搜索属性方法,如果没有,则根据隐藏属性proto存储的地址,在原型中寻找,如果还是没有则undefined</li>
+<li>原型链:proto就像链子一样,将构造函数对象和原型对象链接在一起</li>
+</ul>
+</li>
+<li>
+<p>原型进阶 2&ndash;原型链</p>
+</li>
+</ul>
+<h3 id="3"><a name="user-content-3" href="#3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3. 面向对象三大作用和数据绑定</h3>
+<ul>
+<li>
+<p>封装性&ndash;只需要知道如何使用,不需要知道如何实现</p>
+<ul>
+<li>封装框架:将一些常用的功能放在一个对象中管理</li>
+</ul>
+</li>
+<li>
+<p>描述数据(对象字面量):对象的简化写法</p>
+<ul>
+<li>json不需要实例化</li>
+<li>双对象&ndash;抽象的,每次使用必须实例化</li>
+</ul>
+</li>
+<li>
+<p>面向对象编程</p>
+<ul>
+<li>函数:工具          书</li>
+<li>对象:工具包        书架</li>
+<li>框架:多个对象(工具) ----分类管理           图书馆</li>
+</ul>
+</li>
+<li>
+<p>数据绑定方式</p>
+<ul>
+<li>原生方式(dom.innerHTML=&rsquo;&lsquo;);</li>
+<li>formateString()</li>
+<li>模板(artTemplate)</li>
+</ul>
+</li>
+</ul>
+<h3 id="4"><a name="user-content-4" href="#4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4. 多种方式创建对象</h3>
+<ul>
+<li>
+<p>json</p>
+</li>
+<li>
+<p>构造函数</p>
+<ul>
+<li>可以在构造函数中放属性和方法,但是每个实例属性是不一样的,方法则是共享的,多个相同的方法就会占用内存空间,内存浪费</li>
+<li>所以我们方法可以放在原型里面(双对象法则 混合模式)</li>
+</ul>
+</li>
+<li>
+<p>原型对象</p>
+<ul>
+<li>如果属性放在原型对象中,值类型和引用类型就会出现问题</li>
+</ul>
+</li>
+<li>
+<p>双对象法则</p>
+<ul>
+<li>属性放在构造函数中,方法放在原型中</li>
+</ul>
+</li>
+<li>
+<p>拷贝方式 (extend)</p>
+<ul>
+<li>Function extend(目标,源)</li>
+</ul>
+</li>
+<li>
+<p>第三方框架(模拟后台语言定义对象的方式(class))</p>
+</li>
+</ul>
+<h3 id="5-js-"><a name="user-content-5-js-" href="#5-js-" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>5. 从内存角度认识面向对象(js世界)&ndash;微观角度</h3>
+<ul>
+<li>
+<p>数据类型分类</p>
+<ul>
+<li>数字</li>
+<li>数组</li>
+<li>对象 </li>
+<li>undefined</li>
+<li>null</li>
+<li>布尔</li>
+<li>字符串</li>
+</ul>
+</li>
+<li>
+<p>值类型(栈)</p>
+<ul>
+<li>只在栈中开辟空间</li>
+<li>数据直接存储在栈中</li>
+</ul>
+</li>
+<li>
+<p>引用类型(堆)</p>
+<ul>
+<li>同时在栈和堆中开辟空间</li>
+<li>栈中存储的只是内存地址&ndash;(堆中的地址)</li>
+<li>真实数据都存储在堆中</li>
+</ul>
+</li>
+<li>
+<p>内存的生命周期</p>
+<ul>
+<li>分配内存</li>
+<li>使用内存</li>
+<li>内存回收</li>
+</ul>
+</li>
+<li>
+<p>内存泄漏:一块被分配的内存既不能使用,又不能回收,这样的泄露越多,最终导致占用内存越来越多,最终使得应用崩溃,甚至导致浏览器崩溃,最恶毒的就是导致系统也崩溃</p>
+</li>
+</ul>
+<h3 id="6-js-"><a name="user-content-6-js-" href="#6-js-" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>6. 从内存角度认识面向对象(js世界)&ndash;宏观角度</h3>
+<ul>
+<li>
+<p>自定义对象</p>
+</li>
+<li>
+<p>Bom对象</p>
+<ul>
+<li>Windows</li>
+<li>document</li>
+<li>location</li>
+<li>history</li>
+<li>navigator</li>
+</ul>
+</li>
+<li>
+<p>如何获取传递的值</p>
+<ul>
+<li>window.location.search;<br />
+    <pre><code class="javascript">function query(){
     var params = window.location.search;
     var arr =params.substring(1).split(',');
     return arr;
 }
-</code></pre><br />
-第二种方式 (常用)</p>
-<blockquote>
-<p>传参方式<br />
-<pre><code class="javascript">var querystring = function(){
+</code></pre></li>
+<li>第二种方式 (常用)<br />
+    <pre><code class="javascript">var querystring = function(){
     var str = window.location.search.substring(1);//将传参提取出来 去掉?号
     var arr = str.split(&quot;&amp;&quot;);//将多个参数分开放入arr中
     var json={};//定义一个空的对象
@@ -1064,84 +1217,10 @@ search是从当前URL?号开始的字符串</p>
     }
     return json;//返回对象
 }
-</code></pre><br />
-3. 自定义对象</p>
-</blockquote>
-<p>例子 产品对象 星座对象</p>
-</blockquote>
-<hr />
-<h3 id="_2"><a name="user-content-_2" href="#_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>函数对象详解</h3>
-<ol>
-<li>
-<p>prototype</p>
-<blockquote>
-<p>var product = function(){} <br />
-这是一个自定义对象:函数实现的,函数又是Function的一个实例<br />
-所以这个自定义对象含有Function对象的一切属性和方法<br />
-所以这个product含有prototype这个属性<br />
-原型也是对象,对象都是函数实现的,所以也包含Function对象的一切属性方法</p>
-</blockquote>
+</code></pre></li>
+</ul>
 </li>
 <li>
-<p>arguments 重要性:9分 使用频率:8分 考试点:10分</p>
-<blockquote>
-<p>arguments只有在代码运行的时候才起作用<br />
-保存的是函数传入实参<br />
-例如 add(123);add(123,123);<br />
-arguments是一个数组,保存函数的参数===准确的来说是伪数组</p>
-</blockquote>
+<p>内置对象</p>
 </li>
-<li>
-<p>call<br />
-<pre><code class="javascript">//对象1
-var myclass={
-    getAllStudentsNumbers:function(){
-    return 130;
-    }
-    }
-//对象2
-var student{
-    getDetail:function(){
-    return{name:'123',aihao:&quot;321&quot;;}
-    }
-}
-//借用--供爷法则
-console.log(myclass.getAllStudentsNumbers.call(student));
-</code></pre></p>
-<blockquote>
-<p>student借用myclass.getAllStudentsNumbers;就要像爷一样,把借用的对象放在前面<br />
-方法:myclass.getAllStudentsNumbers.call(student)</p>
-<h5 id="_3"><a name="user-content-_3" href="#_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>传参</h5>
-<p><pre><code class="javascript">function add(a,b){
-    alert(a+b);
-}
-function sub(a,b){
-    alert(a-b);
-}
-add.call(sub,3,1);
-</code></pre><br />
-弹出一个弹出框, 结果为4</p>
-<h6 id="callthis"><a name="user-content-callthis" href="#callthis" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>call之后,爷里面的this,就会指向调用者就是孙子</h6>
-<h4 id="_4"><a name="user-content-_4" href="#_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>伪数组</h4>
-<p><pre><code class="javascript">var divs = document.getElementsByTagName('div');
-console.log(divs.length);
-divs.pop().style.background='green';//不起作用,因为divs根本不是一个数组,是伪数组
-//伪数组转换为真数组
-var domNodes = Array.prototype.slice.call(divs);
-</code></pre><br />
-其实伪数组 就是一个json对象<br />
-var json= {1:&rsquo;abc&rsquo;,2:&lsquo;321&rsquo;,3:&lsquo;123&rsquo;,length:&lsquo;3&rsquo;}<br />
-真数组<br />
-var json=[&lsquo;abc&rsquo;,&lsquo;321&rsquo;,&lsquo;123&rsquo;];<br />
-转换为真数组<br />
-var domNodes = Array.prototype.slice.call(divs);<br />
-转换后,就可以应用数组下面的所有方法了</p>
-</blockquote>
-</li>
-<li>Apply<blockquote>
-<p>apply的功能和call一模一样,只是传参的形式不一样<br />
-call的参数是平铺 add.call(sub,3,1);<br />
-apply的话,只能传递一个参数,所以要放在中括号里面add.apply(sub,[3,1]);</p>
-</blockquote>
-</li>
-</ol></article></body></html>
+</ul></article></body></html>

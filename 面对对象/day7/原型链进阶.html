@@ -1014,134 +1014,82 @@ body .markdown-body
     page-break-after: avoid;
   }
 }
-</style><title>面向对象认识整个js世界</title></head><body><article class="markdown-body"><h1 id="js"><a name="user-content-js" href="#js" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>面向对象认识整个js世界</h1>
-<ol>
+</style><title>原型链进阶</title></head><body><article class="markdown-body"><h1 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>原型链进阶</h1>
+<h3 id="object-function"><a name="user-content-object-function" href="#object-function" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>自定义对象 内置对象 Object Function对象</h3>
+<ul>
+<li>他们之间的关系到底是什么呢?</li>
+</ul>
+<h4 id="1"><a name="user-content-1" href="#1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1. 原型链复习</h4>
+<ul>
+<li>原型链就是将两个没什么关系的内存空间相链</li>
+<li>依靠的就是__proto__属性</li>
+</ul>
+<h4 id="2-new"><a name="user-content-2-new" href="#2-new" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2. new的本质</h4>
+<ul>
+<li>创建一个空对象</li>
+<li>拷贝构造函数的属性方法到空对象中</li>
+<li>自动生成一个属性__proto__指向类的原型</li>
+</ul>
+<h4 id="3-object9595proto9595"><a name="user-content-3-object9595proto9595" href="#3-object9595proto9595" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3. Object对象的__proto__</h4>
+<h5 id="_2"><a name="user-content-_2" href="#_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>== 是值相等就可以了,会自动进行类型转换  ===是全等,数据类型和数值一样,那么才相等</h5>
+<ul>
 <li>
-<p>内置对象<br />
-1.1 总结js中的内置对象</p>
-<blockquote>
-<p>其实除了Math及全局对象，其余的为构造函数<br />
-全局对象 Number Boolean String Array Object Function Date Math Regex </p>
-</blockquote>
-</li>
-<li>
-<p>Bom对象----window document location screen navigator</p>
-</li>
-</ol>
-<h5 id="location-"><a name="user-content-location-" href="#location-" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Location&mdash;地址栏</h5>
-<blockquote>
-<p>URL网址 <a href="http://www.baidu.com">http://www.baidu.com</a><br />
-协议 http/ftp<br />
-端口号 默认80<br />
-查询字符串 ?name=&lsquo;111&rsquo;</p>
-<h6 id="locationhrefsearch"><a name="user-content-locationhrefsearch" href="#locationhrefsearch" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>location.href和search</h6>
-<p>location.href返回整个URL<br />
-search是从当前URL?号开始的字符串</p>
-</blockquote>
-<h5 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>如何获取传递的值</h5>
-<blockquote>
-<p>window.location.search;<br />
-<pre><code class="javascript">function query(){
-    var params = window.location.search;
-    var arr =params.substring(1).split(',');
-    return arr;
-}
-</code></pre><br />
-第二种方式 (常用)</p>
-<blockquote>
-<p>传参方式<br />
-<pre><code class="javascript">var querystring = function(){
-    var str = window.location.search.substring(1);//将传参提取出来 去掉?号
-    var arr = str.split(&quot;&amp;&quot;);//将多个参数分开放入arr中
-    var json={};//定义一个空的对象
-    //遍历
-    for (var i =0;i&lt;arr.length;i++){
-    var c = arr[i].indexOf('=');//找到=号的位置
-    if (c==-1) continue;//如果没有发现则调到下一次循环
-    var d = arr[i].substring(0,c);//截取等号前面的内容
-    var e = arr[i].substring(c+1);//截取等号后面的内容
-    json[d]=e;//以键值的形式存储在对象当中
-    }
-    return json;//返回对象
-}
-</code></pre><br />
-3. 自定义对象</p>
-</blockquote>
-<p>例子 产品对象 星座对象</p>
-</blockquote>
-<hr />
-<h3 id="_2"><a name="user-content-_2" href="#_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>函数对象详解</h3>
-<ol>
-<li>
-<p>prototype</p>
-<blockquote>
-<p>var product = function(){} <br />
-这是一个自定义对象:函数实现的,函数又是Function的一个实例<br />
-所以这个自定义对象含有Function对象的一切属性和方法<br />
-所以这个product含有prototype这个属性<br />
-原型也是对象,对象都是函数实现的,所以也包含Function对象的一切属性方法</p>
-</blockquote>
+<p>Object对象是内置对象Function对象实例</p>
+<ul>
+<li>Object.__proto__ === Function.prototype //true</li>
+<li>Function.prototype.__proto__ === Object.prototype //true</li>
+<li>Object.prototype.__proto__ 指向为null</li>
+</ul>
 </li>
 <li>
-<p>arguments 重要性:9分 使用频率:8分 考试点:10分</p>
-<blockquote>
-<p>arguments只有在代码运行的时候才起作用<br />
-保存的是函数传入实参<br />
-例如 add(123);add(123,123);<br />
-arguments是一个数组,保存函数的参数===准确的来说是伪数组</p>
-</blockquote>
+<p>以后将Object和Function看成四个对象</p>
+<ul>
+<li>Object</li>
+<li>Object.prototype</li>
+<li>Function</li>
+<li>Function.prototype</li>
+</ul>
 </li>
 <li>
-<p>call<br />
-<pre><code class="javascript">//对象1
-var myclass={
-    getAllStudentsNumbers:function(){
-    return 130;
-    }
-    }
-//对象2
-var student{
-    getDetail:function(){
-    return{name:'123',aihao:&quot;321&quot;;}
-    }
-}
-//借用--供爷法则
-console.log(myclass.getAllStudentsNumbers.call(student));
-</code></pre></p>
-<blockquote>
-<p>student借用myclass.getAllStudentsNumbers;就要像爷一样,把借用的对象放在前面<br />
-方法:myclass.getAllStudentsNumbers.call(student)</p>
-<h5 id="_3"><a name="user-content-_3" href="#_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>传参</h5>
-<p><pre><code class="javascript">function add(a,b){
-    alert(a+b);
-}
-function sub(a,b){
-    alert(a-b);
-}
-add.call(sub,3,1);
-</code></pre><br />
-弹出一个弹出框, 结果为4</p>
-<h6 id="callthis"><a name="user-content-callthis" href="#callthis" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>call之后,爷里面的this,就会指向调用者就是孙子</h6>
-<h4 id="_4"><a name="user-content-_4" href="#_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>伪数组</h4>
-<p><pre><code class="javascript">var divs = document.getElementsByTagName('div');
-console.log(divs.length);
-divs.pop().style.background='green';//不起作用,因为divs根本不是一个数组,是伪数组
-//伪数组转换为真数组
-var domNodes = Array.prototype.slice.call(divs);
-</code></pre><br />
-其实伪数组 就是一个json对象<br />
-var json= {1:&rsquo;abc&rsquo;,2:&lsquo;321&rsquo;,3:&lsquo;123&rsquo;,length:&lsquo;3&rsquo;}<br />
-真数组<br />
-var json=[&lsquo;abc&rsquo;,&lsquo;321&rsquo;,&lsquo;123&rsquo;];<br />
-转换为真数组<br />
-var domNodes = Array.prototype.slice.call(divs);<br />
-转换后,就可以应用数组下面的所有方法了</p>
-</blockquote>
+<p>内置对象__proto__指向的全是===Function.prototype</p>
 </li>
-<li>Apply<blockquote>
-<p>apply的功能和call一模一样,只是传参的形式不一样<br />
-call的参数是平铺 add.call(sub,3,1);<br />
-apply的话,只能传递一个参数,所以要放在中括号里面add.apply(sub,[3,1]);</p>
-</blockquote>
+<li>
+<p>自定义对象__proto__原型指向内置对象.prototype</p>
 </li>
-</ol></article></body></html>
+<li>内置对象.prototype原型指向Function.prototype</li>
+<li>Function.prototype原型指向Object.prototype</li>
+<li>
+<p>Object.prototype原型指向为null</p>
+</li>
+<li>
+<p>只要原型指向不是为null,就会一层一层往下找</p>
+</li>
+</ul>
+<h4 id="4-"><a name="user-content-4-" href="#4-" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4. 内置对象属性搜索机制&ndash;链式搜索法则</h4>
+<ul>
+<li>
+<p>搜索机制</p>
+<ul>
+<li>首先在构造对象中寻找属性(方法)</li>
+<li>如过没找到,找到该对象的proto指向的对象,继续寻找属性(方法)</li>
+<li>如此无限循环,直到proto指向为null</li>
+</ul>
+</li>
+<li>
+<p>停止条件</p>
+<ul>
+<li>系统已经设计好,Object.prototype对象的proto为null,是所有链式属性搜索的终点</li>
+</ul>
+</li>
+</ul>
+<h4 id="5"><a name="user-content-5" href="#5" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>5. 构造函数的原型链</h4>
+<ul>
+<li>例子:Foo<ul>
+<li>Foo.__proto__ 指向的是Function.prototype===&gt;Object.prototype</li>
+<li>Foo.prototype.__proto__指向的是Object.prototype</li>
+</ul>
+</li>
+</ul>
+<h2 id="objectprototype"><a name="user-content-objectprototype" href="#objectprototype" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>鼻祖是Object.prototype ,是一切链式循环的终点</h2>
+<h3 id="_3"><a name="user-content-_3" href="#_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>图</h3>
+<p><img alt="Alt text" src="///D://WEB%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE/%E9%9D%A2%E5%AF%B9%E5%AF%B9%E8%B1%A1/day7/%E5%9B%BE%E7%89%871.png" /></p></article></body></html>

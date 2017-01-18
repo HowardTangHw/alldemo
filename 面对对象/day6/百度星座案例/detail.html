@@ -8,7 +8,9 @@
 
 <body>
     <h1 id='h1'></h1>
+    <script src="../template.js"></script>
     <script src="../frame.js"></script>
+
     <script>
         var data = [{
             name: 1,
@@ -48,7 +50,12 @@
             data: 12
         }, ];
         var json = $$.querystring();
-        document.getElementById("h1").innerHTML = data[json.num].name + '数据为' + data[json.num].data;
+        // document.getElementById("h1").innerHTML = data[json.num].name + '数据为' + data[json.num].data;
+        // var h1 = '<h2>@(name),数据是@(data)</h2>';
+        // var html = $$.formateString(h1, data[json.num]);
+        var h1 = '<h2>{{name}},数据是{{data}}</h2>';
+        var html = $$.bindArtTemplate(h1, data[json.num]);
+        document.getElementById("h1").innerHTML = html;
     </script>
 </body>
 
