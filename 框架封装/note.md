@@ -31,3 +31,9 @@
 - 使用对象字面量形式封装框架(JSON)--zhuantou2.js
 
 - 使用extend函数来封装框架 -- zhuantou3.js
+
+- 当一个控件,同时写了dom0和dom2代码
+	+  dom0优先执行
+
+- dom2的优点:dom0会自动覆盖前面绑定的事件,一个元素只能绑定一个事件,dom2可以绑定多个事件(例子 可以一次click触发多个click事件)
+	+ 解除绑定removeEventListener
