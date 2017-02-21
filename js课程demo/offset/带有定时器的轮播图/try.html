@@ -85,22 +85,18 @@
 </body>
 
 </html>
-<script type="text/javascript">
+<script>
     var all = document.getElementById("all");
     var ul = all.children[0].children[0];
     var lis = ul.children;
-    //lis[0].cloneNode(true);
-    //1.克隆节点
     ul.appendChild(lis[0].cloneNode(true));
-    //2.创建ol 里面的li
-    var ol = all.children[0].children[1];
+    var ol = document.getElementsByTagName("ol")[0];
     for (var i = 0; i < lis.length - 1; i++) {
         var li = document.createElement("li");
         ol.appendChild(li);
         li.innerHTML = i + 1;
     }
     ol.children[0].className = "current";
-    //3.动画效果
     var k = 0;
     var kk = 0;
     for (var i = 0; i < ol.children.length; i++) {
@@ -109,66 +105,38 @@
             for (var i = 0; i < ol.children.length; i++) {
                 ol.children[i].className = "";
             }
-            this.className = "current";
+            this.className = "current ";
             run(ul, -(this.index * lis[0].offsetWidth));
-            k = kk = this.index; //修复bug
+            k = kk = this.index;
         }
-
     }
-    //4.定时器部分
-
+    //计时器
     var timer = null;
     timer = setInterval(autoplay, 1000);
 
     function autoplay() {
-        //动画做法
         kk++;
         if (kk > lis.length - 1) {
             ul.style.left = 0;
             kk = 1;
         }
         run(ul, -(kk * lis[0].offsetWidth));
-
-        //小方块做法
         k++;
         for (var i = 0; i < ol.children.length; i++) {
             ol.children[i].className = "";
         }
-
-        if (k > 4) {
+        if (k > ol.children.length - 1) {
             k = 0;
-            ol.children[k].className = "current";
         }
         ol.children[k].className = "current";
     }
-
-
-    //鼠标经过和停止定时器
-
     all.onmouseover = function() {
         clearInterval(timer);
     }
     all.onmouseout = function() {
             timer = setInterval(autoplay, 1000);
         }
-        //	//修复bug 自己的蠢方法
-        //			for(var i = 0; i < ol.children.length; i++) {
-        //			ol.children[i].index = i;
-        //			ol.children[i].onmouseover = function() {
-        //				for(var i = 0; i < ol.children.length; i++) {
-        //				ol.children[i].className = "";
-        //			}
-        //				clearInterval(timer);
-        //				kk=this.index;
-        //				k=this.index;
-        //				run(ul, -(kk * lis[0].offsetWidth));
-        //				ol.children[k].className = "current";
-        //				timer = setInterval(autoplay, 1000);
-        //			}
-        //			
-        //		}
-
-    //动画
+        //动画
     function run(obj, target) {
         clearInterval(obj.timer);
         var speed = obj.offsetLeft < target ? 50 : -50;
